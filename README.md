@@ -19,30 +19,10 @@ Os atores e as respetivas descrições da Loja de Tecnologia Online podem ser en
 | Identificador   |      Descrição      |  Exemplo |
 |----------|:-------------:|------:|
 |Utilizador |  Utilizador genérico, tem acesso à informação pública tal como os diversos produtos disponíveis para venda. | n/a |
-|Visitante |  Utilizador genérico, tem acesso à informação pública tal como os diversos produtos disponíveis para venda. | n/a |
-|Cliente |  Utilizador genérico, tem acesso à informação pública tal como os diversos produtos disponíveis para venda. | n/a |
-|Administrador |  Utilizador genérico, tem acesso à informação pública tal como os diversos produtos disponíveis para venda. | n/a |
-|API’s |  Utilizador genérico, tem acesso à informação pública tal como os diversos produtos disponíveis para venda. | n/a |
-
-
-
-
-
-Utilizador
-Utilizador genérico, tem acesso à informação pública tal como os diversos produtos disponíveis para venda.
-n/a
-Visitante
-Utilizador não autenticado, pode registar-se ou autenticar-se no sistema.
-n/a
-Cliente
-Utilizador autenticado, pode consultar os produtos disponíveis para venda, gerir a sua lista de favoritos, proceder à compra de um produto, consultar o seu histórico de compras, comentar e pontuar um artigo do catálogo.
-phruta2000
-Administrador
-Utilizador autenticado, que pode alterar os preços dos produtos, adicionar novos artigos ao inventário e gerir os comentários dos utilizadores.
-admin
-API’s
-API externas que podem ser usadas para efetuar o pagamento da compra.
-PayPal
+|Visitante |  Utilizador não autenticado, pode registar-se ou autenticar-se no sistema. | n/a |
+|Cliente |  Utilizador autenticado, pode consultar os produtos disponíveis para venda, gerir a sua lista de favoritos, proceder à compra de um produto, consultar o seu histórico de compras, comentar e pontuar um artigo do catálogo.| phruta2000 |
+|Administrador |  Utilizador autenticado, que pode alterar os preços dos produtos, adicionar novos artigos ao inventário e gerir os comentários dos utilizadores | admin |
+|API’s | API externas que podem ser usadas para efetuar o pagamento da compra. | PayPal |
 
 
 ## 2. User Stories
