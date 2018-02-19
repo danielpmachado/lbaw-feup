@@ -17,21 +17,42 @@ Os atores e as respetivas descrições da Loja de Tecnologia Online podem ser en
 ![alt text](https://github.com/dolfander/LBAW-53/blob/master/images%20README/actors%20diagram.png)
 
 | Identificador   |      Descrição      |  Exemplo |
-|----------|:-------------:|------:|
+|:----------:|:-------------|:------:|
 |Utilizador |  Utilizador genérico, tem acesso à informação pública tal como os diversos produtos disponíveis para venda. | n/a |
 |Visitante |  Utilizador não autenticado, pode registar-se ou autenticar-se no sistema. | n/a |
 |Cliente |  Utilizador autenticado, pode consultar os produtos disponíveis para venda, gerir a sua lista de favoritos, proceder à compra de um produto, consultar o seu histórico de compras, comentar e pontuar um artigo do catálogo.| phruta2000 |
 |Administrador |  Utilizador autenticado, que pode alterar os preços dos produtos, adicionar novos artigos ao inventário e gerir os comentários dos utilizadores | admin |
 |API’s | API externas que podem ser usadas para efetuar o pagamento da compra. | PayPal |
 
+Tabela 1: Descrição dos Atores
 
 ## 2. User Stories
  
 Para a Loja de Tecnologia Online devem ser considerados os casos de utilização apresentados de seguida.
  
 ### 2.1. Visitante
+
+| Identificador   |Nome| Prioridade|      Descrição      |
+|:----------:|:-------------:|:-------------:|:------|
+|US01 | Log in  | alta |Como Visitante, eu quero autenticar-me no sistema, para poder aceder a informação privilegiada. |
+|US02 | Registar  | alta |Como Visitante, eu quero registar-me, para poder autenticar-me no sistema.  |
  
+Tabela 2: Casos de Utilização do Visitante
+
+
 ### 2.2. Utilizador
+
+| Identificador   |Nome| Prioridade|      Descrição      |
+|:----------:|:-------------:|:-------------:|:------|
+|US11 | Pesquisa  | alta |Como Utilizador, eu quero consultar toda a informação pública que se encontra no site, de forma a estar informado acerca dos seus conteúdo.|
+|US12 | Pontuações  | alta |Como Utilizador, eu quero ter acesso às pontuações e comentários de cada produto, de forma a informar-se sobre as opiniões de outras pessoas.  |
+|US13 | Página Inicial  | alta |Como Utilizador, eu quero aceder à página inicial, para poder ver um breve descrição do site.  |
+|US14 | Página “Sobre”  | média |Como Utilizador, eu quero aceder à página “sobre”, para ver um descrição completa do site.  |
+|US15 | Catálogo  | alta |Como Utilizador, eu quero aceder à página do catálogo, para poder ver os produtos disponíveis . |
+|US16 | FAQ  | média  |Como Utilizador, eu quero aceder à página de FAQ, para poder ver as dúvidas frequentes. |
+|US17 | Contactos  | alta |Como Utilizador, eu quero aceder à página de contactos, para que possa ver todos os contactos.  |
+
+Tabela 3: Casos de Utilização do Utilizador
  
 ### 2.3. Cliente
  
