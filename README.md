@@ -68,9 +68,20 @@ Tabela 3: Casos de Utilização do Utilizador
 |US28 | Perfil   | alta |Como Cliente, eu quero mudar a minha informação, de forma a mantê-la atualizada.|
 |US29 | Histórico  | alta |Como cliente, e quero consultar meu histórico, de forma a saber que artigos comprei.|
 
- 
+ Tabela 4: Casos de Utilização do Cliente
 ### 2.4. Administrador
+
+| Identificador   |Nome| Prioridade|      Descrição      |
+|:----------:|:-------------:|:-------------:|:------|
+|US31 | Remover produto  | alta |Como Administrador, eu quero poder remover um produto da loja caso este tenha sido descontinuado ou substituído por um outro.|
+|US32 | Stock de um produto  | alta |Como Administrador, eu quero poder alterar a quantidade disponível de um dado artigo.|
+|US33 | Especificações de um produto  | média |Como Administrador, eu quero poder alterar a informação disponível acerca de um dado artigo.|
+|US34 | Histórico  | média  |Como Administrador, eu quero ter acesso ao histórico de compras dos clientes.|
+|US35 | Banir utilizador | baixa |Como Administrador, eu quero poder banir um cliente por má conduta.|
+|US36 | Remover comentário  | baixa |Como Administrador, eu quero poder remover um dado comentário num produto feito por um utilizador.|
  
+ Tabela 5: Casos de Utilização do Administrador
+
 ## A1. Anexos: Requisitos suplementares
  
 Este anexo contém as regras de negócio, os requisitos técnicos e outras restrições.
