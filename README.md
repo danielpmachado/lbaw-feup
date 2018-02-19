@@ -95,11 +95,28 @@ As regras de negócio definem ou restringem um aspecto do negócio, com a inten�
 |BR01 | Validação da compra |Uma compra só deve ser validada após os dados relativos ao pagamento serem verificados|
 |BR02 | Notificação de disponibilidade |Quando um produto não se encontra imediatamente disponível o cliente pode ativar as notificações para ser avisado quando o produto estiver novamente disponível|
 
+Tabela 7: Regras do negócio
  
 ### A1.2. Requisitos técnicos
 
 Os requisitos técnicos estão preocupados com os aspectos técnicos que o sistema deve atender, como problemas relacionados ao desempenho, problemas de confiabilidade e problemas de disponibilidade.
- 
+
+| Identificador   | Nome |     Descrição      |
+|:----------:|:-------------:|:------|
+|TR01 | Disponibilidade |A disponibilidade do sistema deve rondar os 100 por cento por cada período de 24 horas|
+|TR02 | Acessibilidade |O sistema deve garantir que todos conseguem aceder às páginas independentemente do browser ou do dispositivo utilizado|
+|TR03 | Usabilidade |O sistema deve ser simples e intuitivo de usar|
+|TR04 | Desempenho |O sistema deve ser potenciado para dar sempre resposta no menor tempo possível|
+|TR05 | Aplicação Web |O sistema deve ser implementado como um aplicativo Web com páginas dinâmicas|
+|TR06 | Portabilidade |O sistema do lado do servidor deve funcionar em várias plataformas|
+|TR07 | Base de Dados |O sistema de gerenciamento de base de dados a usar será SQLite |
+|TR08 | Segurança |O sistema deve proteger as informações do acesso não autorizado através do uso de um sistema de autenticação e verificação|
+|TR09 | Robustez |O sistema deve estar preparado para lidar com erros durante a execução|
+|TR10 | Escalabilidade |O sistema deve estar preparado para lidar com o crescimento do número de usuários e suas ações|
+|TR11 | Ética |O sistema deve respeitar a privacidade dos utilizadores, isto é, apenas os próprios devem ter acesso à sua password e informações pessoais|
+
+Tabela 7: Requisitos técnicos
+
 ### A1.3. Restrições
 
 Não existem restrições que nos limitem em termos de liberdade na procura de uma solução.
