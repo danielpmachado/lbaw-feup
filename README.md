@@ -16,6 +16,12 @@ Os atores e as respetivas descrições da Loja de Tecnologia Online podem ser en
 
 ![alt text](https://github.com/dolfander/LBAW-53/blob/master/images%20README/actors%20diagram.png)
 
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
+
 ## 2. User Stories
  
 Para a Loja de Tecnologia Online devem ser considerados os casos de utilização apresentados de seguida.
