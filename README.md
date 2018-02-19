@@ -12,30 +12,36 @@ Os utilizadores estão separados em grupos diferentes com permissões distintas.
  
 ## 1. Actors
  
-> Diagram identifying actors and their relationships.
-> Table identifying actors, including a brief description and examples.
+Os atores e as respetivas descrições da Loja de Tecnologia Online podem ser encontrados respectivamente na Figura 1 e Tabela 1.
+
  
 ## 2. User Stories
  
-> User stories organized by actor.
-> For each actor, a table containing a line for each user story, and for each user story: an identifier, a name, a priority, and a description (following the recommended structure).
+Para a Loja de Tecnologia Online devem ser considerados os casos de utilização apresentados de seguida.
  
-### 2.1. Actor 1
+### 2.1. Visitante
  
-### 2.2. Actor 2
+### 2.2. Utilizador
  
-### 2.N. Actor N
+### 2.3. Cliente
  
-## A1. Annex: Supplementary requirements
+### 2.4. Administrador
  
-> Annex including business rules, technical requirements, and restrictions.
-> For each subsection, a table containing identifiers, names, and descriptions for each requirement.
+## A1. Anexos: Requisitos suplementares
  
-### A1.1. Business rules
+Este anexo contém as regras de negócio, os requisitos técnicos e outras restrições.
  
-### A1.2. Technical requirements
+### A1.1. Regras de negócio
+
+As regras de negócio definem ou restringem um aspecto do negócio, com a intenção de modelar a estrutura do negócio ou influenciar o seu comportamento.
  
-### A1.3. Restrictions
+### A1.2. Requisitos técnicos
+
+Os requisitos técnicos estão preocupados com os aspectos técnicos que o sistema deve atender, como problemas relacionados ao desempenho, problemas de confiabilidade e problemas de disponibilidade.
+ 
+### A1.3. Restrições
+
+Não existem restrições que nos limitem em termos de liberdade na procura de uma solução.
  
 ***
 
