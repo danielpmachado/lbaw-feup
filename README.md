@@ -90,6 +90,12 @@ Este anexo contém as regras de negócio, os requisitos técnicos e outras restr
 
 As regras de negócio definem ou restringem um aspecto do negócio, com a intenção de modelar a estrutura do negócio ou influenciar o seu comportamento.
  
+| Identificador   | Nome |     Descrição      |
+|:----------:|:-------------:|:------|
+|BR01 | Validação da compra |Uma compra só deve ser validada após os dados relativos ao pagamento serem verificados|
+|BR02 | Notificação de disponibilidade |Quando um produto não se encontra imediatamente disponível o cliente pode ativar as notificações para ser avisado quando o produto estiver novamente disponível|
+
+ 
 ### A1.2. Requisitos técnicos
 
 Os requisitos técnicos estão preocupados com os aspectos técnicos que o sistema deve atender, como problemas relacionados ao desempenho, problemas de confiabilidade e problemas de disponibilidade.
