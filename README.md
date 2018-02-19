@@ -55,6 +55,19 @@ Tabela 2: Casos de Utilização do Visitante
 Tabela 3: Casos de Utilização do Utilizador
  
 ### 2.3. Cliente
+
+| Identificador   |Nome| Prioridade|      Descrição      |
+|:----------:|:-------------:|:-------------:|:------|
+|US21 | Adicionar Carrinho  | alta |Como Cliente, eu quero adicionar um item ao carrinho de compras, de forma a poder proceder à sua compra.|
+|US22 | Remover Carrinho  | alta |Como Cliente, eu quero remover um item do carrinho de compras, de forma a retirá-lo da lista de itens que pretendo adquirir.|
+|US23 | Comprar  | alta |Como Cliente, eu quero comprar um item, de forma a que possa adquiri-lo.|
+|US24 | Adicionar Favoritos  | alta |Como Cliente, eu quero adicionar um item à minha lista de favoritos, de forma a poder vê-lo mais tarde.|
+|US25 | Remover Fovoritos  | alta |Como Cliente, eu quero adicionar um item à minha lista de favoritos, de forma a poder esquecê-lo.|
+|US26 | Comentar  | alta |Como Cliente, eu quero submeter um comentário, de forma a partilhar a minha opinião.|
+|US27 | Avaliar | alta |Como Cliente, eu quero avaliar um artigo, de forma a poder classificá-lo.|
+|US28 | Perfil   | alta |Como Cliente, eu quero mudar a minha informação, de forma a mantê-la atualizada.|
+|US29 | Histórico  | alta |Como cliente, e quero consultar meu histórico, de forma a saber que artigos comprei.|
+
  
 ### 2.4. Administrador
  
