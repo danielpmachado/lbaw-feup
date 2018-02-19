@@ -14,7 +14,8 @@ Os utilizadores estão separados em grupos diferentes com permissões distintas.
  
 Os atores e as respetivas descrições da Loja de Tecnologia Online podem ser encontrados respectivamente na Figura 1 e Tabela 1.
 
- 
+![alt text](https://github.com/dolfander/LBAW-53/blob/master/images%20README/actors%20diagram.png)
+
 ## 2. User Stories
  
 Para a Loja de Tecnologia Online devem ser considerados os casos de utilização apresentados de seguida.
