@@ -4,6 +4,9 @@
   margin-bottom: 0;
   border-radius: 0;
   padding: 5px 100px;
+  border-color: #f2f2f2; 
+  border-width: 0 0 2px 0;
+
 }
 
 .navbar-inverse .navbar-brand {
@@ -16,26 +19,30 @@
     font-size: 15px;
     color: #ffffff;
 }
-#search{
-    display:block;
-    text-align:center;
+
+.navbar-inverse .navbar-brand:hover{
+    color:#c80000; 
+}
+
+.navbar-inverse .navbar-right li a:hover{
+    color: #c80000;
 }
 
 #search input{
     border-radius: 50px;
-    width: 250px;
+    width: 100%;
+}
+
+#add img{
+	width: 100%; /* Set width to 100% */
+	margin-top: 50px;
+	height: 100%;
 }
 
 /* Add a gray background color and some padding to the footer */
 footer {
   background-color: #f2f2f2;
   padding: 25px;
-}
-
-.carousel-inner img {
-  width: 100%; /* Set width to 100% */
-  margin-top: 50px;
-  height: 100%;
 }
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -45,13 +52,6 @@ footer {
     padding: 0;
 }
 
-#search input{
-    width: 100%;
-}
-
-.carousel-caption {
-  display: none;
-}
 }
 
 /*
@@ -59,9 +59,7 @@ footer {
     new stuff
 */
 
-body {
-    padding-top: 90px;
-}
+
 .panel-login {
     border-color: #ccc;
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
