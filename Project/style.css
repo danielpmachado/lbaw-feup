@@ -107,7 +107,8 @@ footer {
 
 
 .panel-login {
-    border-color: #ccc;
+	margin-top: 10em;
+  border-color: #ccc;
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
@@ -306,4 +307,13 @@ a:hover{
 }
 i.red{
     color:#BC0213;
+}
+
+#contact .card:hover i,#contact .card:hover h4{
+	color: #6e7889;
+}
+
+
+.col-sm-12 {
+	margin-top: 3em;
 }
