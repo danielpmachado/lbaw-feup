@@ -476,4 +476,29 @@ i.red{
 	width: 80%;
 	height: auto;
 	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#price-tag {
+	font-size: 3em;
+}
+
+#product-name-details{
+	color: #222;
+	font-size: 2em;
+	padding-bottom:15px;
+}
+
+.description-tag {
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+
+#description-box {
+
+	padding-right: 15%;
+}
+
+#purchases-buttons {
+	margin-bottom: 2em;
 }
