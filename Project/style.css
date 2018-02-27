@@ -8,17 +8,8 @@ body{
   margin-bottom: 0;
   border-radius: 0;
   padding: 5px 100px;
-<<<<<<< HEAD
-  background-color: #393b45;
-
-=======
-<<<<<<< HEAD
   background-color: #222;
-=======
-  background-color: #393b45;
 
->>>>>>> 679ff2a939652004b940d8186114f95c28400328
->>>>>>> 9bdcf2f8246291f07bf41d7858cffe3b710ccdad
 }
 
 .navbar-inverse .navbar-brand {
@@ -477,7 +468,6 @@ i.red{
 	margin-top: 3em;
 }
 
-<<<<<<< HEAD
 .product-section{
 	margin-top: 65px;
 }
@@ -487,5 +477,3 @@ i.red{
 	height: auto;
 	margin-bottom: 20px;
 }
-=======
->>>>>>> 13a3ff066d231d5329dc030a4e9eb278e7ab1ead
