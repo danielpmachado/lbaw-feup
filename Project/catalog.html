@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tech4You</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+</head>
+<body>
+
+<nav id="top_nav" class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Tech4U</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <form class="navbar-form navbar-left" id="search" action="/action_page.php">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="catalog.html"><i class="fa fa-bars"  style="font-size:15px;"></i> Catalog</a></li>
+            <li><a href="registration.html"><i class="fa fa-user"  style="font-size:15px;"></i> Sign In</a></li>
+            <li><a href="#"><i class="fa fa-shopping-cart"  style="font-size:15px;"></i> Cart</a></li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="catalog" class="container-fluid">
+	<div class="nav-side-menu">
+		<div class="brand">Catalog</div>
+		<i class="fa fa-angle-down fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+		<div class="menu-list">
+			<ul id="menu-content" class="menu-content collapse out">
+				<li data-toggle="collapse" data-target="#computers" class="collapsed active">
+					<a href="#"><i class="fa fa-desktop fa-lg"></i> Computers <span class="arrow"></span></a>
+				</li>
+				<ul class="sub-menu collapse" id="computers">
+					<li class="active"><a href="#">Apple</a></li>
+					<li><a href="#">Asus</a></li>
+					<li><a href="#">Asus</a></li>
+					<li><a href="#">HP</a></li>
+					<li><a href="#">Typography</a></li>
+					<li><a href="#">FontAwesome</a></li>
+					<li><a href="#">Slider</a></li>
+					<li><a href="#">Panels</a></li>
+					<li><a href="#">Widgets</a></li>
+					<li><a href="#">Bootstrap Model</a></li>
+				</ul>
+				<li data-toggle="collapse" data-target="#accessories" class="collapsed">
+					<a href="#"><i class="fa fa-headphones fa-lg"></i> Accessories <span class="arrow"></span></a>
+				</li>
+				<ul class="sub-menu collapse" id="accessories">
+					<li>New Service 1</li>
+					<li>New Service 2</li>
+					<li>New Service 3</li>
+				</ul>
+
+				<li data-toggle="collapse" data-target="#components" class="collapsed">
+					<a href="#"><i class="fa fa-car fa-lg"></i> Components <span class="arrow"></span></a>
+				</li>
+				<ul class="sub-menu collapse" id="components">
+					<li>New New 1</li>
+					<li>New New 2</li>
+					<li>New New 3</li>
+				</ul>
+				<li data-toggle="collapse" data-target="#mobile" class="collapsed">
+					<a href="#"><i class="fa fa-tablet-alt fa-lg"></i> Mobile <span class="arrow"></span></a>
+				</li>
+				<ul class="sub-menu collapse" id="mobile">
+					<li>New New 1</li>
+					<li>New New 2</li>
+					<li>New New 3</li>
+				</ul>
+				
+			</ul>
+			</div>
+	</div>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
