@@ -106,7 +106,7 @@ footer {
 
 #catalog{
 	  margin: 50px 0 0 0;
-	  
+
 }
 .nav-side-menu {
   overflow: auto;
@@ -557,7 +557,27 @@ i.red{
 }
 
 .card-header{
-	background-color: black;
-	color: white;
-	padding: 1em;
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+
+.card-body{
+	background-color: #f2f2f2;
+}
+
+.row{
+	padding: 0 1em 0 1em;
+}
+
+
+button.btn.btn-outline-danger.btn-xs{
+	background-color: #f2f2f2;
+	padding: 0.6em  1em;
+	color:  Crimson;
+	border: solid 1px Crimson;
+}
+
+button.btn.btn-outline-danger.btn-xs:hover{
+	background-color: Crimson;
+	color: #f2f2f2;
 }
