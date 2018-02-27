@@ -105,7 +105,7 @@ footer {
 }
 
 /*
-	CATALOG PAGE	
+	CATALOG PAGE
 */
 
 #catalog{
@@ -139,7 +139,7 @@ footer {
   margin: 0px;
   line-height: 40px;
   cursor: pointer;
-     
+
     .collapsed{
        .arrow:before{
                  font-family: FontAwesome;
@@ -235,7 +235,7 @@ footer {
     width: 40px;
     text-align: center;
   }
-  
+
   .nav-side-menu .brand {
     text-align: left !important;
     font-size: 22px;
@@ -467,4 +467,14 @@ i.red{
 
 .col-sm-12 {
 	margin-top: 3em;
+}
+
+.product-section{
+	margin-top: 65px;
+}
+
+.product-image{
+	width: 80%;
+	height: auto;
+	margin-bottom: 20px;
 }
