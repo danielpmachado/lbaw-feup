@@ -8,17 +8,8 @@ body{
   margin-bottom: 0;
   border-radius: 0;
   padding: 5px 100px;
-<<<<<<< HEAD
-  background-color: #393b45;
-
-=======
-<<<<<<< HEAD
   background-color: #222;
-=======
-  background-color: #393b45;
 
->>>>>>> 679ff2a939652004b940d8186114f95c28400328
->>>>>>> 9bdcf2f8246291f07bf41d7858cffe3b710ccdad
 }
 
 .navbar-inverse .navbar-brand {
@@ -110,22 +101,23 @@ footer {
 }
 
 /*
-	CATALOG PAGE	
+	CATALOG PAGE
 */
 
 #catalog{
 	  margin: 50px 0 0 0;
-	  padding:0;
+	  
 }
 .nav-side-menu {
   overflow: auto;
   font-size: 15px;
   background-color: #222;
   width: 275px;
-  height: 100%;
+  height: 100vh;
   color: #ddd;
-  position:fixed;
-  display: block;
+  position:static;
+	display: block;
+	padding:0;
 
 }
 .nav-side-menu .brand {
@@ -144,7 +136,7 @@ footer {
   margin: 0px;
   line-height: 40px;
   cursor: pointer;
-     
+
     .collapsed{
        .arrow:before{
                  font-family: FontAwesome;
@@ -227,7 +219,8 @@ footer {
   .nav-side-menu {
     position: relative;
     width: 100%;
-    margin-bottom: 10px;
+		margin-bottom: 10px;
+		height:100%;
   }
   .nav-side-menu .toggle-btn {
     display: block;
@@ -240,7 +233,7 @@ footer {
     width: 40px;
     text-align: center;
   }
-  
+
   .nav-side-menu .brand {
     text-align: left !important;
     font-size: 22px;
@@ -253,6 +246,15 @@ footer {
     display: block;
   }
 
+}
+
+#products{
+	margin:0;
+	padding:30px;
+}
+
+#products .card{
+	padding: 20px;
 }
 
 
@@ -477,3 +479,12 @@ i.red{
 	margin-top: 3em;
 }
 
+.product-section{
+	margin-top: 65px;
+}
+
+.product-image{
+	width: 80%;
+	height: auto;
+	margin-bottom: 20px;
+}
