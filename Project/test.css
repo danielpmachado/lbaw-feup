@@ -1,0 +1,17 @@
+body{
+	background-color: #d8d9de;
+}
+
+#add img{
+	width: 100%; /* Set width to 100% */
+	-margin-top: 50px;
+	height: 600px;
+}
+
+#about{
+	border-width: 0 0 2px 0;
+	border-style: solid;
+	border-color: #222;
+	padding: 25px;
+	font-size: 17px;
+}
