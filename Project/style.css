@@ -1,5 +1,4 @@
 
-/* Remove the navbar's default margin-bottom and rounded borders */
 body{
 	background-color: #ddd;
 }
@@ -38,56 +37,13 @@ body{
 
 
 #add img{
-	width: 100%; /* Set width to 100% */
+	width: 100%;
 	margin-top: 50px;
 	height: 100vh;
 }
 
-#about{
-	border-width: 0 0 2px 0;
-	border-style: solid;
-	border-color: #222;
-	padding: 25px;
-	font-size: 17px;
-}
 
-#about h2{
-	font-size: 35px;
-	font-family: 'Orbitron';
-}
 
-#info{
-	border-width: 0 0 2px 0;
-	border-style: solid;
-	border-color: #222;
-	padding:25px;
-}
-
-#info .col-sm-4{
-	padding: 25px 50px;
-}
-
-#team{
-	padding: 80px 120px;
-}
-
-#team .person {
-	border: 10px solid transparent;
-	margin-bottom: 25px;
-	width: 80%;
-	height: 80%;
-}
-#team .person:hover {
-	border-color: #f1f1f1;
-}
-
-/* Add a gray background color and some padding to the footer */
-footer {
-  background-color: #f2f2f2;
-  padding: 25px;
-}
-
-/* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 768px) {
 
 .navbar{
