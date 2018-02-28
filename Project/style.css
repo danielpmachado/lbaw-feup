@@ -1,61 +1,4 @@
 
-body{
-	background-color: #ddd;
-}
-
-.navbar-inverse {
-  margin-bottom: 0;
-  border-radius: 0;
-  padding: 5px 100px;
-  background-color: #222;
-
-}
-
-.navbar-inverse .navbar-brand {
-    color:#ddd;
-    font-size:25px;
-    font-family: 'Orbitron';
-}
-
-.navbar-inverse .navbar-right li a{
-    font-size: 15px;
-    color: #ddd;
-}
-
-.navbar-inverse .navbar-brand:hover{
-    color:#c80000;
-}
-
-.navbar-inverse .navbar-right li a:hover{
-    color: #c80000;
-}
-
-#search input{
-    border-radius: 50px;
-    width: 100%;
-}
-
-
-#add img{
-	width: 100%;
-	margin-top: 50px;
-	height: 100vh;
-}
-
-
-
-@media (max-width: 768px) {
-
-.navbar{
-    padding: 0;
-}
-
-#add img{
-	height:100%;
-}
-
-}
-
 /*
 	CATALOG PAGE
 */
@@ -561,8 +504,4 @@ button.btn.btn-outline-danger.btn-xs{
 button.btn.btn-outline-danger.btn-xs:hover{
 	background-color: Crimson;
 	color: #f2f2f2;
-}
-
-.profile-items a{
-	color:#393B45;
 }
