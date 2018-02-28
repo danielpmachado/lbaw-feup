@@ -488,3 +488,7 @@ i.red{
 	height: auto;
 	margin-bottom: 20px;
 }
+
+.profile-items a{
+	color:#393B45;
+}
