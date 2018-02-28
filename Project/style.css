@@ -562,3 +562,7 @@ button.btn.btn-outline-danger.btn-xs:hover{
 	background-color: Crimson;
 	color: #f2f2f2;
 }
+
+.profile-items a{
+	color:#393B45;
+}
