@@ -3,43 +3,44 @@
 <head>
   <title>Tech4You</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="home.css">
   <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-<nav id="top_nav" class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Tech4U</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-        <form class="navbar-form navbar-left" id="search" action="/action_page.php">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="catalog.html"><i class="fa fa-bars"  style="font-size:15px;"></i> Catalog</a></li>
-            <li><a href="registration.html"><i class="fa fa-user"  style="font-size:15px;"></i> Sign In</a></li>
-            <li><a href="#"><i class="fa fa-shopping-cart"  style="font-size:15px;"></i> Cart</a></li>
-        </ul>
-    </div>
+<nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Tech4U</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	<form class="navbar-form navbar-left" id="search" action="/action_page.php">
+	  <div class="input-group">
+		<input type="text" class="form-control" placeholder="Search">
+		<i class="fa fa-search"></i>
+	  </div>
+	</form>
+	<ul class="navbar-nav ml-auto mt-2 mt-md-0">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-user"></i> Sign In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>Cart</a>
+      </li>
+    </ul>
   </div>
 </nav>
-
-
+  
 <section div id="add">
     <img src="images/home21.jpg" class="img-responsive" alt="Image">
 </section>

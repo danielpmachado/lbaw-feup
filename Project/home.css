@@ -13,8 +13,7 @@ body{
 
 .navbar-inverse {
   margin-bottom: 0;
-  border-radius: 0;
-  padding: 5px 100px;
+  padding: 5px 20px;
   background-color: var(--main-bg-color);
 
 }
@@ -25,28 +24,38 @@ body{
     font-family: var(--logo-text-font);
 }
 
-.navbar-inverse .navbar-right li a{
-    font-size: 15px;
+
+.navbar-inverse .navbar-nav .nav-link{
+    font-size: 16px;
     color: var(--main-text-color);
 }
 
-.navbar-inverse .navbar-brand:hover{
+.navbar-inverse .navbar-nav .nav-link i{
+	padding-right: 5px;
+}
+
+#search i:hover,
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-nav .nav-link:hover{
     color:var(--main-hl-color);
 }
 
-.navbar-inverse .navbar-right li a:hover{
-    color:var(--main-hl-color);
-}
+
 
 #search input{
     border-radius: 50px;
-    width: 100%;
+}
+
+#search i{
+	color: var(--main-text-color);
+	font-size:20px;
+	padding:7px;
 }
 
 
 #add img{
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 40px;
 	height: 100vh;
 }
 
@@ -137,6 +146,7 @@ body{
 
 .footer-distributed .footer-center p a{
 	text-decoration: none;
+	color: var(--main-hl-color);
 }
 
 
@@ -184,9 +194,15 @@ body{
 
 
 @media (max-width: 768px) {
+	
+	#search{
+	width:40%;
+
+	}
+	
 
 	.navbar{
-		padding: 0;
+		padding: 10px;
 	}
 
 	#add img{
