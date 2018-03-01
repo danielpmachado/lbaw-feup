@@ -21,10 +21,10 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#"><span style="font-size:20px;cursor:pointer" onclick="openNav()"><i class="fa fa-bars	"></i></span>Tech4U</a>
+  <a class="navbar-brand" href="#">Tech4U</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-	<form class="navbar-form ml-auto" id="search" action="/action_page.php">
+	<form class="navbar-form mr-auto" id="search" action="/action_page.php">
 	  <div class="input-group">
 		<input type="text" class="form-control" placeholder="Search">
 		<i class="fa fa-search"></i>
@@ -42,73 +42,108 @@
 </nav>
 
 
-
-<div id="catalog">
-		<div id="side_nav"  class="nav-side-menu">
-			<div class="brand">Catalog<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times"></i></a></div>
+<!--nav sidebar -->
+<aside>
+	<nav class="navbar navbar-inverse sidebar navbar-fixed-top" role="navigation">
+		<div class="nav-side-menu">
+			<div class="brand">Catalog</div>
 			<i class="fa fa-angle-down fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-			<div class="menu-list">
-				<ul id="menu-content" class="menu-content collapse out">
-					<li data-toggle="collapse" data-target="#computers" class="collapsed">
-						<a href="#"><i class="fa fa-desktop fa-lg"></i> Computers <span class="arrow"></span></a>
-					</li>
-					<ul class="sub-menu collapse" id="computers">
-						<li><a href="#">Apple</a></li>
-						<li><a href="#">Asus</a></li>
-						<li><a href="#">Asus</a></li>
-						<li><a href="#">HP</a></li>
-						<li><a href="#">Typography</a></li>
-						<li><a href="#">FontAwesome</a></li>
-						<li><a href="#">Slider</a></li>
-						<li><a href="#">Panels</a></li>
-						<li><a href="#">Widgets</a></li>
-						<li><a href="#">Bootstrap Model</a></li>
-					</ul>
-					<li data-toggle="collapse" data-target="#accessories" class="collapsed">
-						<a href="#"><i class="fa fa-headphones fa-lg"></i> Accessories <span class="arrow"></span></a>
-					</li>
-					<ul class="sub-menu collapse" id="accessories">
+
+				<div class="menu-list">
+
+					<ul id="menu-content" class="menu-content collapse out">
+						<li>
+						<a href="#">
+						<i class="fa fa-dashboard fa-lg"></i> Dashboard
+						</a>
+						</li>
+
+						<li  data-toggle="collapse" data-target="#products" class="collapsed active">
+						<a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements  <i class="fa fa-gift fa-lg btn pull-right" style="margin-top:5px"></i></a>
+						</li>
+						<ul class="sub-menu collapse" id="products">
+							<li class="active"><a href="#">CSS3 Animation</a></li>
+							<li><a href="#">General</a></li>
+							<li><a href="#">Buttons</a></li>
+							<li><a href="#">Tabs & Accordions</a></li>
+							<li><a href="#">Typography</a></li>
+							<li><a href="#">FontAwesome</a></li>
+							<li><a href="#">Slider</a></li>
+							<li><a href="#">Panels</a></li>
+							<li><a href="#">Widgets</a></li>
+							<li><a href="#">Bootstrap Model</a></li>
+						</ul>
+
+
+						<li data-toggle="collapse" data-target="#service" class="collapsed">
+						<a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+						</li>  
+						<ul class="sub-menu collapse" id="service">
 						<li>New Service 1</li>
 						<li>New Service 2</li>
 						<li>New Service 3</li>
-					</ul>
+						</ul>
 
-					<li data-toggle="collapse" data-target="#components" class="collapsed">
-						<a href="#"><i class="fa fa-cogs fa-lg"></i> Components <span class="arrow"></span></a>
-					</li>
-					<ul class="sub-menu collapse" id="components">
+
+						<li data-toggle="collapse" data-target="#new" class="collapsed">
+						<a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="new">
 						<li>New New 1</li>
 						<li>New New 2</li>
 						<li>New New 3</li>
-					</ul>
-					<li data-toggle="collapse" data-target="#mobile" class="collapsed">
-						<a href="#"><i class="fa fa-phone fa-lg"></i> Mobile <span class="arrow"></span></a>
-					</li>
-					<ul class="sub-menu collapse" id="mobile">
-						<li>New New 1</li>
-						<li>New New 2</li>
-						<li>New New 3</li>
-					</ul>
+						</ul>
 
-				</ul>
-				</div>
+
+						<li>
+						<a href="#">
+						<i class="fa fa-user fa-lg"></i> Profile
+						</a>
+						</li>
+
+						<li>
+						<a href="#">
+						<i class="fa fa-users fa-lg"></i> Users
+						</a>
+						</li>
+					</ul>
 			</div>
-</div>
+		</div>
+	</nav>
+  </aside>
+  
 
-<div id="main">
+
+<div class="main">
 		<img src="images/home21.jpg" class="img-responsive" alt="Image">
 </div>
 
 <script>
-		function openNav() {
-				document.getElementById("side_nav").style.width = "250px";
-				document.getElementById("main").style.marginLeft = "250px";
+    function htmlbodyHeightUpdate(){
+		var height3 = $( window ).height()
+		var height1 = $('.nav').height()+50
+		height2 = $('.main').height()
+		if(height2 > height3){
+			$('html').height(Math.max(height1,height3,height2)+10);
+			$('body').height(Math.max(height1,height3,height2)+10);
+		}
+		else
+		{
+			$('html').height(Math.max(height1,height3,height2));
+			$('body').height(Math.max(height1,height3,height2));
 		}
 		
-		function closeNav() {
-				document.getElementById("side_nav").style.width = "0";
-				document.getElementById("main").style.marginLeft= "0";
-		}
+	}
+	$(document).ready(function () {
+		htmlbodyHeightUpdate()
+		$( window ).resize(function() {
+			htmlbodyHeightUpdate()
+		});
+		$( window ).scroll(function() {
+			height2 = $('.main').height()
+  			htmlbodyHeightUpdate()
+		});
+	});
 </script>
 		
 	
