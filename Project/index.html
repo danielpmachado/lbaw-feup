@@ -21,10 +21,10 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Tech4U</a>
+  <a class="navbar-brand" href="#"><span style="font-size:20px;cursor:pointer" onclick="openNav()"><i class="fa fa-bars	"></i></span>Tech4U</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-	<form class="navbar-form navbar-left" id="search" action="/action_page.php">
+	<form class="navbar-form ml-auto" id="search" action="/action_page.php">
 	  <div class="input-group">
 		<input type="text" class="form-control" placeholder="Search">
 		<i class="fa fa-search"></i>
@@ -40,13 +40,12 @@
     </ul>
   </div>
 </nav>
-  
 
 
-<div id="catalog" class="container-fluid">
-	<div class="row">
-		<div class="nav-side-menu col-sm-2 ">
-			<div class="brand">Catalog</div>
+
+<div id="catalog">
+		<div id="side_nav"  class="nav-side-menu">
+			<div class="brand">Catalog<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times"></i></a></div>
 			<i class="fa fa-angle-down fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 			<div class="menu-list">
 				<ul id="menu-content" class="menu-content collapse out">
@@ -94,12 +93,25 @@
 				</ul>
 				</div>
 			</div>
-			<div id="add" class="col-sm-10">
-					<img src="images/home21.jpg" class="img-responsive" alt="Image">
-			</div>
-		</div>
 </div>
 
+<div id="main">
+		<img src="images/home21.jpg" class="img-responsive" alt="Image">
+</div>
+
+<script>
+		function openNav() {
+				document.getElementById("side_nav").style.width = "250px";
+				document.getElementById("main").style.marginLeft = "250px";
+		}
+		
+		function closeNav() {
+				document.getElementById("side_nav").style.width = "0";
+				document.getElementById("main").style.marginLeft= "0";
+		}
+</script>
+		
+	
 
 
 <footer class="footer-distributed">
@@ -151,6 +163,8 @@
 	</div>
  
 </footer>
+
+
 
 </body>
 </html>
