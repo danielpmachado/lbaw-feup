@@ -240,6 +240,7 @@ body{
 
  
   .nav-side-menu {
+  z-index:1000;
   overflow: auto;
   font-size: 15px;
   background-color: var(--main-bg-color);
@@ -390,14 +391,13 @@ body{
 
    .catalog{
 	margin-top: 50px;
-    padding: 20px 60px;
-	
+	padding: 60px 20px;
   }
   
   
   .catalog .card{
-	margin:20px 15px;
 	padding:10px;
+	margin: 0 15px 15px 0;
 	
   }
   
