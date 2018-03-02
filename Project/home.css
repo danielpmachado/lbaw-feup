@@ -1,10 +1,11 @@
 :root {
     --main-bg-color: #292b2c;
 	--main-text-color: #ddd;
-	--main-hl-color: #00a1b7;
+	/*--main-hl-color: #00a1b7;*/
+  --main-hl-color:#86C2E1;
 	--contrast-color: #222;
 	--logo-text-font: 'Orbitron';
-	
+
 }
 
 body{
@@ -19,7 +20,7 @@ body{
 
 .bg-dark{
 	background-color: var(--main-bg-color) !important;;
-	
+
 }
 
 .navbar-dark .navbar-brand {
@@ -208,7 +209,7 @@ body{
     -o-transition: margin 200ms ease-out;
     transition: margin 200ms ease-out;
   }
-  
+
 
   /*small/medium side display*/
   @media (min-width: 768px) {
@@ -216,8 +217,8 @@ body{
 	 .nav-side-menu .menu-list .menu-content {
 		display: block;
 	}
-	
-	
+
+
     nav.sidebar{
       width: 200px;
       margin-left: -225px;
@@ -238,7 +239,7 @@ body{
 
   }
 
- 
+
   .nav-side-menu {
   z-index:1000;
   overflow: auto;
@@ -335,7 +336,7 @@ body{
 	justify-content: left;
 
 	}
-	
+
 	.navbar{
 		padding: 10px;
 	}
@@ -353,11 +354,11 @@ body{
 		margin-bottom: 40px;
 		text-align: center;
 	}
-	
+
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
-	
+
   .nav-side-menu {
 	border:none;
 	position: absolute;
@@ -393,14 +394,14 @@ body{
 	margin-top: 50px;
 	padding: 60px 20px;
   }
-  
-  
+
+
   .catalog .card{
 	padding:10px;
 	margin: 0 15px 15px 0;
-	
+
   }
-  
+
 
 
 */
