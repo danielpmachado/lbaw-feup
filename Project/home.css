@@ -1,7 +1,7 @@
 :root {
     --main-bg-color: #292b2c;
 	--main-text-color: #ddd;
-	--main-hl-color: #0293cc;
+	--main-hl-color: #00a1b7;
 	--contrast-color: #222;
 	--logo-text-font: 'Orbitron';
 	
@@ -11,42 +11,48 @@ body{
 	background-color: var(--main-text-color);
 }
 
-.navbar-inverse {
+.navbar-dark {
   margin-bottom: 0;
   padding: 5px 20px;
+  background-color: var(--main-bg-color);
 }
 
-.bg-inverse{
-	background-color: var(--main-bg-color);
+.bg-dark{
+	background-color: var(--main-bg-color) !important;;
+	
 }
 
-.navbar-inverse .navbar-brand {
+.navbar-dark .navbar-brand {
     color: var(--main-text-color);
     font-size:25px;
 	font-family: var(--logo-text-font);
 }
 
+.navbar-toogler-icon{
+	color: white;
+}
 
-.navbar-inverse .navbar-nav .nav-link{
+.navbar-dark .navbar-nav .nav-link{
     font-size: 16px;
     color: var(--main-text-color);
 }
 
-.navbar-inverse .navbar-nav .nav-link i{
+.navbar-dark .navbar-nav .nav-link i{
 	padding-right: 5px;
 }
 
-#search i:hover,
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-nav .nav-link:hover{
+.navbar-dark .form-inline i{
+	color: var(--main-text-color);
+	font-size: 20px;
+	padding-left:5px;
+}
+
+.navbar-dark .form-inline i:hover,
+.navbar-dark .navbar-brand:hover,
+.navbar-dark .navbar-nav .nav-link:hover{
     color:var(--main-hl-color);
 }
 
-#search i{
-	color: var(--main-text-color);
-	font-size:20px;
-	padding:7px;
-}
 
 
 .footer-distributed{
@@ -227,7 +233,7 @@ body{
 
     /* Move nav to full on mouse over*/
     nav.sidebar:hover{
-      margin-left: -20px;
+      margin-left: -16px;
     }
 
   }
@@ -265,13 +271,12 @@ body{
   line-height: 40px;
   cursor: pointer;
 }
-.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu ul :not(collapsed) .arrow i,
 .nav-side-menu li :not(collapsed) .arrow:before {
-  font-family: FontAwesome;
-  content: "\f078";
   display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding:10px;
+  margin-right:15px;
+  font-size: 20px;
   vertical-align: middle;
   float: right;
 }
@@ -306,11 +311,12 @@ body{
   border-bottom: 1px solid var(--contrast-color);
 }
 .nav-side-menu li a {
+ margin-left: 10px;
   text-decoration: none;
   color: var(--main-text-color);
 }
 .nav-side-menu li a i {
-  padding-left: 10px;
+
   width: 20px;
   padding-right: 30px;
 }
@@ -381,8 +387,20 @@ body{
 	MAIN
 */
 
-   .main{
-    padding: 10px 100px 0 100px;;
+
+   .catalog{
+	margin-top: 50px;
+    padding: 20px 60px;
+	
   }
+  
+  
+  .catalog .card{
+	margin:20px 15px;
+	padding:10px;
+	
+  }
+  
 
 
+*/
