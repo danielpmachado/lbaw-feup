@@ -1,15 +1,14 @@
 :root {
     --main-bg-color: #292b2c;
 	--main-text-color: #ddd;
-	--main-hl-color: #c80000;
+	--main-hl-color: #0293cc;
 	--contrast-color: #222;
 	--logo-text-font: 'Orbitron';
 	
 }
 
-
 body{
-	background-color: var(--main-bg-color);
+	background-color: var(--main-text-color);
 }
 
 .navbar-inverse {
@@ -41,10 +40,6 @@ body{
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-nav .nav-link:hover{
     color:var(--main-hl-color);
-}
-
-#search input{
-	border-radius: 50px;
 }
 
 #search i{
@@ -189,52 +184,11 @@ body{
 }
 
 
-@media (max-width: 768px) {
-	
-	#search .input-group .form-control{
-	justify-content: left;
-
-	}
-	
-	.navbar{
-		padding: 10px;
-	}
-
-	.navbar-inverse .navbar-brand i{
-		display: none;
-	}
-
-	.main{
-		margin:0;
-
-	}
-
-	.main img{
-		height:100%;
-		width: 100%;
-	}
-		
-
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
-		width: 100%;
-		margin-bottom: 40px;
-		text-align: center;
-	}
-	
-
-	.footer-distributed .footer-center i{
-		margin-left: 0;
-	}
-
-}
-
-
 /*
 	CATALOG
 */
- /* Adding gvnix styles css  */
+
+/* Adding gvnix styles css  */
  @import 'http://geo-gvnix.rhcloud.com/resources/styles/standard.css';
 
   nav.sidebar.navbar {
@@ -242,25 +196,22 @@ body{
 
   }
 
-  nav.sidebar, #main{
-    -webkit-transition: margin 200ms ease-out;
+  nav.sidebar{
+	-webkit-transition: margin 200ms ease-out;
     -moz-transition: margin 200ms ease-out;
     -o-transition: margin 200ms ease-out;
     transition: margin 200ms ease-out;
   }
-
+  
 
   /*small/medium side display*/
   @media (min-width: 768px) {
 
-    /*Allow main to be next to Nav*/
-	
-	.main img{
-		width:100%;
-		height:100vh;
+	 .nav-side-menu .menu-list .menu-content {
+		display: block;
 	}
-
-    
+	
+	
     nav.sidebar{
       width: 200px;
       margin-left: -225px;
@@ -278,17 +229,13 @@ body{
     nav.sidebar:hover{
       margin-left: -20px;
     }
-    /*for hiden things when navbar hidden*/
-    .forAnimate{
-      opacity: 0;
-    }
+
   }
 
-  /*---- FIM SLIDE MENU*/
-  
+ 
   .nav-side-menu {
   overflow: auto;
-  font-size: 12px;
+  font-size: 15px;
   background-color: var(--main-bg-color);
   position: fixed;
   top: 55px;
@@ -315,7 +262,7 @@ body{
   list-style: none;
   padding: 0px;
   margin: 0px;
-  line-height: 35px;
+  line-height: 40px;
   cursor: pointer;
 }
 .nav-side-menu ul :not(collapsed) .arrow:before,
@@ -365,7 +312,7 @@ body{
 .nav-side-menu li a i {
   padding-left: 10px;
   width: 20px;
-  padding-right: 20px;
+  padding-right: 30px;
 }
 .nav-side-menu li:hover {
   border-left: 3px solid var(--main-hl-color);
@@ -377,6 +324,33 @@ body{
   transition: all 1s ease;
 }
 @media (max-width: 767px) {
+	#search .input-group .form-control{
+	justify-content: left;
+
+	}
+	
+	.navbar{
+		padding: 10px;
+	}
+
+	.navbar-inverse .navbar-brand i{
+		display: none;
+	}
+
+
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+	
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	
   .nav-side-menu {
 	border:none;
 	position: absolute;
@@ -402,10 +376,13 @@ body{
     line-height: 50px !important;
   }
 }
-@media (min-width: 767px) {
-  .nav-side-menu .menu-list .menu-content {
-    display: block;
+
+/*
+	MAIN
+*/
+
+   .main{
+    padding: 10px 100px 0 100px;;
   }
-}
 
 

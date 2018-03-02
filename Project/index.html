@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="home.css">
   <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
@@ -17,30 +17,26 @@
 </head>
 <body>
 
-<nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">Tech4U</a>
+<nav class="navbar navbar-expand-md fixed-top navbar-inverse bg-inverse">
+      <a class="navbar-brand" href="#">Tech4U</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-	<form class="navbar-form mr-auto" id="search" action="/action_page.php">
-	  <div class="input-group">
-		<input type="text" class="form-control" placeholder="Search">
-		<i class="fa fa-search"></i>
-	  </div>
-	</form>
-	<ul class="navbar-nav ml-auto mt-2 mt-md-0">
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-user"></i> Sign In</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>Cart</a>
-      </li>
-    </ul>
-  </div>
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+		<form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+			<a class="nav-link" href="#"><i class="fa fa-user"></i> Sign In</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>Cart</a>
+		  </li>
+        </ul>
+     </div>
 </nav>
-
 
 <!--nav sidebar -->
 <aside>
@@ -52,60 +48,52 @@
 				<div class="menu-list">
 
 					<ul id="menu-content" class="menu-content collapse out">
-						<li>
-						<a href="#">
-						<i class="fa fa-dashboard fa-lg"></i> Dashboard
-						</a>
-						</li>
-
-						<li  data-toggle="collapse" data-target="#products" class="collapsed active">
-						<a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements  <i class="fa fa-gift fa-lg btn pull-right" style="margin-top:5px"></i></a>
-						</li>
-						<ul class="sub-menu collapse" id="products">
-							<li class="active"><a href="#">CSS3 Animation</a></li>
-							<li><a href="#">General</a></li>
-							<li><a href="#">Buttons</a></li>
-							<li><a href="#">Tabs & Accordions</a></li>
-							<li><a href="#">Typography</a></li>
-							<li><a href="#">FontAwesome</a></li>
-							<li><a href="#">Slider</a></li>
-							<li><a href="#">Panels</a></li>
-							<li><a href="#">Widgets</a></li>
-							<li><a href="#">Bootstrap Model</a></li>
-						</ul>
-
-
-						<li data-toggle="collapse" data-target="#service" class="collapsed">
-						<a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+						<li data-toggle="collapse" data-target="#computers" class="collapsed">
+						<a href="#"><i class="fa fa-desktop fa-lg fa-fw"></i> Computers <span class="arrow"></span></a>
 						</li>  
-						<ul class="sub-menu collapse" id="service">
+						<ul class="sub-menu collapse" id="computers">
 						<li>New Service 1</li>
 						<li>New Service 2</li>
 						<li>New Service 3</li>
 						</ul>
 
 
-						<li data-toggle="collapse" data-target="#new" class="collapsed">
-						<a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+						<li data-toggle="collapse" data-target="#components" class="collapsed">
+						<a href="#"><i class="fa fa-cogs fa-lg fa-fw"></i> Components <span class="arrow"></span></a>
+						</li>  
+						<ul class="sub-menu collapse" id="components">
+						<li>New Service 1</li>
+						<li>New Service 2</li>
+						<li>New Service 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#accessories" class="collapsed">
+						<a href="#"><i class="fa fa-headphones fa-lg fa-fw"></i> Accessories <span class="arrow"></span></a>
 						</li>
-						<ul class="sub-menu collapse" id="new">
+						<ul class="sub-menu collapse" id="accessories">
+						<li>New New 1</li>
+						<li>New New 2</li>
+						<li>New New 3</li>
+						</ul>
+						
+						<li data-toggle="collapse" data-target="#mobile" class="collapsed">
+						<a href="#"><i class="fa fa-tablet fa-lg fa-fw"></i> Mobile <span class="arrow"></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="mobile">
+						<li>New New 1</li>
+						<li>New New 2</li>
+						<li>New New 3</li>
+						</ul>
+						
+						<li data-toggle="collapse" data-target="#consoles" class="collapsed">
+						<a href="#"><i class="fa fa-gamepad fa-lg fa-fw"></i> Consoles <span class="arrow"></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="consoles">
 						<li>New New 1</li>
 						<li>New New 2</li>
 						<li>New New 3</li>
 						</ul>
 
-
-						<li>
-						<a href="#">
-						<i class="fa fa-user fa-lg"></i> Profile
-						</a>
-						</li>
-
-						<li>
-						<a href="#">
-						<i class="fa fa-users fa-lg"></i> Users
-						</a>
-						</li>
 					</ul>
 			</div>
 		</div>
@@ -115,38 +103,75 @@
 
 
 <div class="main">
-		<img src="images/home21.jpg" class="img-responsive" alt="Image">
+<div class="container-fluid">
+	<div class="row">
+	<div class="card-group">
+		  <div class="card col-sm-4">
+			<img class="card-img-top" src="images/product1.jpg" alt="Card image cap">
+			<div class="card-body">
+			  <h5 class="card-title">Card title</h5>
+			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			</div>
+			<div class="card-footer">
+			  <small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		  </div>
+		  <div class="card col-sm-4">
+			<img class="card-img-top" src="images/product2.png" alt="Card image cap">
+			<div class="card-body">
+			  <h5 class="card-title">Card title</h5>
+			  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+			</div>
+			<div class="card-footer">
+			  <small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		  </div>
+		  <div class="card col-sm-4">
+			<img class="card-img-top" src="images/product1.jpg" alt="Card image cap">
+			<div class="card-body">
+			  <h5 class="card-title">Card title</h5>
+			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+			</div>
+			<div class="card-footer">
+			  <small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		  </div>
+		  </div>
+		 <div class="card-group">
+		  <div class="card col-sm-4">
+			<img class="card-img-top" src="images/product1.jpg" alt="Card image cap">
+			<div class="card-body">
+			  <h5 class="card-title">Card title</h5>
+			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			</div>
+			<div class="card-footer">
+			  <small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		  </div>
+		  <div class="card col-sm-4">
+			<img class="card-img-top" src="images/product2.png" alt="Card image cap">
+			<div class="card-body">
+			  <h5 class="card-title">Card title</h5>
+			  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+			</div>
+			<div class="card-footer">
+			  <small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		  </div>
+		  <div class="card col-sm-4">
+			<img class="card-img-top" src="images/product1.jpg" alt="Card image cap">
+			<div class="card-body">
+			  <h5 class="card-title">Card title</h5>
+			  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+			</div>
+			<div class="card-footer">
+			  <small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		  </div>
+		  </div>
+	  </div>
+	</div>
 </div>
-
-<script>
-    function htmlbodyHeightUpdate(){
-		var height3 = $( window ).height()
-		var height1 = $('.nav').height()+50
-		height2 = $('.main').height()
-		if(height2 > height3){
-			$('html').height(Math.max(height1,height3,height2)+10);
-			$('body').height(Math.max(height1,height3,height2)+10);
-		}
-		else
-		{
-			$('html').height(Math.max(height1,height3,height2));
-			$('body').height(Math.max(height1,height3,height2));
-		}
-		
-	}
-	$(document).ready(function () {
-		htmlbodyHeightUpdate()
-		$( window ).resize(function() {
-			htmlbodyHeightUpdate()
-		});
-		$( window ).scroll(function() {
-			height2 = $('.main').height()
-  			htmlbodyHeightUpdate()
-		});
-	});
-</script>
-		
-	
 
 
 <footer class="footer-distributed">
@@ -198,6 +223,7 @@
 	</div>
  
 </footer>
+
 
 
 
