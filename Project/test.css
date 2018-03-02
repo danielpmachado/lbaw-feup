@@ -1,5 +1,6 @@
 body{
-	background-color: #d8d9de;
+	-background-color: #d8d9de;
+	background-color: #f8f8f8;
 }
 
 .navbar-inverse {
