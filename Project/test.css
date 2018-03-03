@@ -279,6 +279,10 @@ div.card-body{
 	margin: 1em;
 }
 
+.card-header{
+	background-color: #292b2c;
+	color: white;
+}
 
 .product-section{
 	margin-top: 65px;
@@ -313,4 +317,177 @@ div.card-body{
 
 #purchases-buttons {
 	margin-bottom: 2em;
+}
+
+/* progress bar*/
+
+
+.board {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    background: none;
+}
+
+.board .nav-tabs {
+    position: relative;
+    margin: 40px auto;
+    margin-bottom: 0;
+    box-sizing: border-box;
+		border: none;
+}
+
+.liner {
+    height: 2px;
+    background: #ddd;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 32%;
+    z-index: -1;
+}
+
+.nav-tabs > li {
+    width: 25%;
+
+}
+
+/*
+.nav-tabs > li:after {
+    content: " ";
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    margin-left: -10px;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #aaa;
+    transition: left 1s;
+}
+
+.nav-tabs > li.active:after {
+    left: 50%;
+    opacity: 1;
+}*/
+/*
+.nav-tabs > li[rel-index="-1"]:after {
+    left: calc(50% + 100%);
+}
+
+.nav-tabs > li[rel-index="-2"]:after {
+    left: calc(50% + 200%);
+}
+
+.nav-tabs > li[rel-index="-3"]:after {
+    left: calc(50% + 300%);
+}
+
+.nav-tabs > li[rel-index="1"]:after {
+    left: calc(50% - 100% );
+}
+
+.nav-tabs > li[rel-index="2"]:after {
+    left: calc(50% - 200%);
+}
+
+.nav-tabs > li[rel-index="3"]:after {
+    left: calc(50% - 300%);
+}*/
+
+.nav-tabs > li a {
+    width: 70px;
+    -height: 70px;
+    -line-height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.3em;
+}
+
+
+
+.nav-tabs > li a:hover {
+    border: none;
+    background: none;
+}
+
+.nav-tabs > li.active a, .nav-tabs > li.active a:hover {
+    border: none;
+    background: none;
+}
+
+.nav-tabs > li span {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100%;
+    background: white;
+    z-index: 2;
+    -position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.nav-tabs > li:nth-of-type(1) span {
+    color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(1).active span {
+    color: white;
+    background: #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(2) span {
+    color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(2).active span {
+    color: #f0ad4e;
+    background: #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(3) span {
+    color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(3).active span {
+    color: #f0ad4e;
+    background: #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(4) span {
+    color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(4).active span {
+    color: #f0ad4e;
+    background: #f0ad4e;
+}
+
+.nav-tabs > li > a.disabled {
+    opacity: 1;
+}
+
+.nav-tabs > li > a.disabled span {
+    border-color: #ddd;
+    color: #aaa;
+}
+
+div[role="tabpanel"]:after {
+    content: "";
+    display: block;
+    clear: both;
 }
