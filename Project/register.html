@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tech4You</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="home.css">
+
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Tech4U</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+				<form class="input-group my-2 my-md-0">
+					<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-outline-light" type="button"><i class="fa fa-search"></i></button>
+					</div>
+				</form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+					<a class="nav-link" href="sign_in.html"><i class="fa fa-user"></i> Sign In</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>0,00€</a>
+					</li>
+        </ul>
+     </div>
+</nav>
+
+
+<div class="sign container-fluid">
+	<nav>
+		<div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<a class="nav-item nav-link active" id="nav-in-tab" data-toggle="tab" href="#nav-in" role="tab" aria-controls="nav-in" aria-selected="true">Sign In</a>
+			<a class="nav-item nav-link" id="nav-up-tab" data-toggle="tab" href="#nav-up" role="tab" aria-controls="nav-up" aria-selected="false">Sign Up</a>
+		</div>
+	</nav>
+	<div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="nav-in" role="tabpanel" aria-labelledby="nav-in-tab">
+				<form>
+					<div class="form-group row">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="inputUsername1" placeholder="Username">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-12">
+							<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-12">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheck1">
+								<label class="form-check-label" for="gridCheck1">
+									Remember Me
+								</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-12">
+								<button type="submit" class="btn btn-dark ">Sign in</button>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-12">
+								<a  href="#">Forgot your Password?</a>
+							</div>
+						</div>
+				</form>
+		</div>
+		<div class="tab-pane fade" id="nav-up" role="tabpanel" aria-labelledby="nav-up-tab">
+				<form>
+						<div class="form-group">
+								<input type="text" class="form-control" id="inputUsename2" placeholder="Username">
+						</div>
+						<div class="form-group">
+								<input type="text" class="form-control" id="inputPassword2" placeholder="Password">
+						</div>
+						<div class="form-group">
+								<input type="text" class="form-control" id="inputPassword3" placeholder="Confirm Password">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="inputEmail" placeholder="Email">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="inputAddress" placeholder="Address">
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-8">
+								<input type="text" class="form-control" id="inputCity" placeholder="City">
+							</div>
+							<div class="form-group col-md-4">
+								<input type="text" class="form-control" id="inputZip" placeholder="Zip">
+							</div>
+						</div>	
+						<div class="form-group">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+									<label class="form-check-label" for="invalidCheck2">
+										Agree to terms and conditions
+									</label>
+								</div>
+							</div>
+						<div class="form-group row">
+								<div class="col-sm-12">
+									<button type="submit" class="btn btn-dark ">Sign up</button>
+								</div>
+							</div>
+				</form>
+		</div>
+	</div>   
+</div>
+
+	<footer class="footer-distributed">
+		<div class="footer-left">
+			<h3>Tech4U</h3>
+			<p class="footer-links">
+				<a href="#">Home</a>
+				·
+				<a href="#">About</a>
+				·
+				<a href="#">FAQ</a>
+				·
+				<a href="#">Profile</a>
+				·
+				<a href="#">Cart</a>
+			</p>
+			<p class="footer-copyright">Tech4U &copy; Copyright 2015</p>
+		</div>
+		
+		<div class="footer-center">
+			<div>
+				<i class="fa fa-map-marker"></i>
+				<p><span>21 Revolution Street</span> Paris, France</p>
+			</div>
+			<div>
+				<i class="fa fa-phone"></i>
+				<p>+1 555 123456</p>
+			</div>
+			<div>
+				<i class="fa fa-envelope"></i>
+				<p><a href="mailto:support@company.com">support@company.com</a></p>
+			</div>
+	
+		</div>
+	
+		<div class="footer-right">
+			<p class="footer-company-about">
+				<span>About the company</span>
+				Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+			</p>
+			<div class="footer-icons">
+	
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-linkedin"></i></a>
+				<a href="#"><i class="fab fa-github"></i></a>
+	
+			</div>
+		</div>
+	 
+	</footer>	
+
+</body>
+</html>
