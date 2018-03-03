@@ -8,7 +8,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="home.css">
+  	<link rel="stylesheet" href="style.css">
 
   
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -28,16 +28,16 @@
 				<form class="input-group my-2 my-md-0">
 					<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
 					<div class="input-group-append">
-						<button class="btn btn-outline-light" type="button"><i class="fa fa-search"></i></button>
+						<button class="btn" type="button"><i class="fa fa-search"></i></button>
 					</div>
 				</form>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-					<a class="nav-link" href="sign_in.html"><i class="fa fa-user"></i> Sign In</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>0,00€</a>
-					</li>
+			<a class="nav-link" href="register.html"><i class="fa fa-user"></i> Sign In</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>0,00€</a>
+		  </li>
         </ul>
      </div>
 </nav>
@@ -52,77 +52,75 @@
 	</nav>
 	<div class="tab-content" id="nav-tabContent">
 		<div class="tab-pane fade show active" id="nav-in" role="tabpanel" aria-labelledby="nav-in-tab">
-				<form>
-					<div class="form-group row">
-						<div class="col-sm-12">
-							<input type="text" class="form-control" id="inputUsername1" placeholder="Username">
-						</div>
+			<form>
+				<div class="form-group">
+					<button type="button" class="btn btn-danger">
+							<i class="fab fa-google-plus-g"></i>  Sign in with Google
+					</button>
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-primary">
+							<i class="fab fa-facebook"></i>  Sign in with Facebook
+					</button>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputUsername1" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="gridCheck1">
+						<label class="form-check-label" for="gridCheck1">
+							Remember Me
+						</label>
 					</div>
-					<div class="form-group row">
-						<div class="col-sm-12">
-							<input type="password" class="form-control" id="inputPassword" placeholder="Password">
-						</div>
-					</div>
-					<div class="form-group row">
-						<div class="col-sm-12">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="gridCheck1">
-								<label class="form-check-label" for="gridCheck1">
-									Remember Me
-								</label>
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col-sm-12">
-								<button type="submit" class="btn btn-dark ">Sign in</button>
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col-sm-12">
-								<a  href="#">Forgot your Password?</a>
-							</div>
-						</div>
-				</form>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-dark ">Sign in</button>
+				</div>
+				<div class="form-group">
+					<a  href="#">Forgot your Password?</a>	
+				</div>
+			</form>
 		</div>
 		<div class="tab-pane fade" id="nav-up" role="tabpanel" aria-labelledby="nav-up-tab">
 				<form>
-						<div class="form-group">
-								<input type="text" class="form-control" id="inputUsename2" placeholder="Username">
+					<div class="form-group">
+							<input type="text" class="form-control" id="inputUsename2" placeholder="Username">
+					</div>
+					<div class="form-group">
+							<input type="text" class="form-control" id="inputPassword2" placeholder="Password">
+					</div>
+					<div class="form-group">
+							<input type="text" class="form-control" id="inputPassword3" placeholder="Confirm Password">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="inputEmail" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="inputAddress" placeholder="Address">
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-8">
+							<input type="text" class="form-control" id="inputCity" placeholder="City">
 						</div>
-						<div class="form-group">
-								<input type="text" class="form-control" id="inputPassword2" placeholder="Password">
+						<div class="form-group col-md-4">
+							<input type="text" class="form-control" id="inputZip" placeholder="Zip">
 						</div>
-						<div class="form-group">
-								<input type="text" class="form-control" id="inputPassword3" placeholder="Confirm Password">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" id="inputEmail" placeholder="Email">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" id="inputAddress" placeholder="Address">
-						</div>
-						<div class="form-row">
-							<div class="form-group col-md-8">
-								<input type="text" class="form-control" id="inputCity" placeholder="City">
+					</div>	
+					<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+								<label class="form-check-label" for="invalidCheck2">
+									Agree to terms and conditions
+								</label>
 							</div>
-							<div class="form-group col-md-4">
-								<input type="text" class="form-control" id="inputZip" placeholder="Zip">
-							</div>
-						</div>	
-						<div class="form-group">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-									<label class="form-check-label" for="invalidCheck2">
-										Agree to terms and conditions
-									</label>
-								</div>
-							</div>
-						<div class="form-group row">
-								<div class="col-sm-12">
-									<button type="submit" class="btn btn-dark ">Sign up</button>
-								</div>
-							</div>
+						</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-dark ">Sign up</button>
+					</div>
 				</form>
 		</div>
 	</div>   

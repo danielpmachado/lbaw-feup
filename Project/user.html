@@ -8,7 +8,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="style.css">
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -19,32 +19,38 @@
 <body>
 
 <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html">Tech4U</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+		<a class="navbar-brand" href="index.html">Tech4U</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-				<form class="input-group my-2 my-md-0">
-					<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-					<div class="input-group-append">
-						<button class="btn btn-outline-light" type="button"><i class="fa fa-search"></i></button>
+		<div class="collapse navbar-collapse" id="navbarsExample04">
+			<form class="input-group my-2 my-md-0">
+				<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+				<div class="input-group-append">
+					<button class="btn" type="button"><i class="fa fa-search"></i></button>
+				</div>
+			</form>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-user"></i>Daniel
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="#">Favorites</a>
+						<a class="dropdown-item" href="#">History</a>
 					</div>
-				</form>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-					<a class="nav-link" href="sign_in.html"><i class="fa fa-user"></i> Sign In</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>0,00€</a>
-					</li>
-        </ul>
-     </div>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
+				</li>
+			</ul>
+	 </div>
 </nav>
 
 
 
-<div class="container-fluid">
+<div class="profile container-fluid">
   <div class="row">
     <div class="col-md-4">
       <div class="profile-sidebar">
@@ -75,7 +81,7 @@
                     <a> City </a> <h5>London</h5>
                     <a> Email </a> <h5> daniel.pmachado@gmail.com </h5>
                     <a> Password</a> <h5> ********** </h5>
-                    <button type="button" class="btn btn-outline-danger"><span class="glyphicon glyphicon-pencil"></span>  Edit Info</button>
+                    <button type="button" class="btn btn-outline-primary"><span class="glyphicon glyphicon-pencil"></span>  Edit Info</button>
               </div>
           </div>
       </div>
