@@ -3,39 +3,41 @@
 <head>
   <title>Tech4You</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
   <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </button>
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
       <a class="navbar-brand" href="index.html">Tech4U</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="registration.html"><i class="fa fa-user"  style="font-size:15px;"></i> Sign In</a></li>
-            <li><a href="#"><i class="fa fa-shopping-cart"  style="font-size:15px;"></i> Cart</a></li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+		<form class="form-inline my-2 my-md-0">
+			<input class="form-control" type="text" placeholder="Search" aria-label="Search">
+			<i class="fa fa-search" aria-hidden="true"></i>
+		</form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+			<a class="nav-link" href="sign_in.html"><i class="fa fa-user"></i> Sign In</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>0,00€</a>
+		  </li>
         </ul>
-        <form class="navbar-form" id="search" action="/action_page.php">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-        </form>
-    </div>
-  </div>
+     </div>
 </nav>
 
 <div class="container">
@@ -113,9 +115,55 @@
 		</div>
 	</div>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
+	<footer class="footer-distributed">
+		<div class="footer-left">
+			<h3>Tech4U</h3>
+			<p class="footer-links">
+				<a href="#">Home</a>
+				·
+				<a href="#">About</a>
+				·
+				<a href="#">FAQ</a>
+				·
+				<a href="#">Profile</a>
+				·
+				<a href="#">Cart</a>
+			</p>
+			<p class="footer-copyright">Tech4U &copy; Copyright 2015</p>
+		</div>
+		
+		<div class="footer-center">
+			<div>
+				<i class="fa fa-map-marker"></i>
+				<p><span>21 Revolution Street</span> Paris, France</p>
+			</div>
+			<div>
+				<i class="fa fa-phone"></i>
+				<p>+1 555 123456</p>
+			</div>
+			<div>
+				<i class="fa fa-envelope"></i>
+				<p><a href="mailto:support@company.com">support@company.com</a></p>
+			</div>
+	
+		</div>
+	
+		<div class="footer-right">
+			<p class="footer-company-about">
+				<span>About the company</span>
+				Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+			</p>
+			<div class="footer-icons">
+	
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-linkedin"></i></a>
+				<a href="#"><i class="fab fa-github"></i></a>
+	
+			</div>
+		</div>
+	 
+	</footer>	
 
 </body>
 </html>
