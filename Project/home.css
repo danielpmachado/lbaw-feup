@@ -10,6 +10,7 @@
 
 body{
 	background-color: var(--main-text-color);
+  -background-color: #f8f8f8;
 }
 
 .navbar-dark {
@@ -209,7 +210,7 @@ body{
 
   .catalog .card{
 	margin: 0 15px 15px 0;
-	border: 1px solid rgba(0,0,0,.25);	
+	border: 1px solid rgba(0,0,0,.25);
 	}
 
 	.catalog h2{
@@ -236,55 +237,55 @@ body{
 		padding: 50px;
 		border-top: 1px solid var(--contrast-color);
 	}
-	
+
 	.footer-distributed .footer-left,
 	.footer-distributed .footer-center,
 	.footer-distributed .footer-right{
 		display: inline-block;
 		vertical-align: top;
 	}
-	
+
 	/* Footer left */
-	
+
 	.footer-distributed .footer-left{
 		width: 35%;
 	}
-	
+
 	/* The company logo */
-	
+
 	.footer-distributed h3{
 		color: var(--main-text-color);
 		font-family: var(--logo-text-font);
 		font-size: 35px;
 		margin: 0;
 	}
-	
+
 	/* Footer links */
 	.footer-distributed .footer-links{
 		color: var(--main-text-color);
 		margin: 20px 0 12px;
 		padding: 0;
 	}
-	
+
 	.footer-distributed .footer-links a{
 		display:inline-block;
 		line-height: 1.8;
 		text-decoration: none;
 		color:  inherit;
 	}
-	
+
 	.footer-distributed .footer-copyright{
 		color:  #8f9296;
 		font-size: 15px;
 		margin: 0;
 	}
-	
+
 	/* Footer Center */
-	
+
 	.footer-distributed .footer-center{
 		width: 35%;
 	}
-	
+
 	.footer-distributed .footer-center i{
 		background-color:  #33383b;
 		color: var(--main-text-color);
@@ -297,37 +298,37 @@ body{
 		margin: 10px 15px;
 		vertical-align: middle;
 	}
-	
+
 	.footer-distributed .footer-center i.fa-envelope{
 		font-size: 20px;
 		line-height: 38px;
 	}
-	
+
 	.footer-distributed .footer-center p{
 		display: inline-block;
 		color: var(--main-text-color);
 		vertical-align: middle;
 		margin:0;
 	}
-	
+
 	.footer-distributed .footer-center p span{
 		display:block;
 		font-size:10px;
 		line-height:2;
 	}
-	
+
 	.footer-distributed .footer-center p a{
 		text-decoration: none;
 		color: var(--main-hl-color);
 	}
-	
-	
+
+
 	/* Footer Right */
-	
+
 	.footer-distributed .footer-right{
 		width: 25%;
 	}
-	
+
 	.footer-distributed .footer-company-about{
 		line-height: 20px;
 		color:  #92999f;
@@ -335,18 +336,18 @@ body{
 		font-weight: normal;
 		margin: 0;
 	}
-	
+
 	.footer-distributed .footer-company-about span{
 		display: block;
 		color: var(--main-text-color);
 		font-size: 17px;
 		margin-bottom: 20px;
 	}
-	
+
 	.footer-distributed .footer-icons{
 		margin-top: 25px;
 	}
-	
+
 	.footer-distributed .footer-icons a{
 		display: inline-block;
 		width: 35px;
@@ -354,12 +355,12 @@ body{
 		cursor: pointer;
 		background-color:  #33383b;
 		border-radius: 5px;
-	
+
 		font-size: 20px;
 		color: var(--main-text-color);
 		text-align: center;
 		line-height: 35px;
-	
+
 		margin-right: 3px;
 		margin-bottom: 5px;
 	}
@@ -380,13 +381,13 @@ body{
 		border:1px solid rgba(0,0,0,.25);
 		padding:20px;
 	}
-	
+
 	.sign .tab-content #nav-in form,
 	.sign .tab-content #nav-up form{
 		text-align: center;
 		padding: 30px;
 	}
-	
+
 	.sign #nav-in .btn,
 	.sign #nav-up .btn{
 		width:100px;
@@ -401,25 +402,25 @@ body{
 	@media (max-width: 767px) {
 		#search .input-group .form-control{
 		justify-content: left;
-	
+
 		}
 
 		.catalog h2 {
 			margin-top:30px;
 			margin-left:0;
 		}
-		
+
 		.catalog .card{
 			margin: 20px 70px;
 		}
 		.navbar{
 			padding: 10px;
 		}
-	
+
 		.navbar-inverse .navbar-brand i{
 			display: none;
 		}
-	
+
 		.footer-distributed .footer-left,
 		.footer-distributed .footer-center,
 		.footer-distributed .footer-right{
@@ -427,11 +428,11 @@ body{
 			margin-bottom: 40px;
 			text-align: center;
 		}
-		
+
 		.footer-distributed .footer-center i{
 			margin-left: 0;
 		}
-		
+
 		.nav-side-menu {
 		border:none;
 		margin-left:-10px;
@@ -460,6 +461,118 @@ body{
 			width:75%;
 		}
 	}
-	
+
+  /*
+  -----------
+  	PROFILE
+  -----------
+  */
+/*
+.profile{
+  margin: 20px 0;
+}*/
+
+.profile-sidebar{
+  padding: 20px 0 10px 0;
+  margin-top: 5em;
+  margin-left: 1em;
+}
+
+.profile-user-pic{
+  float:none;
+  margin: 0 auto;
+  width:50%;
+  height:50%;
+}
+
+.profile-user-title{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-user-name{
+  color: #5a73al;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-user-job{
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+.btn:last-child{
+  margin-right: 0;
+}
+
+.profile-user-menu{
+  margin-top:30px;
+}
 
 
+
+.profile-user-menu ul li a{
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-user-menu ul li a i{
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.profile-user-menu ul li.nav-item:hover{
+  background-color: white;
+  color:#5babd1;
+}
+
+.profile-user-menu ul li a:hover{
+  text-decoration: none;
+  color:#5babd1;
+}
+
+li.nav-item.active  {
+  color:#5babd1;
+  background-color: white;
+  border-left: 2px  solid #5babd1;
+  margin-left:  - 3px;
+  padding: 1em;
+}
+
+.profile-user-menu li.nav-item{
+  padding: 1em;
+}
+
+.profile-content{
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+
+.panel {
+  margin-top: 6em;
+  background-color: white;
+  padding:2em;
+  border-radius: 10px;
+  border: 1px solid silver;
+}
+
+.panel-heading{
+  margin-bottom: 1em;
+  border-bottom: 1px solid silver;
+  padding: 0.5em;
+}
+
+.panel-body{
+
+  padding:0.5em;
+
+}
+
+.panel-body h5  {
+  margin-bottom: 1em;
+}
