@@ -215,13 +215,14 @@ MAIN CATALOG
 
  .catalog{
 margin-top: 50px;
-padding: 20px 10px 60px 20px;
+-padding: 20px 10px 60px 20px;
+padding:2em 5em;
 }
 
 
 .catalog .card{
-margin: 0 15px 15px 0;
-border: 1px solid rgba(0,0,0,.25);
+-margin: 0 15px 15px 0;
+border: 10px solid var(--main-text-color);
 }
 
 .catalog h2{
@@ -606,7 +607,7 @@ li.nav-item.active  {
   }
 
   .catalog .card{
-    margin: 20px 70px;
+    -margin: 20px 70px;
   }
   .navbar{
     padding: 10px;
@@ -695,8 +696,13 @@ Team CSS
 
 */
 
+h2#team{
+  margin-bottom: 1.5em;
+}
+
 .team{
-    padding:75px 0;
+    padding-top:5em;
+    padding-bottom: 3em;
 }
 h6.description{
 	font-weight: bold;
@@ -757,16 +763,18 @@ h6.description{
 	width: 30px;
     height: 30px;
     text-align: center;
-    border: 1px solid #f3b54a;
+    border: 1.1px solid #f3b54a;
     margin: 2px;
     padding: 5px;
 	display: inline-block;
+  border-radius: 2px;
 }
 .img-box a{
 	color:#fff;
 }
 .img-box:hover:after{
 	opacity: 1;
+  border-radius: 5px;
 }
 .img-box:hover ul{
 	opacity: 1;
@@ -787,13 +795,35 @@ i.red{
 }
 
 #contact .card:hover i,#contact .card:hover h4{
-	color: #6e7889;
+	-color: #6e7889;
 }
 
 
 .col-sm-12 {
 	margin-top: 3em;
 }
+
+div.card-body.text-center{
+  background-color: var(--main-text-color);
+}
+
+h3.description{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#about{
+  margin-top:8em;
+  margin-bottom: 4em;
+
+}
+
+#about-title{
+  margin-bottom: 2em;
+}
+
+
+
 
 
 /*
@@ -1000,7 +1030,6 @@ div[role="tabpanel"]:after {
 .shopping-cart {
     margin-top: 20px;
 }
-
 
 .card-header{
 	background-color: #292b2c;
