@@ -439,14 +439,14 @@ FOOTER
   -----------
   */
 .profile{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 
 .profile-sidebar{
   padding: 20px 0 25px 0;
   margin-top: 5em;
-  margin-left: 4em;
+  margin-left: 3em;
 }
 
 .profile-user-pic{
@@ -477,37 +477,37 @@ FOOTER
   margin-top:30px;
 }
 
-.profile-user-menu ul li a{
+.profile-user-menu .nav li a{
   color: var(--main-bg-color);
   font-size: 14px;
   font-weight: 400;
 }
 
-.profile-user-menu ul li a i{
+.profile-user-menu .nav li a i{
   margin-right: 8px;
   font-size: 16px;
 }
 
-.profile-user-menu ul li.nav-item:hover{
+.profile-user-menu .nav li:hover{
   background-color: rgba(255,255,255,.50);
   color:var(--main-hl-color);
-  border-left: 2px  solid var(--main-hl-color);
+  border-left: 2px  solid var(--main-bg-color);
 }
 
-.profile-user-menu ul li a:hover{
+.profile-user-menu .nav li a:hover{
   text-decoration: none;
 
 }
 
-li.nav-item.active  {
+.profile-user-menu li.active  {
   color:var(--main-hl-color);
   background-color: rgba(255,255,255,.50);
-  border-left: 2px  solid var(--main-hl-color);
+  border-left: 2px  solid var(--main-bg-color);
   margin-left:  - 3px;
   padding: 1em;
 }
 
-.profile-user-menu li.nav-item{
+.profile-user-menu li{
   padding: 1em;
 }
 
@@ -518,8 +518,7 @@ li.nav-item.active  {
 }
 
 .panel {
-  margin-top: 6em;
-  margin-left:1em;
+  margin:6em 0 3em;
   background-color: white;
   padding:2em;
   border-radius: 10px;
@@ -543,6 +542,14 @@ li.nav-item.active  {
   text-decoration: bold;
   font-size: 17px;
   margin-bottom: 1em;
+}
+
+.fav-card{
+  margin-top:90px;
+}
+
+.fav-card .btn{
+  margin-bottom: 5px;
 }
 
 /*
@@ -799,9 +806,7 @@ i.red{
 }
 
 
-.col-sm-12 {
-	margin-top: 3em;
-}
+
 
 div.card-body.text-center{
   background-color: var(--main-text-color);
