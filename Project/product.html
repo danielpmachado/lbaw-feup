@@ -3,277 +3,255 @@
 <head>
   <title>Tech4You</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+  
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" href="test.css">
 </head>
 <body>
 
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-      <a class="navbar-brand" href="test.html">Tech4U</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Tech4U</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="navbarNavDropdown" class="navbar-collapse collapse">
 
-          <ul class="navbar-nav mr-auto">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-            </form>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Catalog</a>
-              </li>
-          </ul>
-          <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    User
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="profile.html">Your Profile</a>
-                      <a class="dropdown-item" href="test.html">Sign Out</a>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i> Cart</a>
-              </li>
-          </ul>
-      </div>
-  </nav>
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+				<form class="input-group my-2 my-md-0">
+					<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+					<div class="input-group-append">
+						<button class="btn" type="button"><i class="fa fa-search"></i></button>
+					</div>
+				</form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+					<a class="nav-link" href="register.html"><i class="fa fa-user"></i> Sign In</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
+					</li>
+        </ul>
+     </div>
+</nav>
 
 
+<div class="container-fluid product-section">
+	<div class="row">
+		<div class="col-md-6 text-center">
+			<img class="product-image" alt="product preview" src="images/IphoneX.png" />
 
-  <div class="container-fluid product-section">
-  	<div class="row">
-  		<div class="col-md-6 text-center">
-  			<img class="product-image" alt="product preview" src="images/IphoneX.png" />
+		<div class="row">
+			<div class="col-md-12">
+			<div class="rating-block">
+				<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+					<i class="fa fa-star"></i>
+				</button>
+				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+					<i class="fa fa-star"></i>
+				</button>
+				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+					<i class="fa fa-star"></i>
+				</button>
+				<button type="button" class="btn btn-secondary  btn-sm" aria-label="Left Align" disabled>
+					<i class="fa fa-star"></i>
+				</button>
+				<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align" disabled>
+					<i class="fa fa-star"></i>
+				</button>
+			</div>
+			</div>
+		</div>
+		</div>
+		<div class="col-md-6" id="description-box">
+			<h4 class="text" id="product-name-details">IPHONE X - 256 GB</h4>
+			<h3 class="text-success" id="price-tag">1199 €</h3>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="rating-block">
-              <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-              <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                <i class="fa fa-star"></i>
-              </button>
-              <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                  <i class="fa fa-star"></i>
-              </button>
-              <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                  <i class="fa fa-star"></i>
-              </button>
-              <button type="button" class="btn btn-secondary  btn-sm" aria-label="Left Align">
-                  <i class="fa fa-star"></i>
-              </button>
-              <button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align">
-                  <i class="fa fa-star"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-  		</div>
-  		<div class="col-md-6" id="description-box">
-        <h3 class="text text-left" id="product-name-details">
-          IPHONE X - 256 GB
-        </h3>
-  			<h3 class="text-success" id="price-tag">
-  				1199 €
-  			</h3>
+			<div class="row">
+				<div class="col-md-12 ">
 
-        <div class="row">
-          <div class="col-md-12 text-left">
+					<div id="purchases-buttons">
+						<button type="button" class="btn btn-outline-success">
+							<i class="fa fa-shopping-cart"></i> Add to Cart
+						</button>
+						<button type="button" class="btn btn-outline-danger">
+							<i class="fa fa-heart"></i> Add to Favorites
+						</button>
+					</div>
 
-            <div id="purchases-buttons">
-              <button type="button" class="btn btn-success">
-                Add to Cart
-              </button>
-              <button type="button" class="btn btn-primary">
-                Add to Favorites
-              </button>
-            </div>
+					<p><span class="description-tag">Description</span></p>
+					<p>
+						smartphone with 256 GB storage capacity and 5.8 "Super Retina display (2436 x 1125 pixels at 458 dpi),
+						with contrast ratio of 1000000: 1;
+						resistant to water and dust; Face ID;
+						Bionic A11 processor with 64-bit architecture; wireless charging;
+						12MP wide-angle and telephoto cameras and TrueDepth camera;
+						4K video recording at 24, 30 or 60 fps; Talk time (wireless) up to 21 hours.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-            <p><span class="description-tag">Description</span></p>
-            <p>
-              smartphone with 256 GB storage capacity and 5.8 "Super Retina display (2436 x 1125 pixels at 458 dpi),
-              with contrast ratio of 1000000: 1;
-              resistant to water and dust; Face ID;
-              Bionic A11 processor with 64-bit architecture; wireless charging;
-              12MP wide-angle and telephoto cameras and TrueDepth camera;
-              4K video recording at 24, 30 or 60 fps; Talk time (wireless) up to 21 hours.
-            </p>
+<div class="container-fluid review-section">
+	<div class="row">
+		<div class="col-md-12">
+				<hr/>
+				<div class="row">
+					<div class="col-sm-3 text-center">
+						<img src="images/default.png" class="rounded" height="60" width="60">
+						<div class="review-block-name">nktailor</div>
+						<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+					</div>
+					<div class="col-sm-9">
+						<div class="review-block-rate">
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+						</div>
+			<div class="review-block-title"> <strong>The huge leap</strong> </div>
+			<div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
+				</div>
+				</div>
+				<hr/>
+				<div class="row">
+					<div class="col-sm-3 text-center">
+						<img src="images/default.png" class="rounded" height="60" width="60">
+						<div class="review-block-name">nktailor</div>
+						<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+					</div>
+					<div class="col-sm-9">
+						<div class="review-block-rate">
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+						</div>
+			<div class="review-block-title"> <strong>The huge leap</strong> </div>
+			<div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
+				</div>
+				</div>
+				<hr/>
+				<div class="row">
+					<div class="col-sm-3 text-center">
+						<img src="images/default.png" class="rounded" height="60" width="60">
+						<div class="review-block-name">nktailor</div>
+						<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+					</div>
+					<div class="col-sm-9">
+						<div class="review-block-rate">
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+						</div>
+			<div class="review-block-title"> <strong>The huge leap</strong> </div>
+			<div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	</div>
 
-          </div>
-        </div>
-
-
-  		</div>
-  	</div>
-  </div>
-
-  <div class="container-fluid review-section">
-    <div class="container">
-
-  		<div class="row">
-  			<div class="col-md-12">
-  				<hr/>
-  				<div class="review-block">
-  					<div class="row">
-  						<div class="col-md-3 text-center">
-  							<img src="images/default.png" class="rounded" height="60" width="60">
-  							<div class="review-block-name"><a href="#">nktailor</a></div>
-  							<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-  						</div>
-  						<div class="col-sm-9">
-  							<div class="review-block-rate">
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                      <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align">
-  								   <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align">
-  								   <i class="fa fa-star"></i>
-  								</button>
-  							</div>
-  							<div class="review-block-title"> <strong>The huge leap</strong> </div>
-  							<div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
-  						</div>
-  					</div>
-  					<hr/>
-  					<div class="row">
-  						<div class="col-sm-3 text-center">
-  							<img src="images/default.png" class="rounded" height="60" width="60">
-  							<div class="review-block-name"><a href="#">nktailor</a></div>
-  							<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-  						</div>
-  						<div class="col-sm-9">
-  							<div class="review-block-rate">
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-  								   <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align">
-  								   <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  							</div>
-                <div class="review-block-title"> <strong>The huge leap</strong> </div>
-                <div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
-	             </div>
-  					</div>
-  					<hr/>
-  					<div class="row">
-  						<div class="col-sm-3 text-center">
-  							<img src="images/default.png" class="rounded" height="60" width="60">
-  							<div class="review-block-name"><a href="#">nktailor</a></div>
-  							<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-  						</div>
-  						<div class="col-sm-9">
-  							<div class="review-block-rate">
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-  								   <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  								<button type="button" class="btn btn-secondary btn-grey btn-sm" aria-label="Left Align">
-  								    <i class="fa fa-star"></i>
-  								</button>
-  							</div>
-                <div class="review-block-title"> <strong>The huge leap</strong> </div>
-                <div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
-            </div>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-
-      </div>
-
-  </div>
+</div>
 
 
 
 
-    <footer class="footer-distributed">
-    	<div class="footer-left">
-    		<h3>Tech4U</h3>
-    		<p class="footer-links">
-    			<a href="#">Home</a>
-    			·
-    			<a href="#">About</a>
-    			·
-    			<a href="#">FAQ</a>
-    			·
-    			<a href="#">Profile</a>
-    			·
-    			<a href="#">Cart</a>
-    		</p>
-    		<p class="footer-copyright">Tech4U &copy; Copyright 2015</p>
-    	</div>
+<footer class="footer-distributed">
+	<div class="footer-left">
+		<h3>Tech4U</h3>
+		<p class="footer-links">
+			<a href="#">Home</a>
+			·
+			<a href="#">About</a>
+			·
+			<a href="#">FAQ</a>
+			·
+			<a href="#">Profile</a>
+			·
+			<a href="#">Cart</a>
+		</p>
+		<p class="footer-copyright">Tech4U &copy; Copyright 2015</p>
+	</div>
+	
+	<div class="footer-center">
+		<div>
+			<i class="fa fa-map-marker"></i>
+			<p><span>21 Revolution Street</span> Paris, France</p>
+		</div>
+		<div>
+			<i class="fa fa-phone"></i>
+			<p>+1 555 123456</p>
+		</div>
+		<div>
+			<i class="fa fa-envelope"></i>
+			<p><a href="mailto:support@company.com">support@company.com</a></p>
+		</div>
 
-    	<div class="footer-center">
-    		<div>
-    			<i class="fa fa-map-marker"></i>
-    			<p><span>21 Revolution Street</span> Paris, France</p>
-    		</div>
-    		<div>
-    			<i class="fa fa-phone"></i>
-    			<p>+1 555 123456</p>
-    		</div>
-    		<div>
-    			<i class="fa fa-envelope"></i>
-    			<p><a href="mailto:support@company.com">support@company.com</a></p>
-    		</div>
+	</div>
 
-    	</div>
+	<div class="footer-right">
+		<p class="footer-company-about">
+			<span>About the company</span>
+			Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+		</p>
+		<div class="footer-icons">
 
-    	<div class="footer-right">
-    		<p class="footer-company-about">
-    			<span>About the company</span>
-    			Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-    		</p>
-    		<div class="footer-icons">
+			<a href="#"><i class="fab fa-facebook-f"></i></a>
+			<a href="#"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-linkedin"></i></a>
+			<a href="#"><i class="fab fa-github"></i></a>
 
-    			<a href="#"><i class="fa fa-facebook"></i></a>
-    			<a href="#"><i class="fa fa-twitter"></i></a>
-    			<a href="#"><i class="fa fa-linkedin"></i></a>
-    			<a href="#"><i class="fa fa-github"></i></a>
-
-    		</div>
-    	</div>
-
-    </footer>
+		</div>
+	</div>
+ 
+</footer>
 
 </body>
 </html>
