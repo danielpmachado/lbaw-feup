@@ -222,7 +222,7 @@ padding:2em 5em;
 
 .catalog .card{
 -margin: 0 15px 15px 0;
-border: 15px solid var(--main-text-color);
+border: 25px solid var(--main-text-color);
 }
 
 .catalog h2{
