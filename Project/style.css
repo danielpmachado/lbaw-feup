@@ -18,8 +18,8 @@ a{
 
 .navbar-dark {
 margin-bottom: 0;
-padding-right: 90px;
-padding-left: 90px;
+padding-right: 80px;
+padding-left: 80px;
 background-color: var(--main-bg-color);
 }
 
@@ -222,14 +222,14 @@ padding:2em 5em;
 
 .catalog .card{
 -margin: 0 15px 15px 0;
-border: 10px solid var(--main-text-color);
+border: 15px solid var(--main-text-color);
 }
 
 .catalog h2{
   color:rgba(0,0,0,.75);
   border-bottom: 1px solid rgba(0,0,0,.5);
   padding-bottom: 5px;
-  margin: 0 0 25px 35px;
+  margin: 0 0 25px 0;
 }
 
 .catalog .card p{

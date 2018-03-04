@@ -3,41 +3,104 @@
 <head>
   <title>Tech4You</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </button>
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
       <a class="navbar-brand" href="index.html">Tech4U</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-        <form class="navbar-form navbar-left" id="search" action="/action_page.php">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="registration.html"><i class="fa fa-bars"  style="font-size:15px;"></i> Catalog</a></li>
-            <li><a href="registration.html"><i class="fa fa-user"  style="font-size:15px;"></i> Sign In</a></li>
-            <li><a href="#"><i class="fa fa-shopping-cart"  style="font-size:15px;"></i> Cart</a></li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+				<form class="input-group my-2 my-md-0">
+					<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+					<div class="input-group-append">
+						<button class="btn" type="button"><i class="fa fa-search"></i></button>
+					</div>
+				</form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+					<a class="nav-link" href="register.html"><i class="fa fa-user"></i> Sign In</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
+					</li>
         </ul>
-    </div>
-  </div>
+     </div>
 </nav>
+
+<!--nav sidebar -->
+<aside>
+	<nav class="navbar navbar-inverse sidebar navbar-fixed-top" role="navigation">
+		<div class="nav-side-menu">
+			<div class="brand">Catalog<i class="fa fa-angle-double-right"></i></div>
+			<i class="fa fa-angle-down fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+				<div class="menu-list">
+					<ul id="menu-content" class="menu-content collapse out">
+						<li data-toggle="collapse" data-target="#computers" class="collapsed active">
+						<a href="#"><i class="fa fa-desktop fa-fw"></i> Computers <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="computers">
+						<li class="active">Asus</li>
+						<li>New Service 2</li>
+						<li>New Service 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#components" class="collapsed">
+						<a href="#"><i class="fa fa-cogs fa-fw"></i> Components <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="components">
+						<li>New Service 1</li>
+						<li>New Service 2</li>
+						<li>New Service 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#accessories" class="collapsed">
+						<a href="#"><i class="fa fa-headphones fa-fw"></i> Accessories <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="accessories">
+						<li>New New 1</li>
+						<li>New New 2</li>
+						<li>New New 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#mobile" class="collapsed">
+						<a href="#"><i class="fa fa-mobile-alt fa-fw"></i> Mobile <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="mobile">
+						<li>New New 1</li>
+						<li>New New 2</li>
+						<li>New New 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#consoles" class="collapsed">
+						<a href="#"><i class="fa fa-gamepad fa-fw"></i> Consoles <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="consoles">
+						<li>New New 1</li>
+						<li>New New 2</li>
+						<li>New New 3</li>
+						</ul>
+
+					</ul>
+			</div>
+		</div>
+	</nav>
+  </aside>
+
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
