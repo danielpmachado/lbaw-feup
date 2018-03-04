@@ -131,6 +131,12 @@ padding-left: 20px;
 border-bottom: 1px solid var(--contrast-color);
 }
 
+.nav-side-menu .brand i{
+  padding: 15px 10px;
+  vertical-align: middle;
+  float: right;
+}
+
 .nav-side-menu .toggle-btn {
 display: none;
 }
@@ -212,6 +218,7 @@ margin-top: 50px;
 padding: 20px 10px 60px 20px;
 }
 
+
 .catalog .card{
 margin: 0 15px 15px 0;
 border: 1px solid rgba(0,0,0,.25);
@@ -227,6 +234,15 @@ border: 1px solid rgba(0,0,0,.25);
 .catalog .card p{
   font-size:15px;
   color: var(--main-bg-color);
+}
+
+.catalog .card .card-btn{
+  text-align: center;
+
+}
+
+.catalog .card .btn{
+  margin-bottom: 10px;
 }
 
 /*
@@ -607,6 +623,10 @@ li.nav-item.active  {
 
   .footer-distributed .footer-center i{
     margin-left: 0;
+  }
+
+  .nav-side-menu .brand i{
+    display: none;
   }
 
   .nav-side-menu {
