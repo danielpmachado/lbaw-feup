@@ -215,13 +215,14 @@ MAIN CATALOG
 
  .catalog{
 margin-top: 50px;
-padding: 20px 10px 60px 20px;
+-padding: 20px 10px 60px 20px;
+padding:2em 5em;
 }
 
 
 .catalog .card{
-margin: 0 15px 15px 0;
-border: 1px solid rgba(0,0,0,.25);
+-margin: 0 15px 15px 0;
+border: 10px solid var(--main-text-color);
 }
 
 .catalog h2{
@@ -606,7 +607,7 @@ li.nav-item.active  {
   }
 
   .catalog .card{
-    margin: 20px 70px;
+    -margin: 20px 70px;
   }
   .navbar{
     padding: 10px;
@@ -802,7 +803,7 @@ i.red{
 	margin-top: 3em;
 }
 
-.card-body{
+div.card-body.text-center{
   background-color: var(--main-text-color);
 }
 
