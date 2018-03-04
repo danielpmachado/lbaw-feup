@@ -18,7 +18,8 @@ a{
 
 .navbar-dark {
 margin-bottom: 0;
-padding: 5px 50px;
+padding-right: 100px;
+padding-left: 100px;
 background-color: var(--main-bg-color);
 }
 
@@ -28,9 +29,9 @@ background-color: var(--main-bg-color) !important;;
 }
 
 .navbar-dark .navbar-brand {
-  color: var(--main-text-color);
-  font-size:25px;
-font-family: var(--logo-text-font);
+  -color: var(--main-text-color);
+  -font-size:25px;
+  -font-family: var(--logo-text-font);
 }
 
 .navbar-toogler-icon{
@@ -213,7 +214,7 @@ padding: 20px 10px 60px 20px;
 
 .catalog .card{
 margin: 0 15px 15px 0;
-border: 1px solid rgba(0,0,0,.25);	
+border: 1px solid rgba(0,0,0,.25);
 }
 
 .catalog h2{
@@ -407,7 +408,7 @@ FOOTER
   font-size:15px;
   padding:5px;
   margin-bottom: 1px;
-  
+
 }
 
 .sign #nav-in .btn-primary{
@@ -584,7 +585,7 @@ li.nav-item.active  {
     margin-top:30px;
     margin-left:0;
   }
-  
+
   .catalog .card{
     margin: 20px 70px;
   }
@@ -603,11 +604,11 @@ li.nav-item.active  {
     margin-bottom: 40px;
     text-align: center;
   }
-  
+
   .footer-distributed .footer-center i{
     margin-left: 0;
   }
-  
+
   .nav-side-menu {
   border:none;
   margin-left:-10px;
@@ -658,10 +659,6 @@ Team CSS
 
 */
 
-
-body{
-    font-family: 'Quicksand', sans-serif;
-}
 .team{
     padding:75px 0;
 }
@@ -760,5 +757,221 @@ i.red{
 
 .col-sm-12 {
 	margin-top: 3em;
+}
+
+
+/*
+  -----------
+  	CART
+  -----------
+  */
+
+#progress-bar{
+  margin-top: 4em;
+  margin-bottom: 5em;
+}
+
+.board {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    background: none;
+}
+
+.board .nav-tabs {
+    position: relative;
+    margin: 40px auto;
+    margin-bottom: 0;
+    box-sizing: border-box;
+		border: none;
+}
+
+.liner {
+    height: 2px;
+    background: #bbb;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 32%;
+    z-index: -1;
+}
+
+.nav-tabs > li {
+    width: 25%;
+
+}
+.nav-tabs > li a {
+    width: 70px;
+    -height: 70px;
+    -line-height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.3em;
+}
+
+
+
+.nav-tabs > li a:hover {
+    border: none;
+    background: none;
+}
+
+.nav-tabs > li.active a, .nav-tabs > li.active a:hover {
+    border: none;
+    background: none;
+}
+
+.nav-tabs > li span {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100%;
+    background: white;
+    z-index: 2;
+    -position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.nav-tabs > li:nth-of-type(1) span {
+    color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(1).active span {
+    color: white;
+    background: #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(2) span {
+    color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(2).active span {
+    color: #f0ad4e;
+    background: #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(3) span {
+    color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(3).active span {
+    color: #f0ad4e;
+    background: #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(4) span {
+    color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.nav-tabs > li:nth-of-type(4).active span {
+    color: #f0ad4e;
+    background: #f0ad4e;
+}
+
+.nav-tabs > li > a.disabled {
+    opacity: 1;
+}
+
+.nav-tabs > li > a.disabled span {
+    border-color: #bbb;
+    color: #aaa;
+}
+
+div[role="tabpanel"]:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.quantity {
+    float: left;
+    margin-right: 15px;
+    background-color: #eee;
+    position: relative;
+    width: 80px;
+    overflow: hidden
+}
+
+.quantity input {
+    margin: 0;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    float: right;
+    color: #000;
+    font-size: 20px;
+    border: 0;
+    outline: 0;
+    background-color: #F6F6F6
+}
+
+.quantity input.qty {
+    position: relative;
+    border: 0;
+    width: 100%;
+    height: 40px;
+    padding: 10px 25px 10px 10px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 0;
+    background-clip: padding-box
+}
+
+.quantity .minus, .quantity .plus {
+    line-height: 0;
+    background-clip: padding-box;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-background-size: 6px 30px;
+    -moz-background-size: 6px 30px;
+    color: #bbb;
+    font-size: 20px;
+    position: absolute;
+    height: 50%;
+    border: 0;
+    right: 0;
+    padding: 0;
+    width: 25px;
+    z-index: 3
+}
+
+.quantity .minus:hover, .quantity .plus:hover {
+    background-color: #dad8da
+}
+
+.quantity .minus {
+    bottom: 0
+}
+.shopping-cart {
+    margin-top: 20px;
+}
+
+
+.card-header{
+	background-color: #292b2c;
+	color: white;
+}
+
+.tab-content{
+  width:100%;
 }
 
