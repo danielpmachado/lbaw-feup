@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tech4You</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Tech4U</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+				<form class="input-group my-2 my-md-0">
+					<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+					<div class="input-group-append">
+						<button class="btn" type="button"><i class="fa fa-search"></i></button>
+					</div>
+				</form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+					<a class="nav-link" href="register.html"><i class="fa fa-user"></i> Sign In</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
+					</li>
+        </ul>
+     </div>
+</nav>
+
+<!--nav sidebar -->
+<aside>
+	<nav class="navbar navbar-inverse sidebar navbar-fixed-top" role="navigation">
+		<div class="nav-side-menu">
+			<div class="brand">Catalog<i class="fa fa-angle-double-right"></i></div>
+			<i class="fa fa-angle-down fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+				<div class="menu-list">
+					<ul id="menu-content" class="menu-content collapse out">
+						<li data-toggle="collapse" data-target="#computers" class="collapsed active">
+						<a href="#"><i class="fa fa-desktop fa-fw"></i> Computers <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="computers">
+						<li class="active">Asus</li>
+						<li>New Service 2</li>
+						<li>New Service 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#components" class="collapsed">
+						<a href="#"><i class="fa fa-cogs fa-fw"></i> Components <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="components">
+						<li>New Service 1</li>
+						<li>New Service 2</li>
+						<li>New Service 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#accessories" class="collapsed">
+						<a href="#"><i class="fa fa-headphones fa-fw"></i> Accessories <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="accessories">
+						<li>New New 1</li>
+						<li>New New 2</li>
+						<li>New New 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#mobile" class="collapsed">
+						<a href="#"><i class="fa fa-mobile-alt fa-fw"></i> Mobile <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="mobile">
+						<li>New New 1</li>
+						<li>New New 2</li>
+						<li>New New 3</li>
+						</ul>
+
+						<li data-toggle="collapse" data-target="#consoles" class="collapsed">
+						<a href="#"><i class="fa fa-gamepad fa-fw"></i> Consoles <span class="arrow"><i class=" fa fa-angle-down"></i></span></a>
+						</li>
+						<ul class="sub-menu collapse" id="consoles">
+						<li>New New 1</li>
+						<li>New New 2</li>
+						<li>New New 3</li>
+						</ul>
+
+					</ul>
+			</div>
+		</div>
+	</nav>
+  </aside>
+
+
+  <section class="intro carousel slide bg-overlay-light h-auto" id="carouselExampleCaptions">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img class="d-block img-fluid" alt="First slide" src="images/asus0.png ">
+          <div class="carousel-caption ">
+  			       <a href="#" class="btn btn-dark btn-capsul px-4 py-2">Explore More</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" alt="First slide" src="images/asus00.png">
+          <div class="carousel-caption ">
+  			       <a href="#" class="btn btn-dark btn-capsul px-4 py-2">Explore More</a>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+  </section>
+
+
+  <div class="featured container-fluid">
+  	<h2 id="featured">Featured Products</h2>
+  	<div class="row justify-content-center">
+  		  <div class="card col-lg-3 col-md-4 col-sm-6">
+  			<img class="card-img-top" src="images/product11.jpg" alt="Card image cap">
+  			<div class="card-body">
+  			  <h5 class="card-title">Asus P3-Hfdsfd</h5>
+  				<p class="card-text">756€ - Available</p>
+  				<div class="card-btn">
+  						<a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
+  						<a href="product.html" class="btn  btn-dark  btn-block">See More</a>
+  				</div>
+  			</div>
+  		  </div>
+  		  <div class="card col-lg-3 col-md-4 col-sm-6">
+  			<img class="card-img-top" src="images/product2.jpg" alt="Card image cap">
+  			<div class="card-body">
+  				<h5 class="card-title">Asus P3-Hfdsfd</h5>
+  				<p class="card-text">756€ - Available</p>
+  				<div class="card-btn">
+  						<a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
+  						<a href="product.html" class="btn  btn-dark  btn-block">See More</a>
+  				</div>
+  			</div>
+  		  </div>
+  		  <div class="card col-lg-3 col-md-4 col-sm-6">
+  			<img class="card-img-top" src="images/product3.jpg" alt="Card image cap">
+  			<div class="card-body">
+  				<h5 class="card-title">Asus P3-Hfdsfd</h5>
+  				<p class="card-text">756€ - Available</p>
+  				<div class="card-btn">
+  						<a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
+  						<a href="product.html" class="btn  btn-dark  btn-block">See More</a>
+  				</div>
+  			</div>
+  		  </div>
+  		  <div class="card col-lg-3 col-md-4 col-sm-6">
+  			<img class="card-img-top" src="images/product4.jpeg" alt="Card image cap">
+  			<div class="card-body">
+  					<h5 class="card-title">Asus P3-Hfdsfd</h5>
+  					<p class="card-text">756€ - Available</p>
+  					<div class="card-btn">
+  							<a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
+  							<a href="product.html" class="btn  btn-dark  btn-block">See More</a>
+  					</div>
+  			</div>
+  		  </div>
+
+  	</div>
+  </div>
+
+
+
+
+<footer class="footer-distributed">
+	<div class="footer-left">
+		<h3>Tech4U</h3>
+		<p class="footer-links">
+			<a href="#">Home</a>
+			·
+			<a href="#">About</a>
+			·
+			<a href="#">FAQ</a>
+			·
+			<a href="#">Profile</a>
+			·
+			<a href="#">Cart</a>
+		</p>
+		<p class="footer-copyright">Tech4U &copy; Copyright 2015</p>
+	</div>
+
+	<div class="footer-center">
+		<div>
+			<i class="fa fa-map-marker-alt"></i>
+			<p><span>21 Middle Revolution Street</span> Paris, France</p>
+		</div>
+		<div>
+			<i class="fa fa-phone"></i>
+			<p>+1 555 123456</p>
+		</div>
+		<div>
+			<i class="fa fa-envelope"></i>
+			<p><a href="mailto:support@tech4u.com">support@tech4u.com</a></p>
+		</div>
+
+	</div>
+
+	<div class="footer-right">
+		<p class="footer-company-about">
+			<span>About the company</span>
+			The passion for technology appeared before the one for entrepreneurship, because I’ve always liked to discover what mechanisms hide behind the devices, how systems work and how can they be optimized.
+		<div class="footer-icons">
+
+			<a href="#"><i class="fab fa-facebook-f"></i></a>
+			<a href="#"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-linkedin"></i></a>
+			<a href="#"><i class="fab fa-github"></i></a>
+
+		</div>
+	</div>
+
+</footer>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 :root {
   --main-bg-color: #292b2c;
 --main-text-color: #ddd;
-/*--main-hl-color: #00a1b7;*/
---main-hl-color:#86C2E1;
+--main-hl-color: #00a1b7;
+/*--main-hl-color:#86C2E1;*/
 --contrast-color: #222;
 --logo-text-font: 'Orbitron';
 
@@ -1118,6 +1118,37 @@ section#faq{
     padding: 20px;
     color:#232323;
     box-shadow:inset 0px 4px 5px rgba(0,0,0,0.1);
-    border-top:1px soild #000;
+    border-top:1px solid #000;
     border-radius:0;
+}
+
+
+/*
+--------
+ HOME
+--------
+*/
+
+#carouselExampleCaptions{
+  margin-top: 4em;
+}
+
+#pic-add, #pic-text{
+  padding: 0;
+}
+
+#pic-add{
+  -overflow: hidden;
+}
+.featured{
+  -padding:0;
+}
+
+#featured{
+  background-color:  var(--main-bg-color);
+  color:white;
+  padding: 0.5em 2em 0.5em 1em;
+  margin: 0 -1em;
+  text-align: right;
+
 }
