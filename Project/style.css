@@ -13,7 +13,7 @@ background-color: var(--main-text-color);
 }
 
 a{
-  color: var(--main-hl-color)
+  color: var(--main-hl-color);
 }
 
 .navbar-dark {
@@ -1043,4 +1043,81 @@ div[role="tabpanel"]:after {
 
 .tab-content{
   width:100%;
+}
+
+
+/*
+--------
+ FAQ
+--------
+*/
+
+#faq h2{
+  width:100%;
+  margin: 1em 0;
+}
+
+section#faq{
+    margin-top:5em;
+}
+
+#faq .card {
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom:1px;
+    border:none;
+}
+#faq .card-header:first-child {
+    border-radius: 0;
+}
+#faq .card-header {
+    background-color: #f7f7f9;
+    margin-bottom: 0;
+    padding: 20px 1.25rem;
+    -border:none;
+
+}
+#faq .card-header a i{
+    float:left;
+    font-size:25px;
+    padding:5px 0;
+    margin:0 25px 0 0px;
+    color:#195C9D;
+}
+#faq .card-header i{
+    float:right;
+    font-size:30px;
+    width:1%;
+    margin-top:8px;
+    margin-right:10px;
+    color: var(--main-bg-color);
+}
+#faq .card-header a{
+    width:97%;
+    float:left;
+    color:#565656;
+}
+#faq .card-header p{
+    margin:0;
+}
+
+#faq .card-header h3{
+    margin:0 0 0px;
+    font-size:20px;
+    font-weight:bold;
+    color: var(--main-hl-color);
+}
+#faq .card-block {
+    -moz-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 20px;
+    color:#232323;
+    box-shadow:inset 0px 4px 5px rgba(0,0,0,0.1);
+    border-top:1px soild #000;
+    border-radius:0;
 }
