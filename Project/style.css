@@ -97,7 +97,7 @@ nav.sidebar{
   }
 
   /*give sidebar 100% width;*/
-  nav.sidebar li {
+  nav.sidebar li{
     width: 100%;
   }
 
@@ -1136,20 +1136,15 @@ section#faq{
 --------
 */
 
+
+
 #carouselExampleCaptions{
-  margin-top: 4em;
+  margin-top: 60px;
+  display:block;
+	
+
 }
 
-#pic-add, #pic-text{
-  padding: 0;
-}
-
-#pic-add{
-  -overflow: hidden;
-}
-.featured{
-  -padding:0;
-}
 
 #featured{
   background-color:  var(--main-bg-color);
