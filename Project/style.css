@@ -1,16 +1,15 @@
 :root {
   --main-bg-color: #292b2c;
-/*--main-text-color: #ddd;*/
---main-text-color: #f8f8f8;
---main-hl-color: #00a1b7;
-/*--main-hl-color:#86C2E1;*/
---contrast-color: #222;
---logo-text-font: 'Orbitron';
+  --main-text-color: #f8f8f8;
+  --main-hl-color: #00a1b7;
+  --contrast-color: #222;
+  --second-bg-color: #ddd;
+  --logo-text-font: 'Orbitron';
 
 }
 
 body{
-background-color: var(--main-text-color);
+  background-color: var(--main-text-color);
 }
 
 a{
@@ -18,19 +17,18 @@ a{
 }
 
 .navbar-dark {
-margin-bottom: 0;
-padding-right: 80px;
-padding-left: 80px;
-background-color: var(--main-bg-color);
+  margin-bottom: 0;
+  padding: 5px 80px;
+  background-color: var(--main-bg-color);
 }
 
 .bg-dark{
-background-color: var(--main-bg-color) !important;;
-
+  background-color: var(--main-bg-color) !important;
 }
 
 .navbar-dark .navbar-brand {
-  color: #f8f8f8;
+  padding-bottom: 0;
+  color: var(--main-text-color);
   font-size:25px;
   font-family: var(--logo-text-font);
 }
@@ -52,6 +50,7 @@ padding-right: 5px;
 width:200px;
 }
 
+.navbar-dark .navbar-brand:hover,
 .navbar-dark .form-inline i:hover,
 .navbar-dark .navbar-nav .nav-link:hover{
   color:var(--main-hl-color);
@@ -65,15 +64,31 @@ CATALOG NAV
 */
 
 #catalog-nav{
-	margin-top:60px;
+	margin-top:50px;
 	position:static;
+  padding: 2px 200px;
 }
 
-#catalog-nav .navbar-nav{
-	 display: flex;
-  justify-content: center;
-  flex-direction:row;
+
+/*
+--------
+ HOME
+--------
+*/
+
+#carouselExampleCaptions{
+  display:block;
+
 }
+
+#featured{
+  background-color:  var(--main-bg-color);
+  color:  var(--main-text-color);
+  margin:0;
+  padding: 10px 20px;
+
+}
+
 
 /*
 ---------------
@@ -994,31 +1009,4 @@ section#faq{
     box-shadow:inset 0px 4px 5px rgba(0,0,0,0.1);
     border-top:1px solid #000;
     border-radius:0;
-}
-
-
-
-/*
---------
- HOME
---------
-*/
-
-
-
-#carouselExampleCaptions{
-  margin-top: 60px;
-  display:block;
-	
-
-}
-
-
-#featured{
-  background-color:  var(--main-bg-color);
-  color:white;
-  padding: 0.5em 2em 0.5em 1em;
-  margin: 0 -1em;
-  text-align: right;
-
 }
