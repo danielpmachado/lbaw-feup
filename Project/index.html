@@ -17,55 +17,71 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" id="main-nav">
       <a class="navbar-brand" href="index.html">Tech4U</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-				<form class="input-group my-2 my-md-0">
-					<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-					<div class="input-group-append">
-						<button class="btn" type="button"><i class="fa fa-search"></i></button>
-					</div>
-				</form>
+      <div class="collapse navbar-collapse" id="navbar1">
+		  <form class="form-inline input-group">
+			<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+			<div class="input-group-append">
+				<span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+			</div>
+		  </form>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-					<a class="nav-link" href="register.html"><i class="fa fa-user"></i> Sign In</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
-					</li>
+			<a class="nav-link" href="register.html"><i class="fa fa-user"></i> Sign In</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
+		  </li>
         </ul>
      </div>
 </nav>
 
 <nav id="catalog-nav" class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+	  <a class="navbar-brand">Catalog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2" aria-controls="navbar2" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse container" id="navbarsExample04">
+      <div class="collapse navbar-collapse" id="navbar2">
         <ul class="navbar-nav w-100 justify-content-between">
           <div class="dropdown">
             <li class="nav-item">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-desktop"></i>Computers
               </a>
-              <div class="dropdown-menu" style="width: 900px"  aria-labelledby="dropdownMenu2">
+              <div class="dropdown-menu" style="width: 100vh"  aria-labelledby="dropdownMenu2">
                 <div class="row mx-0">
-                  <div class="col-sm-3">
-                    <a href="#">fxcasf</a>
+                  <div class="col-sm-4">
+					<ul>
+						<h5>Notebooks</h5>
+						<li>Gaming</li>
+						<li>Smth</li>
+						<li>Smth</li>
+						<li>Examples</li>
+					</ul>
                   </div>
-                  <div class="col-sm-3 border-left">
-                    <a href="#">fxcasf</a>
+                  <div class="col-sm-4">
+                    <ul>
+						<h5>Desktop</h5>
+						<li>Gaming</li>
+						<li>Smth</li>
+						<li>Smth</li>
+						<li>Examples</li>
+					</ul>
                   </div>
-                  <div class="col-sm-3 border-left">
-                    <a href="#">fxcasf</a>
-                  </div>
-                  <div class="col-sm-3 border-left">
-                    <a href="#">fxcasf</a>
+                  <div class="col-sm-4">
+                    <ul>
+						<h5>Mobility</h5>
+						<li>Gaming</li>
+						<li>Smth</li>
+						<li>Smth</li>
+						<li>Examples</li>
+					</ul>
                   </div>
                 </div>
               </div>

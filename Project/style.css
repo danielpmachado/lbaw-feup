@@ -12,47 +12,37 @@ body{
   background-color: var(--main-text-color);
 }
 
-a{
-  color: var(--main-hl-color);
-}
-
-.navbar-dark {
-  margin-bottom: 0;
-  padding: 5px 80px;
+#main-nav {
   background-color: var(--main-bg-color);
+  padding: 4px 80px;
 }
 
 .bg-dark{
   background-color: var(--main-bg-color) !important;
 }
 
-.navbar-dark .navbar-brand {
-  padding-bottom: 0;
+#main-nav .navbar-brand {
   color: var(--main-text-color);
   font-size:25px;
   font-family: var(--logo-text-font);
 }
 
-.navbar-toogler-icon{
-color:var(--main-text-color);
-}
-
-.navbar-dark .navbar-nav .nav-link{
+#main-nav .navbar-nav .nav-link{
   font-size: 16px;
   color: var(--main-text-color);
 }
 
-.navbar-dark .navbar-nav .nav-link i{
-padding-right: 5px;
+#main-nav .navbar-nav .nav-link i{
+	padding-right: 5px;
 }
 
-.navbar-dark .input-group{
-width:200px;
+#main-nav .input-group{
+	width:200px;
 }
 
-.navbar-dark .navbar-brand:hover,
-.navbar-dark .form-inline i:hover,
-.navbar-dark .navbar-nav .nav-link:hover{
+#main-nav .navbar-brand:hover,
+#main-nav  .form-inline i:hover,
+#main-nav .navbar-nav .nav-link:hover{
   color:var(--main-hl-color);
 }
 
@@ -66,7 +56,7 @@ CATALOG NAV
 #catalog-nav{
 	margin-top:50px;
 	position:static;
-  padding: 2px 200px;
+    padding: 2px 200px;
 }
 
 
@@ -490,6 +480,10 @@ FOOTER
   justify-content: left;
 
   }
+  
+  #catalog-nav{
+	  padding: 5px;
+  }
 
   .catalog h2 {
     margin-top:30px;
@@ -529,23 +523,7 @@ FOOTER
     display: none;
   }
 
-  .nav-side-menu {
-  border:none;
-  margin-left:-10px;
-  width: 100%;
-  }
-  .nav-side-menu .toggle-btn {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 25px;
-    top: 10px;
-    z-index: 10 !important;
-    padding: 3px;
-    color: var(--main-text-color);
-    width: 40px;
-    text-align: center;
-  }
+ 
   .brand {
     text-align: left !important;
     font-size: 22px;
