@@ -1,3 +1,9 @@
+/*
+--------------
+  MAIN CONFS
+--------------
+*/
+
 :root {
   --main-bg-color: #292b2c;
   --main-text-color: #f8f8f8;
@@ -12,6 +18,13 @@ body{
   background-color: var(--main-text-color);
 }
 
+/*
+-----------
+  NAVBARS
+-----------
+*/
+
+
 #main-nav {
   background-color: var(--main-bg-color);
   padding: 4px 80px;
@@ -21,18 +34,20 @@ body{
   background-color: var(--main-bg-color) !important;
 }
 
-#main-nav .navbar-brand {
+#main-nav .navbar-brand{
   color: var(--main-text-color);
   font-size:25px;
   font-family: var(--logo-text-font);
 }
 
-#main-nav .navbar-nav .nav-link{
+#main-nav .navbar-nav .nav-link,
+#catalog-nav .navbar-nav .nav-link{
   font-size: 16px;
   color: var(--main-text-color);
 }
 
-#main-nav .navbar-nav .nav-link i{
+#main-nav .navbar-nav .nav-link i,
+#catalog-nav .navbar-nav .nav-link i{
 	padding-right: 5px;
 }
 
@@ -46,17 +61,69 @@ body{
   color:var(--main-hl-color);
 }
 
-
-/*
------------
-CATALOG NAV
------------
-*/
-
 #catalog-nav{
 	margin-top:50px;
 	position:static;
-    padding: 2px 200px;
+  padding: 2px 8vh;
+}
+
+#catalog-nav .navbar-brand{
+  color: var(--main-text-color);
+  font-size:25px;
+}
+#catalog-nav .nav-link{
+  padding-right: 2.5vh;
+}
+
+#catalog-nav .dropdown .dropdown-menu{
+  background-color: var(--main-text-color);
+  width:45vh;
+  border:none;
+  border-radius: 0;
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+}
+
+#catalog-nav .list-group-item{
+  background-color: var(--main-text-color);
+}
+
+@media (min-width: 767px) {
+#catalog-nav .dropdown .dropdown-menu {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+
+  max-height: 0;
+  display: block;
+  overflow: visible;
+  opacity: 0;
+}
+
+#catalog-nav .dropdown:hover .dropdown-menu{
+  max-height: 100vh;
+  opacity: 1;
+}
+
+
+}
+
+@media (max-width: 767px) {
+  #main-nav, #catalog-nav{
+    padding:10px 30px;
+  }
+
+  #catalog-nav .dropdown .dropdown-menu{
+    width:100%;
+    left: 0;
+    text-align: left;
+    transform: translate(0, 0);
+  }
+
 }
 
 
@@ -376,7 +443,7 @@ FOOTER
   color:var(--main-hl-color);
   background-color: white;
   border-left: 2px  solid var(--main-bg-color);
-  margin-left:  - 3px;
+  margin-left:  3px;
   padding: 1em;
 }
 
@@ -476,30 +543,14 @@ FOOTER
 --------
 */
 @media (max-width: 767px) {
-  #search .input-group .form-control{
-  justify-content: left;
 
-  }
-  
-  #catalog-nav{
-	  padding: 5px;
-  }
+
 
   .catalog h2 {
     margin-top:30px;
     margin-left:0;
   }
 
-  .catalog .card{
-    -margin: 20px 70px;
-  }
-  .navbar{
-    padding: 10px;
-  }
-
-  .navbar-inverse .navbar-brand i{
-    display: none;
-  }
 
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
@@ -519,17 +570,6 @@ FOOTER
 
   }
 
-  .nav-side-menu .brand i{
-    display: none;
-  }
-
- 
-  .brand {
-    text-align: left !important;
-    font-size: 22px;
-    padding-left: 20px;
-    line-height: 50px !important;
-  }
 
   .sign{
     width:75%;
