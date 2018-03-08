@@ -51,9 +51,6 @@ body{
 	padding-right: 5px;
 }
 
-#main-nav .input-group{
-	width:200px;
-}
 
 #main-nav .navbar-brand:hover,
 #main-nav  .form-inline i:hover,
@@ -62,54 +59,31 @@ body{
 }
 
 #catalog-nav{
-	margin-top:50px;
+	margin-top:55px;
 	position:static;
-  padding: 2px 8vh;
+  padding: 2px 80px;
 }
 
 #catalog-nav .navbar-brand{
   color: var(--main-text-color);
   font-size:25px;
 }
-#catalog-nav .nav-link{
-  padding-right: 2.5vh;
-}
+
 
 #catalog-nav .dropdown .dropdown-menu{
   background-color: var(--main-text-color);
-  width:45vh;
+  width:60vh;
   border:none;
   border-radius: 0;
-  left: 50%;
-  right: auto;
-  text-align: center;
-  transform: translate(-50%, 0);
 }
 
 #catalog-nav .list-group-item{
   background-color: var(--main-text-color);
 }
 
-@media (min-width: 767px) {
-#catalog-nav .dropdown .dropdown-menu {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
 
-  max-height: 0;
-  display: block;
-  overflow: visible;
-  opacity: 0;
-}
-
-#catalog-nav .dropdown:hover .dropdown-menu{
-  max-height: 100vh;
-  opacity: 1;
-}
-
-
+#main-nav .input-group{
+	width:200px;
 }
 
 @media (max-width: 767px) {
@@ -119,11 +93,12 @@ body{
 
   #catalog-nav .dropdown .dropdown-menu{
     width:100%;
-    left: 0;
-    text-align: left;
-    transform: translate(0, 0);
   }
 
+}
+
+#main-nav .dropdown-menu{
+  text-align: center;
 }
 
 
