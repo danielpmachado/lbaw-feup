@@ -121,6 +121,12 @@ body{
 
 }
 
+#featured-container .card{
+  border: 10px solid var(--main-text-color);
+  border-top: 20px solid var(--main-text-color);
+  border-bottom: 20px solid var(--main-text-color);
+}
+
 
 /*
 ---------------
