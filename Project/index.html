@@ -14,8 +14,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/c560c025cf.js"></script>
+
 </head>
 <body>
+
+
 
 <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" id="main-nav">
     <a class="navbar-brand" href="index.html">Tech4U</a>
@@ -37,7 +40,12 @@
                   <i class="fa fa-user"></i>Sign in
                 </a>
                 <div class="dropdown-menu ">
-                    <form class="px-4 py-3">
+                    <form class="p-3 p-2">
+                      <div class="form-group">
+                          <button type="button" class="btn btn-danger">
+                              <i class="fab fa-google-plus-g"></i>  Sign in with Google
+                          </button>
+                      </div>
                       <div class="form-group">
                         <input type="email" class="form-control" id="sign-in-usr" placeholder="Username">
                       </div>
@@ -50,11 +58,13 @@
                           Remember me
                         </label>
                       </div>
-                      <button type="submit" class="btn btn-dark">Sign in</button>
+                      <div class="form-group">
+                         <button type="submit" class="btn btn-dark">Sign in</button>
+                      </div>  
                     </form>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">New around here? Sign up</a>
-                    <a class="dropdown-item" href="#">Forgot password?</a>
+                    <a  href="register.html">New around here? Sign up</a>
+                    <a  href="#">Forgot password?</a>
                 </div>
               </div>
         </li>
