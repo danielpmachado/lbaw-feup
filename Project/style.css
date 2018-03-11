@@ -116,6 +116,21 @@ body{
   text-align: center;
 }
 
+/*
+-----------
+  SIGN IN
+-----------
+*/
+
+#sign-in{
+  border-radius:0px;
+  padding:15px;
+  background-color: var(--main-text-color);
+}
+
+
+
+
 
 /*
 --------
@@ -141,6 +156,7 @@ body{
   border-top: 20px solid var(--main-text-color);
   border-bottom: 20px solid var(--main-text-color);
 }
+
 
 
 /*
@@ -328,9 +344,9 @@ FOOTER
 }
 
 /*
----------------------
-  SIGN IN / SIGN UP
----------------------
+-------------
+  REGISTER
+-------------
 */
 
 .sign{
@@ -344,30 +360,18 @@ FOOTER
   padding:20px;
 }
 
-.sign .tab-content #nav-in form,
 .sign .tab-content #nav-up form{
   text-align: center;
   padding: 30px;
 }
 
-.sign #nav-in .btn,
+
 .sign #nav-up .btn{
   width:100px;
   padding: 7px;
 }
 
-.sign #nav-in .btn-danger,
-.sign #nav-in .btn-primary{
-  width:200px;
-  font-size:15px;
-  padding:5px;
-  margin-bottom: 1px;
 
-}
-
-.sign #nav-in .btn-primary{
-  margin-bottom: 20px;
-}
 
 /*
   -----------
