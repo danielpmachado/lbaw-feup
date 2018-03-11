@@ -61,7 +61,7 @@ body{
 #catalog-nav{
 	margin-top:55px;
 	position:static;
-  padding: 2px 80px;
+  padding: 2px 30vh;
 }
 
 #catalog-nav .navbar-brand{
@@ -74,7 +74,11 @@ body{
   background-color: var(--main-text-color);
   width:60vh;
   border:none;
-  border-radius: 0;
+  border-radius: 0;left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+
 }
 
 #catalog-nav .list-group-item{
@@ -93,6 +97,7 @@ body{
 
   #catalog-nav .dropdown .dropdown-menu{
     width:100%;
+    transform: translate(0, 0);
   }
 
 }
