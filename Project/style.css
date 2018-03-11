@@ -523,7 +523,25 @@ FOOTER
  MOBILE
 --------
 */
+
+
+@media (max-width: 550px) {
+
+  .carousel-inner img{
+
+      min-height: 150px;
+      min-width: 700px;
+      margin: 0 -30%;
+  }
+
+}
 @media (max-width: 767px) {
+
+  .carousel-inner img{
+
+      min-height: 150px;
+      min-width: 700px;
+  }
 
 
 
