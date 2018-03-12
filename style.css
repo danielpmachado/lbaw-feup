@@ -612,6 +612,12 @@ FOOTER
 
 @media (max-width: 767px) {
 
+  .navbar-brand{
+    position: relative;
+    left:0;
+    transform: translateX(0);
+  }
+
   #catalog-nav{
     padding: 1em 2.4em;
   }
