@@ -24,6 +24,10 @@ body{
 -----------
 */
 
+.sign-in{
+  margin-right: -3em;
+}
+
 .g-signin2{
   padding: 1em;
 }
