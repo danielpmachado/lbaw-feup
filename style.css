@@ -24,8 +24,18 @@ body{
 -----------
 */
 
-.sign-in{
-  margin-right: -3em;
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
+#drop-1{
+  margin-left:6em;
+}
+
+#drop-2{
+  margin-left:-7em;
 }
 
 
@@ -37,7 +47,7 @@ div.abcRioButton.abcRioButtonLightBlue{
 
 .breadcrumb{
   margin-top: 1em;
-  margin-left: 1em;
+  margin-left: 4em;
   background-color: var(--main-text-color);
 }
 
@@ -48,7 +58,7 @@ div.abcRioButton.abcRioButtonLightBlue{
 
 #main-nav {
   background-color: var(--main-bg-color);
-  padding: 4px 80px;
+  padding: 8px 80px;
 }
 
 .bg-dark{
@@ -57,7 +67,7 @@ div.abcRioButton.abcRioButtonLightBlue{
 
 #main-nav .navbar-brand{
   color: var(--main-text-color);
-  font-size:25px;
+  font-size:27px;
   font-family: var(--logo-text-font);
 }
 
@@ -65,6 +75,15 @@ div.abcRioButton.abcRioButtonLightBlue{
 #catalog-nav .navbar-nav .nav-link{
   font-size: 16px;
   color: var(--main-text-color);
+}
+
+
+#catalog-nav .navbar-nav .nav-link:hover{
+  color: var(--main-hl-color);
+}
+
+#catalog-nav .navbar-nav .show .nav-link{
+  color: var(--main-hl-color);
 }
 
 #main-nav .navbar-nav .nav-link i,
@@ -82,7 +101,7 @@ div.abcRioButton.abcRioButtonLightBlue{
 #catalog-nav{
 	margin-top:55px;
 	position:static;
-  padding: 2px 30vh;
+  padding: 2px 50vh;
 }
 
 #catalog-nav .navbar-brand{
@@ -555,6 +574,7 @@ FOOTER
 */
 
 
+
 @media (max-width: 550px) {
 
   .carousel-inner img{
@@ -565,7 +585,46 @@ FOOTER
   }
 
 }
+
+@media (max-width: 1300px) {
+  #catalog-nav{
+    padding: 2px 40vh;
+  }
+}
+
+@media (max-width: 1200px) {
+  #catalog-nav{
+    padding: 2px 30vh;
+  }
+}
+
+@media (max-width: 1040px) {
+  #catalog-nav{
+    padding: 2px 20vh;
+  }
+}
+
+@media (max-width: 870px) {
+  #catalog-nav{
+    padding: 2px 10vh;
+  }
+}
+
 @media (max-width: 767px) {
+
+  .navbar-brand{
+    position: relative;
+    left:0;
+    transform: translateX(0);
+  }
+
+  #catalog-nav{
+    padding: 1em 2.4em;
+  }
+
+  #drop-1, #drop-2{
+    margin: 0;
+  }
 
   .carousel-inner img{
 
@@ -573,13 +632,10 @@ FOOTER
       min-width: 700px;
   }
 
-
-
   .catalog h2 {
     margin-top:30px;
     margin-left:0;
   }
-
 
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
@@ -774,7 +830,6 @@ h3.description{
   */
 
 #progress-bar{
-  margin-top: 4em;
   margin-bottom: 5em;
 }
 
