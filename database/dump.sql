@@ -89,7 +89,7 @@ CREATE TABLE "user" (
 );
 
 
-CREATE TABLE "history_product" (
+CREATE TABLE history_product (
     id SERIAL,
     date date NOT NULL,
     description text NOT NULL,
@@ -97,17 +97,17 @@ CREATE TABLE "history_product" (
 );
 
 
-CREATE TABLE "single_history_product" (
+CREATE TABLE single_history_product (
     id_history_product integer,
     id_product integer
 );
 
-CREATE TABLE "featured_product" (
+CREATE TABLE featured_product (
     id SERIAL,
     date date
 );
 
-CREATE TABLE "single_featured_product" (
+CREATE TABLE single_featured_product (
     id_product integer,
     id_featured_product integer
 );
