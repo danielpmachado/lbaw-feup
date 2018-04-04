@@ -1,4 +1,22 @@
 -- Tables
+DROP TABLE IF EXISTS brand CASCADE;
+DROP TABLE IF EXISTS favorite CASCADE;
+DROP TABLE IF EXISTS model CASCADE;
+DROP TABLE IF EXISTS "order" CASCADE;
+DROP TABLE IF EXISTS payment CASCADE;
+DROP TABLE IF EXISTS product CASCADE;
+DROP TABLE IF EXISTS "user" CASCADE;
+DROP TABLE IF EXISTS history_product CASCADE;
+DROP TABLE IF EXISTS product_category CASCADE;
+DROP TABLE IF EXISTS single_category CASCADE;
+DROP TABLE IF EXISTS product_order CASCADE;
+DROP TABLE IF EXISTS featured_product CASCADE;
+DROP TABLE IF EXISTS review CASCADE;
+DROP TABLE IF EXISTS single_history_product CASCADE;
+DROP TABLE IF EXISTS single_featured_product CASCADE;
+
+
+
 
 CREATE TABLE brand (
     id SERIAL,
@@ -8,7 +26,7 @@ CREATE TABLE brand (
 CREATE TABLE favorite (
     id_user integer,
     id_product integer,
-    addition_date integer NOT NULL
+    addition_date timestamp with time zone
 );
 
 
@@ -33,6 +51,7 @@ CREATE TABLE "order" (
 
 CREATE TABLE payment (
     id SERIAL,
+    id_order integer,
     method text,
     amount real,
     date timestamp with time zone
@@ -44,7 +63,7 @@ CREATE TABLE product (
     description text NOT NULL,
     stock integer,
     price real,
-    model_id integer,
+    id_model integer,
     CONSTRAINT stock_positive CHECK ((stock >= 0)),
     CONSTRAINT price_positive CHECK ((price > 0))
 );
@@ -129,11 +148,11 @@ ALTER TABLE ONLY model
 ALTER TABLE ONLY model
     ADD CONSTRAINT model_name UNIQUE (name);
 
-ALTER TABLE ONLY order
+ALTER TABLE ONLY "order"
     ADD CONSTRAINT order_pkey PRIMARY KEY (id);
 
 ALTER TABLE ONLY payment
-    ADD CONSTRAINT payment_pkey PRIMARY KEY (id, id_order);
+    ADD CONSTRAINT payment_pkey PRIMARY KEY (id);
 
 ALTER TABLE ONLY product
     ADD CONSTRAINT product_pkey PRIMARY KEY (id);
@@ -141,8 +160,14 @@ ALTER TABLE ONLY product
 ALTER TABLE ONLY product
     ADD CONSTRAINT product_name UNIQUE (name);
 
+ALTER TABLE ONLY history_product
+ADD CONSTRAINT  history_product_pkey PRIMARY KEY (id);
+
 ALTER TABLE ONLY product_category
     ADD CONSTRAINT product_category_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY featured_product
+    ADD CONSTRAINT featured_product_pkey PRIMARY KEY (id);
 
 ALTER TABLE ONLY product_order
     ADD CONSTRAINT product_order_pkey PRIMARY KEY (id_product,id_order);
@@ -153,17 +178,20 @@ ALTER TABLE ONLY review
 ALTER TABLE ONLY single_category
     ADD CONSTRAINT single_category_pkey PRIMARY KEY (id_product, id_product_category);
 
-ALTER TABLE ONLY user
+ALTER TABLE ONLY "user"
     ADD CONSTRAINT user_pkey PRIMARY KEY (id);
 
-ALTER TABLE ONLY user
+ALTER TABLE ONLY "user"
     ADD CONSTRAINT user_email_key UNIQUE (email);
+
+ALTER TABLE ONLY single_featured_product
+    ADD CONSTRAINT single_featured_product_pkey PRIMARY KEY (id_product, id_featured_product);
 
 
     -- Foreign Keys
 
 ALTER TABLE ONLY favorite
-    ADD CONSTRAINT favorite_id_user_fkey FOREIGN KEY (id_user) REFERENCES user(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT favorite_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY favorite
     ADD CONSTRAINT favorite_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
@@ -171,11 +199,11 @@ ALTER TABLE ONLY favorite
 ALTER TABLE ONLY model
     ADD CONSTRAINT model_id_brand_fkey FOREIGN KEY (id_brand) REFERENCES brand(id) ON UPDATE CASCADE;
 
-ALTER TABLE ONLY order
-    ADD CONSTRAINT order_id_user_fkey FOREIGN KEY (id_user) REFERENCES user(id) ON UPDATE CASCADE;
+ALTER TABLE ONLY "order"
+    ADD CONSTRAINT order_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY payment
-    ADD CONSTRAINT payment_id_order_fkey FOREIGN KEY (id_order) REFERENCES order(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT payment_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product
     ADD CONSTRAINT product_id_model_fkey FOREIGN KEY (id_model) REFERENCES model(id) ON UPDATE CASCADE;
@@ -184,10 +212,10 @@ ALTER TABLE ONLY product_order
     ADD CONSTRAINT product_order_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product_order
-    ADD CONSTRAINT product_order_id_order_fkey FOREIGN KEY (id_order) REFERENCES order(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT product_order_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY review
-    ADD CONSTRAINT review_id_user_fkey FOREIGN KEY (id_user) REFERENCES user(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT review_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY review
     ADD CONSTRAINT review_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
@@ -208,4 +236,6 @@ ALTER TABLE ONLY single_featured_product
     ADD CONSTRAINT single_featured_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_featured_product
-    ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON UPDATE CASCADE;
+ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON UPDATE CASCADE;
+
+
