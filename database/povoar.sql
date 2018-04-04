@@ -265,3 +265,39 @@ INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (1
 INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (7,2);
 INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (6,3);
 INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (2,4);
+
+CREATE FUNCTION delivey_date() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+  IF EXISTS (SELECT * FROM review WHERE NEW.delivery_date <= CURRENT_TIMESTAMP) THEN
+    RAISE EXCEPTION 'The delivery date must be after the actual date';
+  END IF;
+  RETURN NEW;
+END
+$BODY$
+LANGUAGE plpgsql;
+ 
+CREATE TRIGGER delivery_date
+  BEFORE INSERT ON “order”
+  FOR EACH ROW
+    EXECUTE PROCEDURE delivey_date();
+CREATE FUNCTION review_product() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+  IF EXISTS (SELECT * FROM review WHERE NEW.id_user = id_user AND NEW.id_product = id_product) THEN
+    RAISE EXCEPTION 'An user can only make one review per product';
+  END IF;
+  RETURN NEW;
+END
+$BODY$
+LANGUAGE plpgsql;
+ 
+CREATE TRIGGER review_product
+  BEFORE INSERT ON review
+  FOR EACH ROW
+    EXECUTE PROCEDURE review_product();
+
+CREATE INDEX search_idx ON product USING GIST (to_tsvector('english', name));
+CREATE INDEX order_delivery_date ON “order” USING btree (delivery_date);
+ CREATE INDEX email_user ON "user" USING hash (email);
+
