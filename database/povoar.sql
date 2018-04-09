@@ -276,7 +276,7 @@ BEGIN
 END
 $BODY$
 LANGUAGE plpgsql;
- 
+
 CREATE TRIGGER delivery_date
   BEFORE INSERT ON “order”
   FOR EACH ROW
@@ -291,13 +291,38 @@ BEGIN
 END
 $BODY$
 LANGUAGE plpgsql;
- 
-CREATE TRIGGER review_product
-  BEFORE INSERT ON review
+
+CREATE FUNCTION update_history() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+  INSERT INTO single_history_product (id_history_product, id_product)
+SELECT NEW.id, date, description, price FROM history_product WHERE NEW.id = history_product.id;
+  RETURN NEW;
+END
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER update_history
+  AFTER INSERT ON history_product
   FOR EACH ROW
-    EXECUTE PROCEDURE review_product();
+    EXECUTE PROCEDURE update_history();
+
+CREATE FUNCTION insert_single_featured_product() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+  INSERT INTO single_featured_product (id_product, id_featured_product)
+SELECT NEW.id, date FROM featured_product WHERE NEW.id = featured_product.id;
+  RETURN NEW;
+END
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER insert_single_featured_product
+  AFTER INSERT ON featured_product
+  FOR EACH ROW
+    EXECUTE PROCEDURE insert_single_featured_product();
+
 
 CREATE INDEX search_idx ON product USING GIST (to_tsvector('english', name));
 CREATE INDEX order_delivery_date ON “order” USING btree (delivery_date);
  CREATE INDEX email_user ON "user" USING hash (email);
-
