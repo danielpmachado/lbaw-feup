@@ -2,6 +2,8 @@
 
 Online Shop - Tech4U
 
+**Developers**
+
 Daniel Pereira Machado - up201506365@fe.up.pt<br/>
 David Rafael Silva Falcão - up201506571@fe.up.pt<br/>
 José Pedro Dias de Almeida Machado - up201504779@fe.up.pt<br/>
