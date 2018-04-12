@@ -14,3 +14,14 @@
 * A1: [Project presentation](https://github.com/dolfander/lbaw1753/wiki/A1:-Technology-Store---Tech4U)
 * A2: [Personas and Usage Scenarios](https://github.com/dolfander/lbaw1753/wiki/A2:-Actors-and-User-stories)
 * A3: [User Interfaces Prototype]
+
+#### Database specification
+* A4: [Conceptual Data Model]
+* A5: [Relational schema, validation and schema refinement](https://github.com/dolfander/lbaw1753/wiki/A5:-Relational-Schema,-validation-and-schema-refinement)
+* A6: [Integrity constraints. indexes, triggers, user functions, database populated with data](https://github.com/dolfander/lbaw1753/wiki/A6:-Indexes,-triggers,-user-functions-and-population)
+#### Architecture specification and Prototype
+* A7: [High-level architecture. Privileges. Web resources specification](https://github.com/dolfander/lbaw1753/wiki/A7:--High-level-architecture.-Privileges.-Web-resources-specification)
+* A8: [Vertical Prototype]
+* A9: [Main Accesses to the database and transactions]
+#### Product and Presentation
+* A10: [Product]
