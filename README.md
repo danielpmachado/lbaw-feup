@@ -1,10 +1,16 @@
 # LBAW1753
 
-Online Shop - Tech4U
+## Online Shop - Tech4U
 
-**Developers**
+### Developers
 
-Daniel Pereira Machado - up201506365@fe.up.pt<br/>
-David Rafael Silva Falcão - up201506571@fe.up.pt<br/>
-José Pedro Dias de Almeida Machado - up201504779@fe.up.pt<br/>
-Sofia Catarina Bahamonde Alves - up201504570@fe.up.pt<br/>
+* Daniel Pereira Machado 
+* David Rafael Silva Falcão 
+* José Pedro Dias de Almeida Machado 
+* Sofia Catarina Bahamonde Alves 
+
+### Artefacts 
+User Requirements specification
+A1: Project presentation
+A2: Personas and Usage Scenarios
+A3: User Interfaces Prototype
