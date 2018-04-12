@@ -10,7 +10,9 @@
 * Sofia Catarina Bahamonde Alves 
 
 ### Artefacts 
-User Requirements specification
-A1: Project presentation
-A2: Personas and Usage Scenarios
-A3: User Interfaces Prototype
+
+**User Requirements specification**
+
+* A1: Project presentation
+* A2: Personas and Usage Scenarios
+* A3: User Interfaces Prototype
