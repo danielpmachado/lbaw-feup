@@ -237,5 +237,3 @@ ALTER TABLE ONLY single_featured_product
 
 ALTER TABLE ONLY single_featured_product
 ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON UPDATE CASCADE;
-
-
