@@ -8,7 +8,7 @@
 			·
 			<a href="/faq">FAQ</a>
 			·
-			<a href="user.html">Profile</a>
+			<a href="/user">Profile</a>
 			·
 			<a href="mycart.html">Cart</a>
 		</p>

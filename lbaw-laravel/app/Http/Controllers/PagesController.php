@@ -17,4 +17,8 @@ class PagesController extends Controller
     public function faq(){
         return view('pages.faq');
     }
+
+    public function user(){
+        return view('pages.user');
+    }
 }
