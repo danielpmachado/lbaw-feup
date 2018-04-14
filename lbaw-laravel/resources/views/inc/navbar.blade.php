@@ -1,20 +1,25 @@
 
 <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" id="main-nav">
+
     <a class="navbar-brand" href="/">{{ config('app.name', 'Tech4U') }}</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbar1">
+
       <form class="form-inline input-group">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
         	<span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
         </div>
       </form>
+
       <ul class="navbar-nav ml-auto">
         <li class="nav-item ">
-            <div class="dropdown show ">
+            @guest
+            <div class="dropdown show">
                 <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-user"></i>Sign in
                 </a>
@@ -40,16 +45,38 @@
                       <div class="g-signin2" data-width="180" data-height="40" data-longtitle="true"></div>
                     </form>
                     <div class="dropdown-divider"></div>
-                    <a  href="register.html">New here? Sign up</a><br>
+                    <a  href="{{ route('register') }}">New here? Sign up</a><br>
                     <a  href="#">Forgot your password?</a>
                 </div>
               </div>
+            @else
+            <div class="dropdown">
+                <div class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ Auth::user()->name }}
+                  <div class="dropdown-menu pull-left">
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <a class="dropdown-item" href="#">Cart</a>
+                      <a class="dropdown-item" href="#">Wish List</a>
+                      <div class="dropdown-divider"></div>
+                          <a href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                              Logout
+                          </a>
+
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              {{ csrf_field() }}
+                          </form>
+                  </div>
+            </div>
+            @endguest
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
         </li>
+
       </ul>
    </div>
 </nav>
-
 
