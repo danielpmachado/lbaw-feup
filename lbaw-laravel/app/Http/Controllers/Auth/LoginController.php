@@ -18,10 +18,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers {
-        logout as performLogout;
-    }
-    
+    use AuthenticatesUsers;
     
 
     /**
@@ -41,10 +38,4 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function logout(Request $request)
-    {
-        print("Hello World");
-        $this->performLogout($request);
-        return redirect()->route('/faq');
-    }
 }

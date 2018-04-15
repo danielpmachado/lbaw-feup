@@ -101,7 +101,8 @@ CREATE TABLE "user" (
     password text NOT NULL,
     address text,
     city text,
-    permissions text NOT NULL
+    permissions text NOT NULL,
+    remember_token VARCHAR
 );
 
 

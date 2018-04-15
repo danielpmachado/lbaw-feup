@@ -26,8 +26,7 @@
                       <a class="dropdown-item" href="#">Profile</a>
                       <a class="dropdown-item" href="#">Cart</a>
                       <a class="dropdown-item" href="#">Wish List</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="button" href="{{ url('/logout') }}"> Logout </a>
+                      <a class="dropdown-item" href="#">Purchase History</a>
                   </div>
             </div>
             @else
@@ -85,6 +84,12 @@
         <li class="nav-item">
           <a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
         </li>
+
+        @if (Auth::check())
+        <li class="nav-item">
+            <a class="nav-link"  href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i></a>
+        </li>
+        @endif
 
       </ul>
    </div>
