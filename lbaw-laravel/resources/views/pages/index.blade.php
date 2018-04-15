@@ -8,13 +8,14 @@
   </ol>
   <div class="carousel-inner " role="listbox">
     <div class="carousel-item active">
-      <img class="d-block w-100 text-center" alt="First slide" src="images/asus0.png ">
+      <img class="d-block w-100 text-center" alt="First slide" src="{{ URL::to('/') }}/images/asus0.png">
+      
       <div class="carousel-caption ">
            <a href="#" class="btn btn-dark btn-capsul px-4 py-2">Explore More</a>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" alt="First slide" src="images/asus00.png">
+      <img class="d-block w-100" alt="First slide" src="{{ URL::to('/') }}/images/asus00.png">
       <div class="carousel-caption ">
            <a href="#" class="btn btn-dark btn-capsul px-4 py-2">Explore More</a>
       </div>
