@@ -16,6 +16,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/faq', 'PagesController@faq');
 Route::get('/user', 'PagesController@user');
+Route::get('/404', 'PagesController@error404');
 
 
 // Authentication
