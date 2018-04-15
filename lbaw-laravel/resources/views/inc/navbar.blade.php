@@ -18,19 +18,48 @@
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item ">
-            @guest
+            @if (Auth::check())
+            <div class="dropdown">
+                <div class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ Auth::user()->name }}
+                  <div class="dropdown-menu pull-left">
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <a class="dropdown-item" href="#">Cart</a>
+                      <a class="dropdown-item" href="#">Wish List</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="button" href="{{ url('/logout') }}"> Logout </a>
+                  </div>
+            </div>
+            @else
             <div class="dropdown show">
                 <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-user"></i>Sign in
                 </a>
                 <div class="dropdown-menu " id="sign-in">
-                   <form class="my-3 mx-3 p-0 p-0">
-                      <div class="form-group">
-                        <input type="email" class="form-control" id="sign-in-usr" placeholder="Username">
+
+                   <form class="my-3 mx-3 p-0 p-0" method="POST" action="{{ route('login') }}">
+                      {{ csrf_field() }}
+
+                      <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                          <input id="sign-in-usr" id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
+
+                          @if ($errors->has('email'))
+                              <span class="help-block">
+                                  <strong>{{ $errors->first('email') }}</strong>
+                              </span>
+                          @endif
                       </div>
-                      <div class="form-group">
-                        <input type="password" class="form-control" id="sign-in-pw" placeholder="Password">
+
+                      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <input id="sign-in-pw" type="password" class="form-control" name="password" required placeholder="Password">
+
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
                       </div>
+
                       <div class="form-group">
                           <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -44,32 +73,13 @@
                       </div>
                       <div class="g-signin2" data-width="180" data-height="40" data-longtitle="true"></div>
                     </form>
+
                     <div class="dropdown-divider"></div>
                     <a  href="{{ route('register') }}">New here? Sign up</a><br>
                     <a  href="#">Forgot your password?</a>
                 </div>
-              </div>
-            @else
-            <div class="dropdown">
-                <div class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ Auth::user()->name }}
-                  <div class="dropdown-menu pull-left">
-                      <a class="dropdown-item" href="#">Profile</a>
-                      <a class="dropdown-item" href="#">Cart</a>
-                      <a class="dropdown-item" href="#">Wish List</a>
-                      <div class="dropdown-divider"></div>
-                          <a href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                                       document.getElementById('logout-form').submit();">
-                              Logout
-                          </a>
-
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              {{ csrf_field() }}
-                          </form>
-                  </div>
             </div>
-            @endguest
+            @endif
         </li>
 
         <li class="nav-item">
