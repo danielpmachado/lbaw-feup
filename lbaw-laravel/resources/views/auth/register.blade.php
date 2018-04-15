@@ -41,17 +41,19 @@
                 @endif
             </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                <input placeholder="Address" id="adress" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
             </div>
+            
             <div class="form-row">
-                <div class="form-group col-md-8">
-                    <input type="text" class="form-control" id="inputCity" placeholder="City">
+                <div class="form-group col-md-8 {{ $errors->has('city') ? ' has-error' : '' }}">
+                    <input placeholder="city" id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required>
                 </div>
                 <div class="form-group col-md-4">
                     <input type="text" class="form-control" id="inputZip" placeholder="Zip">
                 </div>
             </div>
+
             <div class="form-group">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="invalidCheck2">
