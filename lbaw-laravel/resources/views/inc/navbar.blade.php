@@ -21,7 +21,7 @@
             @if (Auth::check())
             <div class="dropdown">
                 <div class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ Auth::user()->name }}
+                  {{ Auth::user()->username }}
                   <div class="dropdown-menu pull-left">
                       <a class="dropdown-item" href="#">Profile</a>
                       <a class="dropdown-item" href="#">Cart</a>
@@ -94,4 +94,3 @@
       </ul>
    </div>
 </nav>
-
