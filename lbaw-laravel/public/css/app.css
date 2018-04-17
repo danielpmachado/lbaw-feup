@@ -142,24 +142,21 @@
   
   }
   
-  #main-nav .dropdown-menu{
-    text-align: center;
-  }
-  
-  /*
-  -----------
-    SIGN IN
-  -----------
-  */
-  
   #sign-in{
+    text-align: center;
     border-radius:0px;
     padding:15px;
     background-color: var(--main-text-color);
   }
-  
-  
-  
+
+  #user-menu{
+    border-radius: 0px;
+    background-color: var(--main-text-color);
+  }
+
+  #user-menu a:hover{
+    background-color: white;
+  }
   
   
   /*

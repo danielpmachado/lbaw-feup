@@ -1,18 +1,14 @@
 <footer class="footer-distributed">
 	<div class="footer-left">
-		<h3>Tech4U</h3>
+		<h3>{{ config('app.name', 'Tech4U') }}</h3>
 		<p class="footer-links">
 			<a href="/">Home</a>
 			·
 			<a href="/about">About</a>
 			·
 			<a href="/faq">FAQ</a>
-			·
-			<a href="/user">Profile</a>
-			·
-			<a href="mycart.html">Cart</a>
 		</p>
-		<p class="footer-copyright">Tech4U &copy; Copyright 2015</p>
+		<p class="footer-copyright">{{ config('app.name', 'Tech4U') }} &copy; Copyright 2015</p>
 	</div>
 
 	<div class="footer-center">

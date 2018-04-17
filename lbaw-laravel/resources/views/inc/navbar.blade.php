@@ -22,9 +22,8 @@
             <div class="dropdown">
                 <div class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{ Auth::user()->name }}
-                  <div class="dropdown-menu pull-left">
+                  <div class="dropdown-menu pull-left" id="user-menu">
                       <a class="dropdown-item" href="#">Profile</a>
-                      <a class="dropdown-item" href="#">Cart</a>
                       <a class="dropdown-item" href="#">Wish List</a>
                       <a class="dropdown-item" href="#">Purchase History</a>
                   </div>
