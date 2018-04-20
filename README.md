@@ -4,8 +4,8 @@
 
 ### Developers
 * [Daniel Pereira Machado](https://github.com/dolfander)
-* [David Rafael Silva Falcão](https://github.com/dolfander)
-* [José Pedro Dias de Almeida Machado](https://github.com/dolfander)
+* [David Rafael Silva Falcão](https://github.com/davidrsfalcao)
+* [José Pedro Dias de Almeida Machado](https://github.com/TrocaTudo95)
 * [Sofia Catarina Bahamonde Alves](https://github.com/kyahra)
 
 ### Artefacts 
