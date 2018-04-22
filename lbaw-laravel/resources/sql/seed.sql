@@ -185,6 +185,9 @@ ALTER TABLE ONLY "user"
 ALTER TABLE ONLY "user"
     ADD CONSTRAINT user_email_key UNIQUE (email);
 
+ALTER TABLE ONLY "user"
+    ADD CONSTRAINT username_key UNIQUE (username);
+
 ALTER TABLE ONLY single_featured_product
     ADD CONSTRAINT single_featured_product_pkey PRIMARY KEY (id_product, id_featured_product);
 
@@ -513,3 +516,65 @@ INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (1
 INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (7,2);
 INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (6,3);
 INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (2,4);
+
+
+-- CREATE FUNCTION delivey_date() RETURNS TRIGGER AS
+-- $BODY$
+-- BEGIN
+--   IF EXISTS (SELECT * FROM review WHERE NEW.delivery_date <= CURRENT_TIMESTAMP) THEN
+--     RAISE EXCEPTION 'The delivery date must be after the actual date';
+--   END IF;
+--   RETURN NEW;
+-- END
+-- $BODY$
+-- LANGUAGE plpgsql;
+--
+-- CREATE TRIGGER delivery_date
+--   BEFORE INSERT ON "order"
+--   FOR EACH ROW
+--     EXECUTE PROCEDURE delivey_date();
+-- CREATE FUNCTION review_product() RETURNS TRIGGER AS
+-- $BODY$
+-- BEGIN
+--   IF EXISTS (SELECT * FROM review WHERE NEW.id_user = id_user AND NEW.id_product = id_product) THEN
+--     RAISE EXCEPTION 'An user can only make one review per product';
+--   END IF;
+--   RETURN NEW;
+-- END
+-- $BODY$
+-- LANGUAGE plpgsql;
+--
+-- CREATE FUNCTION update_history() RETURNS TRIGGER AS
+-- $BODY$
+-- BEGIN
+--   INSERT INTO single_history_product (id_history_product, id_product)
+-- SELECT NEW.id, date, description, price FROM history_product WHERE NEW.id = history_product.id;
+--   RETURN NEW;
+-- END
+-- $BODY$
+-- LANGUAGE plpgsql;
+--
+-- CREATE TRIGGER update_history
+--   AFTER INSERT ON history_product
+--   FOR EACH ROW
+--     EXECUTE PROCEDURE update_history();
+--
+-- CREATE FUNCTION insert_single_featured_product() RETURNS TRIGGER AS
+-- $BODY$
+-- BEGIN
+--   INSERT INTO single_featured_product (id_product, id_featured_product)
+-- SELECT NEW.id, date FROM featured_product WHERE NEW.id = featured_product.id;
+--   RETURN NEW;
+-- END
+-- $BODY$
+-- LANGUAGE plpgsql;
+--
+-- CREATE TRIGGER insert_single_featured_product
+--   AFTER INSERT ON featured_product
+--   FOR EACH ROW
+--     EXECUTE PROCEDURE insert_single_featured_product();
+
+
+CREATE INDEX search_idx ON product USING GIST (to_tsvector('english', name));
+CREATE INDEX order_delivery_date ON "order" USING btree (delivery_date);
+CREATE INDEX email_user ON "user" USING hash (email);
