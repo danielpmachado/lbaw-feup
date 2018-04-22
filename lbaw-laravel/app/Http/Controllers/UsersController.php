@@ -7,8 +7,16 @@ use App\User;
 
 class UsersController extends Controller
 {
-    public function profile($username){
-       $user = User::whereUsername($username)->first();
-       return view('pages.user');
+    public function profile($id){
+       $user = User::find($id);
+        return view('pages.user',compact('user'));
+    }
+
+    public function update($id){
+
+        $user = User::find($id);;
+        $user->username = "Alternativa";
+        $user->save();
+        
     }
 }

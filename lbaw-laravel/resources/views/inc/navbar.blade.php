@@ -18,17 +18,7 @@
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item ">
-            @if (Auth::check())
-            <div class="dropdown">
-                <div class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ Auth::user()->username }}
-                  <div id="user-menu" class="dropdown-menu pull-left">
-                      <a class="dropdown-item" href="#">Profile</a>
-                      <a class="dropdown-item" href="#">Wish List</a>
-                      <a class="dropdown-item" href="#">Purchase History</a>
-                  </div>
-            </div>
-            @else
+            @if (!Auth::check())
             <div class="dropdown show">
                 <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-user"></i>Sign in
@@ -85,9 +75,13 @@
         </li>
 
         @if (Auth::check())
+        <li>
+        <a class="nav-link" href="{{route('profile', ['id' =>Auth::user()->id])}}"><i class="fa fa-user"></i></a>
+        </li>
         <li class="nav-item">
             <a class="nav-link"  href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i></a>
         </li>
+        
         @endif
 
       </ul>

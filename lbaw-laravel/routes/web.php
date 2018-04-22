@@ -17,7 +17,8 @@ Route::get('/about', 'PagesController@about');
 Route::get('/faq', 'PagesController@faq');
 Route::get('/404', 'PagesController@error404');
 
-Route::get('/users/{user_id}','UsersController@profile');
+Route::get('/users/{id}','UsersController@profile')->name('profile');
+// Route::get('/users/{id}/update','UsersController@update');
 
 
 // Authentication
