@@ -7,8 +7,8 @@ use App\User;
 
 class UsersController extends Controller
 {
-    public function profile($user_id){
-       $user = User::whereUsername($user_id)->first();
-       return $user;
+    public function profile($username){
+       $user = User::whereUsername($username)->first();
+       return view('pages.user');
     }
 }
