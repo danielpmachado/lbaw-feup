@@ -155,7 +155,7 @@
   }
 
   #user-menu a:hover{
-    background-color: white;
+    background-color: var(  --second-bg-color);
   }
   
   
