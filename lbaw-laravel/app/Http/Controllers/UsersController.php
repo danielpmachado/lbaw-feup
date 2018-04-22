@@ -9,7 +9,7 @@ class UsersController extends Controller
 {
     public function profile($id){
        $user = User::find($id);
-        return view('pages.user',compact('user'));
+        return view('user.profile',compact('user'));
     }
 
     public function update($id){
