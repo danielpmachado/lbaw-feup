@@ -408,6 +408,41 @@ FOOTER
   	PROFILE
   -----------
   */
+
+.inputfile {
+  margin: 0 2em;
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    border-radius: 5px;  
+    text-align: center;
+    margin: 0 2em;
+    padding: 0.5em 1em;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
 .profile{
   margin-bottom: 20px;
 }
