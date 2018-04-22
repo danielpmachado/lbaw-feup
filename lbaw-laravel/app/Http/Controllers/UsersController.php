@@ -23,6 +23,7 @@ class UsersController extends Controller
     public function delete($id){
         $user = User::find($id);  
         $user->delete();
+        return redirect()->route('home');
    }
 
 }
