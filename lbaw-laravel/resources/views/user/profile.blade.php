@@ -34,14 +34,19 @@
 							<a> Email </a> <h5>{{$user->email}} </h5>
 							<a> Password</a> <h5> ********** </h5>
 							<button type="button" class="btn btn-outline-primary"><span class="glyphicon glyphicon-pencil"></span>  Edit Info</button>
+							
+							<form action="{{ route('delete_user', ['id' => Auth::user()->id]) }}" method="post">
+								{{ csrf_field() }}
+								{{ method_field('DELETE') }}
+								<div class="form-group">
+									<button type="submit" class="btn btn-danger">DELETE</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<form class="update_user">
-			<input type="text" name="username" placeholder="Username">
-	  	</form>
 	</div>
 </div>
 				
