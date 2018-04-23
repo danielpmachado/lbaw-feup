@@ -8,16 +8,13 @@ use App\User;
 class UsersController extends Controller
 {
     public function profile($id){
-       $user = User::find($id);
+        $user = User::find($id);
         return view('user.profile',compact('user'));
     }
 
-    public function update($id){
-
-        $user = User::find($id);;
-        $user->username = "Alternativa";
-        $user->save();
-        
+    public function showEditForm($id){
+        $user = User::find($id);
+        return view('user.edit', compact('user'));
     }
 
     public function delete($id){
@@ -25,5 +22,23 @@ class UsersController extends Controller
         $user->delete();
         return redirect()->route('home');
    }
+
+   public function update($id){ 
+
+        $this->validate(request(), [
+             'username' => 'required',
+        ]);
+
+        $user = User::find($id);  
+
+        $user->username = request('username');
+        $user->address = request('address');
+        $user->city = request('city');
+
+
+        $user->save();
+
+        return redirect()->route('home');
+    }
 
 }

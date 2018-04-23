@@ -18,7 +18,8 @@ Route::get('/faq', 'PagesController@faq');
 Route::get('/404', 'PagesController@error404');
 
 Route::get('/users/{id}','UsersController@profile')->name('profile');
-Route::get('/users/{id}/update','UsersController@update');
+ROUTE::get('/users/{id}/edit','UsersController@showEditForm')->name('edit_profile');
+Route::post('/users/{id}/update','UsersController@update')->name('update_user');
 Route::delete('/users/{id}/delete','UsersController@delete')->name('delete_user');
 
 

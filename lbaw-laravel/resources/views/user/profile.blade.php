@@ -33,7 +33,7 @@
 							<a> City </a> <h5>{{$user->city}}</h5>
 							<a> Email </a> <h5>{{$user->email}} </h5>
 							<a> Password</a> <h5> ********** </h5>
-							<button type="button" class="btn btn-outline-primary"><span class="glyphicon glyphicon-pencil"></span>  Edit Info</button>
+							<a href="{{route('edit_profile', ['id' => Auth::user()->id])}}" type="button" class="btn btn-outline-primary"><span class="glyphicon glyphicon-pencil"></span>  Edit Info</a>
 							
 							<form action="{{ route('delete_user', ['id' => Auth::user()->id]) }}" method="post">
 								{{ csrf_field() }}
