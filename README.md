@@ -16,7 +16,7 @@
 * A3: [User Interfaces Prototype]
 
 #### Database specification
-* A4: [Conceptual Data Model]
+* A4: [Conceptual Data Model](https://github.com/dolfander/lbaw1753/wiki/A4:-Conceptual-Data-Model)
 * A5: [Relational schema, validation and schema refinement](https://github.com/dolfander/lbaw1753/wiki/A5:-Relational-Schema,-validation-and-schema-refinement)
 * A6: [Integrity constraints. indexes, triggers, user functions, database populated with data](https://github.com/dolfander/lbaw1753/wiki/A6:-Indexes,-triggers,-user-functions-and-population)
 #### Architecture specification and Prototype
