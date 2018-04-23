@@ -12,7 +12,7 @@
 
 **User Requirements specification**
 * A1: [Project presentation](https://github.com/dolfander/lbaw1753/wiki/A1:-Technology-Store---Tech4U)
-* A2: [Personas and Usage Scenarios](https://github.com/dolfander/lbaw1753/wiki/A2:-Actors-and-User-stories)
+* A2: [Actors and Users stories](https://github.com/dolfander/lbaw1753/wiki/A2:-Actors-and-User-stories)
 * A3: [User Interfaces Prototype]
 
 #### Database specification
