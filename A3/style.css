@@ -420,7 +420,7 @@ FOOTER
 }
 
 .inputfile + label {
-    border-radius: 5px;  
+    border-radius: 5px;
     text-align: center;
     margin: 0 2em;
     padding: 0.5em 1em;
@@ -1146,4 +1146,65 @@ section#faq{
     box-shadow:inset 0px 4px 5px rgba(0,0,0,0.1);
     border-top:1px solid #000;
     border-radius:0;
+}
+
+/*
+NAVBAR test
+*/
+
+
+.mega-dropdown {
+  position: static !important;
+}
+/*
+.mega-dropdown-menu {
+    padding: 20px 0px;
+    width: 100%;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}*/
+
+.mega-dropdown-menu{
+  min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+}
+.mega-dropdown-menu li{
+ display: inline;
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+
+
+
+/*
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  color: #222;
+  padding: 3px 5px;
+}
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+}
+.mega-dropdown-menu .dropdown-header {
+  font-size: 18px;
+  color: #ff3546;
+  padding: 5px 60px 5px 5px;
+  line-height: 30px;
+}*/
+
+.drop-nav{
+  margin: 0;
 }
