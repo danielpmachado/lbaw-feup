@@ -21,7 +21,7 @@
 * A6: [Integrity constraints. indexes, triggers, user functions, database populated with data](https://github.com/dolfander/lbaw1753/wiki/A6:-Indexes,-triggers,-user-functions-and-population)
 #### Architecture specification and Prototype
 * A7: [High-level architecture. Privileges. Web resources specification](https://github.com/dolfander/lbaw1753/wiki/A7:--High-level-architecture.-Privileges.-Web-resources-specification)
-* A8: [Vertical Prototype]
+* A8: [Vertical Prototype](https://github.com/dolfander/lbaw1753/wiki/A8:-Vertical-prototype)
 * A9: [Main Accesses to the database and transactions]
 #### Product and Presentation
 * A10: [Product]
