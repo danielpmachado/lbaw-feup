@@ -22,6 +22,6 @@
 #### Architecture specification and Prototype
 * A7: [High-level architecture. Privileges. Web resources specification](https://github.com/dolfander/lbaw1753/wiki/A7:--High-level-architecture.-Privileges.-Web-resources-specification)
 * A8: [Vertical Prototype](https://github.com/dolfander/lbaw1753/wiki/A8:-Vertical-prototype)
-* A9: [Main Accesses to the database and transactions]
+* A9: [Main Accesses to the database and transactions](https://github.com/dolfander/lbaw1753/wiki/A9:-Main-Accesses-to-the-database-and-transactions)
 #### Product and Presentation
 * A10: [Product]
