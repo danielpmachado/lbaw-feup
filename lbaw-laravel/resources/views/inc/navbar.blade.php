@@ -70,19 +70,34 @@
             @endif
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
-        </li>
-
         @if (Auth::check())
-        <li>
+       <!-- <li>
         <a class="nav-link" href="{{route('profile', ['id' =>Auth::user()->id])}}"><i class="fa fa-user"></i></a>
         </li>
         <li class="nav-item">
             <a class="nav-link"  href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i></a>
         </li>
+    -->
+
+        
+
+        <li class="nav-item ">
+            <div class="dropdown show ">
+                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
+                  <i class="fa fa-user"></i> {{Auth::user()->username}}
+                </a>
+                <div class="dropdown-menu " id="sign-in" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{route('profile', ['id' =>Auth::user()->id])}}">My Profile</a>
+                <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a> 
+                </div>
+              </div>
+        </li>
         
         @endif
+
+        <li class="nav-item">
+            <a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
+          </li>
 
       </ul>
    </div>
