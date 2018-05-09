@@ -39,8 +39,32 @@
 			</div>
 			<div id="settings" class="tab-pane fade show">
 				<div class="card fav-card">
-             		<div class="card-header bg-dark text-light">Personal Info</div>
+             		<div class="card-header bg-dark text-light">Settings</div>
 					<div class="card-body">
+						<form form class="form-horizontal" method="POST" action="{{ route('update_user', ['id' => Auth::user()->id])}}">
+							{{ csrf_field() }}
+				
+							<div class="form-group {">
+								<input  id="name" type="text" class="form-control" name="username" value="{{ $user->username  }}" required autofocus>
+							</div>
+				
+							<div class="form-group">
+								<input  id="adress" type="text" class="form-control" name="address" value="{{ $user->address }}" required>
+							</div>
+				
+							<div class="form-row">
+								<div class="form-group col-md-8 ">
+									<input  id="city" type="text" class="form-control" name="city" value="{{ $user->city }}" required>
+								</div>
+								<div class="form-group col-md-4">
+									<input type="text" class="form-control" id="inputZip" placeholder="Zip">
+								</div>
+							</div>
+				
+							<div class="form-group">
+								<button type="submit" class="btn btn-dark ">Save Changes</button>
+							</div>
+						</form>
 						<a href="{{route('edit_profile', ['id' => Auth::user()->id])}}" type="button" class="btn btn-outline-primary"><span class="glyphicon glyphicon-pencil"></span>  Edit Info</a>
 						
 						<form action="{{ route('delete_user', ['id' => Auth::user()->id]) }}" method="post">
