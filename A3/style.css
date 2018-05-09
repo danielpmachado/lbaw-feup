@@ -410,7 +410,7 @@ FOOTER
   -----------
 */
 
-.profile-sidebar,.profile{
+.profile-sidebar, .profile-tabs{
   margin: 70px 0;
 }
 
@@ -455,7 +455,7 @@ FOOTER
 }
 
 
-.profile #overview a {
+ #overview a,.panel-body h5  {
   font-weight: bold;
   font-size: 17px;
   margin-bottom: 1em;
