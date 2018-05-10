@@ -64,13 +64,8 @@
 							</div>
 
 							<div class="form-group">
-								<a> Password </a>
-								<input  id="password" type="password" class="form-control" name="password" value="0123456789" required>
-							</div>
-
-							<div class="form-group">
-								<a> Confirm Password </a>
-								<input  id="confirm-password" type="password" class="form-control" name="confirm-password" value="0123456789" required>
+								<a> Email </a>
+								<input  id="email" type="text" class="form-control" name="email" value="{{ $user->email }}" required>
 							</div>
 
 							<div class="form-group float-left">

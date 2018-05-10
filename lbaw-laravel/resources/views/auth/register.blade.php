@@ -47,7 +47,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-8 {{ $errors->has('city') ? ' has-error' : '' }}">
-                    <input placeholder="city" id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required>
+                    <input placeholder="City" id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required>
                 </div>
                 <div class="form-group col-md-4">
                     <input type="text" class="form-control" id="inputZip" placeholder="Zip">

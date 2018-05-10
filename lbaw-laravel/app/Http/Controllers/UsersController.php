@@ -21,7 +21,10 @@ class UsersController extends Controller
    public function update($id){ 
 
         $this->validate(request(), [
-             'username' => 'required',
+            'username' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:user',
+            'city' => 'required|string|max:255',
         ]);
 
         $user = User::find($id);  
@@ -29,12 +32,11 @@ class UsersController extends Controller
         $user->username = request('username');
         $user->address = request('address');
         $user->city = request('city');
-        $user->password = bcrypt(request('password'));
 
 
         $user->save();
 
-        return redirect()->route('home');
+        return redirect()->route('profile',['id' => $user->id]);
     }
 
 }
