@@ -1,10 +1,9 @@
 TODO list
 
 User 
-1 - Profile permissions
-2 - Change Password
-3 - Insert zip code in db
-4 - Ask for password on account deletion
-5 - Profile picture in db
+-> Change Password
+-> Insert zip code in db
+-> Ask for password on account deletion
+-> Profile picture in db
 
 

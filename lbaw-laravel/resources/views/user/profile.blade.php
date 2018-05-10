@@ -17,7 +17,9 @@
 					<li class="active"><a data-toggle="pill" href="#overview"><i class="fa fa-user"></i> Personal Info</a></li>
 					<li><a data-toggle="pill" href="#favorites"><i class="fa fa-heart"></i> Favorites</a></a></li>
 					<li><a data-toggle="pill" href="#history"><i class="fa fa-history"></i> History </a></li>
+					@if(Auth::id() == $user->id)
 					<li><a data-toggle="pill" href="#settings"><i class="fa fa-cogs"></i> Settings </a></li>
+					@endif
 					</ul>
 				</div>
 			</div>
@@ -35,6 +37,7 @@
 					</div>
 				</div>
 			</div>
+			@if(Auth::id() == $user->id)
 			<div id="settings" class="tab-pane fade show">
 				<div class="card fav-card">
              		<div class="card-header bg-dark text-light">Settings</div>
@@ -84,6 +87,7 @@
 					</div>
 				</div>
 			</div>
+			@endif
 		</div>
 	</div>
 </div>

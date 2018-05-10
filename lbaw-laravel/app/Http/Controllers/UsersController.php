@@ -32,6 +32,7 @@ class UsersController extends Controller
         $user->username = request('username');
         $user->address = request('address');
         $user->city = request('city');
+        $user->email = request('email');
 
 
         $user->save();
