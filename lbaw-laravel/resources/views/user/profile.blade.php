@@ -6,9 +6,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
-				<div class="profile-user-pic">
-					<img src="images/default.png" alt="" class="img-fluid rounded">
-				</div>
+				<img class="profile-user-pic" src="{{ URL::asset("images/default.png") }}" alt="Profile picture">
 				<div class="profile-user-title">
 					<div class="profile-user-name">
 						{{$user->username}}
@@ -74,7 +72,7 @@
 								<a> Confirm Password </a>
 								<input  id="confirm-password" type="password" class="form-control" name="confirm-password" value="0123456789" required>
 							</div>
-				
+
 							<div class="form-group float-left">
 								<button type="submit" class="btn btn-dark ">Save Changes</button>
 							</div>
