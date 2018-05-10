@@ -12,11 +12,6 @@ class UsersController extends Controller
         return view('user.profile',compact('user'));
     }
 
-    public function showEditForm($id){
-        $user = User::find($id);
-        return view('user.edit', compact('user'));
-    }
-
     public function delete($id){
         $user = User::find($id);  
         $user->delete();
@@ -34,6 +29,7 @@ class UsersController extends Controller
         $user->username = request('username');
         $user->address = request('address');
         $user->city = request('city');
+        $user->password = bcrypt(request('password'));
 
 
         $user->save();

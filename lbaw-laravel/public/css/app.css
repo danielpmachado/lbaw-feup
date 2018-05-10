@@ -452,7 +452,7 @@
 
 }
 
-#overview a {
+#overview a , #settings a{
   font-weight: bold;
   font-size: 17px;
   margin-bottom: 1em;
