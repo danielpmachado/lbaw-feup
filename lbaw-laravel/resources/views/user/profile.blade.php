@@ -76,7 +76,7 @@
 							</div>
 
 						</form>
-						
+
 						<form action="{{ route('delete_user', ['id' => Auth::user()->id]) }}" method="post">
 							{{ csrf_field() }}
 							{{ method_field('DELETE') }}

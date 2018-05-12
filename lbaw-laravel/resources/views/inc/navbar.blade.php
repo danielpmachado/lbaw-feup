@@ -64,7 +64,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a  href="{{ route('register') }}">New here? Sign up</a><br>
-                    <a  href="#">Forgot your password?</a>
+                    <a  href="{{ url('password/reset') }}">Forgot your password?</a>
                 </div>
             </div>
             @endif
