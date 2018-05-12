@@ -30,9 +30,10 @@
              		<div class="card-header bg-dark text-light">Personal Info</div>
 					<div class="card-body">
 						<a> Username </a> <p>{{$user->username}}</p>
+						<a> Email </a> <p>{{$user->email}} </p>
 						<a> Address </a> <p>{{$user->address}}</p>
 						<a> City </a> <p>{{$user->city}}</p>
-						<a> Email </a> <p>{{$user->email}} </p>
+						<a> Zip </a> <p>{{$user->zip}}</p>
 						<a> Password</a> <p> ********** </p>
 					</div>
 				</div>
@@ -62,7 +63,7 @@
 								</div>
 								<div class="form-group col-md-4">
 									<a> Zip </a>
-									<input type="text" class="form-control" id="inputZip" placeholder="Zip">
+									<input  id="zip" type="text" class="form-control" name="zip" value="{{ $user->zip }}" required>
 								</div>
 							</div>
 
