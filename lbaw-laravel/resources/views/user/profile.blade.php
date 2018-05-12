@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
-				<img class="profile-user-pic" src="{{ URL::asset("images/default.png") }}" alt="Profile picture">
+				<img class="profile-user-pic" src="/images/avatars/{{$user->avatar}}" alt="Profile picture">
 				<div class="profile-user-title">
 					<div class="profile-user-name">
 						{{$user->username}}
@@ -43,7 +43,7 @@
 				<div class="card fav-card">
              		<div class="card-header bg-dark text-light">Settings</div>
 					<div class="card-body">
-						<form form class="form-horizontal" method="POST" action="{{ route('update_user', ['id' => Auth::user()->id])}}">
+						<form form class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{ route('update_user', ['id' => Auth::user()->id])}}">
 							{{ csrf_field() }}
 				
 							<div class="form-group">
@@ -70,6 +70,11 @@
 							<div class="form-group">
 								<a> Email </a>
 								<input  id="email" type="text" class="form-control" name="email" value="{{ $user->email }}" required>
+							</div>
+
+							<div class="form-group"> 
+								<a> Profile Image </a><br>
+								<input type="file" name="avatar">
 							</div>
 
 							<div class="form-group float-left">

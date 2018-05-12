@@ -108,6 +108,7 @@ CREATE TABLE "user" (
     city text,
     zip text,
     permissions text NOT NULL,
+    avatar text DEFAULT 'default.png',
     remember_token VARCHAR
 );
 

@@ -76,9 +76,9 @@
                 <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
                   <i class="fa fa-user"></i> {{Auth::user()->username}}
                 </a>
-                <div class="dropdown-menu " id="sign-in" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{{route('profile', ['id' =>Auth::user()->id])}}">My Profile</a>
-                <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a> 
+                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
+                    <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a> 
                 </div>
               </div>
         </li>

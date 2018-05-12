@@ -1,7 +1,6 @@
 TODO list
 
 User 
--> Profile picture in db
 -> Google authentication
 
 

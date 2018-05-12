@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Image;
 
 class UsersController extends Controller
 {
@@ -18,14 +19,11 @@ class UsersController extends Controller
         return redirect()->route('home');
    }
 
-   public function update($id){ 
+   public function update(Request $request,$id){ 
+        $avatar = $request->file('avatar');
+        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        Image::make($avatar)->save( public_path('/images/avatars/' . $filename ) );
 
-        $this->validate(request(), [
-            'username' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:user',
-            'city' => 'required|string|max:255',
-        ]);
 
         $user = User::find($id);  
 
@@ -33,6 +31,8 @@ class UsersController extends Controller
         $user->address = request('address');
         $user->city = request('city');
         $user->email = request('email');
+        $user->zip = request('zip');
+        $user->avatar = $filename;
 
 
         $user->save();
