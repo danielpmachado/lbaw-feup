@@ -1,8 +1,6 @@
 TODO list
 
 User 
--> Insert zip code in db
--> Ask for password on account deletion
 -> Profile picture in db
 -> Google authentication
 
