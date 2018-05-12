@@ -40,6 +40,15 @@ body{
   margin-left:-7em;
 }
 
+a#nav_signIn, a#nav_cart{
+  display: block;
+  line-height: 26px;
+  font-family: 'Montserrat', sans-serif;
+  -font-weight: bold;
+  font-size: 12.6px;
+  color: white;
+  -text-transform: uppercase;
+}
 
 
 div.abcRioButton.abcRioButtonLightBlue{
@@ -75,7 +84,7 @@ div.abcRioButton.abcRioButtonLightBlue{
 
 #main-nav .navbar-nav .nav-link,
 #catalog-nav .navbar-nav .nav-link{
-  font-size: 16px;
+  -font-size: 16px;
   color: var(--main-text-color);
 }
 
@@ -1240,7 +1249,19 @@ NAVBAR test
 }
 
 .dropdown.mega-dropdown a{
-  color: white;
+/*  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: bold;
+  font-weight: 13px;
+  text-transform: uppercase;*/
+  display: block;
+line-height: 26px;
+font-family: 'Montserrat', sans-serif;
+-font-weight: bold;
+font-size: 12.7px;
+color: white;
+text-transform: uppercase;
+
 
 }
 
