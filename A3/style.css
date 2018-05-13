@@ -1257,7 +1257,7 @@ NAVBAR test
   display: block;
 line-height: 26px;
 font-family: 'Montserrat', sans-serif;
--font-weight: bold;
+font-weight:700;
 font-size: 12.7px;
 color: white;
 text-transform: uppercase;
@@ -1290,28 +1290,28 @@ text-transform: uppercase;
 
 .nav .nav-column h3 {
     margin: 20px 0 10px 0;
-    line-height: 18px;
-
-    font-family: Helvetica, Arial, sans-serif;
+    display: block;
+    line-height: 20px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 14px;
-    color: #372f2b;
+    font-size: 12.7px;
+    color: black;
     text-transform: uppercase;
 }
 
 .nav .nav-column h3.orange { color: #ff722b; }
 
 .nav .nav-column li a {
-    display: block;
-    line-height: 26px;
-
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 13px;
-    color: #888888;
+    -display: block;
+    line-height: 35px;
+    font-family: 'Montserrat',Arial,Helvetica,sans-serif;
+    font-weight:lighter;
+    font-size: 12.9px;
+    color: grey;
+    text-transform:capitalize;
 }
 
-.nav .nav-column li a:hover { color: #666666; }
+.nav .nav-column li a:hover { color: black; }
 
 
 
