@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+    'client_id' => env('GOOGLE_ID'),         // Your GitHub Client ID
+    'client_secret' => env('GOOGLE_SECRET'), // Your GitHub Client Secret
+    'redirect' => env('GOOGLE_URL'),
+],
+
 ];
