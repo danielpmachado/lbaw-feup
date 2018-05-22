@@ -1,6 +1,15 @@
 TODO list
 
 User 
--> Google authentication
+-> Google authentication (JAMES)
+-> Wishlist
+-> Purchase History
+
+Products
+
+Reviews
+
+Cart
+
 
 

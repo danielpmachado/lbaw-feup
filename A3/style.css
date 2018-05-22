@@ -1227,6 +1227,8 @@ NAVBAR test
 }
 */
 
+
+
 .dropdown-menu.mega-dropdown-menu{
   opacity: 0;
   visibility: hidden;
@@ -1374,6 +1376,25 @@ h3.dropdown-header{
   }
 
   .mega-dropdown-menu.show .nav-column li{
-    display: none;
+    -display: none;
+  }
+
+  .mega-dropdown-menu{
+    padding:0;
+  }
+
+  .mega-dropdown-menu ul{
+    padding:0;
+  }
+
+  .mega-dropdown .nav-column h3{
+    color:white;
+  }
+
+   .mega-dropdown .nav-column li a{
+      display: none;
+  }
+  #image.nav-column{
+    display:none;
   }
 }
