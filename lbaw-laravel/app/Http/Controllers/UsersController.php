@@ -14,18 +14,18 @@ class UsersController extends Controller
     }
 
     public function delete($id){
-        $user = User::find($id);  
+        $user = User::find($id);
         $user->delete();
         return redirect()->route('home');
    }
 
-   public function update(Request $request,$id){ 
+   public function update(Request $request,$id){
         $avatar = $request->file('avatar');
         $filename = time() . '.' . $avatar->getClientOriginalExtension();
         Image::make($avatar)->save( public_path('/images/avatars/' . $filename ) );
 
 
-        $user = User::find($id);  
+        $user = User::find($id);
 
         $user->username = request('username');
         $user->address = request('address');
