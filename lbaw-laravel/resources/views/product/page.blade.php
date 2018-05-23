@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="catalog.html">Catalog</a></li>
-    <li class="breadcrumb-item active">{{$product->name}}</li>
-  </ol>
+<ol class="p_breadcrumb breadcrumb">
+    <li class="breadcrumb-item h6"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item h6"><a href="catalog.html">Catalog</a></li>
+    <li class="breadcrumb-item active h6">{{$product->name}}</li>
+</ol>
+<hr>
 <div class="container-fluid product-section">
 
 
