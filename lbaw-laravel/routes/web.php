@@ -35,7 +35,7 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
-
-
 //Product
 Route::get('/products/{id}','ProductController@page')->name('page');
+
+//Favorites

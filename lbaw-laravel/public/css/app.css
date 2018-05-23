@@ -457,12 +457,13 @@
 
     
   .p_breadcrumb{
-    margin: 10px 50px;
+    margin: 25px 0 0 80px;
+    padding:0;
     background-color: var(--main-text-color);
   }
   
   .p_breadcrumb a{
-    color: var(--main-hl-color);
+    color: var(--main-bg-color)k;
   }
   
   .product-section{

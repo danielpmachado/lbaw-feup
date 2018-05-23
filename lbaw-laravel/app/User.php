@@ -32,4 +32,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Get all of favorite posts for the user.
+     */
+    public function favorites()
+    {
+        return $this->belongsToMany(Product::class, 'favorite', 'id_user', 'id_product');
+    }
+
 }

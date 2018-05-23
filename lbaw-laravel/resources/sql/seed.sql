@@ -238,7 +238,7 @@ ALTER TABLE ONLY single_category
     ADD CONSTRAINT single_category_id_product_category_fkey FOREIGN KEY (id_product_category) REFERENCES product_category(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_history_product
-    ADD CONSTRAINT single_history_product_id_history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT single_history__history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_history_product
     ADD CONSTRAINT single_history_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
@@ -337,7 +337,7 @@ INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'
 INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Hamilton','ut lacus. Nulla tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus',737,134,12);
 
 
-INSERT INTO favorite (id_user,id_product,addition_date) VALUES (6,8,'2018-04-05');
+INSERT INTO favorite (id_user,id_product,addition_date) VALUES (1,1,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (6,9,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (3,8,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (15,6,'2018-04-05');

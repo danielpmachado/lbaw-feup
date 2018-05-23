@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\User;
 use Image;
@@ -10,12 +11,15 @@ class UsersController extends Controller
 {
     public function profile($id){
         $user = User::find($id);
-        return view('user.profile',compact('user'));
+        $favorites = $user->favorites;
+
+        return view('user.profile',compact('user','favorites'));
     }
 
     public function delete($id){
         $user = User::find($id);
         $user->delete();
+        
         return redirect()->route('home');
    }
 
