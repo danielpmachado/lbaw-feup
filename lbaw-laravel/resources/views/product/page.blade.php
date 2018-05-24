@@ -97,7 +97,7 @@
 							<textarea class="form-control" id="Textarea1" rows="4" placeholder="Leave your opinion"></textarea>
 						</div>
 					<div class="form-group">
-							<button type="submit" class="btn btn-dark ">Submit Comment</button>
+							<button id="submit_button" type="submit" class="btn btn-dark ">Submit Comment</button>
 					</div>
 				</form>
 			</div>
@@ -105,5 +105,4 @@
 	</div>
 	</div>
 </div>
-@endsection  
-      
+@endsection
