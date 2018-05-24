@@ -24,11 +24,6 @@ class UsersController extends Controller
    }
 
    public function update(Request $request,$id){
-        $avatar = $request->file('avatar');
-        $filename = time() . '.' . $avatar->getClientOriginalExtension();
-        Image::make($avatar)->save( public_path('/images/avatars/' . $filename ) );
-
-
         $user = User::find($id);
 
         $user->username = request('username');
@@ -36,8 +31,14 @@ class UsersController extends Controller
         $user->city = request('city');
         $user->email = request('email');
         $user->zip = request('zip');
-        $user->avatar = $filename;
-
+    
+        $avatar = $request->file('avatar');
+        
+        if($avatar != null){
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->save( public_path('/images/avatars/' . $filename ) );
+            $user->avatar = $filename;
+        }
 
         $user->save();
 

@@ -338,7 +338,7 @@ INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'
 
 
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (1,1,'2018-04-05');
-INSERT INTO favorite (id_user,id_product,addition_date) VALUES (6,9,'2018-04-05');
+INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,1,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (3,8,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (15,6,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (10,2,'2018-04-05');
@@ -353,7 +353,7 @@ INSERT INTO favorite (id_user,id_product,addition_date) VALUES (5,7,'2018-04-05'
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (6,4,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (5,10,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (10,7,'2018-04-05');
-INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,6,'2018-04-05');
+INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,3,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (9,7,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (12,8,'2018-04-05');
 

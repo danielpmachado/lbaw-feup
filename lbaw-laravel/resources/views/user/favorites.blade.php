@@ -2,15 +2,14 @@
     <div class="card fav-card">
         <div class="card-header bg-dark text-light">Favorites</div>
         <div class="card-body">
+            @foreach($favorites as $favorite)
             <div class="row">
-
-            @forelse ($favorites as $favorite)
                 <div class="col-12 col-sm-12 col-md-2 text-center">
                     <img class="img-responsive" src="/images/products/{{$favorite->pic}}" alt="prewiew" width="120" height="80">
                 </div>
 
                 <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                    <a class="product-name"><strong>{{ $favorite->name }}</strong></a>
+                    <a class="product-name" href="/products/{{ $favorite->id }}"><strong>{{ $favorite->name }}</strong></a>
                     <p>{{ $favorite->price }}</p>
                 </div>
 
@@ -24,12 +23,9 @@
                     </button>
                 </div>
                 @endif
-            @empty
-            <p>You have no favorite posts.</p>
-            @endforelse
-
             </div>
             <hr>
+            @endforeach
         </div>
     </div>
 </div>
