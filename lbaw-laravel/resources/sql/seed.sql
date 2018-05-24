@@ -66,6 +66,7 @@ CREATE TABLE product (
     stock integer,
     price real,
     id_model integer,
+    pic text DEFAULT 'default.png',
     CONSTRAINT stock_positive CHECK ((stock >= 0)),
     CONSTRAINT price_positive CHECK ((price > 0))
 );
@@ -237,7 +238,7 @@ ALTER TABLE ONLY single_category
     ADD CONSTRAINT single_category_id_product_category_fkey FOREIGN KEY (id_product_category) REFERENCES product_category(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_history_product
-    ADD CONSTRAINT single_history_product_id_history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT single_history__history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_history_product
     ADD CONSTRAINT single_history_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
@@ -314,7 +315,7 @@ INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VAL
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'lbaw1753@google.pt','lbaw1753','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','212-7102 Risus. Av.','Águas Lindas de Goiás','5370-253','Admin ');
 --a pass deste user lbaw1753 é 123456
 
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Steel','facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna sed dui. Fusce aliquam, enim nec tempus scelerisque, lorem ipsum sodales purus, in molestie tortor nibh sit amet orci. Ut sagittis lobortis mauris. Suspendisse',9970,950,1);
+INSERT INTO product (id,name,description,stock,price,id_model,pic) VALUES (DEFAULT,'IPhone X - 256 GB','Diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer.',1349.99,1349.99,1, 'IphoneX.png');
 INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Garrison','diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer',1832,530,1);
 INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Solomon','Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam. Duis mi enim, condimentum eget, volutpat ornare, facilisis',1436,1211,13);
 INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Slade','in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et',7510,354,12);
@@ -336,8 +337,8 @@ INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'
 INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Hamilton','ut lacus. Nulla tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus',737,134,12);
 
 
-INSERT INTO favorite (id_user,id_product,addition_date) VALUES (6,8,'2018-04-05');
-INSERT INTO favorite (id_user,id_product,addition_date) VALUES (6,9,'2018-04-05');
+INSERT INTO favorite (id_user,id_product,addition_date) VALUES (1,1,'2018-04-05');
+INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,1,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (3,8,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (15,6,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (10,2,'2018-04-05');
@@ -352,7 +353,7 @@ INSERT INTO favorite (id_user,id_product,addition_date) VALUES (5,7,'2018-04-05'
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (6,4,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (5,10,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (10,7,'2018-04-05');
-INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,6,'2018-04-05');
+INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,3,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (9,7,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (12,8,'2018-04-05');
 

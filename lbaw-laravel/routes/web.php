@@ -31,12 +31,11 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
 
-
+// Google Auth
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
-  // Password Reset Routes...
-Auth::routes();
-
 //Product
 Route::get('/products/{id}','ProductController@page')->name('page');
+
+//Favorites
