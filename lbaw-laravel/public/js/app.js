@@ -2,7 +2,7 @@ function addEventListeners() {
 
   let favorite_button = document.querySelector('#fav');
   if (favorite_button != null)
-    favorite_button.addEventListener('submit', sendProductFavRequest);
+    favorite_button.addEventListener('click', sendProductFavRequest);
 
 
   // let submit_button = document.querySelector('#submit_button');
@@ -29,11 +29,11 @@ function sendAjaxRequest(method, url, data, handler) {
 }
 
 function sendProductFavRequest() {
-  let product = this.closest('div');
-  let id = item.getAttribute('data-id');
-  let checked = item.querySelector('input[type=checkbox]').checked;
-
-  sendAjaxRequest('post', '/api/item/' + id, {done: checked}, itemUpdatedHandler);
+  console.log("fav");
+  let product = this.closest('div.product');
+  let id = product.getAttribute('data-id');
+  
+  sendAjaxRequest('post', '/products/' + id + "/favorite");
 }
 
 function add_comment(event) {
