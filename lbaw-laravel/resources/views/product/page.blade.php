@@ -7,8 +7,7 @@
     <li class="breadcrumb-item active h6">{{$product->name}}</li>
 </ol>
 <hr>
-<div class="container-fluid product-section">
-
+<div class="container-fluid product" data-id="{{ $product->id }}">
 
 	<div class="row">
 		<div class="col-md-6 text-center">
@@ -24,13 +23,13 @@
 				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+				<button type="button" class="btn btdata-id="{{ $product->id }}"aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btn-dark  btn-sm" aria-label="Left Align" disabled>
+				<button type="button" class="btn btdata-id="{{ $product->id }}"ia-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
+				<button type="button" class="btn btdata-id="{{ $product->id }}"n-sm" aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
 			</div>
@@ -48,7 +47,7 @@
 						<button type="button" class="btn btn-outline-success">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
-						<button type="button" class="btn btn-outline-danger fav">
+						<button id="fav" type="button" class="btn btn-outline-danger">
 							<i class="fa fa-heart"></i> Add to Favorites
 						</button>
 					</div>
@@ -97,7 +96,7 @@
 							<textarea class="form-control" id="Textarea1" rows="4" placeholder="Leave your opinion"></textarea>
 						</div>
 					<div class="form-group">
-							<button type="submit" class="btn btn-dark ">Submit Comment</button>
+							<button id="submit_button" type="submit" class="btn btn-dark ">Submit Comment</button>
 					</div>
 				</form>
 			</div>
@@ -105,5 +104,4 @@
 	</div>
 	</div>
 </div>
-@endsection  
-      
+@endsection
