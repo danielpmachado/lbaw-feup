@@ -48,7 +48,7 @@
 						<button type="button" class="btn btn-outline-success">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
-						<button type="button" class="btn btn-outline-danger">
+						<button type="button" class="btn btn-outline-danger fav">
 							<i class="fa fa-heart"></i> Add to Favorites
 						</button>
 					</div>

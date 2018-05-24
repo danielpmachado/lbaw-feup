@@ -455,6 +455,9 @@
   ----------
   */
 
+  .product-name{
+    color: var(--main-bg-color);
+  }
     
   .p_breadcrumb{
     margin: 25px 0 0 80px;
