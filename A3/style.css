@@ -45,10 +45,16 @@ a#nav_signIn, a#nav_cart{
   display: block;
   line-height: 26px;
   font-family: 'Montserrat', sans-serif;
-  -font-weight: bold;
-  font-size: 12.6px;
+  font-weight:bolder;
+  font-size: 12px;
   color: white;
-  -text-transform: uppercase;
+  text-transform: uppercase;
+}
+
+a#nav_signIn{
+  border-left: 2px white solid;
+  margin-left: 2em;
+  padding-left: 2em;
 }
 
 
@@ -165,9 +171,10 @@ div.abcRioButton.abcRioButtonLightBlue{
 */
 
 #sign-in{
-  border-radius:0px;
+  border-radius:5px;
   padding:15px;
-  background-color: var(--main-text-color);
+  background-color: white;
+  margin-top: 1em;
 }
 
 
@@ -547,9 +554,15 @@ FOOTER
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1207px) {
   #catalog-nav{
     padding: 2px 30vh;
+  }
+  #main-nav{
+    padding: 8px 10px;
+  }
+  #main-nav .input-group {
+    width: 120px;
   }
 }
 
@@ -567,18 +580,17 @@ FOOTER
 
 @media (max-width: 767px) {
 
-  .navbar-brand{
-    position: relative;
-    left:0;
-    transform: translateX(0);
-  }
-
   #catalog-nav{
     padding: 1em 2.4em;
   }
 
   #drop-1, #drop-2{
     margin: 0;
+  }
+  ul.dropdown-menu.mega-dropdown-menu-show{
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
   }
 
   .carousel-inner img{
@@ -1371,13 +1383,6 @@ h3.dropdown-header{
 }
 
 @media (max-width: 767px) {
-  .mega-dropdown-menu.show .dropdown-header{
-    -display: none;
-  }
-
-  .mega-dropdown-menu.show .nav-column li{
-    -display: none;
-  }
 
   .mega-dropdown-menu{
     padding:0;
@@ -1397,4 +1402,12 @@ h3.dropdown-header{
   #image.nav-column{
     display:none;
   }
+
+  ul.dropdown-menu.mega-dropdown-menu-show{
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+  }
+
+
 }
