@@ -6,19 +6,16 @@ function addEventListeners() {
     sendProductFavRequest(this);
   }
 
-    //favorite_button.addEventListener('click', sendProductFavRequest);
+  let submit_button = document.querySelector('#submit_button');
+  if(submit_button!=null)
+    submit_button.addEventListener('submit', add_comment);
 
-
-  // let submit_button = document.querySelector('#submit_button');
-  // if(submit_button!=null)
-  //   submit_button.addEventListener('submit', add_comment);
-  // });
 }
 
 function encodeForAjax(data) {
   if (data == null) return null;
   return Object.keys(data).map(function(k){
-    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])  
+    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
   }).join('&');
 }
 
@@ -59,7 +56,7 @@ function favoriteProductHandler(){
 }
 
 function add_comment(event) {
-  
+
 }
 
 addEventListeners();
