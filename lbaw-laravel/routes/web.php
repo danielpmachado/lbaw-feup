@@ -37,6 +37,6 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallb
 
 //Product
 Route::get('/products/{id}','ProductController@page')->name('page');
-Route::post("/products/{id}/favorite",'ProductController@favorite');
+Route::post('/products/{id}/favorite','ProductController@favorite');
 
 

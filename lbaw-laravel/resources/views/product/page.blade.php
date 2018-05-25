@@ -48,7 +48,7 @@
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
 						<button id="fav" type="button" class="btn btn-outline-danger">
-							<i class="fa fa-heart"></i> Add to Favorites
+							<i class="fa fa-heart"></i> Add to Wishlist
 						</button>
 					</div>
 

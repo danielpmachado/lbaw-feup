@@ -2,7 +2,10 @@ function addEventListeners() {
 
   let favorite_button = document.querySelector('#fav');
   if (favorite_button != null)
-    favorite_button.addEventListener('click', sendProductFavRequest);
+  favorite_button.onclick = function(){
+    sendProductFavRequest(this);
+  }
+    //favorite_button.addEventListener('click', sendProductFavRequest);
 
 
   // let submit_button = document.querySelector('#submit_button');
@@ -28,12 +31,17 @@ function sendAjaxRequest(method, url, data, handler) {
   request.send(encodeForAjax(data));
 }
 
-function sendProductFavRequest() {
-  console.log("fav");
-  let product = this.closest('div.product');
+function sendProductFavRequest(button) {
+  let product = button.closest('div.product');
   let id = product.getAttribute('data-id');
   
-  sendAjaxRequest('post', '/products/' + id + "/favorite");
+  sendAjaxRequest('post', '/products/' + id + "/favorite",null,favoriteProductHandler);
+}
+
+function favoriteProductHandler(){
+  let product = JSON.parse(this.responseText);
+  let button = document.querySelector('div.product[data-id="' + product.id + '"] #fav');
+  button.innerHTML ='<i class="fa fa-trash"></i> Remove from Wishlist';
 }
 
 function add_comment(event) {
