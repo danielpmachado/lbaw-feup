@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-signin-client_id" content="997560327402-61nc9u85rjrcc1u2baecb54uf3b7p9f8.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="997560327402-h7drds8gikmaab9da9qq8sr93lk6sld6.apps.googleusercontent.com">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

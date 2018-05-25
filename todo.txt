@@ -3,6 +3,7 @@ TODO list
 User 
 -> Google authentication (JAMES)
 -> Purchase History
+-> password not null
 
 History
 -> show
@@ -14,6 +15,8 @@ Products
 Reviews
 
 Cart
+
+
 
 
 
