@@ -10,7 +10,7 @@
 
                 <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
                     <a class="product-name" href="/products/{{ $favorite->id }}"><strong>{{ $favorite->name }}</strong></a>
-                    <p>{{ $favorite->price }}</p>
+                    <p>{{ $favorite->price }} €</p>
                 </div>
 
                 @if(Auth::id() == $user->id)

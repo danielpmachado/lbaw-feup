@@ -455,6 +455,9 @@
   ----------
   */
 
+  .product-name{
+    color: var(--main-bg-color);
+  }
     
   .p_breadcrumb{
     margin: 25px 0 0 80px;
@@ -466,7 +469,7 @@
     color: var(--main-bg-color)k;
   }
   
-  .product-section{
+  .product{
     margin-top: 90px;
     padding-right:100px;
   }
@@ -608,7 +611,7 @@
       margin-bottom: 10px;
     }
   
-    .product-section{
+    .product{
       text-align: center;
       padding:10px;
     }
