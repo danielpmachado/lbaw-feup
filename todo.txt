@@ -4,9 +4,10 @@ User
 -> Google authentication (JAMES)
 -> Purchase History
 
-Wishlist (Sofia)
--> policies
-
+History
+-> show
+-> add date
+-> see if is in order
 
 Products
 
