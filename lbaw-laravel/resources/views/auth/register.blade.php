@@ -65,7 +65,7 @@
         <div class="form-group">
             <button type="submit" class="btn btn-dark ">Sign up</button>
         </div>
-        <a href="{{url('auth/google')}}" class="btn btn-primary"> Google</a>
+        <a id="loginGoogle" href="{{url('auth/google')}}" class="btn btn-primary"><img src="/images/google-icon.png" width="20px"> Sign in with Google</a>
     </form>
 </div>
 @endsection

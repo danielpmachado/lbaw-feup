@@ -3,6 +3,7 @@ TODO list
 User 
 -> Google authentication (JAMES)
 -> Purchase History
+-> password not null
 
 Wishlist (Sofia)
 -> policies
@@ -13,6 +14,8 @@ Products
 Reviews
 
 Cart
+
+
 
 
 
