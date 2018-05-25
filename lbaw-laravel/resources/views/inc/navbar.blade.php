@@ -59,7 +59,7 @@
                       <div class="form-group">
                          <button type="submit" class="btn btn-dark">Sign in</button>
                       </div>
-                      <div class="g-signin2" data-width="180" data-height="40" data-longtitle="true"></div>
+                      <div href="{{url('auth/google')}}" class="g-signin2" data-width="180" data-height="40" data-longtitle="true"></div>
                     </form>
 
                     <div class="dropdown-divider"></div>
