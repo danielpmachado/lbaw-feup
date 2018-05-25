@@ -496,7 +496,7 @@
       font-size: 1.3em;
   }
   
-  #purchases-buttons {
+  .product-buttons{
       margin-bottom: 2em;
   }
   
@@ -607,7 +607,7 @@
       text-align: center;
     }
   
-    #purchases-buttons .btn{
+    .product-buttons .btn{
       margin-bottom: 10px;
     }
   
