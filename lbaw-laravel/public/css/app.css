@@ -469,7 +469,7 @@
     color: var(--main-bg-color)k;
   }
   
-  .product{
+  .product-page{
     margin-top: 90px;
     padding-right:100px;
   }
@@ -611,7 +611,7 @@
       margin-bottom: 10px;
     }
   
-    .product{
+    .product-page{
       text-align: center;
       padding:10px;
     }

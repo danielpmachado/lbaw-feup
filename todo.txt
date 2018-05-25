@@ -5,9 +5,8 @@ User
 -> Purchase History
 
 Wishlist (Sofia)
--> remove button form favorites
 -> policies
--> buttons changes
+
 
 Products
 

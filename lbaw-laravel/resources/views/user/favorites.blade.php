@@ -3,7 +3,7 @@
         <div class="card-header bg-dark text-light">Favorites</div>
         <div class="card-body">
             @foreach($favorites as $favorite)
-            <div class="row">
+            <div class="row product" data-id="{{ $favorite->id }}">
                 <div class="col-12 col-sm-12 col-md-2 text-center">
                     <img class="img-responsive" src="/images/products/{{$favorite->pic}}" alt="prewiew" width="120" height="80">
                 </div>
@@ -14,11 +14,11 @@
                 </div>
 
                 @if(Auth::id() == $user->id)
-                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right product-buttons"  data-id="{{ $favorite->id }}">
+                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right" >
                     <button type="button" class="btn btn-outline-success btn-xs">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to Cart
                     </button>
-                    <button id="fav" type="button" class="btn btn-outline-danger btn-xs">
+                    <button id="fav" type="button" class="btn btn-outline-danger btn-xs" value="list_remove">
                         <i class="fa fa-trash" aria-hidden="true"></i> Remove
                     </button>
                 </div>
