@@ -1,10 +1,9 @@
 function addEventListeners() {
 
-  let fav_button = document.querySelector('#fav');
-  if (fav_button != null)
-  fav_button.onclick = function(){
-    sendProductFavRequest(this);
-  }
+  let fav_button = document.querySelectorAll(' #fav');
+  [].forEach.call(fav_button, function(fav) {
+    fav.addEventListener('click', sendProductFavRequest);
+  });
 
   let submit_button = document.querySelector('#submit_button');
   if(submit_button!=null)
@@ -29,22 +28,28 @@ function sendAjaxRequest(method, url, data, handler) {
   request.send(encodeForAjax(data));
 }
 
-function sendProductFavRequest(button) {
-  let product = button.closest('div.product-buttons');
+// ---------------------------------
+//            FAVORITES
+//----------------------------------
+function sendProductFavRequest() {
+  let product = this.closest('div.product');
   let id = product.getAttribute('data-id');
-  let value = button.value;
+  let value = this.value;
   
   if(value == "add")
     sendAjaxRequest('post', '/products/' + id + "/favorite",null,favoriteProductHandler);
 
   if(value == "remove")
     sendAjaxRequest('post', '/products/' + id + "/unfavorite",null, favoriteProductHandler );
+
+  if(value == "list_remove")
+    sendAjaxRequest('post', '/products/' + id + "/unfavorite",null, unfavProductHandler);
 }
 
 
 function favoriteProductHandler(){
   let product = JSON.parse(this.responseText);
-  let button = document.querySelector('div.product-buttons[data-id="' + product.id + '"] #fav');
+  let button = document.querySelector('div.product[data-id="' + product.id + '"] #fav');
 
   if(button.value == "add"){
     button.innerHTML ='<i class="fa fa-trash"></i> Remove from Wishlist';
@@ -53,6 +58,14 @@ function favoriteProductHandler(){
     button.innerHTML ='<i class="fa fa-heart"></i> Add to Wishlist';
     button.value ="add";
   }
+}
+
+function unfavProductHandler(){
+  let product = JSON.parse(this.responseText);
+  let element = document.querySelector('div.product[data-id="' + product.id + '"]');
+
+  element.remove();
+ 
 }
 
 function add_comment(event) {

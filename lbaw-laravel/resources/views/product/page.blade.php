@@ -7,7 +7,7 @@
     <li class="breadcrumb-item active h6">{{$product->name}}</li>
 </ol>
 <hr>
-<div class="container-fluid product">
+<div class="container-fluid product-page product" data-id="{{ $product->id }}">
 
 	<div class="row">
 		<div class="col-md-6 text-center">
@@ -43,13 +43,13 @@
 			<div class="row">
 				<div class="col-md-12 ">
 
-					<div class="product-buttons"  data-id="{{ $product->id }}">
+					<div class="product-buttons" >
 						<button type="button" class="btn btn-outline-success">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
 						@if($product->favorited())
 						<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
-							<i class="fa fa-heart"></i> Remove from Wishlist
+							<i class="fa fa-trash"></i> Remove from Wishlist
 						</button>
 						@else
 						<button id="fav" type="button" class="btn btn-outline-danger" value="add">
