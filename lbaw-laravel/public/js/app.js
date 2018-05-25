@@ -1,4 +1,4 @@
-function addEventListeners() {
+/*function addEventListeners() {
   let submit_button = document.querySelector('#submit_button');
   if(submit_button!=null)
     submit_button.addEventListener('submit', add_comment);
@@ -25,4 +25,4 @@ function sendAjaxRequest(method, url, data, handler) {
 
 function add_comment(event) {
   
-}
+}*/
