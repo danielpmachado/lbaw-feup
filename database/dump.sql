@@ -101,7 +101,7 @@ CREATE TABLE "user" (
     id SERIAL,
     email text NOT NULL,
     name text NOT NULL,
-    password text NOT NULL,
+    password text,
     address text,
     city text,
     permissions text NOT NULL

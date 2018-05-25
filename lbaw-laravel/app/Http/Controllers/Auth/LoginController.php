@@ -53,7 +53,7 @@ class LoginController extends Controller
           $user = Socialite::driver($provider)->stateless()->user();
           $authUser = $this->findOrCreateUser($user, $provider);
           Auth::login($authUser, true);
-          return  redirect($this-redirectTo);
+          return  redirect($this->redirectTo);
     }
     public function findOrCreateUser($user, $provider){
 
@@ -62,11 +62,23 @@ class LoginController extends Controller
       if($authUser){
         return $authUser;
       }
-      return User::create([
+      /*return User::create([
         'username' => $user->user,
         'email' => [$user->email],
         'provider' => [strtoupper($provider)],
         'provider_id' => [$user->id],
+      ]);*/
+
+      return User::create([
+        'username' => $user->name,
+        'email' => $user->email,
+        'password' => bcrypt('123123'),
+        'address'=> 'address',
+        'city'=> 'city',
+        'zip' => 'zip',
+        'permissions' => 'User',
+        'provider' => strtoupper($provider),
+        'provider_id' => $user->id,
       ]);
 
     }
