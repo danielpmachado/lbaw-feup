@@ -1,23 +1,21 @@
 function addEventListeners() {
 
-  let favorite_button = document.querySelector('#fav');
-  if (favorite_button != null)
-  favorite_button.onclick = function(){
+  let fav_button = document.querySelector('#fav');
+  if (fav_button != null)
+  fav_button.onclick = function(){
     sendProductFavRequest(this);
   }
-    //favorite_button.addEventListener('click', sendProductFavRequest);
 
+  let submit_button = document.querySelector('#submit_button');
+  if(submit_button!=null)
+    submit_button.addEventListener('submit', add_comment);
 
-  // let submit_button = document.querySelector('#submit_button');
-  // if(submit_button!=null)
-  //   submit_button.addEventListener('submit', add_comment);
-  // });
 }
 
 function encodeForAjax(data) {
   if (data == null) return null;
   return Object.keys(data).map(function(k){
-    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])  
+    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
   }).join('&');
 }
 
@@ -32,20 +30,33 @@ function sendAjaxRequest(method, url, data, handler) {
 }
 
 function sendProductFavRequest(button) {
-  let product = button.closest('div.product');
+  let product = button.closest('div.product-buttons');
   let id = product.getAttribute('data-id');
+  let value = button.value;
   
-  sendAjaxRequest('post', '/products/' + id + "/favorite",null,favoriteProductHandler);
+  if(value == "add")
+    sendAjaxRequest('post', '/products/' + id + "/favorite",null,favoriteProductHandler);
+
+  if(value == "remove")
+    sendAjaxRequest('post', '/products/' + id + "/unfavorite",null, favoriteProductHandler );
 }
+
 
 function favoriteProductHandler(){
   let product = JSON.parse(this.responseText);
-  let button = document.querySelector('div.product[data-id="' + product.id + '"] #fav');
-  button.innerHTML ='<i class="fa fa-trash"></i> Remove from Wishlist';
+  let button = document.querySelector('div.product-buttons[data-id="' + product.id + '"] #fav');
+
+  if(button.value == "add"){
+    button.innerHTML ='<i class="fa fa-trash"></i> Remove from Wishlist';
+    button.value ="remove";
+  }else{
+    button.innerHTML ='<i class="fa fa-heart"></i> Add to Wishlist';
+    button.value ="add";
+  }
 }
 
 function add_comment(event) {
-  
+
 }
 
 addEventListeners();

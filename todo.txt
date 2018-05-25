@@ -2,8 +2,12 @@ TODO list
 
 User 
 -> Google authentication (JAMES)
--> Wishlist
 -> Purchase History
+
+Wishlist (Sofia)
+-> remove button form favorites
+-> policies
+-> buttons changes
 
 Products
 

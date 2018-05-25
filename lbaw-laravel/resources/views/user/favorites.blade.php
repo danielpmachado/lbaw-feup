@@ -14,11 +14,11 @@
                 </div>
 
                 @if(Auth::id() == $user->id)
-                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right ">
+                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right product-buttons"  data-id="{{ $favorite->id }}">
                     <button type="button" class="btn btn-outline-success btn-xs">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to Cart
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-xs">
+                    <button id="fav" type="button" class="btn btn-outline-danger btn-xs">
                         <i class="fa fa-trash" aria-hidden="true"></i> Remove
                     </button>
                 </div>

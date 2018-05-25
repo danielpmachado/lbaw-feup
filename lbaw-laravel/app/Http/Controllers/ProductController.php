@@ -21,4 +21,11 @@ class ProductController extends Controller
         $product = Product::find($id);
         return $product;
     }
+
+    public function unfavorite($id){
+        Auth::user()->favorites()->detach($id);
+
+        $product = Product::find($id);
+        return $product;
+    }
 }
