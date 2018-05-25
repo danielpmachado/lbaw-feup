@@ -193,11 +193,11 @@ INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (12,5,'maur
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (13,3,'vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla','2018-08-10',2,3);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (14,4,'urna. Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas ornare egestas ligula. Nullam','2018-08-10',19,7);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (15,2,'arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam.','2018-08-10',13,12);
-INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (16,5,'non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras','2018-08-10',7,12);
+INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (16,5,'non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras','2018-08-10',1,12);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (17,3,'cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit','2018-08-10',17,3);
-INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (18,2,'vitae, orci. Phasellus dapibus quam quis diam. Pellentesque','2018-08-10',9,10);
+INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (18,2,'vitae, orci. Phasellus dapibus quam quis diam. Pellentesque','2018-08-10',1,10);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (19,3,'accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus','2018-08-10',14,19);
-INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (20,4,'ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at,','2018-08-10',18,6);
+INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (20,4,'ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at,','2018-08-10',1,6);
 
 INSERT INTO single_category (id_product,id_product_category) VALUES (1,1);
 INSERT INTO single_category (id_product,id_product_category) VALUES (2,2);

@@ -5,13 +5,19 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Review;
 
 class ProductController extends Controller
 {
     public function page($id){
         $product = Product::find($id);
 
-        return view('product.page',compact('product'));
+        $reviews = Review::where('id_product',$id)
+        ->orderBy('date','asc')
+        ->get();
+  
+
+        return view('product.page',compact('product','reviews'));
     }
 
     

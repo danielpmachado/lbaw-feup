@@ -104,7 +104,7 @@ CREATE TABLE "user" (
     id SERIAL,
     email text NOT NULL,
     username text NOT NULL,
-    password text NOT NULL,
+    password text,
     address text,
     city text,
     zip text,
@@ -430,15 +430,15 @@ INSERT INTO product_order (id_product,id_order) VALUES (8,15);
 INSERT INTO product_order (id_product,id_order) VALUES (15,4);
 
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,5,'tempor augue ac ipsum. Phasellus vitae mauris','2018-08-25',6,4);
-INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,1,'eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam','2018-08-10',11,10);
+INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,1,'Yet one that really paid off six months into our testing.One that was sorely needed after years of similarity and the premium design, extra power.Losing the home button and altering the design was a dangerous move.','2018-08-10',1,10);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,1,'Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis','2018-08-10',12,3);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,3,'Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus','2018-08-10',8,14);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,5,'hendrerit. Donec','2018-08-10',16,12);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,5,'ante. Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae','2018-08-10',17,16);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,4,'sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque.','2018-08-10',19,20);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,3,'placerat','2018-08-10',4,12);
-INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,4,'sem mollis dui, in sodales elit erat vitae risus.','2018-08-10',20,1);
-INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,1,'purus. Maecenas libero est, congue a, aliquet vel, vulputate eu,','2018-08-10',16,9);
+INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,4,'One that was sorely needed after years of similarity and the premium design, extra power, all-screen front mix together to create - by far - the best iPhone Apples ever made','2018-08-10',1,1);
+INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,1,'It is impossible to give a perfect score to something that costs this much - but this is the closest to smartphone perfection Apple has ever got.','2018-08-10',16,9);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,5,'lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque','2018-08-10',10,4);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,5,'mauris id sapien. Cras dolor dolor, tempus non, lacinia at, iaculis quis, pede. Praesent eu dui. Cum sociis natoque penatibus et magnis','2018-08-10',3,10);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,3,'vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla','2018-08-10',2,3);
@@ -446,7 +446,7 @@ INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,4,
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,2,'arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam.','2018-08-10',13,12);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,5,'non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras','2018-08-10',7,12);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,3,'cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit','2018-08-10',17,3);
-INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,2,'vitae, orci. Phasellus dapibus quam quis diam. Pellentesque','2018-08-10',9,10);
+INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,2,'The iPhone X was a huge gamble from Apple, yet one that really paid off six months into our testing. Losing the home button and altering the design was a dangerous move, but one that was sorely needed after years of similarity','2018-08-10',1,10);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,3,'accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus','2018-08-10',14,19);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,4,'ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at,','2018-08-10',18,6);
 
