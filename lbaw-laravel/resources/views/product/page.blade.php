@@ -47,9 +47,15 @@
 						<button type="button" class="btn btn-outline-success">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
+						@if($product->favorited())
+						<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
+							<i class="fa fa-heart"></i> Remove from Wishlist
+						</button>
+						@else
 						<button id="fav" type="button" class="btn btn-outline-danger" value="add">
 							<i class="fa fa-heart"></i> Add to Wishlist
 						</button>
+						@endif
 					</div>
 
 					<p><span class="description-tag">Description</span></p>
