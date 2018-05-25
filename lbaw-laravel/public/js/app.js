@@ -2,7 +2,9 @@ function addEventListeners() {
 
   let fav_button = document.querySelectorAll(' #fav');
   [].forEach.call(fav_button, function(fav) {
-    fav.addEventListener('click', sendProductFavRequest);
+    fav.onclick = function(){
+          sendProductFavRequest(this);
+    }
   });
 
   let submit_button = document.querySelector('#submit_button');
@@ -31,10 +33,10 @@ function sendAjaxRequest(method, url, data, handler) {
 // ---------------------------------
 //            FAVORITES
 //----------------------------------
-function sendProductFavRequest() {
-  let product = this.closest('div.product');
+function sendProductFavRequest(button) {
+  let product = button.closest('div.product');
   let id = product.getAttribute('data-id');
-  let value = this.value;
+  let value = button.value;
   
   if(value == "add")
     sendAjaxRequest('post', '/products/' + id + "/favorite",null,favoriteProductHandler);
