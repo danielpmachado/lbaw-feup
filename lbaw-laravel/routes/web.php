@@ -41,6 +41,6 @@ Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 
 //Reviews
-Route::post('review/{id}', 'ReviewController@create');
+Route::put('/products/{id}/reviews', 'ReviewController@create');
 
 

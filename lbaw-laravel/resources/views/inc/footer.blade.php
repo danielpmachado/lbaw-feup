@@ -33,10 +33,10 @@
 			The passion for technology appeared before the one for entrepreneurship, because I’ve always liked to discover what mechanisms hide behind the devices, how systems work and how can they be optimized.
 		<div class="footer-icons">
 
-			<a href="#"><i class="fa fa-facebook-f"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-linkedin"></i></a>
-			<a href="#"><i class="fa fa-github"></i></a>
+			<a href="#"><i class="fab fa-facebook-f"></i></a>
+			<a href="#"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-linkedin"></i></a>
+			<a href="#"><i class="fab fa-github"></i></a>
 
 		</div>
 	</div>

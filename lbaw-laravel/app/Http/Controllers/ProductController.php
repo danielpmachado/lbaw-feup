@@ -15,7 +15,6 @@ class ProductController extends Controller
         $reviews = Review::where('id_product',$id)
         ->orderBy('date','asc')
         ->get();
-        /*$reviews = Review::all();*/
   
 
         return view('product.page',compact('product','reviews'));
