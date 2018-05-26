@@ -1411,3 +1411,9 @@ h3.dropdown-header{
 
 
 }
+
+
+.center-aligned{
+    display: flex;
+    align-items: center;
+}
