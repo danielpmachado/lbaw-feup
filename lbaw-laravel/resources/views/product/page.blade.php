@@ -23,13 +23,13 @@
 				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btdata-id="{{ $product->id }}"aria-label="Left Align" disabled>
+				<button type="button" class="btn btn-primary btn-sm" data-id="{{ $product->id }}"aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btdata-id="{{ $product->id }}"ia-label="Left Align" disabled>
+				<button type="button" class="btn btn-primary btn-sm" data-id="{{ $product->id }}"ia-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btdata-id="{{ $product->id }}"n-sm" aria-label="Left Align" disabled>
+				<button type="button" class="btn btn-dark btn-grey btn-sm" data-id="{{ $product->id }}" aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
 			</div>
@@ -76,9 +76,17 @@
   <div class="col-md-3 text-center">
     <h2>Reviews</h2>
   </div>
-
 </div>
-		<hr/>
+
+<div class="row">
+	<div class="col-md-12">
+			<hr/>
+
+			<?php foreach($reviews as $review) {
+				?>
+				@include('product.review')
+			<?php } ?>
+
 				<form class="submit-comment">
 					<div class="form-group">
 						<label for="Textarea1">Rate {{$product->name}}</label>
