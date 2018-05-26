@@ -40,7 +40,7 @@ Featured Products
 
       <?php foreach($featuredProducts as $featuredProduct) {
         ?>
-        @include('pages.partials.featured')
+        @include('partials.featured')
       <?php } ?>
 
 </div>

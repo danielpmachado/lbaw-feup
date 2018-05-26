@@ -87,10 +87,16 @@
         
         @endif
 
+        @if (Auth::check())
         <li class="nav-item">
-            <a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
-          </li>
-
+            <a class="nav-link" href="{{route('cart', ['id' =>Auth::user()->id])}}"><i class="fa fa-shopping-cart"></i>0,00€</a>
+        </li>
+        @endif
+        @if (!Auth::check())
+        <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa fa-shopping-cart"></i>0,00€</a>
+        </li>
+        @endif
       </ul>
    </div>
 </nav>
