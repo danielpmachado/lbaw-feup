@@ -14,6 +14,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/c560c025cf.js"></script>
+  <script src="script_product.js"></script>
 </head>
 <body>
 
@@ -350,25 +351,27 @@
 		</div>
 		<div class="col-md-6" id="description-box">
 			<h4 class="text" id="product-name-details">IPHONE X - 256 GB</h4>
-			<h3 class="text-success" id="price-tag">1199 €</h3>
+			<h3 class="text-success text-editable" id="price-tag">1199 €</h3>
 
 			<div class="row">
 				<div class="col-md-12 ">
 
 					<div id="purchases-buttons">
-						<button type="button" class="btn btn-outline-success">
-							<i class="fa fa-shopping-cart"></i> Add to Cart
-						</button>
-						<button type="button" class="btn btn-outline-danger">
-							<i class="fa fa-heart"></i> Add to Favorites
-						</button>
-                        <button type="button" class="btn btn-outline-dark">
+                        <button id="editProdut"type="button" class="btn btn-outline-info" onclick="setEditable()">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        <button id="saveChangesProdut" type="button" class="btn btn-outline-success" onclick="setNotEditable()">
+                            Save changes
+                        </button>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
                             <i class="fa fa-trash-o"></i>
                         </button>
 					</div>
 
+                    <p><span class="description-tag">Stock:</span><span class="text-editable"> 3256</span></p>
+
 					<p><span class="description-tag">Description</span></p>
-					<p>
+					<p class="text-editable">
 						smartphone with 256 GB storage capacity and 5.8 "Super Retina display (2436 x 1125 pixels at 458 dpi),
 						with contrast ratio of 1000000: 1;
 						resistant to water and dust; Face ID;
@@ -398,18 +401,13 @@
 	<div class="row">
 		<div class="col-md-12">
 				<hr/>
-				<div class="row">
-                    <div class="col-sm-1 text-center center-aligned">
-                        <button type="button" class="btn btn-outline-danger">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-					<div class="col-sm-2 text-center">
+                <div class="row">
+					<div class="col-sm-3 text-center">
 						<img src="images/default.png" class="rounded" height="60" width="60">
 						<div class="review-block-name">nktailor</div>
 						<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
 					</div>
-					<div class="col-sm-9">
+					<div class="col-sm-8">
 						<div class="review-block-rate">
 							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
 								<i class="fa fa-star"></i>
@@ -430,54 +428,20 @@
 						<div class="review-block-title"> <strong>The huge leap</strong> </div>
 						<div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
 					</div>
+                    <div class="col-sm-1 text-center center-aligned">
+                        <button type="button" class="btn btn-outline-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
 				</div>
 				<hr/>
                 <div class="row">
-                    <div class="col-sm-1 text-center center-aligned">
-                        <button type="button" class="btn btn-outline-danger">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                    <div class="col-sm-2 text-center">
-                        <img src="images/default.png" class="rounded" height="60" width="60">
-                        <div class="review-block-name">nktailor</div>
-                        <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="review-block-rate">
-                            <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-                                <i class="fa fa-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-                                <i class="fa fa-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-                                <i class="fa fa-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-                                <i class="fa fa-star"></i>
-                            </button>
-                            <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-                                <i class="fa fa-star"></i>
-                            </button>
-                        </div>
-                        <div class="review-block-title"> <strong>The huge leap</strong> </div>
-                        <div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
-                    </div>
-                </div>
-				<hr/>
-                <div class="row">
-                    <div class="col-sm-1 text-center center-aligned">
-                        <button type="button" class="btn btn-outline-danger">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-					<div class="col-sm-2 text-center">
+					<div class="col-sm-3 text-center">
 						<img src="images/default.png" class="rounded" height="60" width="60">
 						<div class="review-block-name">nktailor</div>
 						<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
 					</div>
-					<div class="col-sm-9">
+					<div class="col-sm-8">
 						<div class="review-block-rate">
 							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
 								<i class="fa fa-star"></i>
@@ -498,6 +462,45 @@
 						<div class="review-block-title"> <strong>The huge leap</strong> </div>
 						<div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
 					</div>
+                    <div class="col-sm-1 text-center center-aligned">
+                        <button type="button" class="btn btn-outline-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+				</div>
+				<hr/>
+                <div class="row">
+					<div class="col-sm-3 text-center">
+						<img src="images/default.png" class="rounded" height="60" width="60">
+						<div class="review-block-name">nktailor</div>
+						<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="review-block-rate">
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+							<button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
+								<i class="fa fa-star"></i>
+							</button>
+						</div>
+						<div class="review-block-title"> <strong>The huge leap</strong> </div>
+						<div class="review-block-description">The iPhone X is the huge leap forward that Apple's handsets needed. Aside from the original iPhone in 2007, this new iPhone is set to have the biggest impact on Apple’s smartphone direction ever.</div>
+					</div>
+                    <div class="col-sm-1 text-center center-aligned">
+                        <button type="button" class="btn btn-outline-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
 				</div>
 				<hr/>
 				<form class="submit-comment">
@@ -583,6 +586,28 @@
 
 		</div>
 	</div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <p>
+                  Are you sure you want to delete?
+              </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </footer>
 
