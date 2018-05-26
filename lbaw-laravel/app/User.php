@@ -20,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password', 'address','city','zip','permissions'
+        'username', 'email', 'password', 'address','city','zip','permissions', 'provider', 'provider_id'
     ];
 
     /**
@@ -31,5 +31,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get all of favorite posts for the user.
+     */
+    public function favorites()
+    {
+        return $this->belongsToMany(Product::class, 'favorite', 'id_user', 'id_product');
+    }
+
+  
 
 }
