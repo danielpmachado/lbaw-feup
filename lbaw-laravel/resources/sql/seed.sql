@@ -450,8 +450,8 @@ INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,2,
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,3,'accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus','2018-08-10',14,19);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,4,'ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at,','2018-08-10',18,6);
 
-INSERT INTO single_category (id_product,id_product_category) VALUES (1,1);
-INSERT INTO single_category (id_product,id_product_category) VALUES (2,2);
+INSERT INTO single_category (id_product,id_product_category) VALUES (1,5);
+INSERT INTO single_category (id_product,id_product_category) VALUES (2,1);
 INSERT INTO single_category (id_product,id_product_category) VALUES (3,3);
 INSERT INTO single_category (id_product,id_product_category) VALUES (4,2);
 INSERT INTO single_category (id_product,id_product_category) VALUES (5,1);

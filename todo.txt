@@ -13,6 +13,10 @@ History
 -> add date
 -> see if is in order
 
+Catalog
+-> sub_categories
+-> mostrar apenas alguns e colocar botao view more
+
 Products
 
 Reviews

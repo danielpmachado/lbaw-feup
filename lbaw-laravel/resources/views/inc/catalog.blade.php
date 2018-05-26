@@ -17,66 +17,20 @@
                 <div class="row mx-0 ">
                   <div class="col-sm-12 ">
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
+                      @foreach(App\Category::where('name','Computers')->first()->products as $product)
+                              <li>{{ $product->name }}</li>
+                              <li>{{ $product->price }}</li>
+                      @endforeach
+                      <!-- <li class="list-group-item d-flex justify-content-between align-items-center p-1">
                         <a>Asus</a>
                         <span class="badge badge-dark badge-pill">14</span>
-                      </li>
+                      </li> -->
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </li>
-
-
-                <li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-headphones"></i>Accessories
-                </a>
-                <div class="dropdown-menu"  aria-labelledby="dropdownMenu2">
-                  <div class="row mx-0">
-
-                  </div>
-                </div>
-              </div>
-                </li>
-                <li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-cogs"></i>Consoles
-                </a>
-                <div class="dropdown-menu"  aria-labelledby="dropdownMenu2">
-                  <div class="row mx-0">
-
-                  </div>
-                </div>
-              </div>
-                </li>
-                <li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-gamepad"></i>Components
-                </a>
-                <div class="dropdown-menu"  aria-labelledby="dropdownMenu2">
-                  <div class="row mx-0">
-
-                  </div>
-                </div>
-              </div>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-mobile fa-lg"></i>Mobile
-                </a>
-                <div id="drop-2" class="dropdown-menu"  aria-labelledby="dropdownMenu2">
-                  <div class="row mx-0">
-                    
-                  </div>
-                </div>
-              </div>
-                </li>
         </ul>
      </div>
   </nav>
