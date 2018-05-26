@@ -184,14 +184,14 @@ ALTER TABLE ONLY single_featured_product
     -- Foreign Keys
 
 ALTER TABLE ONLY favorite
-    ADD CONSTRAINT favorite_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT favorite_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
 
 ALTER TABLE ONLY favorite
     ADD CONSTRAINT favorite_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY "order"
-    ADD CONSTRAINT order_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT order_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
 
 ALTER TABLE ONLY payment
     ADD CONSTRAINT payment_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON UPDATE CASCADE;
@@ -207,10 +207,10 @@ ALTER TABLE ONLY product_order
     ADD CONSTRAINT product_order_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product_order
-    ADD CONSTRAINT product_order_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT product_order_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON DELETE CASCADE;
 
 ALTER TABLE ONLY review
-    ADD CONSTRAINT review_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT review_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
 
 ALTER TABLE ONLY review
     ADD CONSTRAINT review_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
