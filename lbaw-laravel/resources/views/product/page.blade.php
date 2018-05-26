@@ -8,8 +8,7 @@
 </ol>
 <hr>
 
-<div class="product-section" data-id="{{ $product->id }}">
-
+<div class="product-section">
 	<div class="container-fluid product-page product" data-id="{{ $product->id }}">
 
 	<div class="row">
@@ -72,54 +71,5 @@
 		</div>
 	</div>
 </div>
-
-	<div class="container-fluid review-section">
-
-		<div class="row">
-		<div class="col-md-3 text-center">
-			<h2>Reviews</h2>
-		</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-12">
-					<hr/>
-
-					<?php foreach($reviews as $review) {
-						?>
-						@include('product.review')
-					<?php } ?>
-
-					<form class="submit-comment">
-						<div class="form-group">
-							<label for="Textarea1">Rate {{$product->name}}</label>
-							<div class="review-block-rate">
-								<button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
-									<i class="fa fa-star"></i>
-								</button>
-								<button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
-									<i class="fa fa-star"></i>
-								</button>
-								<button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
-									<i class="fa fa-star"></i>
-								</button>
-								<button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
-									<i class="fa fa-star"></i>
-								</button>
-								<button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
-									<i class="fa fa-star"></i>
-								</button>
-							</div>
-						</div>
-						<div class="form-group">
-								<textarea class="form-control" id="Textarea1" rows="4" placeholder="Leave your opinion"></textarea>
-						</div>
-						<div class="form-group">
-								<button id="submit_review" type="submit" class="btn btn-dark ">Submit Comment</button>
-						</div>
-					</form>
-			</div>
-		</div>
-	</div>
-</div>
+@include('product.reviews')
 @endsection
