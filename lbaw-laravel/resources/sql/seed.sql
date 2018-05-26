@@ -513,10 +513,10 @@ INSERT INTO "featured_product" (id,date) VALUES (DEFAULT,'2018-04-03');
 INSERT INTO "featured_product" (id,date) VALUES (DEFAULT,'2018-04-03');
 INSERT INTO "featured_product" (id,date) VALUES (DEFAULT,'2018-04-03');
 
-INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (16,1);
-INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (7,2);
-INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (6,3);
-INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (2,4);
+INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (2,1);
+INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (3,2);
+INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (4,3);
+INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (5,4);
 
 
 -- CREATE FUNCTION delivey_date() RETURNS TRIGGER AS
