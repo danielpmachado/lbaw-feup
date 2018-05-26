@@ -1377,3 +1377,9 @@ h3.dropdown-header{
     display: none;
   }
 }
+
+
+.center-aligned{
+    display: flex;
+    align-items: center;
+}
