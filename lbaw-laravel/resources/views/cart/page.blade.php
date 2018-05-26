@@ -51,7 +51,9 @@
                                         <?php foreach($products as $product) {
                                             ?>
                                             @include('cart.product')
+                                            <hr>
                                         <?php } ?>
+                                        
                                      
                                       <div class="pull-right">
                                           <a href="" class="btn btn-outline-secondary pull-right">

@@ -20,7 +20,7 @@ class CartController extends Controller
 
         foreach($carts as $cart){
 
-            $products[] = $cart->item;
+            $products[] = $cart->items;
         }
 
         return view('cart.page',compact('user', 'products'));
