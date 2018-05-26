@@ -37,50 +37,12 @@ Featured Products
 </div>
 <div id="featured-container" class="container-fluid">
   <div class="row justify-content-center">
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-      <img class="card-img-top" src="images/product11.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Asus P3-Hfdsfd</h5>
-        <p class="card-text">756€ - Available</p>
-        <div class="card-btn">
-            <a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
-            <a href="product.html" class="btn  btn-dark  btn-block">See More</a>
-        </div>
-      </div>
-      </div>
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-      <img class="card-img-top" src="images/product2.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Asus P3-Hfdsfd</h5>
-        <p class="card-text">756€ - Available</p>
-        <div class="card-btn">
-            <a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
-            <a href="product.html" class="btn  btn-dark  btn-block">See More</a>
-        </div>
-      </div>
-      </div>
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-      <img class="card-img-top" src="images/product3.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Asus P3-Hfdsfd</h5>
-        <p class="card-text">756€ - Available</p>
-        <div class="card-btn">
-            <a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
-            <a href="product.html" class="btn  btn-dark  btn-block">See More</a>
-        </div>
-      </div>
-      </div>
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-      <img class="card-img-top" src="images/product4.jpeg" alt="Card image cap">
-      <div class="card-body">
-          <h5 class="card-title">Asus P3-Hfdsfd</h5>
-          <p class="card-text">756€ - Available</p>
-          <div class="card-btn">
-              <a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
-              <a href="product.html" class="btn  btn-dark  btn-block">See More</a>
-          </div>
-      </div>
-      </div>
+
+      <?php foreach($featuredProducts as $featuredProduct) {
+        ?>
+        @include('pages.partials.featured')
+      <?php } ?>
+
 </div>
 </div>
 @endsection

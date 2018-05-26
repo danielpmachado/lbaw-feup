@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Featured;
 
 class PagesController extends Controller
 {
     public function index(){
-        return view('pages.index');
+
+        $featuredProducts = Featured::all();
+        return view('pages.index', compact('featuredProducts'));
     }
 
     public function about(){
