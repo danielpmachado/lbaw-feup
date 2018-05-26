@@ -18,9 +18,10 @@ Catalog
 -> many to one relation
 -> sub_categories
 -> mostrar apenas alguns e colocar botao view more
+-> link para o catalog em si 
 
 Products
-
+-> change catalog link
 Reviews
 
 Cart

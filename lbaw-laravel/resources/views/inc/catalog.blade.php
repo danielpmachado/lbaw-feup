@@ -4,32 +4,9 @@
       <i class="fa fa-angle-down"></i>
     </button>
 
-    @foreach(App\Category::get() as $category)
     <div id="navbar2" class="collapse navbar-collapse " >
-      <ul class="navbar-nav  w-100 justify-content-between ">
-        <li class="nav-item">
-          <div class="dropdown">
-
-              <a class="nav-link" href="#" id="{{$category->name}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-{{$category->icon}}"></i>{{$category->name}}
-              </a>
-
-              <div id="drop-1" class="dropdown-menu"  aria-labelledby="dropdownMenu2" >
-                <div class="row mx-0 ">
-                  <div class="col-sm-12 ">
-                    <ul class="list-group list-group-flush">
-                      <!-- <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        <a>Asus</a>
-                        <span class="badge badge-dark badge-pill">14</span>
-                      </li> -->
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-     </div>
-     @endforeach
-
+      <ul class="navbar-nav  w-100 justify-content-between ">   
+      @each('partials.category',App\Category::get(), 'category')
+      </ul>
+    </div>
   </nav>
