@@ -252,27 +252,6 @@ INSERT INTO brand (id,name) VALUES (DEFAULT,'NVIDIA');
 INSERT INTO brand (id,name) VALUES (DEFAULT,'Nintendo');
 INSERT INTO brand (id,name) VALUES (DEFAULT,'Sony');
 
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'Surface 3',13);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'SDSDUNC-064G-GN6IN',19);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'6',10);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'SDSDUNC-128G-GN6IN',19);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'GL62M 7RDX-2203XES',17);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'A6-6400K',16);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'Lumia 1020',10);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'Yoga',9);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'S9+',4);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'Latitude 5480',12);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'X',3);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'Aspire V 13',11);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'P20',7);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'GTX1080',20);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'Mi 6',5);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'Macbook Pro 15"',3);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'G6',14);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'8',3);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'S8',4);
--- INSERT INTO model (id,name,id_brand) VALUES (DEFAULT,'GTX960M',20);
-
 
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'vel.est.tempor@erat.org','Geoffrey Keith','PDB77ZTR5OS','Ap #894-4328 Erat Road', 'Raiganj','5370-253','Admin');
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'egestas@nisl.co.uk','Rama Browning','HSY38MXX8ME','P.O. Box 369, 4403 Massa Avenue','Chapadinha','5370-253',' User');
@@ -368,7 +347,11 @@ INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category) V
 
 
 INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category) VALUES (DEFAULT,'Consola Xbox One S 1TB','HDR (High Dynamic Range);40% mais Compacta;4K Ultra HD e HDR Support;4K Ultra HD Blu-ray player',30,249.99,13,'xbox.jpg',4);
-INSERT INTO product (id,name,description,stock,price,id_brand,id_category) VALUES (DEFAULT,'Quamar','egestas hendrerit neque. In ornare sagittis felis. Donec tempor, est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam',4509,21,4,1);
+
+
+INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category) VALUES (DEFAULT,'Placa Gráfica GIGABYTE Aorus NVidia GeForce GTX 1080 Ti Xtreme Edition 11G','A placa gráfica Gigabyte Aorus NVidia GeForce GTX 1080 Ti Xtreme Edition 11G foi concebida especificamente para equipar computadores de gaming e oferecer desempenho gráfico de excelência, apresentando velocidade de relógio de 1746 MHz e 11 GB de memória GDDR5 a 11448 MHz. Para manter os componentes em funcionamento a temperaturas baixas, esta placa gráfica integra um complexo sistema de refrigeração Aorus, composto por três ventoinhas Windforce com diâmetro de 100 mm, uma placa de cobre em contacto direto com o GPU, tubos de calor para conduzir o ar quente para longe dos componentes e uma larga placa de dissipação. Esta placa gráfica Gigabyte Aorus NVidia GeForce GTX 1080 Ti Xtreme Edition 11G destaca-se também pela iluminação LED multicolorida, programável e sincronizável com os restantes equipamentos de gaming, criando um aspeto moderno e atrativo. Outras características relevantes: preparada para realidade virtual; tecnologia NVidia G-Sync; tecnologia Multi-GPU NVidia SLI; interface de memória de 352 bits; suporte de DirectX 12; Dual-Link DVI-D; 3x HDMI 2.0; 3x DisplayPort 1.4.',3,1099,20,'nvidia_1.jpg',5);
+
+
 INSERT INTO product (id,name,description,stock,price,id_brand,id_category) VALUES (DEFAULT,'Hamilton','ut lacus. Nulla tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus',737,134,12,2);
 
 
