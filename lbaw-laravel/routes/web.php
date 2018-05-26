@@ -40,6 +40,7 @@ Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 
-Route::resource('reviews', 'ReviewController');
+//Reviews
+Route::post('review/{id}', 'ReviewController@create');
 
 
