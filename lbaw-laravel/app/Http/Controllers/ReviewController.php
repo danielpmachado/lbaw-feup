@@ -12,11 +12,13 @@ class ReviewController extends Controller
 
 
 
-    public function create(Request $request, $auction_id)
+    public function create(Request $request, $id_product)
     {
       
-      $review = new Comment();
-      $comment->id_product = $auction_id;
+      $review = new Review();
+      $review->comment = $request->input('comment');
+      return $review;
+      /*$comment->id_product = $auction_id;
       $review->comment = $request->input('comment');
       $review->score = $request->input('score');
       $review->id_user = Auth::user()->user_id;
@@ -27,6 +29,6 @@ class ReviewController extends Controller
         $review->url= $review->user->photo;
       else
         $review->url= '/images/'.($review->user->photo=='perfil_blue.png'?'commentImage.jpg' : $review->user->photo);
-      return $review;
+      return $review;*/
     }
 }
