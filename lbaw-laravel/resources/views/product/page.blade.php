@@ -50,10 +50,12 @@
 						<button type="button" class="btn btn-outline-success">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
+						@if(Auth::check())
 						@if($product->favorited())
 						<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
 							<i class="fa fa-trash"></i> Remove from Wishlist
 						</button>
+						@endif
 						@else
 						<button id="fav" type="button" class="btn btn-outline-danger" value="add">
 							<i class="fa fa-heart"></i> Add to Wishlist
