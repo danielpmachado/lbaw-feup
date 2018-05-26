@@ -3,14 +3,15 @@ function addEventListeners() {
   let fav_button = document.querySelectorAll(' #fav');
   [].forEach.call(fav_button, function(fav) {
     fav.onclick = function(){
-          sendProductFavRequest(this);
+          sendFavoriteRequest(this);
     }
   });
 
   let submit_button = document.querySelector('form.submit-review');
   if(submit_button!=null)
-    submit_button.addEventListener('submit', addReviewRequest);
-  
+    submit_button.onclick = function(){
+      addReviewRequest(this);
+}
 
 }
 
@@ -35,21 +36,15 @@ function sendAjaxRequest(method, url, data, handler) {
 //            Review
 //----------------------------------
 
-function addReviewRequest(event) {
-     
+function addReviewRequest(form) {
 
-  let id = this.closest("div.review-section").getAttribute('data-id');
+  let id = form.closest("div.review-section").getAttribute('data-id');
   let comment = document.querySelector("#comment").value;
 
   if (comment != '')
       sendAjaxRequest('put', '/products/' + id + '/reviews', {comment: comment} , addReviewHandler);
 
       event.preventDefault();
- 
-      /*{
-          comment: text
-      }, addReviewHandler);*/
-
 }
 
 function addReviewHandler(){
@@ -98,7 +93,7 @@ function addReviewHandler(){
 //            Favorites
 //----------------------------------
 
-function sendProductFavRequest(button) {
+function sendFavoriteRequest(button) {
   
   let product = button.closest('div.product');
   let id = product.getAttribute('data-id');
