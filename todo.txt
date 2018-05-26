@@ -4,6 +4,7 @@ User
 -> Google authentication (JAMES)
 -> Purchase History
 -> password not null
+-> delete not working
 
 Favorites
 -> add to wishlist when not logged
@@ -14,6 +15,7 @@ History
 -> see if is in order
 
 Catalog
+-> many to one relation
 -> sub_categories
 -> mostrar apenas alguns e colocar botao view more
 

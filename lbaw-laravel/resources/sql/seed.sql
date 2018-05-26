@@ -74,7 +74,8 @@ CREATE TABLE product (
 
 CREATE TABLE product_category (
     id SERIAL,
-    name text NOT NULL
+    name text NOT NULL,
+    icon text 
 );
 
 
@@ -402,11 +403,11 @@ INSERT INTO payment (id,method,amount,date) VALUES (DEFAULT,'Credit Card ',301,'
 INSERT INTO payment (id,method,amount,date) VALUES (DEFAULT,' Paypal ',1344,'2018-01-03');
 
 
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Computers');
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Accessories');
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Mobile');
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Consoles');
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Components');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Computers','desktop');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Accessories','headphones');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Mobile','mobile-alt');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Consoles','gamepad');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Components','cogs');
 
 INSERT INTO product_order (id_product,id_order) VALUES (6,8);
 INSERT INTO product_order (id_product,id_order) VALUES (20,6);
