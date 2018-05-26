@@ -2,7 +2,7 @@
 
 @section('content')
 <ol class="p_breadcrumb breadcrumb">
-    <li class="breadcrumb-item h6"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item h6"><a href="/">Home</a></li>
     <li class="breadcrumb-item h6"><a href="catalog.html">Catalog</a></li>
     <li class="breadcrumb-item active h6">{{$product->name}}</li>
 </ol>

@@ -8,7 +8,6 @@ DROP TABLE IF EXISTS product CASCADE;
 DROP TABLE IF EXISTS "user" CASCADE;
 DROP TABLE IF EXISTS history_product CASCADE;
 DROP TABLE IF EXISTS product_category CASCADE;
-DROP TABLE IF EXISTS single_category CASCADE;
 DROP TABLE IF EXISTS product_order CASCADE;
 DROP TABLE IF EXISTS featured_product CASCADE;
 DROP TABLE IF EXISTS review CASCADE;
@@ -67,6 +66,7 @@ CREATE TABLE product (
     price real,
     id_model integer,
     pic text DEFAULT 'default.png',
+    id_category integer,
     CONSTRAINT stock_positive CHECK ((stock >= 0)),
     CONSTRAINT price_positive CHECK ((price > 0))
 );
@@ -74,7 +74,8 @@ CREATE TABLE product (
 
 CREATE TABLE product_category (
     id SERIAL,
-    name text NOT NULL
+    name text NOT NULL,
+    icon text
 );
 
 
@@ -93,11 +94,6 @@ CREATE TABLE review (
     id_user integer
 );
 
-
-CREATE TABLE single_category (
-    id_product integer,
-    id_product_category integer
-);
 
 
 CREATE TABLE "user" (
@@ -183,8 +179,6 @@ ALTER TABLE ONLY product_order
 ALTER TABLE ONLY review
     ADD CONSTRAINT review_pkey PRIMARY KEY (id);
 
-ALTER TABLE ONLY single_category
-    ADD CONSTRAINT single_category_pkey PRIMARY KEY (id_product, id_product_category);
 
 ALTER TABLE ONLY "user"
     ADD CONSTRAINT user_pkey PRIMARY KEY (id);
@@ -219,6 +213,10 @@ ALTER TABLE ONLY payment
 ALTER TABLE ONLY product
     ADD CONSTRAINT product_id_model_fkey FOREIGN KEY (id_model) REFERENCES model(id) ON UPDATE CASCADE;
 
+ALTER TABLE ONLY product
+  ADD CONSTRAINT product_id_category_fkey FOREIGN KEY (id_category) REFERENCES product_category(id) ON UPDATE CASCADE;
+
+
 ALTER TABLE ONLY product_order
     ADD CONSTRAINT product_order_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
 
@@ -231,11 +229,6 @@ ALTER TABLE ONLY review
 ALTER TABLE ONLY review
     ADD CONSTRAINT review_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
 
-ALTER TABLE ONLY single_category
-    ADD CONSTRAINT single_category_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
-
-ALTER TABLE ONLY single_category
-    ADD CONSTRAINT single_category_id_product_category_fkey FOREIGN KEY (id_product_category) REFERENCES product_category(id) ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_history_product
     ADD CONSTRAINT single_history__history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON UPDATE CASCADE;
@@ -315,26 +308,33 @@ INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VAL
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'lbaw1753@google.pt','lbaw1753','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','212-7102 Risus. Av.','Águas Lindas de Goiás','5370-253','Admin ');
 --a pass deste user lbaw1753 é 123456
 
-INSERT INTO product (id,name,description,stock,price,id_model,pic) VALUES (DEFAULT,'IPhone X - 256 GB','Diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer.',1349.99,1349.99,1, 'IphoneX.png');
-INSERT INTO product (id,name,description,stock,price,id_model,pic) VALUES (DEFAULT,'MacBook Pro','diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer',530,1832.99,1,'MacBook.png');
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Solomon','Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam. Duis mi enim, condimentum eget, volutpat ornare, facilisis',1436,1211,13);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Slade','in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et',7510,354,12);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Martin','pede nec ante blandit viverra. Donec tempus, lorem fringilla ornare placerat, orci lacus vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est',4946,576,13);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Nicholas','a neque. Nullam ut nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec fringilla. Donec feugiat metus',7345,967,2);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Kenneth','In nec orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec fringilla. Donec feugiat metus sit amet ante. Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet,',8989,93,14);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Isaiah','Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc, ullamcorper eu, euismod ac, fermentum vel,',1794,346,3);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Andrew','et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere',7575,994,8);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Thane','in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, nonummy ut, molestie in, tempus eu, ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit nonummy.',3392,381,16);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Palmer','Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per',5549,456,1);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Keaton','feugiat nec, diam. Duis mi enim, condimentum eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed pede. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at, velit. Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam lorem, auctor quis, tristique ac, eleifend',7289,885,8);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Hiram','odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna sed dui. Fusce aliquam, enim nec tempus scelerisque, lorem ipsum sodales purus, in molestie tortor nibh sit amet orci. Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean',2127,165,1);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Calvin','Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim',4332,1168,17);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Kevin','enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam suscipit, est ac facilisis facilisis, magna tellus',1004,905,10);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Zane','neque. Morbi quis urna. Nunc quis arcu vel quam dignissim pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse',3025,1037,19);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Alan','in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra',4143,496,1);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Merritt','quam. Curabitur vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis',4982,1161,12);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Quamar','egestas hendrerit neque. In ornare sagittis felis. Donec tempor, est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam',4509,21,4);
-INSERT INTO product (id,name,description,stock,price,id_model) VALUES (DEFAULT,'Hamilton','ut lacus. Nulla tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus',737,134,12);
+
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Computers','desktop');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Accessories','headphones');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Mobile','mobile-alt');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Consoles','gamepad');
+INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Components','cogs');
+
+INSERT INTO product (id,name,description,stock,price,id_model,pic,id_category) VALUES (DEFAULT,'IPhone X - 256 GB','Diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer.',1349.99,1349.99,1, 'IphoneX.png',3);
+INSERT INTO product (id,name,description,stock,price,id_model,pic,id_category) VALUES (DEFAULT,'MacBook Pro','diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer',530,1832.99,1,'MacBook.png',1);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Solomon','Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam. Duis mi enim, condimentum eget, volutpat ornare, facilisis',1436,1211,13,2);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Slade','in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et',7510,354,12,3);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Martin','pede nec ante blandit viverra. Donec tempus, lorem fringilla ornare placerat, orci lacus vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est',4946,576,13,4);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Nicholas','a neque. Nullam ut nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec fringilla. Donec feugiat metus',7345,967,2,5);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Kenneth','In nec orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec fringilla. Donec feugiat metus sit amet ante. Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet,',8989,93,14,1);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Isaiah','Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc, ullamcorper eu, euismod ac, fermentum vel,',1794,346,3,2);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Andrew','et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere',7575,994,8,4);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Thane','in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, nonummy ut, molestie in, tempus eu, ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit nonummy.',3392,381,16,3);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Palmer','Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per',5549,456,1,3);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Keaton','feugiat nec, diam. Duis mi enim, condimentum eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed pede. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at, velit. Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam lorem, auctor quis, tristique ac, eleifend',7289,885,8,1);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Hiram','odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna sed dui. Fusce aliquam, enim nec tempus scelerisque, lorem ipsum sodales purus, in molestie tortor nibh sit amet orci. Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean',2127,165,1,2);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Calvin','Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim',4332,1168,17,3);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Kevin','enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam suscipit, est ac facilisis facilisis, magna tellus',1004,905,10,5);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Zane','neque. Morbi quis urna. Nunc quis arcu vel quam dignissim pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse',3025,1037,19,1);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Alan','in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra',4143,496,1,2);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Merritt','quam. Curabitur vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis',4982,1161,12,3);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Quamar','egestas hendrerit neque. In ornare sagittis felis. Donec tempor, est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam',4509,21,4,1);
+INSERT INTO product (id,name,description,stock,price,id_model,id_category) VALUES (DEFAULT,'Hamilton','ut lacus. Nulla tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus',737,134,12,2);
 
 
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (1,1,'2018-04-05');
@@ -402,12 +402,6 @@ INSERT INTO payment (id,method,amount,date) VALUES (DEFAULT,'Credit Card ',301,'
 INSERT INTO payment (id,method,amount,date) VALUES (DEFAULT,' Paypal ',1344,'2018-01-03');
 
 
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Computers');
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Accessories');
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Mobile');
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Consoles');
-INSERT INTO product_category (id,name) VALUES (DEFAULT,'Components');
-
 INSERT INTO product_order (id_product,id_order) VALUES (6,8);
 INSERT INTO product_order (id_product,id_order) VALUES (20,6);
 INSERT INTO product_order (id_product,id_order) VALUES (7,1);
@@ -450,26 +444,6 @@ INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,2,
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,3,'accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus','2018-08-10',14,19);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,4,'ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at,','2018-08-10',18,6);
 
-INSERT INTO single_category (id_product,id_product_category) VALUES (1,5);
-INSERT INTO single_category (id_product,id_product_category) VALUES (2,1);
-INSERT INTO single_category (id_product,id_product_category) VALUES (3,3);
-INSERT INTO single_category (id_product,id_product_category) VALUES (4,2);
-INSERT INTO single_category (id_product,id_product_category) VALUES (5,1);
-INSERT INTO single_category (id_product,id_product_category) VALUES (6,3);
-INSERT INTO single_category (id_product,id_product_category) VALUES (7,4);
-INSERT INTO single_category (id_product,id_product_category) VALUES (8,5);
-INSERT INTO single_category (id_product,id_product_category) VALUES (9,4);
-INSERT INTO single_category (id_product,id_product_category) VALUES (10,5);
-INSERT INTO single_category (id_product,id_product_category) VALUES (11,1);
-INSERT INTO single_category (id_product,id_product_category) VALUES (12,2);
-INSERT INTO single_category (id_product,id_product_category) VALUES (13,4);
-INSERT INTO single_category (id_product,id_product_category) VALUES (14,4);
-INSERT INTO single_category (id_product,id_product_category) VALUES (15,4);
-INSERT INTO single_category (id_product,id_product_category) VALUES (16,2);
-INSERT INTO single_category (id_product,id_product_category) VALUES (17,1);
-INSERT INTO single_category (id_product,id_product_category) VALUES (18,2);
-INSERT INTO single_category (id_product,id_product_category) VALUES (19,2);
-INSERT INTO single_category (id_product,id_product_category) VALUES (20,3);
 
 
 INSERT INTO "history_product" (id,date,description,price) VALUES (1,'2018-09-10','egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a purus. Duis',1083);

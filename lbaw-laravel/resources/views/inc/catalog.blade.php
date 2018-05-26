@@ -3,34 +3,10 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2" aria-controls="navbar2" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa fa-angle-down"></i>
     </button>
-  
+
     <div id="navbar2" class="collapse navbar-collapse " >
-      <ul class="navbar-nav  w-100 justify-content-between ">
-        <li class="nav-item">
-          <div class="dropdown">
-
-              <a class="nav-link" href="#" id="Computers" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-desktop"></i>Computers
-              </a>
-
-              <div id="drop-1" class="dropdown-menu"  aria-labelledby="dropdownMenu2" >
-                <div class="row mx-0 ">
-                  <div class="col-sm-12 ">
-                    <ul class="list-group list-group-flush">
-                      @foreach(App\Category::where('name','Computers')->first()->products as $product)
-                              <li>{{ $product->name }}</li>
-                              <li>{{ $product->price }}</li>
-                      @endforeach
-                      <!-- <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        <a>Asus</a>
-                        <span class="badge badge-dark badge-pill">14</span>
-                      </li> -->
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-     </div>
+      <ul class="navbar-nav  w-100 justify-content-between ">   
+      @each('partials.category',App\Category::get(), 'category')
+      </ul>
+    </div>
   </nav>
