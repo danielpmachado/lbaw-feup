@@ -54,11 +54,12 @@
 						<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
 							<i class="fa fa-trash"></i> Remove from Wishlist
 						</button>
-						@endif
+						
 						@else
 						<button id="fav" type="button" class="btn btn-outline-danger" value="add">
 							<i class="fa fa-heart"></i> Add to Wishlist
 						</button>
+						@endif
 						@endif
 					</div>
 

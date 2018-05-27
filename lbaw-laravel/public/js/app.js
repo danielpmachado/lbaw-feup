@@ -3,15 +3,22 @@ function addEventListeners() {
   let fav_button = document.querySelectorAll(' #fav');
   [].forEach.call(fav_button, function(fav) {
     fav.onclick = function(){
-          sendFavoriteRequest(this);
+          favoriteRequest(this);
     }
   });
 
-  let submit_button = document.querySelector('form.submit-review');
-  if(submit_button!=null)
-    submit_button.onclick = function(){
+  let profile_button = document.querySelectorAll(".profile-user-menu li");
+  [].forEach.call(profile_button, function(change) {
+    change.onclick = function(){
+         changeProfilePill(this);
+    }
+  });
+
+  let comment_button = document.querySelector('form.submit-review');
+  if(comment_button!=null)
+    comment_button.onclick = function(){
       addReviewRequest(this);
-}
+  }
 
 }
 
@@ -33,10 +40,25 @@ function sendAjaxRequest(method, url, data, handler) {
 }
 
 // ---------------------------------
+//         Profile Buttons
+//----------------------------------
+
+function changeProfilePill(pill){
+  let active_pill = document.querySelector(".profile-user-menu li.active");
+  
+  active_pill.classList.remove('active');
+  pill.classList.add('active');
+
+}
+
+
+// ---------------------------------
 //            Review
 //----------------------------------
 
 function addReviewRequest(form) {
+
+  event.preventDefault();
 
   let id = form.closest("div.review-section").getAttribute('data-id');
   let comment = document.querySelector("#comment").value;
@@ -44,7 +66,6 @@ function addReviewRequest(form) {
   if (comment != '')
       sendAjaxRequest('put', '/products/' + id + '/reviews', {comment: comment} , addReviewHandler);
 
-      event.preventDefault();
 }
 
 function addReviewHandler(){
@@ -93,7 +114,7 @@ function addReviewHandler(){
 //            Favorites
 //----------------------------------
 
-function sendFavoriteRequest(button) {
+function favoriteRequest(button) {
   
   let product = button.closest('div.product');
   let id = product.getAttribute('data-id');
