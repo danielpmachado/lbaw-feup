@@ -94,9 +94,33 @@
         @endif
         @if (!Auth::check())
         <li class="nav-item">
-            <a class="nav-link" href=""><i class="fa fa-shopping-cart"></i>0,00€</a>
+            
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#cartModal">
+                    <i class="fa fa-shopping-cart"></i> 0,00€
+                </button>     
         </li>
         @endif
       </ul>
    </div>
 </nav>
+
+
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="modal-cart">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Cart Access Denied</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                You need to Sign In in order to access to the Cart section. <br>
+                If you don't have an account you should register yourself.
+            </div>
+            <div class="modal-footer" id="cart-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" style="padding-right=5em; padding-left=5em;"> OK </button>
+            </div>
+        </div>
+        </div>
+</div>

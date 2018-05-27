@@ -1069,3 +1069,8 @@
     margin-left: 2px;
 
   }
+
+  #cart-footer button{
+    padding-right: 3em;
+    padding-left: 3em;
+  }
