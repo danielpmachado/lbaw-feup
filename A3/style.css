@@ -117,9 +117,9 @@ div.abcRioButton.abcRioButtonLightBlue{
 }
 
 #catalog-nav{
-	margin-top:55px;
-	position:static;
-  padding: 2px 50vh;
+	-margin-top:55px;
+	-position:static;
+  padding: 10px 50vh;
 }
 
 #catalog-nav .navbar-brand{
@@ -529,131 +529,7 @@ FOOTER
   margin:0 0 0 90px;
 }
 
-/*
---------
- MOBILE
---------
-*/
 
-
-
-@media (max-width: 550px) {
-
-  .carousel-inner img{
-
-      min-height: 150px;
-      min-width: 700px;
-      margin: 0 -30%;
-  }
-
-}
-
-@media (max-width: 1300px) {
-  #catalog-nav{
-    padding: 2px 40vh;
-  }
-}
-
-@media (max-width: 1207px) {
-  #catalog-nav{
-    padding: 2px 30vh;
-  }
-  #main-nav{
-    padding: 8px 10px;
-  }
-  #main-nav .input-group {
-    width: 120px;
-  }
-}
-
-@media (max-width: 1040px) {
-  #catalog-nav{
-    padding: 2px 20vh;
-  }
-}
-
-@media (max-width: 870px) {
-  #catalog-nav{
-    padding: 2px 10vh;
-  }
-}
-
-@media (max-width: 767px) {
-
-  #catalog-nav{
-    padding: 1em 2.4em;
-  }
-
-  #drop-1, #drop-2{
-    margin: 0;
-  }
-  ul.dropdown-menu.mega-dropdown-menu-show{
-    opacity: 1;
-    visibility: visible;
-    overflow: visible;
-  }
-
-  .carousel-inner img{
-
-      min-height: 150px;
-      min-width: 700px;
-  }
-
-  .catalog h2 {
-    margin-top:30px;
-    margin-left:0;
-  }
-
-  .footer-distributed .footer-left,
-  .footer-distributed .footer-center,
-  .footer-distributed .footer-right{
-    width: 100%;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-
-
-  .footer-distributed .footer-center div p{
-    display: none;
-  }
-
-  .footer-distributed .footer-center i{
-    margin-left: 0;
-
-  }
-
-
-  .sign{
-    width:75%;
-    margin-top: 130px;
-  }
-
-  #description-box{
-    margin-top:40px;
-    text-align: center;
-  }
-
-  #purchases-buttons .btn{
-    margin-bottom: 10px;
-  }
-
-  .product-section{
-    text-align: center;
-    padding:10px;
-  }
-
-  .profile-sidebar{
-    margin:90px 10px 20px 10px;
-
-  }
-
-  .panel-default {
-    margin:0 10px 20px 10px;
-  }
-  .submit-comment{
-    margin:5px;
-  }
-}
 
 
 
@@ -1343,6 +1219,8 @@ text-transform: uppercase;
     -webkit-box-shadow: none;
 }
 
+
+
 /*
 .mega-dropdown-menu > li > ul {
   padding: 0;
@@ -1384,7 +1262,7 @@ h3.dropdown-header{
 
 @media (max-width: 767px) {
 
-  .mega-dropdown-menu{
+  /*.mega-dropdown-menu{
     padding:0;
   }
 
@@ -1398,16 +1276,16 @@ h3.dropdown-header{
 
    .mega-dropdown .nav-column li a{
       display: none;
-  }
+  }*/
   #image.nav-column{
     display:none;
   }
-
+/*
   ul.dropdown-menu.mega-dropdown-menu-show{
     opacity: 1;
     visibility: visible;
     overflow: visible;
-  }
+  }*/
 
 
 }
@@ -1419,4 +1297,154 @@ h3.dropdown-header{
 
 #saveChangesProdut{
     display: none;
+}
+
+
+/*
+--------
+ MOBILE
+--------
+*/
+
+
+
+@media (max-width: 550px) {
+
+  .carousel-inner img{
+
+      min-height: 150px;
+      min-width: 700px;
+      margin: 0 -30%;
+  }
+
+}
+
+@media (max-width: 1300px) {
+  #catalog-nav{
+    padding: 2px 40vh;
+  }
+}
+
+@media (max-width: 1207px) {
+  .mega-dropdown-menu {
+     padding: 2em 5em;
+  }
+  #main-nav{
+    padding: 8px 10px;
+  }
+  #main-nav .input-group {
+    width: 120px;
+  }
+}
+
+@media (max-width: 990px) {
+
+  #main-nav .input-group {
+     width: 200px;
+  }
+
+  .mega-dropdown-menu{
+    padding: 2px 2em;
+  }
+
+  .dropdown-menu.mega-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    float:right;
+  }
+
+  a#nav_signIn{
+      margin-left: 0;
+      border-left: none;
+      padding-left: 0;
+  }
+}
+
+@media (max-width: 870px) {
+  .mega-dropdown-menu{
+    padding: 2px 0em;
+  }
+}
+
+@media (max-width: 767px) {
+
+  /*.mega-dropdown-menu{
+    padding: 1em 2.4em;
+  }*/
+
+  #drop-1, #drop-2{
+    margin: 0;
+  }
+  /*ul.dropdown-menu.mega-dropdown-menu-show{
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+  }*/
+
+  .carousel-inner img{
+
+      min-height: 150px;
+      min-width: 700px;
+  }
+
+  .catalog h2 {
+    margin-top:30px;
+    margin-left:0;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center div p{
+    display: none;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+
+  }
+
+  .sign{
+    width:75%;
+    margin-top: 130px;
+  }
+
+  #description-box{
+    margin-top:40px;
+    text-align: center;
+  }
+
+  #purchases-buttons .btn{
+    margin-bottom: 10px;
+  }
+
+  .product-section{
+    text-align: center;
+    padding:10px;
+  }
+
+  .profile-sidebar{
+    margin:90px 10px 20px 10px;
+
+  }
+
+  .panel-default {
+    margin:0 10px 20px 10px;
+  }
+
+  .submit-comment{
+    margin:5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dropdown-menu ul{
+    padding-left: 10px;
+  }
 }
