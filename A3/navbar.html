@@ -18,6 +18,25 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
+  <script>
+
+      jQuery(document).ready(function($) {
+        var alterClass = function() {
+          var ww = document.body.clientWidth;
+          if (ww < 990) {
+            $('.mega-dropdown-menu').removeClass('show');
+          } else if (ww >= 991) {
+            $('.mega-dropdown-menu').addClass('show');
+          };
+        };
+        $(window).resize(function(){
+          alterClass();
+        });
+        //Fire it when the page first loads:
+        alterClass();
+      });
+  </script>
+
 
 </head>
 <body>
@@ -41,7 +60,7 @@
         <!--  <div class="collapse navbar-collapse js-navbar-collapse">
           		<ul class="nav navbar-nav"> -->
 
-          <li class="dropdown mega-dropdown show">
+          <li id="mobile-drop" class="dropdown mega-dropdown show">
             <a href="#" class="" data-toggle="dropdown">Computers </a>
             <ul class="dropdown-menu mega-dropdown-menu show">
               <li class="col-sm-3 nav-column">
@@ -152,7 +171,7 @@
           </li>
 
           <li class="dropdown mega-dropdown show">
-            <a href="#" class="" data-toggle="dropdown">Components</a>
+            <a href="index.html" class="" data-toggle="dropdown">Components</a>
             <ul class="dropdown-menu mega-dropdown-menu show">
               <li class="col-sm-3 nav-column">
                 <ul>
