@@ -40,19 +40,6 @@ function sendAjaxRequest(method, url, data, handler) {
 }
 
 // ---------------------------------
-//         Profile Buttons
-//----------------------------------
-
-function changeProfilePill(pill){
-  let active_pill = document.querySelector(".profile-user-menu li.active");
-  
-  active_pill.classList.remove('active');
-  pill.classList.add('active');
-
-}
-
-
-// ---------------------------------
 //            Review
 //----------------------------------
 
@@ -70,43 +57,58 @@ function addReviewRequest(form) {
 
 function addReviewHandler(){
 
-  // console.log('ola');
-  // if (this.status != 200) window.location = '/';
-  // let newReview = JSON.parse(this.responseText);
+  if (this.status != 200) window.location = '/';
+  let review = JSON.parse(this.responseText);
 
-  // let review = document.createElement('div');
-  // review.setAttribute('class', 'row');
-  // review.setAttribute('data-id', newReview.id);
-  // console.log(newReview);
-  // /*let date = SplitDateReturn(newReview.date,0);*/
+  // Create the new review
+  let new_review = createReview(review);
 
-  // review.innerHTML = `<div class="row">
-  // <div class="col-sm-3 text-center">
-  //     <img src="/images/avatars/default.png" class="rounded" height="60" width="60">
-  //     <div class="review-block-name">username</div>
-  // <div class="review-block-date">2019-10-23<br/>1 day ago</div>
-  // </div>
-  // <div class="col-sm-9 col-md-8">
-  //     <div class="review-block-rate">  
-  //         <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //         <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //         <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //         <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //         <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //     </div>
-  //     <div class="review-block-title" style="margin-top:10px;"> <strong>The Review</strong> </div>
-  //     <div class="review-block-description">${newReview.comment}</div>
-  // </div>`;
+  console.log(new_review);
+
+  // Reset the new card input
+  let form = document.querySelector('form.submit-review');
+  form.querySelector('#comment').value="";
+
+  // Insert the new card
+  let section = form.parentElement;
+  section.prepend(new_review);
+  new_review.before(document.createElement("HR"));
+}
+
+function createReview(review){
+  let new_review = document.createElement('div');
+  new_review.classList.add('row');
+  
+  new_review.innerHTML = `
+  <div class="col-sm-3 text-center">
+        <img src="/images/avatars/default.png" class="rounded" height="60" width="60">
+        <div class="review-block-name">${review.id_user}</div>
+    <div class="review-block-date">${review.date}</div>
+  </div>
+  <div class="col-sm-9 col-md-8">
+      <div class="review-block-rate">
+          <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+              <i class="fa fa-star"></i>
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+              <i class="fa fa-star"></i>
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+              <i class="fa fa-star"></i>
+          </button>
+          <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
+              <i class="fa fa-star"></i>
+          </button>
+          <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
+              <i class="fa fa-star"></i>
+          </button>
+      </div><br>
+      <div class="review-block-description">${review.comment}</div>
+  </div>
+  `;
+
+   return new_review;
+
 }
 
 
@@ -151,6 +153,18 @@ function unfavProductHandler(){
   let element = document.querySelector('div.product[data-id="' + product.id + '"]');
 
   element.remove();
+}
+
+// ---------------------------------
+//         Profile Buttons
+//----------------------------------
+
+function changeProfilePill(pill){
+  let active_pill = document.querySelector(".profile-user-menu li.active");
+  
+  active_pill.classList.remove('active');
+  pill.classList.add('active');
+
 }
 
 

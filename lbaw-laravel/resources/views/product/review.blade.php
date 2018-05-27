@@ -23,9 +23,7 @@
             <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
                 <i class="fa fa-star"></i>
             </button>
-        </div>
-        <div class="review-block-title" style="margin-top:10px;"> <strong>The Review</strong> </div>
+        </div><br>
         <div class="review-block-description">{{$review->comment}}</div>
     </div>
 </div>
-<hr/>

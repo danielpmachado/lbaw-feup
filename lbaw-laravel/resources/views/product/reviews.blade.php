@@ -12,6 +12,7 @@
             <?php foreach($reviews as $review) {
                 ?>
                 @include('product.review')
+                <hr/>
             <?php } ?>
 
             @if(Auth::check())
