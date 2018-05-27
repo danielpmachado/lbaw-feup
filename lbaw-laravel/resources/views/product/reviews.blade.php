@@ -1,7 +1,7 @@
 <div class="container-fluid review-section" data-id="{{ $product->id }}">
-    <div class="row ml-5">
+    <div class="row m-2">
         <div class="col-md-3 ">
-            <h3>Reviews</h3>
+            <h3 style="text-align:center;">Reviews</h3>
         </div>
     </div>
 
