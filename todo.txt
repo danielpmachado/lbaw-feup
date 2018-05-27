@@ -7,7 +7,7 @@ User
 -> delete not working
 
 Favorites
--> add to wishlist when not logged
+->buttons
 
 History
 -> show
