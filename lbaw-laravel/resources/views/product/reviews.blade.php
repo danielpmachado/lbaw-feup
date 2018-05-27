@@ -1,7 +1,7 @@
 <div class="container-fluid review-section" data-id="{{ $product->id }}">
-    <div class="row ml-5">
+    <div class="row m-2">
         <div class="col-md-3 ">
-            <h3>Reviews</h3>
+            <h3 style="text-align:center;">Reviews</h3>
         </div>
     </div>
 
@@ -20,19 +20,19 @@
                 <div class="form-group">
                     <label for="Textarea1">Rate {{$product->name}}</label>
                     <div class="review-block-rate">
-                        <button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
+                        <button id="btn1" type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
                             <i class="fa fa-star"></i>
                         </button>
-                        <button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
+                        <button id="btn2" type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
                             <i class="fa fa-star"></i>
                         </button>
-                        <button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
+                        <button id="btn3" type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
                             <i class="fa fa-star"></i>
                         </button>
-                        <button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
+                        <button id="btn4" type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
                             <i class="fa fa-star"></i>
                         </button>
-                        <button type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
+                        <button id="btn5" type="button" class="btn btn-outline-dark btn-sm" aria-label="Left Align" >
                             <i class="fa fa-star"></i>
                         </button>
                     </div>

@@ -3,14 +3,14 @@ function addEventListeners() {
   let fav_button = document.querySelectorAll(' #fav');
   [].forEach.call(fav_button, function(fav) {
     fav.onclick = function(){
-          favoriteRequest(this);
+      favoriteRequest(this);
     }
   });
 
   let profile_button = document.querySelectorAll(".profile-user-menu li");
   [].forEach.call(profile_button, function(change) {
     change.onclick = function(){
-         changeProfilePill(this);
+      changeProfilePill(this);
     }
   });
 
@@ -19,6 +19,21 @@ function addEventListeners() {
     comment_button.onclick = function(){
       addReviewRequest(this);
   }
+
+  let rate_button = document.querySelectorAll('form.submit-review .review-block-rate button');
+  [].forEach.call(rate_button, function(rate) {
+    rate.onmouseover = function(){
+      activateRateButtons(this);
+    }
+    rate.onmouseleave = function(){
+      deactivateRateButtons(this);
+    }
+
+    rate.onclick = function(){
+      finalRateButtons(this);
+    }
+  });
+
 
 }
 
@@ -42,6 +57,44 @@ function sendAjaxRequest(method, url, data, handler) {
 // ---------------------------------
 //            Review
 //----------------------------------
+function finalRateButtons(button){
+  let id = button.getAttribute('id');
+  let btn_number = id.charAt(3);
+
+  for (i = 1; i <= btn_number; i++) { 
+    let btn = document.querySelector("#btn" +i);
+    btn.classList.add('final');
+  }
+  
+  for(i=1+ +btn_number; i<=5;i++){
+    console.log(i);
+    let btn = document.querySelector("#btn" +i);
+    btn.classList.remove('final');
+    btn.classList.remove('active');
+  }
+
+}
+
+function activateRateButtons(button){
+  let id = button.getAttribute('id');
+  let btn_number = id.charAt(3);
+
+  for (i = 1; i <= btn_number; i++) { 
+    let btn = document.querySelector("#btn" +i);
+    btn.classList.add('active');
+  }
+
+}
+
+function deactivateRateButtons(button){
+  
+  for (i = 1; i <= 5; i++) { 
+    let btn = document.querySelector("#btn" +i);
+    if(btn.classList.contains('final'))
+      continue;
+    btn.classList.remove('active');
+  }
+}
 
 function addReviewRequest(form) {
 
