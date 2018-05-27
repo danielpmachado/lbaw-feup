@@ -17,7 +17,7 @@ class ReviewController extends Controller
       $review->score = $request->input('rate');
       $review->comment = $request->input('comment');
       $review->id_user = Auth::user()->id;
-      $review->date= date('Y-m-d H:i:s');
+      $review->date= date('Y-m-d');
       $review->id_product = $id_product;
       $review->save();
       return $review;

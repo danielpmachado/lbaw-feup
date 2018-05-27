@@ -141,34 +141,33 @@ function createReview(review){
   let new_review = document.createElement('div');
   new_review.classList.add('row');
   
-  new_review.innerHTML = `
+  let str = `
   <div class="col-sm-3 text-center">
         <img src="/images/avatars/default.png" class="rounded" height="60" width="60">
         <div class="review-block-name">${review.id_user}</div>
     <div class="review-block-date">${review.date}</div>
   </div>
   <div class="col-sm-9 col-md-8">
-      <div class="review-block-rate">
-        <button type="button" class="btn @if(${review.score} > 0) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
-        <i class="fa fa-star"></i>
-        </button>
-        <button type="button" class="btn @if(${review.score} > 1) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
-              <i class="fa fa-star"></i>
-        </button>
-        <button type="button" class="btn @if(${review.score} > 2) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
-              <i class="fa fa-star"></i>
-        </button>
-        <button type="button" class="btn @if(${review.score} > 3) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
-              <i class="fa fa-star"></i>
-        </button>
+      <div class="review-block-rate">`
 
-        <button type="button" class="btn @if(${review.score} > 4) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
-              <i class="fa fa-star"></i>
-        </button>
-      </div><br>
-      <div class="review-block-description">${review.comment}</div>
-  </div>
+  for(i=0; i < 5; i++){
+    if(i<review.score)
+      str +=`<button type="button" class="btn  btn-primary btn-sm ml-1" aria-label="Left Align" disabled>
+                                <i class="fa fa-star"></i>
+                              </button>`;
+    else
+      str += `<button type="button" class="btn btn-dark btn-grey btn-sm ml-1" aria-label="Left Align" disabled>
+                               <i class="fa fa-star"></i> 
+                              </button>`;
+    
+    }
+      
+    str +=`
+    </div><br>
+    <div class="review-block-description">${review.comment}</div>
+    </div>
   `;
+  new_review.innerHTML = str;
 
    return new_review;
 
