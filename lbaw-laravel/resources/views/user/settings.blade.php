@@ -32,9 +32,15 @@
 							<input  id="email" type="text" class="form-control" name="email" value="{{ $user->email }}" required>
 						</div>
 
-						<div class="form-group"> 
+						<!--<div class="form-group"> 
 							<a> Profile Image </a><br>
 							<input type="file" name="avatar">
+						</div>-->
+
+						<div class="custom-file">
+								<a> Profile Image </a><br>
+								<input type="file" class="custom-file-input" id="customFile">
+								<label class="custom-file-label" for="customFile">Choose file</label>
 						</div>
 
 						<div class="form-group float-left">
