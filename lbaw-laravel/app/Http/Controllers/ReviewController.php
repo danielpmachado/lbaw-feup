@@ -14,6 +14,7 @@ class ReviewController extends Controller
     public function create(Request $request, $id_product){
       
       $review = new Review();
+      $review->score = $request->input('rate');
       $review->comment = $request->input('comment');
       $review->id_user = Auth::user()->id;
       $review->date= date('Y-m-d H:i:s');

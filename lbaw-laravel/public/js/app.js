@@ -65,9 +65,8 @@ function finalRateButtons(button){
     let btn = document.querySelector("#btn" +i);
     btn.classList.add('final');
   }
-  
+
   for(i=1+ +btn_number; i<=5;i++){
-    console.log(i);
     let btn = document.querySelector("#btn" +i);
     btn.classList.remove('final');
     btn.classList.remove('active');
@@ -101,10 +100,22 @@ function addReviewRequest(form) {
   event.preventDefault();
 
   let id = form.closest("div.review-section").getAttribute('data-id');
+
+  // get comment
   let comment = document.querySelector("#comment").value;
 
+  // get rate
+  let rate;
+  for (rate = 5; rate >0; rate--) { 
+    let btn = document.querySelector("#btn" +rate);
+    if(btn.classList.contains('final'))
+      break;
+  }
+
+  console.log(rate);
+
   if (comment != '')
-      sendAjaxRequest('put', '/products/' + id + '/reviews', {comment: comment} , addReviewHandler);
+      sendAjaxRequest('put', '/products/' + id + '/reviews', {comment: comment, rate:rate} , addReviewHandler);
 
 }
 
@@ -115,8 +126,6 @@ function addReviewHandler(){
 
   // Create the new review
   let new_review = createReview(review);
-
-  console.log(new_review);
 
   // Reset the new card input
   let form = document.querySelector('form.submit-review');
@@ -140,21 +149,22 @@ function createReview(review){
   </div>
   <div class="col-sm-9 col-md-8">
       <div class="review-block-rate">
-          <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+        <button type="button" class="btn @if(${review.score} > 0) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
+        <i class="fa fa-star"></i>
+        </button>
+        <button type="button" class="btn @if(${review.score} > 1) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
               <i class="fa fa-star"></i>
-          </button>
-          <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+        </button>
+        <button type="button" class="btn @if(${review.score} > 2) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
               <i class="fa fa-star"></i>
-          </button>
-          <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+        </button>
+        <button type="button" class="btn @if(${review.score} > 3) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
               <i class="fa fa-star"></i>
-          </button>
-          <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
+        </button>
+
+        <button type="button" class="btn @if(${review.score} > 4) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
               <i class="fa fa-star"></i>
-          </button>
-          <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-              <i class="fa fa-star"></i>
-          </button>
+        </button>
       </div><br>
       <div class="review-block-description">${review.comment}</div>
   </div>
