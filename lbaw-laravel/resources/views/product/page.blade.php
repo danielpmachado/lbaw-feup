@@ -46,7 +46,8 @@
 				<div class="col-md-12 ">
 
 					<div class="product-buttons" >
-						@if(Auth::check())
+						
+						@if(Auth::user()->permissions == 'User')
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
@@ -59,7 +60,9 @@
 							<i class="fa fa-heart"></i> Add to Wishlist
 						</button>
 						@endif
-						@else
+						@endif
+											
+						@if(!Auth::check())
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
@@ -67,8 +70,19 @@
 							<i class="fa fa-heart"></i> Add to Wishlist
 						</button>
 						@endif
+							
+						@if(Auth::user()->permissions == 'Admin')
+						<a id="editProdut" href="{{route('editProduct', ['id' =>$product->id])}}" type="button" class="btn btn-outline-info">
+								<i class="fa fa-edit"></i> Edit
+						</a>
+						<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
+                            <i class="fa fa-trash"></i> Remove
+                        </button>	
+						@endif
+
 					</div>
 
+					<p><span class="description-tag">Stock  </span><span style="margin-left:5px;"class="text-editable"> {{ $product->stock }}</span></p>
 					<p><span class="description-tag">Description</span></p>
 					{{$product->description}}
 				</div>
@@ -102,6 +116,28 @@
             </div>
         </div>
         </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+				<p>
+					Are you sure you want to delete?
+				</p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+			  <button type="button" class="btn btn-danger">Delete</button>
+			</div>
+		  </div>
+		</div>
 </div>
 
 @include('product.reviews')

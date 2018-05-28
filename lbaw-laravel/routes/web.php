@@ -43,3 +43,7 @@ Route::put('/products/{id}/reviews', 'ReviewController@create');
 
 //cart
 Route::get('/cart/{id}','UsersController@cart')->name('cart');
+
+//Admin
+Route::get('/admin/users', 'AdminController@getAllUsers');
+Route::get('/admin/editProduct/{id}', 'AdminController@editProduct')->name('editProduct');
