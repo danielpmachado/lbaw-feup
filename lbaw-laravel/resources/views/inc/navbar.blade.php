@@ -87,19 +87,12 @@
         
         @endif
 
-        @if (Auth::check())
         <li class="nav-item">
-            <a class="nav-link" href="{{route('cart', ['id' =>Auth::user()->id])}}"><i class="fa fa-shopping-cart"></i>0,00€</a>
+            <button type="button" class="btn btn-link nav-link" data-toggle="modal" data-target="#cartModal">
+                <i class="fa fa-shopping-cart"></i> 0,00€
+            </button>     
         </li>
-        @endif
-        @if (!Auth::check())
-        <li class="nav-item">
-            
-                <button type="button" class="btn btn-link nav-link" data-toggle="modal" data-target="#cartModal">
-                    <i class="fa fa-shopping-cart"></i> 0,00€
-                </button>     
-        </li>
-        @endif
+
       </ul>
    </div>
 </nav>

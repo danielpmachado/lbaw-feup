@@ -4,11 +4,10 @@ User
 -> Google authentication (JAMES)
 -> password not null
 -> choose file button
+-> history and faorites css
 
 History
--> show
 -> add date
--> see if is in order
 
 Catalog
 -> sub_categories

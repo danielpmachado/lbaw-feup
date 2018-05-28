@@ -1,5 +1,3 @@
-
-
 <div class="row">
     <div class="col-sm-3 text-center">
         <img src="/images/avatars/default.png" class="rounded" height="60" width="60">
@@ -28,3 +26,4 @@
         <div class="review-block-description">{{$review->comment}}</div>
     </div>
 </div>
+<hr/>

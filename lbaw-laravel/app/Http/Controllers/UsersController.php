@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Order;
 use Image;
 
 class UsersController extends Controller
@@ -12,7 +13,9 @@ class UsersController extends Controller
         $user = User::find($id);
         $favorites = $user->favorites;
 
-        return view('user.profile',compact('user','favorites'));
+        $orders = Order::where('id_user',$id)->get();
+        
+        return view('user.profile',compact('user','favorites','orders'));
     }
 
     public function delete($id){

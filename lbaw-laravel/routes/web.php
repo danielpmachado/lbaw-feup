@@ -39,9 +39,5 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallb
 Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
-
-//Reviews
 Route::put('/products/{id}/reviews', 'ReviewController@create');
 
-//Cart
-Route::get('/cart/{id}','CartController@page')->name('cart');
