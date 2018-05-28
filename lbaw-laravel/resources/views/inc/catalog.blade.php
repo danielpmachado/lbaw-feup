@@ -6,7 +6,7 @@
 
     <div id="navbar2" class="collapse navbar-collapse " >
       <ul class="navbar-nav  w-100 justify-content-between ">   
-      @each('partials.category',App\Category::get(), 'category')
+     @each('partials.category',App\Category::get(), 'category')
       </ul>
     </div>
   </nav>
