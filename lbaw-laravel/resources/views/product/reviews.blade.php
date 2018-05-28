@@ -15,7 +15,7 @@
                 <hr/>
             <?php } ?>
 
-            @if(Auth::check())
+           
             <form class="submit-review">
                 <div class="form-group">
                     <label for="Textarea1">Rate {{$product->name}}</label>
@@ -40,11 +40,17 @@
                 <div class="form-group">
                         <textarea class="form-control" id="comment" rows="4" placeholder="Leave your opinion"></textarea>
                 </div>
+                @if(Auth::check())
                 <div class="form-group">
                         <button id="submit_review" type="submit" class="btn btn-dark ">Submit Review</button>
                 </div>
+                @else
+                <div class="form-group">
+                        <button id="submit_review" type="submit" class="btn btn-dark " data-toggle="modal" data-target="#buttons-modal">Submit Review</button>
+                </div>
+                @endif
             </form>
-            @endif
+           
         </div>
     </div>
 </div>
