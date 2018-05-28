@@ -5,10 +5,11 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbar1">
-          <form class="form-inline input-group">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <form method="get" class="form-inline input-group" action="{{route('search')}}">
+            {{ csrf_field() }}
+            <input class="form-control" type="search" id="search_bar" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" id="search_button" type="submit"></i></span>
             </div>
           </form>
           <ul class="navbar-nav ml-auto">

@@ -50,6 +50,13 @@ function addEventListeners() {
     }
   });
 
+  // let search_bar = document.getElementById("search_bar");
+  // let search_button =document.getElementById("search_button");
+  // search_button.onclick= function(){
+  //   console.log("ola");
+  // }
+
+
 
 }
 
