@@ -616,3 +616,22 @@ EXECUTE PROCEDURE update_score_product();
 CREATE INDEX search_idx ON product USING GIST (to_tsvector('english', name));
 CREATE INDEX order_delivery_date ON "order" USING btree (delivery_date);
 CREATE INDEX email_user ON "user" USING hash (email);
+
+
+--FTS - body
+ALTER TABLE product ADD COLUMN textsearchable_name_col tsvector;
+UPDATE product SET textsearchable_name_col =
+     to_tsvector('english', coalesce(name,''));
+
+
+--      private function searchNewsByPopularity($searchText, $offset) {
+--       return DB::select("SELECT news.id, title, users.username As author, date, votes, image, substring(body, '(?:<p>)[^<>]*\.(?:<\/p>)') as body_preview
+--         FROM news NATURAL JOIN newspoints JOIN users ON news.author_id = users.id
+--           WHERE NOT EXISTS (SELECT * FROM DeletedItems WHERE DeletedItems.news_id = News.id)
+--           AND textsearchable_body_and_title_index_col @@ plainto_tsquery('english',?)
+--         ORDER BY newspoints.points DESC LIMIT 10 OFFSET ?", [$searchText, $offset]);
+--     }
+--
+-- "SELECT * from product
+-- WHERE textsearchable_name_col @@ plainto_tsquery('english',?)
+-- ORDER BY name DESC LIMIT 20"
