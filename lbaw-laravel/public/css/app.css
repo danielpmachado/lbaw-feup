@@ -170,13 +170,13 @@
   .dropdown.mega-dropdown:hover .dropdown-menu.mega-dropdown-menu {
     opacity: 1;
     visibility: visible;
-    overflow: visible;
+    -overflow: visible;
   }
 
   .dropdown-menu.mega-dropdown-menu {
     opacity: 0;
     visibility: hidden;
-    overflow: hidden;
+    -overflow: hidden;
     transition: all .3s ease .15s;
   }
 
@@ -1146,11 +1146,22 @@
     padding: 2px 2em;
   }
 
-  .dropdown-menu.mega-dropdown-menu {
+  .dropdown-menu.mega-dropdown-menu  {
     opacity: 1;
     visibility: visible;
-    overflow: hidden;
+    overflow: auto;
     float:right;
+    height: 300px;
+
+  }
+
+  .dropdown-menu.mega-dropdown-menu:hover{
+    opacity: 1;
+    visibility: visible;
+    overflow: auto;
+    float:right;
+    height: 300px;
+    
   }
 
   a#nav_signIn{
