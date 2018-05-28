@@ -502,6 +502,15 @@ FOOTER
 	margin-top: 20px;
 }
 
+.product-image-edit{
+	width: 90%;
+	height: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+
+
 #price-tag {
 	font-size: 2.5em;
 }

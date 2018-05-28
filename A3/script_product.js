@@ -11,6 +11,7 @@ function setEditable() {
     document.getElementById("saveChangesProdut").style.display = "inline";
     document.getElementById("cancelChangesProdut").style.display = "inline";
     document.getElementById("editProdut").style.display = "none";
+    document.getElementById("btnDeleteProduct").style.display = "none";
 
 }
 
@@ -25,6 +26,7 @@ function saveChangesProdut(){
     document.getElementById("cancelChangesProdut").style.display = "none";
     document.getElementById("saveChangesProdut").style.display = "none";
     document.getElementById("editProdut").style.display = "inline";
+    document.getElementById("btnDeleteProduct").style.display = "inline";
 }
 
 function cancelChangesProdut(){
@@ -38,6 +40,7 @@ function cancelChangesProdut(){
     document.getElementById("cancelChangesProdut").style.display = "none";
     document.getElementById("saveChangesProdut").style.display = "none";
     document.getElementById("editProdut").style.display = "inline";
+    document.getElementById("btnDeleteProduct").style.display = "inline";
 }
 
 
