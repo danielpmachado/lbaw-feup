@@ -30,7 +30,7 @@
 <body>
     <div id="app">
         @include('inc.navbar')
-        <!--@include('inc.catalog')-->
+        <!--include inc.catalog-->
         @yield('content')
         @include('inc.footer')
     </div>

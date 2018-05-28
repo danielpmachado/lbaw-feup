@@ -220,6 +220,9 @@
     color: grey;
     text-transform: capitalize;
   }
+  .mega-dropdown .nav-column li a:hover {
+    color: black;
+  }
 
   .dropdown.mega-dropdown a {
     line-height: 26px;
@@ -230,6 +233,7 @@
     text-transform: uppercase;
   }
 
+  
   a#nav_signIn {
     border-left: 2px white solid;
     margin-left: 2em;
