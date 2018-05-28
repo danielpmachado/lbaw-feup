@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     protected $table = 'order';
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,12 +21,10 @@ class Cart extends Model
     /**
      * Get all the items in the cart
      */
-    public function items() { 
+    public function items() {
         return $this->belongsToMany(Product::class, 'product_order', 'id_order', 'id_product');
     }
 
-    public function love() {
-        return $this->address;
-     }
+
 
 }
