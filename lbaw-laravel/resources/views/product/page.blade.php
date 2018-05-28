@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-md-12">
 			<div class="rating-block">
-				<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+				<h2 class="bold padding-bottom-7">{{round($product->score,2)}} <small>/ 5</small></h2>
 				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
@@ -49,7 +49,7 @@
 						@if(Auth::check())
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
-						</button>	
+						</button>
 						@if($product->favorited())
 						<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
 							<i class="fa fa-trash"></i> Remove from Wishlist
@@ -62,7 +62,7 @@
 						@else
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
-						</button>		
+						</button>
 						<button id="fav" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-heart"></i> Add to Wishlist
 						</button>
@@ -106,4 +106,3 @@
 
 @include('product.reviews')
 @endsection
-
