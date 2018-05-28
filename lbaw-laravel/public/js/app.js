@@ -61,7 +61,7 @@ function finalRateButtons(button){
   let id = button.getAttribute('id');
   let btn_number = id.charAt(3);
 
-  for (i = 1; i <= btn_number; i++) { 
+  for (i = 1; i <= btn_number; i++) {
     let btn = document.querySelector("#btn" +i);
     btn.classList.add('final');
   }
@@ -78,7 +78,7 @@ function activateRateButtons(button){
   let id = button.getAttribute('id');
   let btn_number = id.charAt(3);
 
-  for (i = 1; i <= btn_number; i++) { 
+  for (i = 1; i <= btn_number; i++) {
     let btn = document.querySelector("#btn" +i);
     btn.classList.add('active');
   }
@@ -86,8 +86,8 @@ function activateRateButtons(button){
 }
 
 function deactivateRateButtons(button){
-  
-  for (i = 1; i <= 5; i++) { 
+
+  for (i = 1; i <= 5; i++) {
     let btn = document.querySelector("#btn" +i);
     if(btn.classList.contains('final'))
       continue;
@@ -97,7 +97,7 @@ function deactivateRateButtons(button){
 
 function addReviewRequest(form) {
 
-  event.preventDefault();
+  //event.preventDefault();
 
   let id = form.closest("div.review-section").getAttribute('data-id');
 
@@ -106,7 +106,7 @@ function addReviewRequest(form) {
 
   // get rate
   let rate;
-  for (rate = 5; rate >0; rate--) { 
+  for (rate = 5; rate >0; rate--) {
     let btn = document.querySelector("#btn" +rate);
     if(btn.classList.contains('final'))
       break;
@@ -140,7 +140,7 @@ function addReviewHandler(){
 function createReview(review,user){
   let new_review = document.createElement('div');
   new_review.classList.add('row');
-  
+  console.log(review.score);
   let str = `
   <div class="col-sm-3 text-center">
         <img src="/images/avatars/default.png" class="rounded" height="60" width="60">
@@ -149,7 +149,6 @@ function createReview(review,user){
   </div>
   <div class="col-sm-9 col-md-8">
       <div class="review-block-rate">`
-
   for(i=0; i < 5; i++){
     if(i<review.score)
       str +=
@@ -157,12 +156,12 @@ function createReview(review,user){
           <i class="fa fa-star"></i>
         </button>`;
     else
-      str += 
+      str +=
       `<button type="button" class="btn btn-dark btn-grey btn-sm ml-1" aria-label="Left Align" disabled>
-        <i class="fa fa-star"></i> 
+        <i class="fa fa-star"></i>
       </button>`;
     }
-      
+
     str +=`
     </div><br>
     <div class="review-block-description">${review.comment}</div>
@@ -180,11 +179,11 @@ function createReview(review,user){
 //----------------------------------
 
 function favoriteRequest(button) {
-  
+
   let product = button.closest('div.product');
   let id = product.getAttribute('data-id');
   let value = button.value;
-  
+
   if(value == "add")
     sendAjaxRequest('post', '/products/' + id + "/favorite",null,favoriteProductHandler);
 
@@ -197,7 +196,7 @@ function favoriteRequest(button) {
 
 
 function favoriteProductHandler(){
-  
+
   let product = JSON.parse(this.responseText);
   let button = document.querySelector('div.product[data-id="' + product.id + '"] #fav');
 
@@ -211,7 +210,7 @@ function favoriteProductHandler(){
 }
 
 function unfavProductHandler(){
-  
+
   let product = JSON.parse(this.responseText);
   let element = document.querySelector('div.product[data-id="' + product.id + '"]');
 
@@ -224,7 +223,7 @@ function unfavProductHandler(){
 
 function changeProfilePill(pill){
   let active_pill = document.querySelector(".profile-user-menu li.active");
-  
+
   active_pill.classList.remove('active');
   pill.classList.add('active');
 

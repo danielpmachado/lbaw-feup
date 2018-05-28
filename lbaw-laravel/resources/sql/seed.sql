@@ -594,6 +594,20 @@ INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (5
 --   FOR EACH ROW
 --     EXECUTE PROCEDURE insert_single_featured_product();
 
+-- CREATE FUNCTION update_score_product()
+-- RETURNS trigger AS
+-- $$
+-- BEGIN
+-- UPDATE product SET score = (SELECT AVG(score) FROM review WHERE review.id_product=product.id)  WHERE product.id = NEW.id_product;
+-- RETURN NEW;
+-- END
+-- $$ LANGUAGE plpgsql;
+--
+-- CREATE TRIGGER update_each_score
+-- AFTER INSERT ON review
+-- FOR EACH ROW
+-- EXECUTE PROCEDURE update_score_product();
+
 
 CREATE INDEX search_idx ON product USING GIST (to_tsvector('english', name));
 CREATE INDEX order_delivery_date ON "order" USING btree (delivery_date);
