@@ -9,4 +9,4 @@
      @each('partials.categories',App\Category::get(), 'category')
       </ul>
     </div>
-  </nav>
+</nav>
