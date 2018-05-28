@@ -14,8 +14,9 @@
 
 }
 
-body{
-  background-color: var(--main-text-color);
+body {
+    background-color: var(--main-text-color);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 /*
