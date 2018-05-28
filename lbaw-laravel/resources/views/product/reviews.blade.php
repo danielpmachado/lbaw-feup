@@ -9,12 +9,7 @@
         <div class="col-md-12">
             <hr/>
 
-            <?php foreach($reviews as $review) {
-                ?>
-                @include('product.review')
-                <hr/>
-            <?php } ?>
-
+            @each('product.review',$reviews, 'review')
            
             <form class="submit-review">
                 <div class="form-group">
