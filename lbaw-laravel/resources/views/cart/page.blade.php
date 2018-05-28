@@ -16,7 +16,7 @@
                         <a href="#step-2" class="btn disabled" aria-controls="step-2" role="tab" data-toggle="tab">
                             <span> 2  </span>
                             <a> Expedition </a>
-  
+
                         </a>
                     </li>
                     <li rel-index="2">
@@ -36,8 +36,8 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="step-1">
                     <div class="col-md-17">
-  
-  
+
+
                       <div class="container">
                          <div class="card shopping-cart">
                                   <div class="card-header bg-dark text-light">
@@ -48,16 +48,12 @@
                                   </div>
                                   <div class="card-body">
 
-                                        <?php foreach($products as $product) {
-                                            ?>
-                                            @include('cart.product')
-                                            <hr>
-                                        <?php } ?>
+                                        @each('cart.product',$products,'product')
                                         
-                                     
+
                                       <div class="pull-right">
                                           <a href="" class="btn btn-outline-secondary pull-right">
-                                              Update shopping cart 
+                                              Update shopping cart
                                           </a>
                                       </div>
                                   </div>

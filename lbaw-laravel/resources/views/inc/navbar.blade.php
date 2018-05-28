@@ -3,7 +3,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-  
+
         <div class="collapse navbar-collapse" id="navbar1">
           <form class="form-inline input-group">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -12,11 +12,11 @@
             </div>
           </form>
           <ul class="navbar-nav ml-auto">
-              
+
               @each('partials.category',App\Category::get(), 'category')
-             
-  
-  
+
+
+
      <li class="nav-item ">
               @if (!Auth::check())
               <div class="dropdown show">
@@ -24,30 +24,30 @@
                     <i class="fa fa-user"></i>Sign in
                   </a>
                   <div class="dropdown-menu " id="sign-in">
-  
+
                      <form class="my-3 mx-3 p-0 p-0" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-  
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <input id="sign-in-usr" id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
-  
+
                             @if ($errors->has('email'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('email') }}</strong>
                                 </span>
                             @endif
                         </div>
-  
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                           <input id="sign-in-pw" type="password" class="form-control" name="password" required placeholder="Password">
-  
+
                           @if ($errors->has('password'))
                               <span class="help-block">
                                   <strong>{{ $errors->first('password') }}</strong>
                               </span>
                           @endif
                         </div>
-  
+
                         <div class="form-group">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -59,10 +59,10 @@
                         <div class="form-group">
                            <button type="submit" class="btn btn-dark">Sign in</button>
                         </div>
-                  
+
                        <a id="loginGoogle" href="{{url('auth/google')}}" class="btn btn-primary"><img src="/images/google-icon.png" width="20px"> Sign in with Google</a>
                       </form>
-  
+
                       <div class="dropdown-divider"></div>
                       <a  href="{{ route('register') }}">New here? Sign up</a><br>
                       <a  href="{{ url('password/reset') }}">Forgot your password?</a>
@@ -70,7 +70,7 @@
               </div>
               @endif
           </li>
-  
+
           @if (Auth::check())
           <li class="nav-item ">
               <div class="dropdown show ">
@@ -79,19 +79,26 @@
                   </a>
                   <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
                       <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
-                      <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a> 
+                      <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
                   </div>
                 </div>
           </li>
-          
-          @endif
 
+          @endif
+           @if (!Auth::check())
         <li class="nav-item">
             <button type="button" class="btn btn-link nav-link" data-toggle="modal" data-target="#cartModal">
                 <i class="fa fa-shopping-cart"></i> 0,00€
-            </button>     
+            </button>
         </li>
+          @else
+          <li class="nav-item">
+              <a type="button" class="btn btn-link nav-link"  href="{{route('cart', ['id' =>Auth::user()->id])}}" >
+                  <i class="fa fa-shopping-cart"></i> 0,00€
+              </a>
+          </li>
 
+        @endif
       </ul>
    </div>
 </nav>
@@ -121,5 +128,3 @@
     </div>
     </div>
 </div>
-
-

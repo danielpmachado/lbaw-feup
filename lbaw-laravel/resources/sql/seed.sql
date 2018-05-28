@@ -243,6 +243,8 @@ ALTER TABLE ONLY cart
 ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON DELETE CASCADE;
 
 
+
+
 INSERT INTO brand (id,name) VALUES (DEFAULT,'Asus');
 INSERT INTO brand (id,name) VALUES (DEFAULT,'HP');
 INSERT INTO brand (id,name) VALUES (DEFAULT,'Apple');
@@ -389,7 +391,9 @@ INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,2,'2018-04-05
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (9,7,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (12,8,'2018-04-05');
 
-
+INSERT INTO cart(id_product, id_user) VALUES (1,20);
+INSERT INTO cart(id_product, id_user) VALUES (3,20);
+INSERT INTO cart(id_product, id_user) VALUES (5,20);
 
 INSERT INTO "order" (status,address,contact,total_cost,payment_method,id_user,id,delivery_date,payment_date) VALUES (' Deliveried','Ap #699-800 Ligula St.','981 553 524',2203,'Credit Card ',11,DEFAULT,'2018-10-06','2018-01-03');
 INSERT INTO "order" (status,address,contact,total_cost,payment_method,id_user,id,delivery_date,payment_date) VALUES (' Processing ','P.O. Box 328, 3629 Luctus Avenue','915 449 883',244,'Credit Card ',17,DEFAULT,'2018-10-06','2018-01-03');
