@@ -79,7 +79,7 @@
                   </a>
                   <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
                       <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
-                      <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a> 
+                      <a class="dropdown-item align-left" href="{{ url('/logout') }}">Logout</a> 
                   </div>
                 </div>
           </li>
