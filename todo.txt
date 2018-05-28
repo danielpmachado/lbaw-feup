@@ -2,12 +2,8 @@ TODO list
 
 User 
 -> Google authentication (JAMES)
--> password not null
 -> choose file button
 -> history and faorites css
-
-History
--> add date
 
 Catalog
 -> sub_categories
@@ -16,11 +12,14 @@ Catalog
 
 Products
 -> change catalog link
+-> adicionar pontuação js
+-> firefox review
 
-Reviews
--> Total rate
 
 Cart
+-> remove
+-> add produtc
+-> chnage total
 
 
 

@@ -50,7 +50,7 @@ class UsersController extends Controller
     public function cart($id){
       $user = User::find($id);
       $products= $user->cart;
-      return view('cart.page',compact('products'));
+      return view('cart.cart',compact('products'));
     }
 
 }
