@@ -8,7 +8,7 @@
 			·
 			<a href="/faq">FAQ</a>
 		</p>
-		<p class="footer-copyright">{{ config('app.name', 'Tech4U') }} &copy; Copyright 2015</p>
+		<p class="footer-copyright">{{ config('app.name', 'Tech4U') }} &copy; Copyright 2018</p>
 	</div>
 
 	<div class="footer-center">
