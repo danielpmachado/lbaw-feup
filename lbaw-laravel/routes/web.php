@@ -40,6 +40,7 @@ Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 Route::put('/products/{id}/reviews', 'ReviewController@create');
+Route::get('/products/search','ProductController@searchProducts')->name('search');
 
 //cart
 Route::get('/cart/{id}','UsersController@cart')->name('cart');
