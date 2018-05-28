@@ -19,6 +19,7 @@ Products
 -> change catalog link
 
 Reviews
+-> Total rate
 
 Cart
 
