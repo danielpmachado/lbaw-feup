@@ -95,7 +95,7 @@
         @if (!Auth::check())
         <li class="nav-item">
             
-                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#cartModal">
+                <button type="button" class="btn btn-link nav-link" data-toggle="modal" data-target="#cartModal">
                     <i class="fa fa-shopping-cart"></i> 0,00€
                 </button>     
         </li>
@@ -119,6 +119,11 @@
                 If you don't have an account you should register yourself.
             </div>
             <div class="modal-footer" id="cart-footer">
+            <form action="{{ route('register') }}">
+			{{ csrf_field() }}
+			{{ method_field('GET') }}
+			<button class="btn btn-dark" type="submit" style="padding-right=5em; padding-left=5em;"> Sign Up </button>
+			</form>
             <button type="button" class="btn btn-success" data-dismiss="modal" style="padding-right=5em; padding-left=5em;"> OK </button>
             </div>
         </div>
