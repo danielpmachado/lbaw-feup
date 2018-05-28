@@ -7,7 +7,7 @@
 
         <div id="drop-1" class="dropdown-menu"  aria-labelledby="dropdownMenu2" >
             <div class="row mx-0 ">
-                <div class="col-sm-12 ">
+                <div class="col-sm-12 ">    
                     <h5>{{$category->name}}</h5>
                     <ul class="list-group list-group-flush">
                     @each('partials.brand',$category->products, 'product')

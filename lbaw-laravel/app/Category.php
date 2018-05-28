@@ -11,7 +11,7 @@ class Category extends Model{
      * Get all of products for a category
      */
     public function products(){
-        return $this->belongsToMany(Product::class, 'single_category', 'id_product_category','id_product');
+        return $this->hasMany(Product::class,'id_category');
     }
 
 }
