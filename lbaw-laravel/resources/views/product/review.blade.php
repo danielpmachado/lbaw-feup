@@ -8,24 +8,6 @@
     </div>
     <div class="col-sm-9 col-md-8">
         <div class="review-block-rate">
-            
-           <!-- <button type="button" class="btn btn-primary  btn-sm" aria-label="Left Align" disabled>
-                <i class="fa fa-star"></i>
-            </button>
-            <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-                <i class="fa fa-star"></i>
-            </button>
-            <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-                <i class="fa fa-star"></i>
-            </button>
-            <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-                <i class="fa fa-star"></i>
-            </button>
-            <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-                <i class="fa fa-star"></i>
-            </button>-->
-
-            
             <button type="button" class="btn @if($review->score > 0) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
                     <i class="fa fa-star"></i>
             </button>
@@ -38,19 +20,11 @@
             <button type="button" class="btn @if($review->score > 3) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
                     <i class="fa fa-star"></i>
             </button>
+
             <button type="button" class="btn @if($review->score > 4) btn-primary @else btn-dark btn-grey @endif  btn-sm" aria-label="Left Align" disabled>
                     <i class="fa fa-star"></i>
             </button>
-
-            
-         
-
-           
-
-
-        </div>
-        <div class="review-block-title" style="margin-top:10px;"> <strong>The Review</strong> </div>
+        </div><br>
         <div class="review-block-description">{{$review->comment}}</div>
     </div>
 </div>
-<hr/>

@@ -19,22 +19,37 @@ function addEventListeners() {
   let fav_button = document.querySelectorAll(' #fav');
   [].forEach.call(fav_button, function(fav) {
     fav.onclick = function(){
-          favoriteRequest(this);
+      favoriteRequest(this);
     }
   });
 
   let profile_button = document.querySelectorAll(".profile-user-menu li");
   [].forEach.call(profile_button, function(change) {
     change.onclick = function(){
-         changeProfilePill(this);
+      changeProfilePill(this);
     }
   });
 
   let comment_button = document.querySelector('form.submit-review');
   if(comment_button!=null)
-    comment_button.onclick = function(){
+    comment_button.onsubmit = function(){
       addReviewRequest(this);
   }
+
+  let rate_button = document.querySelectorAll('form.submit-review .review-block-rate button');
+  [].forEach.call(rate_button, function(rate) {
+    rate.onmouseover = function(){
+      activateRateButtons(this);
+    }
+    rate.onmouseleave = function(){
+      deactivateRateButtons(this);
+    }
+
+    rate.onclick = function(){
+      finalRateButtons(this);
+    }
+  });
+
 
 }
 
@@ -56,73 +71,123 @@ function sendAjaxRequest(method, url, data, handler) {
 }
 
 // ---------------------------------
-//         Profile Buttons
+//            Review
 //----------------------------------
+function finalRateButtons(button){
+  let id = button.getAttribute('id');
+  let btn_number = id.charAt(3);
 
-function changeProfilePill(pill){
-  let active_pill = document.querySelector(".profile-user-menu li.active");
-  
-  active_pill.classList.remove('active');
-  pill.classList.add('active');
+  for (i = 1; i <= btn_number; i++) { 
+    let btn = document.querySelector("#btn" +i);
+    btn.classList.add('final');
+  }
+
+  for(i=1+ +btn_number; i<=5;i++){
+    let btn = document.querySelector("#btn" +i);
+    btn.classList.remove('final');
+    btn.classList.remove('active');
+  }
 
 }
 
+function activateRateButtons(button){
+  let id = button.getAttribute('id');
+  let btn_number = id.charAt(3);
 
-// ---------------------------------
-//            Review
-//----------------------------------
+  for (i = 1; i <= btn_number; i++) { 
+    let btn = document.querySelector("#btn" +i);
+    btn.classList.add('active');
+  }
+
+}
+
+function deactivateRateButtons(button){
+  
+  for (i = 1; i <= 5; i++) { 
+    let btn = document.querySelector("#btn" +i);
+    if(btn.classList.contains('final'))
+      continue;
+    btn.classList.remove('active');
+  }
+}
 
 function addReviewRequest(form) {
 
   event.preventDefault();
 
   let id = form.closest("div.review-section").getAttribute('data-id');
+
+  // get comment
   let comment = document.querySelector("#comment").value;
 
+  // get rate
+  let rate;
+  for (rate = 5; rate >0; rate--) { 
+    let btn = document.querySelector("#btn" +rate);
+    if(btn.classList.contains('final'))
+      break;
+  }
+
   if (comment != '')
-      sendAjaxRequest('put', '/products/' + id + '/reviews', {comment: comment} , addReviewHandler);
+      sendAjaxRequest('put', '/products/' + id + '/reviews', {comment: comment, rate:rate} , addReviewHandler);
 
 }
 
 function addReviewHandler(){
 
-  // console.log('ola');
-  // if (this.status != 200) window.location = '/';
-  // let newReview = JSON.parse(this.responseText);
+  if (this.status != 200) window.location = '/';
+  let response = JSON.parse(this.responseText);
+  let review = response['review'];
+  let user = response['user'];
 
-  // let review = document.createElement('div');
-  // review.setAttribute('class', 'row');
-  // review.setAttribute('data-id', newReview.id);
-  // console.log(newReview);
-  // /*let date = SplitDateReturn(newReview.date,0);*/
+  // Create the new review
+  let new_review = createReview(review,user);
 
-  // review.innerHTML = `<div class="row">
-  // <div class="col-sm-3 text-center">
-  //     <img src="/images/avatars/default.png" class="rounded" height="60" width="60">
-  //     <div class="review-block-name">username</div>
-  // <div class="review-block-date">2019-10-23<br/>1 day ago</div>
-  // </div>
-  // <div class="col-sm-9 col-md-8">
-  //     <div class="review-block-rate">  
-  //         <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //         <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //         <button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //         <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //         <button type="button" class="btn btn-dark btn-grey btn-sm" aria-label="Left Align" disabled>
-  //             <i class="fa fa-star"></i>
-  //         </button>
-  //     </div>
-  //     <div class="review-block-title" style="margin-top:10px;"> <strong>The Review</strong> </div>
-  //     <div class="review-block-description">${newReview.comment}</div>
-  // </div>`;
+  // Reset the new card input
+  let form = document.querySelector('form.submit-review');
+  form.querySelector('#comment').value="";
+
+  // Insert the new card
+  let section = form.parentElement;
+  section.prepend(new_review);
+  new_review.before(document.createElement("HR"));
+}
+
+function createReview(review,user){
+  let new_review = document.createElement('div');
+  new_review.classList.add('row');
+  
+  let str = `
+  <div class="col-sm-3 text-center">
+        <img src="/images/avatars/default.png" class="rounded" height="60" width="60">
+        <div class="review-block-name">${user.username}</div>
+    <div class="review-block-date">${review.date}</div>
+  </div>
+  <div class="col-sm-9 col-md-8">
+      <div class="review-block-rate">`
+
+  for(i=0; i < 5; i++){
+    if(i<review.score)
+      str +=
+      `<button type="button" class="btn  btn-primary btn-sm ml-1" aria-label="Left Align" disabled>
+          <i class="fa fa-star"></i>
+        </button>`;
+    else
+      str += 
+      `<button type="button" class="btn btn-dark btn-grey btn-sm ml-1" aria-label="Left Align" disabled>
+        <i class="fa fa-star"></i> 
+      </button>`;
+    }
+      
+    str +=`
+    </div><br>
+    <div class="review-block-description">${review.comment}</div>
+    </div>
+  `;
+  new_review.innerHTML = str;
+
+   return new_review;
+
 }
 
 
@@ -167,6 +232,18 @@ function unfavProductHandler(){
   let element = document.querySelector('div.product[data-id="' + product.id + '"]');
 
   element.remove();
+}
+
+// ---------------------------------
+//         Profile Buttons
+//----------------------------------
+
+function changeProfilePill(pill){
+  let active_pill = document.querySelector(".profile-user-menu li.active");
+  
+  active_pill.classList.remove('active');
+  pill.classList.add('active');
+
 }
 
 

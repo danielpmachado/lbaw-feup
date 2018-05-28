@@ -13,7 +13,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         $reviews = Review::where('id_product',$id)
-        ->orderBy('date','asc')
+        ->orderBy('date','desc')
         ->get();
   
 

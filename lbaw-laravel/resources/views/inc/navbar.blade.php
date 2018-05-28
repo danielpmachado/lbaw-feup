@@ -389,6 +389,7 @@
                       <a  href="{{ url('password/reset') }}">Forgot your password?</a>
                   </div>
               </div>
+<<<<<<< HEAD
               @endif
           </li>
   
@@ -423,10 +424,32 @@
         </ul>
   
     </div>
+=======
+        </li>
+        
+        @endif
+
+        @if (Auth::check())
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('cart', ['id' =>Auth::user()->id])}}"><i class="fa fa-shopping-cart"></i>0,00€</a>
+        </li>
+        @endif
+        @if (!Auth::check())
+        <li class="nav-item">
+            
+                <button type="button" class="btn btn-link nav-link" data-toggle="modal" data-target="#cartModal">
+                    <i class="fa fa-shopping-cart"></i> 0,00€
+                </button>     
+        </li>
+        @endif
+      </ul>
+   </div>
+>>>>>>> 76be43ee0477c8fadf98d6b94c407bff74d8883b
 </nav>
 
 
 <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<<<<<<< HEAD
     <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content" id="modal-cart">
         <div class="modal-header">
@@ -438,6 +461,28 @@
         <div class="modal-body">
             You need to Sign In in order to access to the Cart section. <br>
             If you don't have an account you should register yourself.
+=======
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="modal-cart">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Cart Access Denied</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                You need to Sign In in order to access to the Cart section. <br>
+                If you don't have an account you should register yourself.
+            </div>
+            <div class="modal-footer" id="cart-footer">
+            <form action="{{ route('register') }}">
+			{{ csrf_field() }}
+			{{ method_field('GET') }}
+			<button class="btn btn-dark" type="submit" style="padding-right=5em; padding-left=5em;"> Sign Up </button>
+			</form>
+            <button type="button" class="btn btn-success" data-dismiss="modal" style="padding-right=5em; padding-left=5em;"> OK </button>
+            </div>
+>>>>>>> 76be43ee0477c8fadf98d6b94c407bff74d8883b
         </div>
         <div class="modal-footer" id="cart-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal" style="padding-right=5em; padding-left=5em;"> OK </button>

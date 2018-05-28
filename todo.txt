@@ -2,12 +2,8 @@ TODO list
 
 User 
 -> Google authentication (JAMES)
--> Purchase History
 -> password not null
--> delete not working
-
-Favorites
-->buttons
+-> choose file button
 
 History
 -> show
@@ -23,6 +19,7 @@ Products
 -> change catalog link
 
 Reviews
+-> Total rate
 
 Cart
 
