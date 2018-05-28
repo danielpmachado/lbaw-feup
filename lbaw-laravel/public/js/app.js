@@ -113,7 +113,7 @@ function deactivateRateButtons(button){
 
 function addReviewRequest(form) {
 
-  //event.preventDefault();
+  event.preventDefault();
 
   let id = form.closest("div.review-section").getAttribute('data-id');
 
