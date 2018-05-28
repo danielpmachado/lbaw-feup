@@ -17,300 +17,353 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" id="main-nav">
-      <a class="navbar-brand" href="index.html">Tech4U</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="main-nav">
+        <a class="navbar-brand" href="index.html">Tech4U</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbar1">
-        <form class="form-inline input-group">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-          	<span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
-          </div>
-        </form>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-              <div class="dropdown show ">
-                  <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user"></i>Sign in
-                  </a>
-                  <div class="dropdown-menu " id="sign-in">
-                     <form class="my-3 mx-3 p-0 p-0">
-                        <div class="form-group">
-                          <input type="email" class="form-control" id="sign-in-usr" placeholder="Username">
-                        </div>
-                        <div class="form-group">
-                          <input type="password" class="form-control" id="sign-in-pw" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" id="gridCheck1">
-                              <label class="form-check-label" for="gridCheck1">
-                                Remember Me
-                              </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                           <button type="submit" class="btn btn-dark">Sign in</button>
-                        </div>
-                        <div class="g-signin2" data-width="180" data-height="40" data-longtitle="true"></div>
-                      </form>
-                      <div class="dropdown-divider"></div>
-                      <a  href="register.html">New here? Sign up</a><br>
-                      <a  href="#">Forgot your password?</a>
-                  </div>
-                </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
-          </li>
-        </ul>
-     </div>
-  </nav>
-
-
-
-  <nav id="catalog-nav" class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-  	  <a class="navbar-brand d-md-none">Catalog</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2" aria-controls="navbar2" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-angle-down"></i>
-      </button>
-
-      <div id="navbar2" class="collapse navbar-collapse " >
-        <ul class="navbar-nav  w-100 justify-content-between ">
-          <li class="nav-item">
-          <div class="dropdown">
-              <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-desktop"></i>Computers
-              </a>
-              <div id="drop-1" class="dropdown-menu "  aria-labelledby="dropdownMenu2" >
-                <div class="row mx-0 ">
-                  <div class="col-sm-12 ">
-                    <h5>Notebooks</h5>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        <a href="catalog.html">Asus</a>
-                        <span class="badge badge-dark badge-pill">14</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Apple
-                        <span class="badge badge-dark badge-pill">2</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Acer
-                        <span class="badge badge-dark badge-pill">1</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Acer
-                        <span class="badge badge-dark badge-pill">1</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-sm-6">
-                    <h5>Desktops</h5>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Asus
-                        <span class="badge badge-dark badge-pill">14</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Apple
-                        <span class="badge badge-dark badge-pill">2</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Acer
-                        <span class="badge badge-dark badge-pill">1</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-sm-6">
-                    <h5>Mobility</h5>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Asus
-                        <span class="badge badge-dark badge-pill">14</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Apple
-                        <span class="badge badge-dark badge-pill">2</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                        Acer
-                        <span class="badge badge-dark badge-pill">1</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        <div class="collapse navbar-collapse" id="navbar1">
+          <form class="form-inline input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+            	<span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
             </div>
-      		</li>
-    			<li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-headphones"></i>Accessories
-                </a>
-                <div class="dropdown-menu"  aria-labelledby="dropdownMenu2">
-                  <div class="row mx-0">
-                    <div class="col-sm-12">
-                      <h5>Notebooks</h5>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Asus
-                          <span class="badge badge-dark badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Apple
-                          <span class="badge badge-dark badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-12">
-                      <h5>Desktops</h5>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Asus
-                          <span class="badge badge-dark badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Apple
-                          <span class="badge badge-dark badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                      </ul>
+          </form>
+          <ul class="navbar-nav ml-auto">
+
+          <!--  <div class="collapse navbar-collapse js-navbar-collapse">
+            		<ul class="nav navbar-nav"> -->
+
+            <li id="" class="dropdown mega-dropdown show">
+              <a href="#" class="" data-toggle="dropdown">Computers </a>
+              <ul  class="dropdown-menu mega-dropdown-menu show">
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Desktops</h3>
+                    <li><a href="#">Tech4U Gaming</a></li>
+                                  <li><a href="#">Tech4U Workstation</a></li>
+                                  <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Workstation</a></li>
+                    <li class="divider"></li>
+                    <h3 class="dropdown-header">Fonts</h3>
+                                  <li><a href="#">Glyphicon</a></li>
+                    <li><a href="#">Google Fonts</a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Laptops</h3>
+                    <li><a href="#">Xiaomi Laptop </a></li>
+                    <li><a href="#">MSI Laptop </a></li>
+                    <li><a href="#">Gaming Laptop</a></li>
+                    <li><a href="#">Lenovo Laptop</a></li>
+                    <li><a href="#">ASUS Laptop</a></li>
+                    <li><a href="#">HUAWEI Laptop</a></li>
+                    <li><a href="#">Acer Laptop </a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Tablet PCs</h3>
+                    <li><a href="#">Android Tablet</a></li>
+                    <li><a href="#">Windows Tablet</a></li>
+                    <li><a href="#">2 In 1 Tablet</a></li>
+                    <li><a href="#">Phablet</a></li>
+                    <li><a href="#">Kids Tablet </a></li>
+                    <li><a href="#">Gaming Tablet</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 nav-column " id="image">
+                  <ul>
+                  <li class="dropdown-header">Featured</li>
+                          <div id="menCollection" class="carousel slide" data-ride="carousel"> <!-- Change to img only-->
+                            <div class="carousel-inner">
+                              <div class="item active">
+                                  <a href="#"><img src="images/img2.jpeg" height="200em" width="300em"class="img-responsive rounded" alt="product 1"></a>
+                                 <button style="margin-top:7px" href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                            </div><!-- End Item -->
+                         </div><!-- End Carousel Inner -->
+                      </div><!-- /.carousel -->
+                   <li class="divider"></li>
+
+                </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li id="" class="dropdown mega-dropdown show">
+              <a href="#" class="" data-toggle="dropdown">Accessories </a>
+              <ul  class="dropdown-menu mega-dropdown-menu show">
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Desktops</h3>
+                    <li><a href="#">Tech4U Gaming</a></li>
+                                  <li><a href="#">Tech4U Workstation</a></li>
+                                  <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Workstation</a></li>
+                    <li class="divider"></li>
+                    <h3 class="dropdown-header">Fonts</h3>
+                                  <li><a href="#">Glyphicon</a></li>
+                    <li><a href="#">Google Fonts</a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Laptops</h3>
+                    <li><a href="#">Xiaomi Laptop </a></li>
+                    <li><a href="#">MSI Laptop </a></li>
+                    <li><a href="#">Gaming Laptop</a></li>
+                    <li><a href="#">Lenovo Laptop</a></li>
+                    <li><a href="#">ASUS Laptop</a></li>
+                    <li><a href="#">HUAWEI Laptop</a></li>
+                    <li><a href="#">Acer Laptop </a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Tablet PCs</h3>
+                    <li><a href="#">Android Tablet</a></li>
+                    <li><a href="#">Windows Tablet</a></li>
+                    <li><a href="#">2 In 1 Tablet</a></li>
+                    <li><a href="#">Phablet</a></li>
+                    <li><a href="#">Kids Tablet </a></li>
+                    <li><a href="#">Gaming Tablet</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 nav-column " id="image">
+                  <ul>
+                  <li class="dropdown-header">Featured</li>
+                          <div id="menCollection" class="carousel slide" data-ride="carousel"> <!-- Change to img only-->
+                            <div class="carousel-inner">
+                              <div class="item active">
+                                  <a href="#"><img src="images/img2.jpeg" height="200em" width="300em"class="img-responsive rounded" alt="product 1"></a>
+                                 <button style="margin-top:7px" href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                            </div><!-- End Item -->
+                         </div><!-- End Carousel Inner -->
+                      </div><!-- /.carousel -->
+                   <li class="divider"></li>
+
+                </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li id="" class="dropdown mega-dropdown show">
+              <a href="#" class="" data-toggle="dropdown">Components </a>
+              <ul  class="dropdown-menu mega-dropdown-menu show">
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Desktops</h3>
+                    <li><a href="#">Tech4U Gaming</a></li>
+                                  <li><a href="#">Tech4U Workstation</a></li>
+                                  <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Workstation</a></li>
+                    <li class="divider"></li>
+                    <h3 class="dropdown-header">Fonts</h3>
+                                  <li><a href="#">Glyphicon</a></li>
+                    <li><a href="#">Google Fonts</a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Laptops</h3>
+                    <li><a href="#">Xiaomi Laptop </a></li>
+                    <li><a href="#">MSI Laptop </a></li>
+                    <li><a href="#">Gaming Laptop</a></li>
+                    <li><a href="#">Lenovo Laptop</a></li>
+                    <li><a href="#">ASUS Laptop</a></li>
+                    <li><a href="#">HUAWEI Laptop</a></li>
+                    <li><a href="#">Acer Laptop </a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Tablet PCs</h3>
+                    <li><a href="#">Android Tablet</a></li>
+                    <li><a href="#">Windows Tablet</a></li>
+                    <li><a href="#">2 In 1 Tablet</a></li>
+                    <li><a href="#">Phablet</a></li>
+                    <li><a href="#">Kids Tablet </a></li>
+                    <li><a href="#">Gaming Tablet</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 nav-column " id="image">
+                  <ul>
+                  <li class="dropdown-header">Featured</li>
+                          <div id="menCollection" class="carousel slide" data-ride="carousel"> <!-- Change to img only-->
+                            <div class="carousel-inner">
+                              <div class="item active">
+                                  <a href="#"><img src="images/img2.jpeg" height="200em" width="300em"class="img-responsive rounded" alt="product 1"></a>
+                                 <button style="margin-top:7px" href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                            </div><!-- End Item -->
+                         </div><!-- End Carousel Inner -->
+                      </div><!-- /.carousel -->
+                   <li class="divider"></li>
+
+                </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li id="" class="dropdown mega-dropdown show">
+              <a href="#" class="" data-toggle="dropdown">Consoles </a>
+              <ul  class="dropdown-menu mega-dropdown-menu show">
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Desktops</h3>
+                    <li><a href="#">Tech4U Gaming</a></li>
+                                  <li><a href="#">Tech4U Workstation</a></li>
+                                  <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Workstation</a></li>
+                    <li class="divider"></li>
+                    <h3 class="dropdown-header">Fonts</h3>
+                                  <li><a href="#">Glyphicon</a></li>
+                    <li><a href="#">Google Fonts</a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Laptops</h3>
+                    <li><a href="#">Xiaomi Laptop </a></li>
+                    <li><a href="#">MSI Laptop </a></li>
+                    <li><a href="#">Gaming Laptop</a></li>
+                    <li><a href="#">Lenovo Laptop</a></li>
+                    <li><a href="#">ASUS Laptop</a></li>
+                    <li><a href="#">HUAWEI Laptop</a></li>
+                    <li><a href="#">Acer Laptop </a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Tablet PCs</h3>
+                    <li><a href="#">Android Tablet</a></li>
+                    <li><a href="#">Windows Tablet</a></li>
+                    <li><a href="#">2 In 1 Tablet</a></li>
+                    <li><a href="#">Phablet</a></li>
+                    <li><a href="#">Kids Tablet </a></li>
+                    <li><a href="#">Gaming Tablet</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 nav-column " id="image">
+                  <ul>
+                  <li class="dropdown-header">Featured</li>
+                          <div id="menCollection" class="carousel slide" data-ride="carousel"> <!-- Change to img only-->
+                            <div class="carousel-inner">
+                              <div class="item active">
+                                  <a href="#"><img src="images/img2.jpeg" height="200em" width="300em"class="img-responsive rounded" alt="product 1"></a>
+                                 <button style="margin-top:7px" href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                            </div><!-- End Item -->
+                         </div><!-- End Carousel Inner -->
+                      </div><!-- /.carousel -->
+                   <li class="divider"></li>
+
+                </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li id="" class="dropdown mega-dropdown show">
+              <a href="#" class="" data-toggle="dropdown">Mobile </a>
+              <ul  class="dropdown-menu mega-dropdown-menu show">
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Desktops</h3>
+                    <li><a href="#">Tech4U Gaming</a></li>
+                                  <li><a href="#">Tech4U Workstation</a></li>
+                                  <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Workstation</a></li>
+                    <li class="divider"></li>
+                    <h3 class="dropdown-header">Fonts</h3>
+                                  <li><a href="#">Glyphicon</a></li>
+                    <li><a href="#">Google Fonts</a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Laptops</h3>
+                    <li><a href="#">Xiaomi Laptop </a></li>
+                    <li><a href="#">MSI Laptop </a></li>
+                    <li><a href="#">Gaming Laptop</a></li>
+                    <li><a href="#">Lenovo Laptop</a></li>
+                    <li><a href="#">ASUS Laptop</a></li>
+                    <li><a href="#">HUAWEI Laptop</a></li>
+                    <li><a href="#">Acer Laptop </a></li>
+                  </ul>
+                </li>
+                <li class="col-6 col-sm-4 col-md-3 nav-column">
+                  <ul>
+                    <h3 class="dropdown-header ">Tablet PCs</h3>
+                    <li><a href="#">Android Tablet</a></li>
+                    <li><a href="#">Windows Tablet</a></li>
+                    <li><a href="#">2 In 1 Tablet</a></li>
+                    <li><a href="#">Phablet</a></li>
+                    <li><a href="#">Kids Tablet </a></li>
+                    <li><a href="#">Gaming Tablet</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-3 nav-column " id="image">
+                  <ul>
+                  <li class="dropdown-header">Featured</li>
+                          <div id="menCollection" class="carousel slide" data-ride="carousel"> <!-- Change to img only-->
+                            <div class="carousel-inner">
+                              <div class="item active">
+                                  <a href="#"><img src="images/img2.jpeg" height="200em" width="300em"class="img-responsive rounded" alt="product 1"></a>
+                                 <button style="margin-top:7px" href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                            </div><!-- End Item -->
+                         </div><!-- End Carousel Inner -->
+                      </div><!-- /.carousel -->
+                   <li class="divider"></li>
+
+                </ul>
+                </li>
+              </ul>
+            </li>
+
+
+
+            <li class="nav-item ">
+                <div class="dropdown show ">
+                    <a id="nav_signIn" class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-user"></i>Sign in
+                    </a>
+                    <div class="dropdown-menu " id="sign-in">
+                       <form class="my-3 mx-3 p-0 p-0">
+                          <div class="form-group">
+                            <input type="email" class="form-control" id="sign-in-usr" placeholder="Username">
+                          </div>
+                          <div class="form-group">
+                            <input type="password" class="form-control" id="sign-in-pw" placeholder="Password">
+                          </div>
+                          <div class="form-group">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                  Remember Me
+                                </label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                             <button type="submit" class="btn btn-dark">Sign in</button>
+                          </div>
+                          <div class="g-signin2" data-width="180" data-height="40" data-longtitle="true"></div>
+                        </form>
+                        <div class="dropdown-divider"></div>
+                        <a  href="register.html">New here? Sign up</a><br>
+                        <a  href="#">Forgot your password?</a>
                     </div>
                   </div>
-                </div>
-              </div>
-    			</li>
-    			<li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-cogs"></i>Consoles
-                </a>
-                <div class="dropdown-menu"  aria-labelledby="dropdownMenu2">
-                  <div class="row mx-0">
-                    <div class="col-sm-6">
-                      <h5>Notebooks</h5>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Asus
-                          <span class="badge badge-dark badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Apple
-                          <span class="badge badge-dark badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-6">
-                      <h5>Desktops</h5>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Asus
-                          <span class="badge badge-dark badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Apple
-                          <span class="badge badge-dark badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    			</li>
-    			<li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-gamepad"></i>Components
-                </a>
-                <div class="dropdown-menu"  aria-labelledby="dropdownMenu2">
-                  <div class="row mx-0">
-                    <div class="col-sm-12">
-                      <h5>Notebooks</h5>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Asus
-                          <span class="badge badge-dark badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Apple
-                          <span class="badge badge-dark badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-mobile fa-lg"></i>Mobile
-                </a>
-                <div id="drop-2" class="dropdown-menu"  aria-labelledby="dropdownMenu2">
-                  <div class="row mx-0">
-                    <div class="col-sm-12">
-                      <h5>Notebooks</h5>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          <a href="catalog.html">Asus</a>
-                          <span class="badge badge-dark badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Apple
-                          <span class="badge badge-dark badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center p-1">
-                          Acer
-                          <span class="badge badge-dark badge-pill">1</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    			</li>
-        </ul>
-     </div>
-  </nav>
+            </li>
+            <li class="nav-item">
+              <a  id="nav_cart" class="nav-link" href="mycart.html"><i class="fa fa-shopping-cart"></i>0,00€</a>
+            </li>
+        <!--  </ul>
+
+        </div >-->
+      </ul>
+
+       </div>
+    </nav>
 
 <div id="about" class="container text-center">
   <div class="row">
