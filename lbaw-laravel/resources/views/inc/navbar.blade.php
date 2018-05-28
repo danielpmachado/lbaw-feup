@@ -6,10 +6,9 @@
 
         <div class="collapse navbar-collapse" id="navbar1">
           <form method="get" class="form-inline input-group" action="{{route('search')}}">
-            {{ csrf_field() }}
-            <input class="form-control" type="search" id="search_bar" placeholder="Search" aria-label="Search">
+            <input class="form-control" type="search" name="search_content" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" id="search_button" type="submit"></i></span>
+                <button class="input-group-text" type="submit" id="basic-addon2"><i class="fa fa-search" ></i></button>
             </div>
           </form>
           <ul class="navbar-nav ml-auto">
