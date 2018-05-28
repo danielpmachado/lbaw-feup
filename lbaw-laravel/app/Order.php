@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class Order extends Model
 {
     protected $table = 'order';
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -19,12 +19,11 @@ class Cart extends Model
 
 
     /**
-     * Get all the items in the cart
+     * Get all the products 
      */
-    public function items() {
+    public function products() { 
         return $this->belongsToMany(Product::class, 'product_order', 'id_order', 'id_product');
     }
-
 
 
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Order;
 use Image;
 
 class UsersController extends Controller
@@ -12,13 +13,15 @@ class UsersController extends Controller
         $user = User::find($id);
         $favorites = $user->favorites;
 
-        return view('user.profile',compact('user','favorites'));
+        $orders = Order::where('id_user',$id)->get();
+
+        return view('user.profile',compact('user','favorites','orders'));
     }
 
     public function delete($id){
         $user = User::find($id);
         $user->delete();
-        
+
         return redirect()->route('home');
    }
 
@@ -30,9 +33,9 @@ class UsersController extends Controller
         $user->city = request('city');
         $user->email = request('email');
         $user->zip = request('zip');
-    
+
         $avatar = $request->file('avatar');
-        
+
         if($avatar != null){
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
             Image::make($avatar)->save( public_path('/images/avatars/' . $filename ) );
@@ -42,6 +45,12 @@ class UsersController extends Controller
         $user->save();
 
         return redirect()->route('profile',['id' => $user->id]);
+    }
+
+    public function cart($id){
+      $user = User::find($id);
+      $products= $user->cart;
+      return view('cart.page',compact('products'));
     }
 
 }

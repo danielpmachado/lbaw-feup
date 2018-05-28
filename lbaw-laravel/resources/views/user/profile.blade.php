@@ -41,6 +41,7 @@
 
 		@include('user.favorites')
 		@include('user.settings')
+		@include('user.history')
 		</div>
 	</div>
 </div>

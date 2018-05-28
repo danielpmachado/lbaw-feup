@@ -18,6 +18,8 @@
     background-color: var(--main-text-color);
     margin-top: 4em;
   }
+
+  
   
   /*
   -----------
@@ -163,20 +165,17 @@
     text-transform: uppercase;
   }
 
-  #main-nav .dropdown-menu {
-    text-align: center;
-  }
 
   .dropdown.mega-dropdown:hover .dropdown-menu.mega-dropdown-menu {
     opacity: 1;
     visibility: visible;
-    overflow: visible;
+    -overflow: visible;
   }
 
   .dropdown-menu.mega-dropdown-menu {
     opacity: 0;
     visibility: hidden;
-    overflow: hidden;
+    -overflow: hidden;
     transition: all .3s ease .15s;
   }
 
@@ -276,32 +275,27 @@
     color:var(--main-hl-color); 
   }
 
+
   
   /*
   --------
    HOME
   --------
   */
-  
-  #carouselExampleCaptions{
-    display:block;
-  
-  }
+
   
   #featured{
-    background-color:  var(--main-bg-color);
-    color:  var(--main-text-color);
+    border-color:black;
+    background-color:var(--main-text-color);
+    color:  var(--main-bg-color);
     margin:0;
     padding: 10px 20px;
   
   }
-  
+
   #featured-container .card{
-    border: 10px solid var(--main-text-color);
-    border-top: 20px solid var(--main-text-color);
-    border-bottom: 20px solid var(--main-text-color);
+    border-radius:0;
   }
-  
   
   
   /*
@@ -498,7 +492,7 @@
   .sign{
     width:35%;
     text-align:center;
-    margin-top:60px;
+    margin-top:120px;
     margin-bottom: 60px;
     background-color: white;
     border-radius:10px;
@@ -746,9 +740,6 @@
       -color: #6e7889;
   }
   
-  
-  
-  
   div.card-body.text-center{
     background-color: var(--main-text-color);
   }
@@ -759,18 +750,16 @@
   }
   
   #about{
-    margin-top:8em;
+    margin-top:100px;
     margin-bottom: 4em;
   
   }
   
   #about-title{
-    margin-bottom: 2em;
+    margin-bottom: 10px;
   }
   
-  
-  
-  
+
   
   /*
     -----------
@@ -815,8 +804,6 @@
   }
   .nav-tabs > li a {
       width: 70px;
-      -height: 70px;
-      -line-height: 70px;
       margin: 20px auto;
       border-radius: 100%;
       padding: 0;
@@ -1145,11 +1132,22 @@
     padding: 2px 2em;
   }
 
-  .dropdown-menu.mega-dropdown-menu {
+  .dropdown-menu.mega-dropdown-menu  {
     opacity: 1;
     visibility: visible;
-    overflow: hidden;
+    overflow: auto;
     float:right;
+    height: 300px;
+
+  }
+
+  .dropdown-menu.mega-dropdown-menu:hover{
+    opacity: 1;
+    visibility: visible;
+    overflow: auto;
+    float:right;
+    height: 300px;
+    
   }
 
   a#nav_signIn{
@@ -1231,6 +1229,10 @@
 
   .submit-comment{
     margin:5px;
+  }
+
+  .mega-dropdown #image{
+    display:none;
   }
 }
 
