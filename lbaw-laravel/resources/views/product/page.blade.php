@@ -47,6 +47,9 @@
 
 					<div class="product-buttons" >
 						@if(Auth::check())
+						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
+							<i class="fa fa-shopping-cart"></i> Add to Cart
+						</button>	
 						@if($product->favorited())
 						<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
 							<i class="fa fa-trash"></i> Remove from Wishlist
