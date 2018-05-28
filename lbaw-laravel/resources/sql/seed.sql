@@ -589,7 +589,7 @@ INSERT INTO "single_featured_product" (id_product,id_featured_product) VALUES (5
 -- $BODY$
 -- LANGUAGE plpgsql;
 --
--- CREATE TRIGGER insert_single_featured_product
+-- CREATE TRIGGER insert_single_featured_products
 --   AFTER INSERT ON featured_product
 --   FOR EACH ROW
 --     EXECUTE PROCEDURE insert_single_featured_product();

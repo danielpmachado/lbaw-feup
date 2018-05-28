@@ -275,6 +275,7 @@
     color:var(--main-hl-color); 
   }
 
+
   
   /*
   --------
@@ -1217,6 +1218,10 @@
 
   .submit-comment{
     margin:5px;
+  }
+
+  .mega-dropdown #image{
+    display:none;
   }
 }
 
