@@ -16,7 +16,7 @@ function addEventListeners() {
 
   let comment_button = document.querySelector('form.submit-review');
   if(comment_button!=null)
-    comment_button.onclick = function(){
+    comment_button.onsubmit = function(){
       addReviewRequest(this);
   }
 
@@ -112,8 +112,6 @@ function addReviewRequest(form) {
       break;
   }
 
-  console.log(rate);
-
   if (comment != '')
       sendAjaxRequest('put', '/products/' + id + '/reviews', {comment: comment, rate:rate} , addReviewHandler);
 
@@ -122,10 +120,12 @@ function addReviewRequest(form) {
 function addReviewHandler(){
 
   if (this.status != 200) window.location = '/';
-  let review = JSON.parse(this.responseText);
+  let response = JSON.parse(this.responseText);
+  let review = response['review'];
+  let user = response['user'];
 
   // Create the new review
-  let new_review = createReview(review);
+  let new_review = createReview(review,user);
 
   // Reset the new card input
   let form = document.querySelector('form.submit-review');
@@ -137,14 +137,14 @@ function addReviewHandler(){
   new_review.before(document.createElement("HR"));
 }
 
-function createReview(review){
+function createReview(review,user){
   let new_review = document.createElement('div');
   new_review.classList.add('row');
   
   let str = `
   <div class="col-sm-3 text-center">
         <img src="/images/avatars/default.png" class="rounded" height="60" width="60">
-        <div class="review-block-name">${review.id_user}</div>
+        <div class="review-block-name">${user.username}</div>
     <div class="review-block-date">${review.date}</div>
   </div>
   <div class="col-sm-9 col-md-8">
@@ -152,14 +152,15 @@ function createReview(review){
 
   for(i=0; i < 5; i++){
     if(i<review.score)
-      str +=`<button type="button" class="btn  btn-primary btn-sm ml-1" aria-label="Left Align" disabled>
-                                <i class="fa fa-star"></i>
-                              </button>`;
+      str +=
+      `<button type="button" class="btn  btn-primary btn-sm ml-1" aria-label="Left Align" disabled>
+          <i class="fa fa-star"></i>
+        </button>`;
     else
-      str += `<button type="button" class="btn btn-dark btn-grey btn-sm ml-1" aria-label="Left Align" disabled>
-                               <i class="fa fa-star"></i> 
-                              </button>`;
-    
+      str += 
+      `<button type="button" class="btn btn-dark btn-grey btn-sm ml-1" aria-label="Left Align" disabled>
+        <i class="fa fa-star"></i> 
+      </button>`;
     }
       
     str +=`

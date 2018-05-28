@@ -20,7 +20,11 @@ class ReviewController extends Controller
       $review->date= date('Y-m-d');
       $review->id_product = $id_product;
       $review->save();
-      return $review;
+
+      return response()->json([
+        'review'=>$review, 
+        'user'=>Auth::user()
+        ]);
     
     }
 }
