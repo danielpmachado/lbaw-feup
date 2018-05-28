@@ -41,3 +41,5 @@ Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 Route::put('/products/{id}/reviews', 'ReviewController@create');
 
+//cart
+Route::get('/cart/{id}','UsersController@cart')->name('cart');
