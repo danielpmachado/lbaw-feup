@@ -816,17 +816,7 @@
   }
   
   
-  
-  .nav-tabs > li a:hover {
-      border: none;
-      background: none;
-  }
-  
-  .nav-tabs > li.active a, .nav-tabs > li.active a:hover {
-      border: none;
-      background: none;
-  }
-  
+
   .nav-tabs > li span {
       width: 70px;
       height: 70px;
@@ -951,9 +941,7 @@
       z-index: 3
   }
   
-  .quantity .minus:hover, .quantity .plus:hover {
-      background-color: #dad8da
-  }
+
   
   .quantity .minus {
       bottom: 0

@@ -44,34 +44,22 @@
                             <div class="card-body">
 
                                 @each('cart.product',$products,'product')
+
+                                <?php
+                                   $total =0;
+                                   foreach($products as $product)
+                                       $total += $product->price;
+                                ?>
                                 
                             </div>
                             <div class="card-footer">
                                 <button href=""  class="btn btn-outline-dark float-right">Checkout</button>
                                 <div class="pt-2">
-                                    Total price: <b>2289.99€</b>
+                                    Total price: <b>{{$total}} €</b>
                                 </div>
                             </div>
                         </div>
                     </div>
-            </div>
-
-
-            <div role="tabpanel" class="tab-pane" id="step-2">
-                <div class="col-md-12">
-                    <button id="step-2-next" class="btn btn-lg btn-primary pull-right">Next</button>
-                    <p>fdsfsdf</p>  
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="step-3">
-                <div class="col-md-12">
-                    <button id="step-3-next" class="btn btn-lg btn-primary pull-right">Next</button>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="step-4">
-                <div class="col-md-12">
-                    <button id="step-4-next" class="btn btn-lg btn-primary pull-right">Continue</button>
-                </div>
             </div>
         </div>
     </div>

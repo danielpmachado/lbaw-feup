@@ -16,7 +16,6 @@ class ProductController extends Controller
         ->orderBy('date','desc')
         ->get();
 
-
         return view('product.page',compact('product','reviews'));
     }
 
