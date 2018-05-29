@@ -39,8 +39,7 @@ class ProductController extends Controller
 
       $text =$request->search_content;
       $products=$this->searchByName($text);
-      dd($products);
-      return $products;
+      return view('pages.search_page',compact('products'));
 
     }
 
@@ -89,4 +88,11 @@ class ProductController extends Controller
         'quantity'=>$product->pivot->quantity
         ]);
     }
+
+    public function delete($id){
+        $product = Product::find($id);
+        $product->delete();
+
+        return redirect()->route('home');
+   }
 }
