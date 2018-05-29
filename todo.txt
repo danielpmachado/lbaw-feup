@@ -17,11 +17,9 @@ Products
 
 
 Cart
--> remove
--> add produtc
--> chnage total
 
 
-
+Feautured
+->Data Base
 
 

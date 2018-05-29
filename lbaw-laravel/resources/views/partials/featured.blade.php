@@ -12,11 +12,27 @@
             Sold Off
             @endif
         </p>
-        <div class="card-btn">
-            <a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
-        <a href="{{route('page', ['id' =>$featuredProduct->product->id])}}" class="btn  btn-dark  btn-block">See More</a>
-        </div>
+        <hr>
+            <div class="card-btn">
+                @if(Auth::check())
+                    @if($featuredProduct->product->ordered())
+                        <button id="cart" type="button" class="btn btn-outline-success" disabled>
+                            <i class="fa fa-check"></i> In Cart
+                        </button>
+                    @else
+                        <button id="cart" type="button" class="btn btn-outline-success">
+                            <i class="fa fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    @endif
+                @else
+                    <button  type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart
+                    </button>
+                @endif
+                <a href="{{route('page', ['id' =>$featuredProduct->product->id])}}" class="btn btn-dark float-right">See More</a>
+            </div>
+
     </div>
 </div>
 
-<?php
+@include('modals.cart')

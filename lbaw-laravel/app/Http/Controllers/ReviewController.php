@@ -12,7 +12,7 @@ class ReviewController extends Controller
 {
 
     public function create(Request $request, $id_product){
-      
+
       $review = new Review();
       $review->score = $request->input('rate');
       $review->comment = $request->input('comment');
@@ -22,19 +22,17 @@ class ReviewController extends Controller
       $review->save();
 
       return response()->json([
-        'review'=>$review, 
+        'review'=>$review,
         'user'=>Auth::user()
         ]);
-    
+
     }
 
 
-    public function delete($id_product, $id_review){
+    public function delete( $id_review){
         $review = Review::find($id_review);
         $review->delete();
 
-        $product = Product::find($id_product);
-
-        return redirect()->route('page',['id' => $product->id]);
+        return $id_review;
     }
 }
