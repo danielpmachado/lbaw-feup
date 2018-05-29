@@ -82,7 +82,7 @@
 								<i class="fa fa-trash"></i> Remove
 							</button>
 							@endif
-						@endif
+						
 
 						@else
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
