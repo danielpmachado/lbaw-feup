@@ -17,6 +17,7 @@ Route::get('/about', 'PagesController@about');
 Route::get('/faq', 'PagesController@faq');
 Route::get('/404', 'PagesController@error404');
 
+Route::get('/search_page','PagesController@search_page');
 // User
 Route::get('/users/{id}','UsersController@profile')->name('profile');
 Route::post('/users/{id}/update','UsersController@update')->name('update_user');
@@ -46,6 +47,7 @@ Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 Route::put('/products/{id}/reviews', 'ReviewController@create');
+
 
 
 //Admin
