@@ -2,10 +2,10 @@
     <div class="image-card" style="height:100%; width:100%; display:flex; align-items:center;">
         <img class="card-img-top" src="{{ URL::to('/') }}/images/products/{{$featuredProduct->product->pic}}" alt="Card image cap">
     </div>
-   
+
     <div class="card-body ">
         <h5 class="card-title">{{$featuredProduct->product->name}}</h5>
-        <p class="card-text" style="height:-20px;">{{$featuredProduct->product->price}}€ - 
+        <p class="card-text" style="height:-20px;">{{$featuredProduct->product->price}}€ -
             @if($featuredProduct->product->stock > 0)
             Available
             @else
@@ -19,5 +19,4 @@
     </div>
 </div>
 
-<?php 
-
+<?php

@@ -909,7 +909,6 @@ div[role="tabpanel"]:after {
     clear: both;
 }
 
-
 .quantity {
     float: left;
     margin-right: 15px;
@@ -965,11 +964,14 @@ div[role="tabpanel"]:after {
     z-index: 3
 }
 
-
-
 .quantity .minus {
     bottom: 0
 }
+
+.quantity .minus:hover, .quantity .plus:hover {
+    background-color: #dad8da
+ }
+ 
 .shopping-cart {
     margin-bottom: 40px;
 }
