@@ -626,6 +626,9 @@ CREATE INDEX email_user ON "user" USING hash (email);
 ALTER TABLE product ADD COLUMN textsearchable_name_col tsvector;
 UPDATE product SET textsearchable_name_col = to_tsvector('portuguese', name || ' ' || description);
 
+ALTER TABLE "user" ADD COLUMN textsearch_name_col tsvector;
+UPDATE "user" SET textsearch_name_col = to_tsvector('english', username );
+
 
 --      private function searchNewsByPopularity($searchText, $offset) {
 --       return DB::select("SELECT news.id, title, users.username As author, date, votes, image, substring(body, '(?:<p>)[^<>]*\.(?:<\/p>)') as body_preview
