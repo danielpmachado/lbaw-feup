@@ -534,6 +534,7 @@ PROFILE
     width:70%;
     height:70%;
     margin-bottom:10px;
+    order: 1;
 }
 
 .profile-user-name{
@@ -541,6 +542,11 @@ PROFILE
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
+    order: 2;
+}
+
+.profile-user-menu{
+    order: 3;
 }
 
 .profile-user-menu li{
@@ -600,7 +606,7 @@ PRODUCT
 }
 
 .product-page{
-    margin-top: 90px;
+    margin-top: 40px;
     padding-right:100px;
 }
 
@@ -609,6 +615,10 @@ PRODUCT
     height: auto;
     margin-bottom: 20px;
     margin-top: 20px;
+}
+
+.product-specs{
+    text-align: justify;
 }
 
 #price-tag {
@@ -1226,8 +1236,8 @@ MOBILE
 
     .profile-sidebar{
         margin:90px 10px 20px 10px;
-        display: flex;
-        justify-content: flex-end;
+        display: flex !important;
+        justify-content: flex-center;
 
     }
 

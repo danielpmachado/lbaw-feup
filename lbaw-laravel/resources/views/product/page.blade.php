@@ -43,7 +43,7 @@
 			<h3 class="text-success" id="price-tag">{{$product->price}} €</h3>
 
 			<div class="row">
-				<div class="col-md-12 ">
+				<div class="col-md-11 product-specs">
 
 					<div class="product-buttons" >
 
