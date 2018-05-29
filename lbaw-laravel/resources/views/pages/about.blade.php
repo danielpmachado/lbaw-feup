@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <div id="about" class="container text-center">
     <div class="row text-center description-row">
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
             <h1 id="about-title" class="container text-center">Tech4U</h1>
-            <p>Donec sollicitudin quis felis vel iaculis. Etiam nulla tellus, volutpat nec varius congue, vulputate ut magna. Suspendisse et tellus posuere, tincidunt massa ac, malesuada velit. Pellentesque metus eros, fermentum sit amet augue ac, faucibus aliquet neque. Nam faucibus ullamcorper mi, ac pharetra eros pharetra nec. Cras sed eros vitae diam mattis lacinia quis non risus. Donec a rutrum turpis. Pellentesque sit amet odio nec odio rhoncus ullamcorper at nec sem.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>We at Tech4U pride ourselves with being one of the fastest growing ecommerce platforms for high quality products. We strive to make you happy.</p>
+            <p>Tech4U specializes in consumer electronics and gadgets. Our online catalog is constantly expanding with the very latest and the coolest gadgets added every day to ensure you get your tech fix.</p>
+            <p>We take your satisfaction seriously. We provide a professional, dedicated service for every single customer regardless of order size.</p>
         </div>
         <div class="col-md-2">
         </div>
@@ -27,7 +27,7 @@
                 <p>We take your <span class="category">security</span> to heart. All your information is confidential</p>
             </div>
             <div class="col-md-4 info-point">
-                <i class="fa fa-dollar"></i>
+                <i class="fa fa-dollar-sign"></i>
                 <p>We analyze the market to give you the <span class="category">lowest prices</span> for all products</p>
             </div>
         </div>
@@ -138,7 +138,7 @@
                 <div class="card border-0">
                     <div class="card-body text-center">
                         <i class="fa fa-envelope"></i>
-                        <h5>tech4you@gmail.com</h5>
+                        <h5>support@tech4u.com</h5>
 
                     </div>
                 </div>
@@ -146,7 +146,7 @@
         </div>
 
     </div>
-</div>    
+</div>
 
 
     <div id="map" style="width:100%;height:400px;"></div>
