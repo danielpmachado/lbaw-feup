@@ -69,7 +69,7 @@
 								<a id="editProdut" href="{{route('editProduct', ['id' =>$product->id])}}" type="button" class="btn btn-outline-info">
 										<i class="fa fa-edit"></i> Edit
 								</a>
-								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
+								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteProduct">
 									<i class="fa fa-trash"></i> Remove
 								</button>	
 								@endif
@@ -143,6 +143,30 @@
 		  </div>
 		</div>
 </div>
+
+<div class="modal fade" id="deleteProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			By deleting this product all the data will be lost and you will no longer be able to make purchases at Tech4U website.
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<form action="{{ route('delete_product', ['id' => $product->id]) }}" method="post">
+				{{ csrf_field() }}
+				{{ method_field('DELETE') }}
+				<button type="submit" class="btn btn-danger">Delete</button>
+			</form>
+		</div>
+		</div>
+	</div>
+	</div>
 
 @include('product.reviews')
 @endsection

@@ -194,55 +194,55 @@ ALTER TABLE ONLY single_featured_product
     -- Foreign Keys
 
 ALTER TABLE ONLY favorite
-    ADD CONSTRAINT favorite_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+    ADD CONSTRAINT favorite_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY favorite
-    ADD CONSTRAINT favorite_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT favorite_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY cart
-ADD CONSTRAINT cart_id_user_fkey FOREIGN KEY(id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+ADD CONSTRAINT cart_id_user_fkey FOREIGN KEY(id_user) REFERENCES "user"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY cart
-ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON UPDATE CASCADE;
+ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY "order"
-    ADD CONSTRAINT order_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+    ADD CONSTRAINT order_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY payment
-    ADD CONSTRAINT payment_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT payment_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product
-    ADD CONSTRAINT product_id_brand_fkey FOREIGN KEY (id_brand) REFERENCES brand(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT product_id_brand_fkey FOREIGN KEY (id_brand) REFERENCES brand(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product
-  ADD CONSTRAINT product_id_category_fkey FOREIGN KEY (id_category) REFERENCES product_category(id) ON UPDATE CASCADE;
+  ADD CONSTRAINT product_id_category_fkey FOREIGN KEY (id_category) REFERENCES product_category(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY product_order
-    ADD CONSTRAINT product_order_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT product_order_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product_order
-    ADD CONSTRAINT product_order_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON DELETE CASCADE;
+    ADD CONSTRAINT product_order_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY review
-    ADD CONSTRAINT review_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+    ADD CONSTRAINT review_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY review
-    ADD CONSTRAINT review_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT review_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY single_history_product
-    ADD CONSTRAINT single_history__history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT single_history__history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_history_product
-    ADD CONSTRAINT single_history_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT single_history_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_featured_product
-    ADD CONSTRAINT single_featured_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT single_featured_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_featured_product
-ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON UPDATE CASCADE;
+ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 
