@@ -17,7 +17,6 @@ class ProductController extends Controller
         ->orderBy('date','desc')
         ->get();
 
-
         return view('product.page',compact('product','reviews'));
     }
 
@@ -46,5 +45,13 @@ class ProductController extends Controller
 
     public function searchByName($searchText){
        return DB::select("SELECT * from product ORDER BY name DESC LIMIT 20");
+    }
+
+    public function deleteOrder($id){
+      Auth::user()->cart()->detach($id);
+
+      $product = Product::find($id);
+        return $product;
+
     }
 }

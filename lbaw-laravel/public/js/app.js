@@ -30,9 +30,9 @@ function addEventListeners() {
     }
   });
 
-  let comment_button = document.querySelector('form.submit-review');
+  let comment_button = document.querySelector('form.submit-review #submit_review');
   if(comment_button!=null)
-    comment_button.onsubmit = function(){
+    comment_button.onclick = function(){
       addReviewRequest(this);
   }
 
@@ -56,6 +56,12 @@ function addEventListeners() {
   //   console.log("ola");
   // }
 
+  let order_deleter = document.querySelectorAll('.product-order #delete');
+  [].forEach.call(order_deleter, function(deleter) {
+    deleter.onclick = function(){
+      sendDeleteOrderRequest(this);
+    }
+  });
 
 
 }
@@ -75,6 +81,23 @@ function sendAjaxRequest(method, url, data, handler) {
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.addEventListener('load', handler);
   request.send(encodeForAjax(data));
+}
+
+// ---------------------------------
+//            Cart
+//----------------------------------
+
+function sendDeleteOrderRequest(button){
+
+  let id = button.closest('div.product-order').getAttribute('data-id');
+
+
+  sendAjaxRequest('post', '/cart/products/' + id + '/remove', null, deleteOrderHandler);
+
+}
+
+function deleteOrderHandler(){
+
 }
 
 // ---------------------------------
@@ -118,11 +141,8 @@ function deactivateRateButtons(button){
   }
 }
 
-function addReviewRequest(form) {
-
-  event.preventDefault();
-
-  let id = form.closest("div.review-section").getAttribute('data-id');
+function addReviewRequest(button) {
+  let id = button.closest("div.review-section").getAttribute('data-id');
 
   // get comment
   let comment = document.querySelector("#comment").value;
@@ -134,6 +154,15 @@ function addReviewRequest(form) {
     if(btn.classList.contains('final'))
       break;
   }
+
+  for (i=1; i<=5; i++) {
+    let btn = document.querySelector("#btn" +i);
+      btn.classList.remove('active');
+      btn.classList.remove('final');
+  }
+
+
+  event.preventDefault();
 
   if (comment != '')
       sendAjaxRequest('put', '/products/' + id + '/reviews', {comment: comment, rate:rate} , addReviewHandler);
