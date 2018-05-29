@@ -97,6 +97,10 @@ function sendDeleteOrderRequest(button){
 }
 
 function deleteOrderHandler(){
+  let product = JSON.parse(this.responseText);
+  let element = document.querySelector('div.product-order[data-id="' + product.id + '"]');
+
+  element.remove();
 
 }
 
