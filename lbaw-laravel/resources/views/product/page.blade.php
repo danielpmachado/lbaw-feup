@@ -88,8 +88,11 @@
 						@endif
 
 					</div>
-
-					<p><span class="description-tag">Stock  </span><span style="margin-left:5px;"class="text-editable"> {{ $product->stock }}</span></p>
+					@if(Auth::check())
+						@if(Auth::user()->permissions == 'Admin')
+							<p><span class="description-tag">Stock  </span><span style="margin-left:5px;"class="text-editable"> {{ $product->stock }}</span></p>
+						@endif
+					@endif					
 					<p><span class="description-tag">Description</span></p>
 					{{$product->description}}
 				</div>
