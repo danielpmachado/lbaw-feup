@@ -61,9 +61,9 @@
                             <div class="img-box rounded">
                                 <img src="images/daniel2.jpg" class="img-fluid rounded">
                                 <ul class="text-center">
-                                    <a href="https://www.facebook.com/daniel.pmachado" target="_blank"><li><i class="fa fa-facebook"></i></li></a>
-                                    <a href="https://www.instagram.com/daniel.pmachado/" target="_blank"><li><i class="fa fa-instagram"></i></li></a>
-                                    <a href="https://github.com/dolfander" target="_blank"><li><i class="fa fa-github"></i></li></a>
+                                    <a href="https://www.facebook.com/daniel.pmachado" target="_blank"><li><i class="fab fa-facebook"></i></li></a>
+                                    <a href="https://www.instagram.com/daniel.pmachado/" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+                                    <a href="https://github.com/dolfander" target="_blank"><li><i class="fab fa-github"></i></li></a>
                                 </ul>
                             </div>
                             <h1>Daniel Machado</h1>
@@ -73,9 +73,9 @@
                             <div class="img-box">
                                 <img src="images/david2.jpg" class="img-fluid rounded">
                                 <ul class="text-center">
-                                    <a href="https://www.facebook.com/david.falcao2" target="_blank"><li><i class="fa fa-facebook"></i></li></a>
-                                    <a href="https://www.instagram.com/davidrsfalcao/" target="_blank"><li><i class="fa fa-instagram"></i></li></a>
-                                    <a href="https://github.com/davidrsfalcao" target="_blank"><li><i class="fa fa-github"></i></li></a>
+                                    <a href="https://www.facebook.com/david.falcao2" target="_blank"><li><i class="fab fa-facebook"></i></li></a>
+                                    <a href="https://www.instagram.com/davidrsfalcao/" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+                                    <a href="https://github.com/davidrsfalcao" target="_blank"><li><i class="fab fa-github"></i></li></a>
                                 </ul>
                             </div>
                             <h1>David Falcão</h1>
@@ -85,9 +85,9 @@
                             <div class="img-box">
                                 <img src="images/troca2.jpg" class="img-fluid rounded">
                                 <ul class="text-center">
-                                    <a href="https://www.facebook.com/zepedro.machado.9" target="_blank"><li><i class="fa fa-facebook"></i></li></a>
-                                    <a href="https://www.instagram.com/zepedromachado97/" target="_blank"><li><i class="fa fa-instagram"></i></li></a>
-                                    <a href="https://github.com/TrocaTudo95" target="_blank"><li><i class="fa fa-github"></i></li></a>
+                                    <a href="https://www.facebook.com/zepedro.machado.9" target="_blank"><li><i class="fab fa-facebook"></i></li></a>
+                                    <a href="https://www.instagram.com/zepedromachado97/" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+                                    <a href="https://github.com/TrocaTudo95" target="_blank"><li><i class="fab fa-github"></i></li></a>
                                 </ul>
                             </div>
                             <h1>José Pedro Machado</h1>
@@ -97,9 +97,9 @@
                             <div class="img-box">
                                 <img src="images/sofia2.jpg" class="img-fluid rounded">
                                 <ul class="text-center">
-                                    <a href="https://www.facebook.com/kyahraa" target="_blank"><li><i class="fa fa-facebook"></i></li></a>
-                                    <a href="https://www.instagram.com/sofiacbalves/" target="_blank"><li><i class="fa fa-instagram"></i></li></a>
-                                    <a href="https://github.com/Kyahra" target="_blank"><li><i class="fa fa-github"></i></li></a>
+                                    <a href="https://www.facebook.com/kyahraa" target="_blank"><li><i class="fab fa-facebook"></i></li></a>
+                                    <a href="https://www.instagram.com/sofiacbalves/" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+                                    <a href="https://github.com/Kyahra" target="_blank"><li><i class="fab fa-github"></i></li></a>
                                 </ul>
                             </div>
                             <h1>Sofia Alves</h1>
