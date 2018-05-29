@@ -14,7 +14,7 @@
 	<div class="footer-center">
 		<div>
 			<i class="fa fa-map-marker"></i>
-			<p><span>21 Middle Revolution Street</span> Paris, France</p>
+			<p><span>Rua Dr Roberto Frias, FEUP</span> Porto, Portugal</p>
 		</div>
 		<div>
 			<i class="fa fa-phone"></i>
