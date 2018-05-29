@@ -29,7 +29,7 @@
         @if(Auth::check())
         @if(Auth::user()->permissions == 'Admin')
         <div class="col-sm-1 text-center center-aligned">
-                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteReview">
+                <button type="button" class="btn btn-outline-danger delete_review" data-toggle="modal" data-target="#deleteReview">
                         <i class="fa fa-trash"></i>
                 </button>
         </div>
@@ -53,7 +53,7 @@
                         </button>
                 </div>
                 <div class="modal-body">
-                        By deleting this review you should have a strong reason: inappropriate or offensive language, disrespect for other users, etc. 
+                        By deleting this review you should have a strong reason: inappropriate or offensive language, disrespect for other users, etc.
                 </div>
                 <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -78,12 +78,12 @@
 		</div>
 		<div class="modal-body">
                         By deleting this review you should have a strong reason: inappropriate or offensive language, disrespect for other users, etc.
-                        
+
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			<button id="delete" type="submit" class="btn btn-danger" data-dismiss="modal">Delete</button>
-			
+
 		</div>
 		</div>
 	</div>
