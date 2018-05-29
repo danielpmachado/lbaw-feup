@@ -26,8 +26,8 @@ Route::delete('/users/{id}/delete','UsersController@delete')->name('delete_user'
 // Cart
 Route::get('/users/cart/{id}','UsersController@cart')->name('cart');
 Route::post('/cart/products/{id}/remove','ProductController@deleteOrder');
-
-
+Route::post('/cart/products/{id}/add','ProductController@addQuantity');
+Route::post('/cart/products/{id}/sub','ProductController@subQuantity');
 
 // Authentication
 Auth::routes();

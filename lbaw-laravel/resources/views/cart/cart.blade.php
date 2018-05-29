@@ -56,8 +56,8 @@
                             </div>
                             <div class="card-footer">
                                 <button href=""  class="btn btn-outline-dark float-right">Checkout</button>
-                                <div class="pt-2">
-                                    Total price: <b>{{$total}}</b>
+                                <div class=" pt-2">
+                                    Total price: <b class="price">{{$total}}</b> €
                                 </div>
                             </div>
                         </div>
