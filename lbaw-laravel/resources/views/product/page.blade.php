@@ -46,22 +46,36 @@
 				<div class="col-md-12 ">
 
 					<div class="product-buttons" >
-						
-						@if(Auth::user()->permissions == 'User')
-						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
-							<i class="fa fa-shopping-cart"></i> Add to Cart
-						</button>
-						@if($product->favorited())
-						<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
-							<i class="fa fa-trash"></i> Remove from Wishlist
-						</button>
-						@else
-						<button id="fav" type="button" class="btn btn-outline-danger" value="add">
-							<i class="fa fa-heart"></i> Add to Wishlist
-						</button>
+
+						@if(Auth::check())
+								@if(Auth::user()->permissions == 'User')
+								<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
+									<i class="fa fa-shopping-cart"></i> Add to Cart
+								</button>
+								@if($product->favorited())
+								<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
+									<i class="fa fa-trash"></i> Remove from Wishlist
+								</button>
+								@else
+								<button id="fav" type="button" class="btn btn-outline-danger" value="add">
+									<i class="fa fa-heart"></i> Add to Wishlist
+								</button>
+								@endif
+								@endif
+
+
+
+								@if(Auth::user()->permissions == 'Admin')
+                                <form id="editProdutForm" action="{{route('editProduct', ['id' =>$product->id])}}">
+                                    <button id="editProdut" type="submit" value="Edit" class="btn btn-outline-info"><i class="fa fa-edit"></i> Edit</button>
+                                </form>
+
+								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
+									<i class="fa fa-trash"></i> Remove
+								</button>
+								@endif
 						@endif
-						@endif
-											
+
 						@if(!Auth::check())
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
@@ -69,15 +83,6 @@
 						<button id="fav" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-heart"></i> Add to Wishlist
 						</button>
-						@endif
-							
-						@if(Auth::user()->permissions == 'Admin')
-						<a id="editProdut" href="{{route('editProduct', ['id' =>$product->id])}}" type="button" class="btn btn-outline-info">
-								<i class="fa fa-edit"></i> Edit
-						</a>
-						<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
-                            <i class="fa fa-trash"></i> Remove
-                        </button>	
 						@endif
 
 					</div>

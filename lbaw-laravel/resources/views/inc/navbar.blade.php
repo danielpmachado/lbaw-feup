@@ -6,10 +6,9 @@
 
         <div class="collapse navbar-collapse" id="navbar1">
           <form method="get" class="form-inline input-group" action="{{route('search')}}">
-            {{ csrf_field() }}
-            <input class="form-control" type="search" id="search_bar" placeholder="Search" aria-label="Search">
+            <input class="form-control" type="search" name="search_content" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" id="search_button" type="submit"></i></span>
+                <button class="input-group-text" type="submit" id="basic-addon2"><i class="fa fa-search" ></i></button>
             </div>
           </form>
           <ul class="navbar-nav ml-auto">
@@ -72,36 +71,37 @@
               @endif
           </li>
 
-          @if (Auth::user()->permissions == 'User')
-          <li class="nav-item ">
-              <div class="dropdown show ">
-                  <a  id="nav_signIn" class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
-                    <i class="fa fa-user"></i> {{Auth::user()->username}}
-                  </a>
-                  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
-                      <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
-                  </div>
-                </div>
-          </li>
-          @endif
+            @if(Auth::check())
+                @if (Auth::user()->permissions == 'User')
+                <li class="nav-item ">
+                    <div class="dropdown show ">
+                        <a  id="nav_signIn" class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
+                            <i class="fa fa-user"></i> {{Auth::user()->username}}
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
+                            <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
+                        </div>
+                        </div>
+                </li>
+                @endif
 
-          @if (Auth::user()->permissions == 'Admin')
-          <li class="nav-item ">
-              <div class="dropdown show ">
-                  <a  id="nav_signIn" class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
-                    <i class="fa fa-user"></i> {{Auth::user()->username}}
-                  </a>
-                  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
-                      <a class="dropdown-item" href="{{ url('/admin/users') }}">Users</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
-                  </div>
-                </div>
-          </li>
-          @endif
-
+                @if (Auth::user()->permissions == 'Admin')
+                <li class="nav-item ">
+                    <div class="dropdown show ">
+                        <a  id="nav_signIn" class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
+                            <i class="fa fa-user"></i> {{Auth::user()->username}}
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
+                            <a class="dropdown-item" href="{{ url('/admin/users') }}">Users</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
+                        </div>
+                        </div>
+                </li>
+                @endif
+            @endif
 
            @if (!Auth::check())
         <li class="nav-item">
