@@ -56,4 +56,26 @@ class ProductController extends Controller
 
         return redirect()->route('home');
    }
+
+   public function update(Request $request,$id){
+        $product = Product::find($id);
+
+        $product->name = request('name');
+        $product->price = request('price');
+        $product->stock = request('stock');
+        $product->description = request('description');
+
+
+        $avatar = $request->file('avatar');
+
+        if($avatar != null){
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->save( public_path('/images/avatars/' . $filename ) );
+            $user->pic = $filename;
+        }
+
+        $user->save();
+
+        return redirect()->route('profile',['id' => $user->id]);
+    }
 }
