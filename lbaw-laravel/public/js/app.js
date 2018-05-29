@@ -91,23 +91,37 @@ function addEventListeners() {
   let cart_button = document.querySelector('.product-buttons #cart');
   if(cart_button!=null)
   cart_button.onclick = function(){
-    console.log("Fsd");
     sendAddCartRequest(this);
-}
-
-
+  }
 }
 
 // ---------------------------------
 //            Cart
 //----------------------------------
 
+function sendAddCartRequest(button){
+  let id = button.closest('div.product').getAttribute('data-id');
+
+  if(!button.disabled)
+    sendAjaxRequest('post', '/cart/products/' + id + "/add",null,addCartHandler);
+  
+}
+
+function  addCartHandler(){
+  let product = JSON.parse(this.responseText);
+  let button = document.querySelector('div.product[data-id="' + product.id + '"] #cart');
+
+  button.innerHTML ='<i class="fa fa-check"></i> In Cart';
+  button.disabled =true;
+  
+}
+
 function sendUpdateQuantityRequest(button){
   let id = button.closest('div.product-order').getAttribute('data-id');
   let value = button.value;
 
   if(value == "+")
-    sendAjaxRequest('post', '/cart/products/' + id + "/add",null,updateQuantityHandler);
+    sendAjaxRequest('post', '/cart/products/' + id + "/inc",null,updateQuantityHandler);
   
   if(value == "-")
     sendAjaxRequest('post', '/cart/products/' + id + "/sub",null,updateQuantityHandler);
@@ -122,9 +136,17 @@ function sendDeleteOrderRequest(button){
 }
 
 function deleteOrderHandler(){
-  let product = JSON.parse(this.responseText);
-  let element = document.querySelector('div.product-order[data-id="' + product.id + '"]');
+  if (this.status != 200) window.location = '/';
 
+  let response = JSON.parse(this.responseText);
+  let product = response['product'];
+  let quantity = response['quantity'];
+
+  
+  let price =document.querySelector('div.shopping-cart .price');
+  price.innerHTML =Math.round((+price.innerHTML - (+product.price* +quantity) ) * 100) / 100 ;
+
+  let element = document.querySelector('div.product-order[data-id="' + product.id + '"]');
   element.remove();
 
 }
