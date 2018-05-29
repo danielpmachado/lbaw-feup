@@ -27,4 +27,14 @@ class ReviewController extends Controller
         ]);
     
     }
+
+
+    public function delete($id_product, $id_review){
+        $review = Review::find($id_review);
+        $review->delete();
+
+        $product = Product::find($id_product);
+
+        return redirect()->route('page',['id' => $product->id]);
+    }
 }
