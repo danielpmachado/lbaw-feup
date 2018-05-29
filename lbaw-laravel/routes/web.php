@@ -22,6 +22,11 @@ Route::get('/users/{id}','UsersController@profile')->name('profile');
 Route::post('/users/{id}/update','UsersController@update')->name('update_user');
 Route::delete('/users/{id}/delete','UsersController@delete')->name('delete_user');
 
+// Cart
+Route::get('/users/cart/{id}','UsersController@cart')->name('cart');
+Route::post('/cart/products/{id}/remove','ProductController@deleteOrder');
+
+
 
 // Authentication
 Auth::routes();
@@ -42,5 +47,4 @@ Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 Route::put('/products/{id}/reviews', 'ReviewController@create');
 Route::get('/products/search','ProductController@searchProducts')->name('search');
 
-//cart
-Route::get('/cart/{id}','UsersController@cart')->name('cart');
+

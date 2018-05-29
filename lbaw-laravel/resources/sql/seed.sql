@@ -148,6 +148,9 @@ ALTER TABLE ONLY brand
 ALTER TABLE ONLY favorite
     ADD CONSTRAINT favorite_pkey PRIMARY KEY (id_user, id_product);
 
+ALTER TABLE ONLY cart
+ADD CONSTRAINT cart_pkey PRIMARY KEY (id_product, id_user);
+
 ALTER TABLE ONLY "order"
     ADD CONSTRAINT order_pkey PRIMARY KEY (id);
 
@@ -187,9 +190,6 @@ ALTER TABLE ONLY "user"
 ALTER TABLE ONLY single_featured_product
     ADD CONSTRAINT single_featured_product_pkey PRIMARY KEY (id_product, id_featured_product);
 
-    ALTER TABLE ONLY cart
-        ADD CONSTRAINT cart_pkey PRIMARY KEY (id_product, id_user);
-
 
     -- Foreign Keys
 
@@ -198,6 +198,12 @@ ALTER TABLE ONLY favorite
 
 ALTER TABLE ONLY favorite
     ADD CONSTRAINT favorite_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+
+ALTER TABLE ONLY cart
+ADD CONSTRAINT cart_id_user_fkey FOREIGN KEY(id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+
+ALTER TABLE ONLY cart
+ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY "order"
@@ -238,11 +244,7 @@ ALTER TABLE ONLY single_featured_product
 ALTER TABLE ONLY single_featured_product
 ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON UPDATE CASCADE;
 
-ALTER TABLE ONLY cart
-ADD CONSTRAINT cart_id_user_fkey FOREIGN KEY(id_user) REFERENCES "user"(id) ON DELETE CASCADE;
 
-ALTER TABLE ONLY cart
-ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON DELETE CASCADE;
 
 
 

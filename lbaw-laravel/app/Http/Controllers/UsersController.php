@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\User;
 use App\Order;
 use Image;
@@ -50,8 +51,13 @@ class UsersController extends Controller
     public function cart($id){
       $user = User::find($id);
       $products= $user->cart;
-     // $quantities = 
-      return view('cart.cart',compact('products'));
+        
+      if(Auth::user()->id == $id)
+        return view('cart.cart',compact('products','user'));
+      else
+         return redirect('/');
+      
     }
 
+   
 }
