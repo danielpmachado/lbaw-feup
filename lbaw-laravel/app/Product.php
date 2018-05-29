@@ -18,6 +18,13 @@ class Product extends Model{
                             ->first();
     }
 
+    public function ordered(){
+        $user = Auth::user();
+        return (bool) $user->cart()->where('id_user', $user->id)
+                            ->where('id_product', $this->id)
+                            ->first();
+    }
+
    /* public function brand(){
 
       /*$brands = Brand::all();

@@ -49,9 +49,15 @@
 
 						@if(Auth::check())
 								@if(Auth::user()->permissions == 'User')
-								<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
+								@if($product->ordered())
+								<button id="cart" type="button" class="btn btn-outline-success" disabled>
+									<i class="fa fa-check"></i> In Cart
+								</button>
+								@else
+								<button id="cart" type="button" class="btn btn-outline-success">
 									<i class="fa fa-shopping-cart"></i> Add to Cart
 								</button>
+								@endif
 								@if($product->favorited())
 								<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
 									<i class="fa fa-trash"></i> Remove from Wishlist
@@ -88,8 +94,11 @@
 						@endif
 
 					</div>
-
-					<p><span class="description-tag">Stock  </span><span style="margin-left:5px;"class="text-editable"> {{ $product->stock }}</span></p>
+					@if(Auth::check())
+						@if(Auth::user()->permissions == 'Admin')
+							<p><span class="description-tag">Stock  </span><span style="margin-left:5px;"class="text-editable"> {{ $product->stock }}</span></p>
+						@endif
+					@endif					
 					<p><span class="description-tag">Description</span></p>
 					{{$product->description}}
 				</div>
