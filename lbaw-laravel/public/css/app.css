@@ -606,10 +606,9 @@ PRODUCT
 }
 
 .p_breadcrumb{
-    margin: 25px 0 0 80px;
+    margin: 80px 0 0 80px;
     padding:0;
     background-color: var(--main-text-color);
-    margin-top: 5.5em;
 }
 
 .p_breadcrumb a{
@@ -618,7 +617,6 @@ PRODUCT
 
 .product-page{
     margin-top: 40px;
-    padding-right:100px;
 }
 
 .product-image{
@@ -920,7 +918,6 @@ div[role="tabpanel"]:after {
     clear: both;
 }
 
-
 .quantity {
     float: left;
     margin-right: 15px;
@@ -976,11 +973,14 @@ div[role="tabpanel"]:after {
     z-index: 3
 }
 
-
-
 .quantity .minus {
     bottom: 0
 }
+
+.quantity .minus:hover, .quantity .plus:hover {
+    background-color: #dad8da
+ }
+ 
 .shopping-cart {
     margin-bottom: 40px;
 }

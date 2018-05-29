@@ -18,6 +18,7 @@ Route::get('/faq', 'PagesController@faq');
 Route::get('/404', 'PagesController@error404');
 
 Route::get('/search_page','PagesController@search_page');
+
 // User
 Route::get('/users/{id}','UsersController@profile')->name('profile');
 Route::post('/users/{id}/update','UsersController@update')->name('update_user');
@@ -25,9 +26,10 @@ Route::delete('/users/{id}/delete','UsersController@delete')->name('delete_user'
 
 // Cart
 Route::get('/users/cart/{id}','UsersController@cart')->name('cart');
-Route::post('/cart/products/{id}/remove','ProductController@deleteOrder');
-
-
+Route::post('/cart/products/{id}/remove','CartController@remove');
+Route::post('/cart/products/{id}/inc','CartController@incQuantity');
+Route::post('/cart/products/{id}/sub','CartController@subQuantity');
+Route::post('/cart/products/{id}/add','CartController@add');
 
 // Authentication
 Auth::routes();
@@ -47,8 +49,9 @@ Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 Route::put('/products/{id}/reviews', 'ReviewController@create');
-
-
+Route::get('/products/search','ProductController@searchProducts')->name('search');
+Route::delete('products/{id}/delete','ProductController@delete')->name('delete_product');
+Route::delete('/products/{id_product}/reviews/{id_review}/delete', 'ReviewController@delete')->name('delete_review');
 
 //Admin
 Route::get('/admin/users', 'AdminController@getAllUsers');

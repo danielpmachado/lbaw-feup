@@ -194,55 +194,55 @@ ALTER TABLE ONLY single_featured_product
     -- Foreign Keys
 
 ALTER TABLE ONLY favorite
-    ADD CONSTRAINT favorite_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+    ADD CONSTRAINT favorite_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY favorite
-    ADD CONSTRAINT favorite_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT favorite_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY cart
-ADD CONSTRAINT cart_id_user_fkey FOREIGN KEY(id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+ADD CONSTRAINT cart_id_user_fkey FOREIGN KEY(id_user) REFERENCES "user"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY cart
-ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON UPDATE CASCADE;
+ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY "order"
-    ADD CONSTRAINT order_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+    ADD CONSTRAINT order_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY payment
-    ADD CONSTRAINT payment_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT payment_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product
-    ADD CONSTRAINT product_id_brand_fkey FOREIGN KEY (id_brand) REFERENCES brand(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT product_id_brand_fkey FOREIGN KEY (id_brand) REFERENCES brand(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product
-  ADD CONSTRAINT product_id_category_fkey FOREIGN KEY (id_category) REFERENCES product_category(id) ON UPDATE CASCADE;
+  ADD CONSTRAINT product_id_category_fkey FOREIGN KEY (id_category) REFERENCES product_category(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY product_order
-    ADD CONSTRAINT product_order_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT product_order_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY product_order
-    ADD CONSTRAINT product_order_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON DELETE CASCADE;
+    ADD CONSTRAINT product_order_id_order_fkey FOREIGN KEY (id_order) REFERENCES "order"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY review
-    ADD CONSTRAINT review_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+    ADD CONSTRAINT review_id_user_fkey FOREIGN KEY (id_user) REFERENCES "user"(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY review
-    ADD CONSTRAINT review_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT review_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY single_history_product
-    ADD CONSTRAINT single_history__history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT single_history__history_product_fkey FOREIGN KEY (id_history_product) REFERENCES history_product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_history_product
-    ADD CONSTRAINT single_history_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT single_history_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_featured_product
-    ADD CONSTRAINT single_featured_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+    ADD CONSTRAINT single_featured_product_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ONLY single_featured_product
-ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON UPDATE CASCADE;
+ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 
@@ -292,7 +292,7 @@ INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VAL
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'semper@penatibusetmagnis.edu','Ciaran Singleton','FBI41SUB4DT','Ap #147-4425 Velit Ave','San Juan de la Costa','5370-253','Admin');
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'Morbi.metus.Vivamus@faucibusleo.edu','Sloane Hatfield','JPG58FMP5HH','P.O. Box 882, 3276 Nunc Ave','Cañete','5370-253','User');
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'mollis.nec.cursus@ultrices.edu','Zachary Love','WXF13ZUT7RV','P.O. Box 790, 9016 Vitae Ave','Purnea','5370-253','Admin');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'lbaw1753@google.pt','lbaw1753','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','212-7102 Risus. Av.','Águas Lindas de Goiás','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'lbaw1753@google.pt','lbaw1753','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','212-7102 Risus. Av.','Águas Lindas de Goiás','5370-253','User');
 --a pass deste user lbaw1753 é 123456
 
 
@@ -304,7 +304,7 @@ INSERT INTO product_category (id,name,icon) VALUES (DEFAULT,'Components','cogs')
 
 INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'IPhone X - 256 GB','Diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer.',25,1349.99,3, 'IphoneX.png',3,0);
 INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'MacBook Pro','diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer',530,1832.99,3,'MacBook.png',1,0);
-INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Huawei P20 Pro',' O Huawei P20 Pro usa a Inteligência Artificial para estabilizar a imagem e captar fotografias com excecional detalhe e nitidez. Além disso, experiencie o poder da Inteligência Artificial da nova Unidade de Processamento de Rede Neural Kirin 970. Com uma vida de bateria impressionante e velocidade superior, é um passo à frente para a série P. Com o Huawei P20 Pro, a vida da bateria jamais será uma limitação graças à gestão da bateria powered by AI e à função SuperCharge, para um carregamento super-rápido. Por fim, em parceria com a Dolby, o Huawei P20 Pro usa Inteligência Artificial para detetar o tipo de áudio que está a escutar, ajustando o nível para lhe oferecer a melhor experiência de som. Outras características: classificação IP67 totalmente à prova de pó e resistente à água até à profundidade de 1 metro; rede 4G LTE; processador Octa-Core (4x 2,4 GHz Cortex-A73 & 4x 1,8 GHz Cortex-A53); gráficos Mali-G72 MP12; 6 GB de RAM; ecrã touchscreen capacitivo OLED de 6,1” (1080 x 2240 píxeis); proteção Corning Gorilla Glass; câmara traseira Leica Triple Camera de 40 MP; câmara frontal de 24 MP; conetividade Wi-Fi e Bluetooth 4.2; NFC; leitor de impressão digital; bateria de 4000 mAh.',30,798.99,7,'huawei-p20-pro.png',3,0);
+INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Huawei P20 Pro',' O Huawei P20 Pro usa a Inteligência Artificial para estabilizar a imagem e captar fotografias com excecional detalhe e nitidez. Além disso, experiencie o poder da Inteligência Artificial da nova Unidade de Processamento de Rede Neural Kirin 970. Com uma vida de bateria impressionante e velocidade superior, é um passo à frente para a série P.',30,798.99,7,'huawei-p20-pro.png',3,0);
 INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Samsung S9','O smartphone Samsung Galaxy S9+ rosa púrpura oferece uma experiência de visualização imersiva com o ecrã infinito, que encaixa confortavelmente na sua mão. Curvo sobre os lados, para uma visão que parece ilimitada, o smartphone Samsung Galaxy S9+ permite que crie vídeos fascinantes em Super Câmara Lenta para partilhar com os seus amigos. Adicione música através de uma seleção aleatória de opções pré-carregadas, ou use uma música da sua lista de reprodução. Surpreenda-se, transformando momentos normais do dia-a-dia em memórias épicas com o seu Galaxy S9+. Crie um emoji animado em Realidade Aumentada que se parece realmente consigo. Para começar, basta tirar uma selfie. Personalize-o depois, exibindo todo o seu estilo. Do cabelo às roupas, pode fazer com que o seu emoji se pareça consigo ou com qualquer outra pessoa. Além disso, pode gravar vídeos com o seu novo "eu" animado para partilhar com os amigos. Tire ainda fotos sem pensar duas vezes, independentemente da hora do dia. Com dois modos de abertura da lente, a Dupla Abertura define a qualidade da sua foto, adapta-se à luz brilhante durante o dia e, em condições de luminosidade reduzida, ajusta-se também, automaticamente, tal como o olho humano, garantindo-lhe fotos incríveis. Pode ainda dar asas ao seu lado artístico, alternando a abertura para criar diferentes ambientes.',3,921.99,4,'s9.png',3,0);
 INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Xiaomi Mi Mix 2 S 64GB','O smartphone Xiaomi Mi Mix 2 preto, com capacidade de armazenamento de 64 GB, apresenta design de exibição imersiva, cujas margens são 12% mais pequenas do que o antecessor Mi Mix e o ecrã exibe relação de aspeto de 18:9 - resultado da pesquisa implacável da Xiaomi na inovação tecnológica. Assim, o smartphone Xiaomi Mi Mix 2 conta com um grande ecrã de 5,99" alojado num corpo que é menor do que o dos smartphones típicos com ecrã de 5,5". A inovação na tecnologia de exibição em ecrã cheio introduz margens mais estreitas, uma câmara frontal menor e um sensor de proximidade oculto que se adapta perfeitamente ao Mi Mix 2 na palma da sua mão. De facto, o Mi Mix 2 está vestido para impressionar e é ainda altamente durável graças à estrutura de liga de alumínio de grau aeroespacial. Extremamente fino e leve, o smartphone Xiaomi Mi Mix 2 destaca-se ainda pelo poderoso processador Snapdragon 835 Octa-Core (4x 2,45 GHz Kryo & 4x 1,9 GHz Kryo), pelos seus 6 GB de RAM e pelos 64 GB de memória UFS 2.1. Outras características: ecrã touchscreen capacitivo IPS LCD de 5,99” (1080 x 2160 píxeis); proteção Corning Gorilla Glass 4; câmaras de 12 MP e 5 MP; conetividade Wi-Fi e Bluetooth 5.0; leitor de impressão digital; bateria Li-Ion de 3400 mAh.',23,599,5,'mi-mix2.png',4,0);
 INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Oneplus 6','RAM

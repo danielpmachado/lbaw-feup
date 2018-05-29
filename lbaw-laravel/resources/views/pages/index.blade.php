@@ -39,10 +39,7 @@ Featured Products
 <div id="featured-container" class="container-fluid">
   <div class="row justify-content-center">
 
-      <?php foreach($featuredProducts as $featuredProduct) {
-        ?>
-        @include('partials.featured')
-      <?php } ?>
+      @each('partials.featured',$featuredProducts,'featuredProduct')
 
 </div>
 </div>

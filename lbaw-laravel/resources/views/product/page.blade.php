@@ -49,9 +49,15 @@
 
 						@if(Auth::check())
 								@if(Auth::user()->permissions == 'User')
-								<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
+								@if($product->ordered())
+								<button id="cart" type="button" class="btn btn-outline-success" disabled>
+									<i class="fa fa-check"></i> In Cart
+								</button>
+								@else
+								<button id="cart" type="button" class="btn btn-outline-success">
 									<i class="fa fa-shopping-cart"></i> Add to Cart
 								</button>
+								@endif
 								@if($product->favorited())
 								<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
 									<i class="fa fa-trash"></i> Remove from Wishlist
@@ -66,11 +72,13 @@
 
 
 								@if(Auth::user()->permissions == 'Admin')
+
                                 <form id="editProdutForm" action="{{route('editProduct', ['id' =>$product->id])}}">
                                     <button id="editProdut" type="submit" value="Edit" class="btn btn-outline-info"><i class="fa fa-edit"></i> Edit</button>
                                 </form>
 
-								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
+								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteProduct">
+
 									<i class="fa fa-trash"></i> Remove
 								</button>
 								@endif
@@ -86,8 +94,11 @@
 						@endif
 
 					</div>
-
-					<p><span class="description-tag">Stock  </span><span style="margin-left:5px;"class="text-editable"> {{ $product->stock }}</span></p>
+					@if(Auth::check())
+						@if(Auth::user()->permissions == 'Admin')
+							<p><span class="description-tag">Stock  </span><span style="margin-left:5px;"class="text-editable"> {{ $product->stock }}</span></p>
+						@endif
+					@endif					
 					<p><span class="description-tag">Description</span></p>
 					{{$product->description}}
 				</div>
@@ -123,26 +134,33 @@
         </div>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-				<p>
-					Are you sure you want to delete?
-				</p>
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-			  <button type="button" class="btn btn-danger">Delete</button>
-			</div>
-		  </div>
+
+
+<div class="modal fade" id="deleteProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
 		</div>
+		<div class="modal-body">
+			By deleting this product all the data will be lost and you will no longer be able to make purchases at Tech4U website.
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<form action="{{ route('delete_product', ['id' => $product->id]) }}" method="post">
+				{{ csrf_field() }}
+				{{ method_field('DELETE') }}
+				<button type="submit" class="btn btn-danger">Delete</button>
+			</form>
+		</div>
+		</div>
+	</div>
+</div>
+
+
 </div>
 
 @include('product.reviews')

@@ -49,11 +49,11 @@ class ProductController extends Controller
         ORDER BY name DESC LIMIT 20",[$searchText]);
     }
 
-    public function deleteOrder($id){
-      Auth::user()->cart()->detach($id);
 
-      $product = Product::find($id);
-        return $product;
+    public function delete($id){
+        $product = Product::find($id);
+        $product->delete();
 
-    }
+        return redirect()->route('home');
+   }
 }

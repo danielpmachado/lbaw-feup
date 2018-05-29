@@ -8,11 +8,7 @@ Search Results
 <div id="featured-container" class="container-fluid">
   <div class="row justify-content-center">
 
-      <?php foreach($products as $featuredProduct) {
-        ?>
-        @include('partials.featured')
-      <?php } ?>
-
+      @each('partials.product_searched',$products,'product')
 </div>
 </div>
 @endsection

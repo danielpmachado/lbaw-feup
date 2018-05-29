@@ -29,11 +29,40 @@
         @if(Auth::check())
         @if(Auth::user()->permissions == 'Admin')
         <div class="col-sm-1 text-center center-aligned">
-                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
+                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteReview">
                         <i class="fa fa-trash"></i>
                 </button>
         </div>
         @endif
         @endif
+
+
+
+
 </div>
 <hr/>
+
+
+<div class="modal fade" id="deleteReview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                        By deleting this review you should have a strong reason: inappropriate or offensive language, disrespect for other users, etc. 
+                </div>
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <form action="{{ route('delete_review', ['id_product' => $review->id_product,'id_review' => $review->id ]) }}" method="post">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                </div>
+                </div>
+        </div>
+</div>

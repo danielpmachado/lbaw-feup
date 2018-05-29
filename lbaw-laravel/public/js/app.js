@@ -14,6 +14,24 @@ jQuery(document).ready(function($) {
   alterClass();
 });
 
+function encodeForAjax(data) {
+  if (data == null) return null;
+  return Object.keys(data).map(function(k){
+    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+  }).join('&');
+}
+
+function sendAjaxRequest(method, url, data, handler) {
+  let request = new XMLHttpRequest();
+
+  request.open(method, url, true);
+  request.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.addEventListener('load', handler);
+  request.send(encodeForAjax(data));
+}
+
+
 function addEventListeners() {
 
   let fav_button = document.querySelectorAll(' #fav');
@@ -63,42 +81,100 @@ function addEventListeners() {
     }
   });
 
+  let quantity_button = document.querySelectorAll('.product-order #quantity');
+  [].forEach.call(quantity_button, function(changer) {
+    changer.onclick = function(){
+      sendUpdateQuantityRequest(this);
+    }
+  });
 
-}
-
-function encodeForAjax(data) {
-  if (data == null) return null;
-  return Object.keys(data).map(function(k){
-    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-  }).join('&');
-}
-
-function sendAjaxRequest(method, url, data, handler) {
-  let request = new XMLHttpRequest();
-
-  request.open(method, url, true);
-  request.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
-  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  request.addEventListener('load', handler);
-  request.send(encodeForAjax(data));
+  let cart_button = document.querySelector('.product-buttons #cart');
+  if(cart_button!=null)
+  cart_button.onclick = function(){
+    sendAddCartRequest(this);
+  }
 }
 
 // ---------------------------------
 //            Cart
 //----------------------------------
 
-function sendDeleteOrderRequest(button){
+function sendAddCartRequest(button){
+  let id = button.closest('div.product').getAttribute('data-id');
 
+  if(!button.disabled)
+    sendAjaxRequest('post', '/cart/products/' + id + "/add",null,addCartHandler);
+  
+}
+
+function  addCartHandler(){
+  let product = JSON.parse(this.responseText);
+  let button = document.querySelector('div.product[data-id="' + product.id + '"] #cart');
+
+  button.innerHTML ='<i class="fa fa-check"></i> In Cart';
+  button.disabled =true;
+  
+}
+
+function sendUpdateQuantityRequest(button){
   let id = button.closest('div.product-order').getAttribute('data-id');
+  let value = button.value;
 
+  if(value == "+")
+    sendAjaxRequest('post', '/cart/products/' + id + "/inc",null,updateQuantityHandler);
+  
+  if(value == "-")
+    sendAjaxRequest('post', '/cart/products/' + id + "/sub",null,updateQuantityHandler);
+
+}
+
+function sendDeleteOrderRequest(button){
+  let id = button.closest('div.product-order').getAttribute('data-id');
 
   sendAjaxRequest('post', '/cart/products/' + id + '/remove', null, deleteOrderHandler);
 
 }
 
 function deleteOrderHandler(){
+  if (this.status != 200) window.location = '/';
+
+  let response = JSON.parse(this.responseText);
+  let product = response['product'];
+  let quantity = response['quantity'];
+
+  
+  let price =document.querySelector('div.shopping-cart .price');
+  price.innerHTML =Math.round((+price.innerHTML - (+product.price* +quantity) ) * 100) / 100 ;
+
+  let element = document.querySelector('div.product-order[data-id="' + product.id + '"]');
+  element.remove();
 
 }
+
+function updateQuantityHandler(){
+  if (this.status != 200) window.location = '/';
+
+  let response = JSON.parse(this.responseText);
+  let product = response['product'];
+  let quantity = response['quantity'];
+  let op = response['op'];
+
+  let element =document.querySelector('div.product-order[data-id="' + product.id + '"] .qty');
+  let price =document.querySelector('div.shopping-cart .price');
+
+  if(quantity >=1)
+    element.value = quantity;
+
+  
+  if(op== 'add')
+    price.innerHTML = Math.round((+price.innerHTML + +product.price) * 100) / 100 ;
+
+  if(op== 'sub')
+    price.innerHTML =Math.round((+price.innerHTML - +product.price) * 100) / 100 ;
+  
+
+}
+
 
 // ---------------------------------
 //            Review
