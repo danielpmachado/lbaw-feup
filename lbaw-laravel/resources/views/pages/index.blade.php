@@ -9,7 +9,7 @@
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
       <img class="d-block w-100 h-100 text-center" alt="First slide" src="{{ URL::to('/') }}/images/add1.jpg">
-      
+
       <div class="carousel-caption ">
            <a href="#" class="btn btn-dark btn-capsul px-4 py-2">Explore More</a>
       </div>
@@ -38,10 +38,7 @@ Featured Products
 <div id="featured-container" class="container-fluid">
   <div class="row justify-content-center">
 
-      <?php foreach($featuredProducts as $featuredProduct) {
-        ?>
-        @include('partials.featured')
-      <?php } ?>
+      @each('partials.featured',$featuredProducts,'featuredProduct')
 
 </div>
 </div>
