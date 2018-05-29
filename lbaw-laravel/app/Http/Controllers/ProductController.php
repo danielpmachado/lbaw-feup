@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Review;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -34,8 +35,18 @@ class ProductController extends Controller
         return $product;
     }
 
+    public function searchProducts(Request $request){
+
+      $text =$request->search_content;
+      $products=$this->searchByName($text);
+      return view('pages.search_page',compact('products'));
+
+    }
+
     public function searchByName($searchText){
-        return DB::select("SELECT * from product WHERE textsearchable_name_col @@ plainto_tsquery('english',?) ORDER BY name DESC LIMIT 20",[$searchText]);
+       return DB::select("SELECT * from product
+        WHERE textsearchable_name_col @@ to_tsquery('portuguese',?)
+        ORDER BY name DESC LIMIT 20",[$searchText]);
     }
 
     public function deleteOrder($id){

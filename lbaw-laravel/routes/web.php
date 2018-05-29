@@ -17,6 +17,7 @@ Route::get('/about', 'PagesController@about');
 Route::get('/faq', 'PagesController@faq');
 Route::get('/404', 'PagesController@error404');
 
+Route::get('/search_page','PagesController@search_page');
 // User
 Route::get('/users/{id}','UsersController@profile')->name('profile');
 Route::post('/users/{id}/update','UsersController@update')->name('update_user');
@@ -41,12 +42,17 @@ Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 //Product
+Route::get('/products/search','ProductController@searchProducts')->name('search');
 Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 Route::put('/products/{id}/reviews', 'ReviewController@create');
+<<<<<<< HEAD
 Route::get('/products/search','ProductController@searchProducts')->name('search');
 Route::delete('products/{id}/delete','ProductController@delete')->name('delete_product');
+=======
+
+>>>>>>> cfd9766bf586779b80f40e6a856bb78c8c8cc843
 
 
 //Admin

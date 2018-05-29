@@ -43,10 +43,10 @@
 			<h3 class="text-success" id="price-tag">{{$product->price}} €</h3>
 
 			<div class="row">
-				<div class="col-md-12 ">
+				<div class="col-md-11 product-specs">
 
 					<div class="product-buttons" >
-						
+
 						@if(Auth::check())
 								@if(Auth::user()->permissions == 'User')
 								<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
@@ -62,19 +62,27 @@
 								</button>
 								@endif
 								@endif
-													
 
-									
+
+
 								@if(Auth::user()->permissions == 'Admin')
+<<<<<<< HEAD
 								<a id="editProdut" href="{{route('editProduct', ['id' =>$product->id])}}" type="button" class="btn btn-outline-info">
 										<i class="fa fa-edit"></i> Edit
 								</a>
 								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteProduct">
+=======
+                                <form id="editProdutForm" action="{{route('editProduct', ['id' =>$product->id])}}">
+                                    <button id="editProdut" type="submit" value="Edit" class="btn btn-outline-info"><i class="fa fa-edit"></i> Edit</button>
+                                </form>
+
+								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
+>>>>>>> cfd9766bf586779b80f40e6a856bb78c8c8cc843
 									<i class="fa fa-trash"></i> Remove
-								</button>	
+								</button>
 								@endif
 						@endif
-						
+
 						@if(!Auth::check())
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-shopping-cart"></i> Add to Cart

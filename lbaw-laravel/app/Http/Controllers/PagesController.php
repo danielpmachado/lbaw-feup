@@ -23,5 +23,8 @@ class PagesController extends Controller
     public function error404(){
         return view('pages.404');
     }
+    public function search_page(){
+      return view('pages.search_page');
+    }
 
 }
