@@ -54,7 +54,39 @@ class ProductController extends Controller
       Auth::user()->cart()->detach($id);
 
       $product = Product::find($id);
-        return $product;
+      return $product;
 
+    }
+
+    public function addQuantity($id){
+        $user = Auth::user();
+
+        $product = $user->cart()->where('id_user', $user->id)
+                        ->where('id_product',$id)
+                        ->first();
+
+        $product->pivot->quantity++;
+        $product->pivot->save();
+
+        return response()->json([
+            'product'=>$product, 
+            'quantity'=>$product->pivot->quantity
+            ]);
+    }
+
+    public function subQuantity($id){
+        $user = Auth::user();
+
+        $product = $user->cart()->where('id_user', $user->id)
+                        ->where('id_product',$id)
+                        ->first();
+
+        $product->pivot->quantity--;
+        $product->pivot->save();
+
+       return response()->json([
+        'product'=>$product, 
+        'quantity'=>$product->pivot->quantity
+        ]);
     }
 }

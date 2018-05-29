@@ -9,16 +9,16 @@
             <p>{{ $product->price }} €</p>
         </div>
 
-        <div class="col-12 col-sm-12 text-sm-center col-md-2 float-right" >
+        <div class="col-12 col-sm-12 col-md-2 float-right" >
 
-            <button id="delete" type="button" class="btn btn-outline-danger">
+            <button id="delete" type="button" class="btn btn-outline-danger float-right">
                 <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
 
             <div class="quantity">
-                <input type="button" value="+" class="plus">
-                <input type="number" step="1" max="99" min="1" value="{{$product->pivot->quantity}}" title="Qty" class="qty" size="4">
-                <input type="button" value="-" class="minus">
+                <input id="quantity" type="button" value="+" class="plus">
+                <input value="{{$product->pivot->quantity}}"  class="qty" size="4" disabled>
+                <input id="quantity" type="button" value="-" class="minus">
             </div>
 
         </div>
