@@ -48,3 +48,6 @@ Route::put('/products/{id}/reviews', 'ReviewController@create');
 Route::get('/products/search','ProductController@searchProducts')->name('search');
 
 
+//Admin
+Route::get('/admin/users', 'AdminController@getAllUsers');
+Route::get('/admin/editProduct/{id}', 'AdminController@editProduct')->name('editProduct');

@@ -273,26 +273,26 @@ INSERT INTO brand (id,name) VALUES (DEFAULT,'Nintendo');
 INSERT INTO brand (id,name) VALUES (DEFAULT,'Sony');
 
 
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'vel.est.tempor@erat.org','Geoffrey Keith','PDB77ZTR5OS','Ap #894-4328 Erat Road', 'Raiganj','5370-253','Admin');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'egestas@nisl.co.uk','Rama Browning','HSY38MXX8ME','P.O. Box 369, 4403 Massa Avenue','Chapadinha','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'lobortis.quis.pede@Vivamusrhoncus.net','Olivia Brennan','MOX89EFA0DU','Ap #624-5071 At, Ave','Oostakker','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'Nulla.facilisi@semeget.org','Charity Livingston','QYA36FRM1NX','9785 Neque St.','Ambala Sadar','5370-253','Admin ');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'nisi@Duiscursus.com','Levi Cervantes','XNW95ZQW9TY','Ap #722-1022 Odio St.','Maria','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'egestas@diam.edu','Quinn Barnes','IBH69AXY9UU','Ap #515-4663 Nulla Street','Melsele','5370-253','Admin ');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'primis@Integervulputaterisus.com','Xenos Osborn','GMT03GML0QV','P.O. Box 893, 1360 Magna. Ave','Fayetteville','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'feugiat@pedeSuspendisse.com','Cole Tyson','ONK78OZF8JP','202-214 Lorem Ave','Montpellier','5370-253','Admin ');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'elit.dictum.eu@eget.net','Desirae Vazquez','TGT94CGV0GO','P.O. Box 989, 6124 Mi Avenue','Qualicum Beach','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'mus.Aenean@velitinaliquet.edu','Xandra Drake','YUT64SMA0OL','6876 Justo Rd.','Musselburgh','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'nibh.vulputate@est.com','Isaac Dillard','SDJ96YDP4PD','Ap #123-9516 Augue. St.','Ramsel','5370-253','Admin ');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'fringilla.purus.mauris@anequeNullam.org','Hayes Mcpherson','SJG98OFJ0XY','2765 Mi Rd.','Hawick','5370-253','Admin ');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'Suspendisse.aliquet.molestie@atvelit.com','Sydney Mcfadden','QQO20CHT9RF','9359 Lorem Av.','Richmond','5370-253','Admin ');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'risus.Nunc@semutcursus.co.uk','Kaseem Holman','CYZ17ZTS8LO','P.O. Box 464, 9581 Sem Av.','Fort Smith','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'scelerisque.lorem.ipsum@Maurisquisturpis.org','Tatum Simpson','SHD63JUZ3FH','3972 Sit Rd.','Salem','5370-253','Admin ');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'vel.est.tempor@google.pt','admin_lbaw','PDB77ZTR5OS','Ap #894-4328 Erat Road', 'Raiganj','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'egestas@nisl.co.uk','Rama Browning','HSY38MXX8ME','P.O. Box 369, 4403 Massa Avenue','Chapadinha','5370-253','User');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'lobortis.quis.pede@Vivamusrhoncus.net','Olivia Brennan','MOX89EFA0DU','Ap #624-5071 At, Ave','Oostakker','5370-253','User');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'Nulla.facilisi@semeget.org','Charity Livingston','QYA36FRM1NX','9785 Neque St.','Ambala Sadar','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'nisi@Duiscursus.com','Levi Cervantes','XNW95ZQW9TY','Ap #722-1022 Odio St.','Maria','5370-253','User');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'egestas@diam.edu','Quinn Barnes','IBH69AXY9UU','Ap #515-4663 Nulla Street','Melsele','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'primis@Integervulputaterisus.com','Xenos Osborn','GMT03GML0QV','P.O. Box 893, 1360 Magna. Ave','Fayetteville','5370-253','User');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'feugiat@pedeSuspendisse.com','Cole Tyson','ONK78OZF8JP','202-214 Lorem Ave','Montpellier','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'elit.dictum.eu@eget.net','Desirae Vazquez','TGT94CGV0GO','P.O. Box 989, 6124 Mi Avenue','Qualicum Beach','5370-253','User');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'mus.Aenean@velitinaliquet.edu','Xandra Drake','YUT64SMA0OL','6876 Justo Rd.','Musselburgh','5370-253','User');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'nibh.vulputate@est.com','Isaac Dillard','SDJ96YDP4PD','Ap #123-9516 Augue. St.','Ramsel','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'fringilla.purus.mauris@anequeNullam.org','Hayes Mcpherson','SJG98OFJ0XY','2765 Mi Rd.','Hawick','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'Suspendisse.aliquet.molestie@atvelit.com','Sydney Mcfadden','QQO20CHT9RF','9359 Lorem Av.','Richmond','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'risus.Nunc@semutcursus.co.uk','Kaseem Holman','CYZ17ZTS8LO','P.O. Box 464, 9581 Sem Av.','Fort Smith','5370-253','User');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'scelerisque.lorem.ipsum@Maurisquisturpis.org','Tatum Simpson','SHD63JUZ3FH','3972 Sit Rd.','Salem','5370-253','Admin');
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'nostra@ultricesVivamusrhoncus.com','Adara Frazier','VBD69BIR9VV','Ap #667-4458 Mauris Rd.','Recogne','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'semper@penatibusetmagnis.edu','Ciaran Singleton','FBI41SUB4DT','Ap #147-4425 Velit Ave','San Juan de la Costa','5370-253','Admin ');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'Morbi.metus.Vivamus@faucibusleo.edu','Sloane Hatfield','JPG58FMP5HH','P.O. Box 882, 3276 Nunc Ave','Cañete','5370-253',' User');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'mollis.nec.cursus@ultrices.edu','Zachary Love','WXF13ZUT7RV','P.O. Box 790, 9016 Vitae Ave','Purnea','5370-253','Admin ');
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'lbaw1753@google.pt','lbaw1753','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','212-7102 Risus. Av.','Águas Lindas de Goiás','5370-253','Admin ');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'semper@penatibusetmagnis.edu','Ciaran Singleton','FBI41SUB4DT','Ap #147-4425 Velit Ave','San Juan de la Costa','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'Morbi.metus.Vivamus@faucibusleo.edu','Sloane Hatfield','JPG58FMP5HH','P.O. Box 882, 3276 Nunc Ave','Cañete','5370-253','User');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'mollis.nec.cursus@ultrices.edu','Zachary Love','WXF13ZUT7RV','P.O. Box 790, 9016 Vitae Ave','Purnea','5370-253','Admin');
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions) VALUES (DEFAULT,'lbaw1753@google.pt','lbaw1753','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','212-7102 Risus. Av.','Águas Lindas de Goiás','5370-253','Admin');
 --a pass deste user lbaw1753 é 123456
 
 

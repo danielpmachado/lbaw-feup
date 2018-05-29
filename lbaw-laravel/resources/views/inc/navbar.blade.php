@@ -72,7 +72,7 @@
               @endif
           </li>
 
-          @if (Auth::check())
+          @if (Auth::user()->permissions == 'User')
           <li class="nav-item ">
               <div class="dropdown show ">
                   <a  id="nav_signIn" class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
@@ -84,8 +84,25 @@
                   </div>
                 </div>
           </li>
-
           @endif
+
+          @if (Auth::user()->permissions == 'Admin')
+          <li class="nav-item ">
+              <div class="dropdown show ">
+                  <a  id="nav_signIn" class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
+                    <i class="fa fa-user"></i> {{Auth::user()->username}}
+                  </a>
+                  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
+                      <a class="dropdown-item" href="{{ url('/admin/users') }}">Users</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
+                  </div>
+                </div>
+          </li>
+          @endif
+
+
            @if (!Auth::check())
         <li class="nav-item">
             <a id="nav_cart"   class="nav-link"  data-toggle="modal" data-target="#cartModal">
