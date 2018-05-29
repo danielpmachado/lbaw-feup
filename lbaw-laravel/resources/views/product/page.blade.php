@@ -46,7 +46,7 @@
 				<div class="col-md-12 ">
 
 					<div class="product-buttons" >
-						
+
 						@if(Auth::check())
 								@if(Auth::user()->permissions == 'User')
 								<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
@@ -62,19 +62,20 @@
 								</button>
 								@endif
 								@endif
-													
 
-									
+
+
 								@if(Auth::user()->permissions == 'Admin')
-								<a id="editProdut" href="{{route('editProduct', ['id' =>$product->id])}}" type="button" class="btn btn-outline-info">
-										<i class="fa fa-edit"></i> Edit
-								</a>
+                                <form id="editProdutForm" action="{{route('editProduct', ['id' =>$product->id])}}">
+                                    <button id="editProdut" type="submit" value="Edit" class="btn btn-outline-info"><i class="fa fa-edit"></i> Edit</button>
+                                </form>
+
 								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
 									<i class="fa fa-trash"></i> Remove
-								</button>	
+								</button>
 								@endif
 						@endif
-						
+
 						@if(!Auth::check())
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
