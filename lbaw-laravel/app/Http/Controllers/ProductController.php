@@ -69,7 +69,8 @@ class ProductController extends Controller
 
         return response()->json([
             'product'=>$product, 
-            'quantity'=>$product->pivot->quantity
+            'quantity'=>$product->pivot->quantity,
+            'op'=>'add'
             ]);
     }
 
@@ -80,12 +81,17 @@ class ProductController extends Controller
                         ->where('id_product',$id)
                         ->first();
 
-        $product->pivot->quantity--;
-        $product->pivot->save();
+        $op ='nan';
+        if($product->pivot->quantity>1){
+            $product->pivot->quantity--;
+            $product->pivot->save();
+            $op ='sub';
+        }
 
        return response()->json([
         'product'=>$product, 
-        'quantity'=>$product->pivot->quantity
+        'quantity'=>$product->pivot->quantity,
+        'op'=>$op
         ]);
     }
 

@@ -122,16 +122,27 @@ function deleteOrderHandler(){
 }
 
 function updateQuantityHandler(){
- // if (this.status != 200) window.location = '/';
+  if (this.status != 200) window.location = '/';
 
   let response = JSON.parse(this.responseText);
   let product = response['product'];
   let quantity = response['quantity'];
+  let op = response['op'];
 
   let element =document.querySelector('div.product-order[data-id="' + product.id + '"] .qty');
+  let price =document.querySelector('div.shopping-cart .price');
 
   if(quantity >=1)
-   element.value = quantity;
+    element.value = quantity;
+
+  
+  if(op== 'add')
+    price.innerHTML = Math.round((+price.innerHTML + +product.price) * 100) / 100 ;
+
+  if(op== 'sub')
+    price.innerHTML =Math.round((+price.innerHTML - +product.price) * 100) / 100 ;
+  
+
 }
 
 
