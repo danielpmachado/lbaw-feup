@@ -49,7 +49,7 @@
 
 						@if(Auth::check())
 								@if(Auth::user()->permissions == 'User')
-								<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
+								<button id="cart" type="button" class="btn btn-outline-success" value="add">
 									<i class="fa fa-shopping-cart"></i> Add to Cart
 								</button>
 								@if($product->favorited())
