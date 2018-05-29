@@ -10,6 +10,7 @@ class PagesController extends Controller
     public function index(){
 
         $featuredProducts = Featured::all();
+
         return view('pages.index', compact('featuredProducts'));
     }
 

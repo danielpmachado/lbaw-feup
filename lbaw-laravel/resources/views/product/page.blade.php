@@ -48,7 +48,7 @@
 					<div class="product-buttons" >
 
 						@if(Auth::check())
-								@if(Auth::user()->permissions == 'User')
+							@if(Auth::user()->permissions == 'User')
 								@if($product->ordered())
 								<button id="cart" type="button" class="btn btn-outline-success" disabled>
 									<i class="fa fa-check"></i> In Cart
@@ -58,6 +58,7 @@
 									<i class="fa fa-shopping-cart"></i> Add to Cart
 								</button>
 								@endif
+
 								@if($product->favorited())
 								<button id="fav" type="button" class="btn btn-outline-danger" value="remove">
 									<i class="fa fa-trash"></i> Remove from Wishlist
@@ -67,24 +68,23 @@
 									<i class="fa fa-heart"></i> Add to Wishlist
 								</button>
 								@endif
-								@endif
+							@endif
 
 
+							@if(Auth::user()->permissions == 'Admin')
 
-								@if(Auth::user()->permissions == 'Admin')
+							<form id="editProdutForm" action="{{route('editProduct', ['id' =>$product->id])}}">
+								<button id="editProdut" type="submit" value="Edit" class="btn btn-outline-info"><i class="fa fa-edit"></i> Edit</button>
+							</form>
 
-                                <form id="editProdutForm" action="{{route('editProduct', ['id' =>$product->id])}}">
-                                    <button id="editProdut" type="submit" value="Edit" class="btn btn-outline-info"><i class="fa fa-edit"></i> Edit</button>
-                                </form>
+							<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteProduct">
 
-								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteProduct">
-
-									<i class="fa fa-trash"></i> Remove
-								</button>
-								@endif
+								<i class="fa fa-trash"></i> Remove
+							</button>
+							@endif
 						@endif
 
-						@if(!Auth::check())
+						@else
 						<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
 							<i class="fa fa-shopping-cart"></i> Add to Cart
 						</button>
@@ -108,32 +108,6 @@
 		</div>
 	</div>
 </div>
-
-<div class="modal fade" id="buttons-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" id="modal-cart">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Access Denied</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                You need to Sign In in order to access to the cart and wishlist section.<br>
-                If you don't have an account you should register yourself.
-            </div>
-            <div class="modal-footer" id="cart-footer">
-			<form action="{{ route('register') }}">
-			{{ csrf_field() }}
-			{{ method_field('GET') }}
-			<button class="btn btn-dark" type="submit" style="padding-right=5em; padding-left=5em;"> Sign Up </button>
-			</form>
-            <button type="button" class="btn btn-success" data-dismiss="modal" style="padding-right=5em; padding-left=5em;"> OK </button>
-            </div>
-        </div>
-        </div>
-</div>
-
 
 
 <div class="modal fade" id="deleteProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -163,5 +137,6 @@
 
 </div>
 
-@include('product.reviews')
+	@include('modals.cart')
+	@include('product.reviews')
 @endsection
