@@ -14,12 +14,14 @@ MAIN CONFS
 
 }
 
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+/* @import url('https://fonts.googleapis.com/css?family=Nunito'); */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body{
     background-color: var(--main-text-color);
     margin-top: 55px;
-    font-family: 'Nunito', sans-serif;
+    /* font-family: 'Nunito', sans-serif; */
+    font-family: 'Raleway', sans-serif;
     font-weight: 200;
 }
 
@@ -294,6 +296,7 @@ HOME
     color:  var(--main-bg-color);
     margin:0;
     padding: 10px 20px;
+    border-top: 1px solid Gainsboro;
 
 }
 
@@ -301,6 +304,14 @@ HOME
     border-radius:0;
 }
 
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-control-prev-icon{
+    color: black;
+}
 
 /*
 ---------------
@@ -595,10 +606,9 @@ PRODUCT
 }
 
 .p_breadcrumb{
-    margin: 25px 0 0 80px;
+    margin: 80px 0 0 80px;
     padding:0;
     background-color: var(--main-text-color);
-    margin-top: 5.5em;
 }
 
 .p_breadcrumb a{
@@ -607,7 +617,6 @@ PRODUCT
 
 .product-page{
     margin-top: 40px;
-    padding-right:100px;
 }
 
 .product-image{
@@ -1102,17 +1111,6 @@ MOBILE
 */
 
 
-@media (max-width: 550px) {
-
-    .carousel-inner img{
-
-        min-height: 150px;
-        min-width: 700px;
-        margin: 0 -30%;
-    }
-
-}
-
 
 @media (max-width: 1300px) {
     #catalog-nav{
@@ -1186,13 +1184,6 @@ MOBILE
 
     #drop-1, #drop-2{
         margin: 0;
-    }
-
-
-    .carousel-inner img{
-
-        min-height: 150px;
-        min-width: 700px;
     }
 
     .catalog h2 {

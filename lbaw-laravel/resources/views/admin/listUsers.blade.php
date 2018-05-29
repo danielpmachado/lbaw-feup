@@ -7,8 +7,8 @@
     <div class="row justify-content-center">
         <div class="col-lg-6" align="center">
             <div class="input-group">
-                <form class="form-inline input-group">
-                    <input class="form-control" type="search" placeholder="Search for user" aria-label="Search">
+                <form method="get" class="form-inline input-group" action="{{ route('searchUsers') }}">
+                    <input class="form-control" type="search" name="search_content" placeholder="Search for user" aria-label="Search">
                     <div class="input-group-append">
                         <button class="input-group-text" type="submit"><i class="fa fa-search" ></i></button>
                     </div>

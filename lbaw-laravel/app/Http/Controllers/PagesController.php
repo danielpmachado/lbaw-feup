@@ -10,6 +10,7 @@ class PagesController extends Controller
     public function index(){
 
         $featuredProducts = Featured::all();
+
         return view('pages.index', compact('featuredProducts'));
     }
 
@@ -23,8 +24,4 @@ class PagesController extends Controller
     public function error404(){
         return view('pages.404');
     }
-    public function search_page(){
-      return view('pages.search_page');
-    }
-
 }
