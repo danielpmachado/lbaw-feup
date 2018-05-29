@@ -47,12 +47,8 @@ Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
 Route::put('/products/{id}/reviews', 'ReviewController@create');
-<<<<<<< HEAD
 Route::get('/products/search','ProductController@searchProducts')->name('search');
 Route::delete('products/{id}/delete','ProductController@delete')->name('delete_product');
-=======
-
->>>>>>> cfd9766bf586779b80f40e6a856bb78c8c8cc843
 
 
 //Admin

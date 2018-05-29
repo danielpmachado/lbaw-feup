@@ -66,18 +66,13 @@
 
 
 								@if(Auth::user()->permissions == 'Admin')
-<<<<<<< HEAD
-								<a id="editProdut" href="{{route('editProduct', ['id' =>$product->id])}}" type="button" class="btn btn-outline-info">
-										<i class="fa fa-edit"></i> Edit
-								</a>
-								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteProduct">
-=======
+
                                 <form id="editProdutForm" action="{{route('editProduct', ['id' =>$product->id])}}">
                                     <button id="editProdut" type="submit" value="Edit" class="btn btn-outline-info"><i class="fa fa-edit"></i> Edit</button>
                                 </form>
 
-								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
->>>>>>> cfd9766bf586779b80f40e6a856bb78c8c8cc843
+								<button id="btnDeleteProduct" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteProduct">
+
 									<i class="fa fa-trash"></i> Remove
 								</button>
 								@endif
