@@ -44,7 +44,9 @@ class ProductController extends Controller
     }
 
     public function searchByName($searchText){
-       return DB::select("SELECT * from product ORDER BY name DESC LIMIT 20");
+       return DB::select("SELECT * from product
+        WHERE textsearchable_name_col @@ to_tsquery('portuguese',?)
+        ORDER BY name DESC LIMIT 20",[$searchText]);
     }
 
     public function deleteOrder($id){

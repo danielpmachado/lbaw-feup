@@ -624,7 +624,7 @@ CREATE INDEX email_user ON "user" USING hash (email);
 
 --FTS - body
 ALTER TABLE product ADD COLUMN textsearchable_name_col tsvector;
-UPDATE product SET textsearchable_name_col = to_tsvector('english', coalesce(name,''));
+UPDATE product SET textsearchable_name_col = to_tsvector('portuguese', name || ' ' || description);
 
 
 --      private function searchNewsByPopularity($searchText, $offset) {
