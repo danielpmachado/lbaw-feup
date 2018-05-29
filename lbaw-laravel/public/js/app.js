@@ -68,11 +68,6 @@ function addEventListeners() {
     }
   });
 
-  // let search_bar = document.getElementById("search_bar");
-  // let search_button =document.getElementById("search_button");
-  // search_button.onclick= function(){
-  //   console.log("ola");
-  // }
 
   let order_deleter = document.querySelectorAll('.product-order #delete');
   [].forEach.call(order_deleter, function(deleter) {
@@ -84,8 +79,6 @@ function addEventListeners() {
   let delete_review = document.querySelectorAll('.remove_comment #delete');
   [].forEach.call(delete_review, function(del){
     del.onclick = function(){
-    //  let delete_button=
-      console.log('perigosas sao perigosas');
       sendDeleteReviewRequest(this);
     }
   });
@@ -160,6 +153,17 @@ function deleteOrderHandler(){
 
 }
 
+function deleteReviewHandler(){
+  if (this.status != 200) window.location = '/';
+
+  let id = JSON.parse(this.responseText);
+
+
+  let element = document.querySelector('div.review-container[data-id="' + id + '"]');
+  element.remove();
+
+}
+
 function updateQuantityHandler(){
   if (this.status != 200) window.location = '/';
 
@@ -190,9 +194,9 @@ function updateQuantityHandler(){
 //----------------------------------
 
 function sendDeleteReviewRequest(button){
-  let id = button.closest("div.review-section").getAttribute('data-id');
-  let id_product = button.closest('div.product-order').getAttribute('data-id');
-  sendAjaxRequest('post', '/cart/products/' + id + '/remove', null, deleteOrderHandler);
+  let id = button.closest("div.review-container").getAttribute('data-id');
+
+  sendAjaxRequest('post', '/products/reviews/' + id + '/delete', null, deleteReviewHandler);
 
 //  /products/{id_product}/reviews/{id_review}/delete
 

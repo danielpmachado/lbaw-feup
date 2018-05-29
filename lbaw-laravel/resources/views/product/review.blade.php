@@ -35,6 +35,27 @@
         </div>
         @endif
         @endif
+        <div class="modal fade remove_comment" id="deleteReview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        	<div class="modal-dialog modal-dialog-centered" role="document">
+        		<div class="modal-content">
+        		<div class="modal-header">
+        			<h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        			<span aria-hidden="true">&times;</span>
+        			</button>
+        		</div>
+        		<div class="modal-body">
+                                By deleting this review you should have a strong reason: inappropriate or offensive language, disrespect for other users, etc.
+
+        		</div>
+        		<div class="modal-footer">
+        			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        			<button id="delete" type="submit" class="btn btn-danger" data-dismiss="modal">Delete</button>
+
+        		</div>
+        		</div>
+        	</div>
+        </div>
 
 
 
@@ -57,7 +78,7 @@
                 </div>
                 <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <form action="{{ route('delete_review', ['id_product' => $review->id_product,'id_review' => $review->id ]) }}" method="post">
+                        <form >
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -65,26 +86,4 @@
                 </div>
                 </div>
         </div>
-</div>
-
-<div class="modal fade remove_comment" id="deleteReview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-		<div class="modal-body">
-                        By deleting this review you should have a strong reason: inappropriate or offensive language, disrespect for other users, etc.
-
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button id="delete" type="submit" class="btn btn-danger" data-dismiss="modal">Delete</button>
-
-		</div>
-		</div>
-	</div>
 </div>

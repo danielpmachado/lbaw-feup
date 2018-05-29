@@ -49,11 +49,13 @@ Route::get('/products/search','ProductController@searchProducts')->name('search'
 Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
-Route::put('/products/{id}/reviews', 'ReviewController@create');
+
 Route::get('/products/search','ProductController@searchProducts')->name('search');
 Route::delete('products/{id}/delete','ProductController@delete')->name('delete_product');
 /*Route::delete('/products/{id_product}/reviews/{id_review}/delete', 'ReviewController@delete')->name('delete_review');*/
-Route::post('/products/{id_product}/reviews/{id_review}/delete','ReviewController@delete')->name('delete_review');
+//Reviews
+Route::post('/products/reviews/{id_review}/delete','ReviewController@delete');
+Route::put('/products/{id}/reviews', 'ReviewController@create');
 
 //Admin
 Route::get('/admin/users', 'AdminController@getAllUsers');
