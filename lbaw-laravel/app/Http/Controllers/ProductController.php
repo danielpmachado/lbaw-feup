@@ -56,4 +56,11 @@ class ProductController extends Controller
         return $product;
 
     }
+
+    public function delete($id){
+        $product = Product::find($id);
+        $product->delete();
+
+        return redirect()->route('home');
+   }
 }
