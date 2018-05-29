@@ -63,6 +63,14 @@ function addEventListeners() {
     }
   });
 
+  let delete_review = document.querySelectorAll('.remove_comment #delete');
+  [].forEach.call(delete_review, function(del){
+    del.onclick = function(){
+      console.log('perigosas sao perigosas');
+      sendDeleteReviewRequest(this);
+    } 
+  });
+
   let quantity_button = document.querySelectorAll('.product-order #quantity');
   [].forEach.call(quantity_button, function(changer) {
     changer.onclick = function(){
@@ -149,6 +157,16 @@ function updateQuantityHandler(){
 // ---------------------------------
 //            Review
 //----------------------------------
+
+function sendDeleteReviewRequest(button){
+  let id_review = button.closest('div.review-container').getAttribute('data-id');
+  let id_product = button.closest('div.product-order').getAttribute('data-id');
+  sendAjaxRequest('post', '/cart/products/' + id + '/remove', null, deleteOrderHandler);
+
+  /products/{id_product}/reviews/{id_review}/delete
+
+}
+
 function finalRateButtons(button){
   let id = button.getAttribute('id');
   let btn_number = id.charAt(3);
