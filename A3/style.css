@@ -14,11 +14,15 @@
 
 }
 
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
 body {
     background-color: var(--main-text-color);
     /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
-    font-family: "Courier New", Courier, monospace;
-    font-weight: 300;
+    /* font-family: "Courier New", Courier, monospace; */
+    /* font-family: Verdana, Arial, Helvetica,sans-serif; */
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
 }
 
 /*
@@ -199,9 +203,16 @@ div.abcRioButton.abcRioButtonLightBlue{
   background-color:  var(--main-bg-color);
   color:  var(--main-text-color);
   margin:0;
-  padding: 10px 20px;
+  padding: 10px 0px 10px 0px;
+  margin: 0 -15px 0 -15px !important;
+  width: 100vw;
 
 }
+
+#featured h2 {
+    text-align: center;
+}
+
 
 #featured-container .card{
   border: 10px solid var(--main-text-color);
@@ -526,7 +537,7 @@ FOOTER
 	color: var(--main-bg-color);
 	font-size: 30px;
 	padding-bottom:15px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .description-tag {
