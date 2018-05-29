@@ -109,7 +109,7 @@ CREATE TABLE "user" (
     provider text,
     provider_id text,
     permissions text NOT NULL,
-    blocked integer,
+    blocked integer DEFAULT 0,
     avatar text DEFAULT 'default.png',
     remember_token VARCHAR
 );
