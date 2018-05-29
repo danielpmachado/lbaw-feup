@@ -8,10 +8,10 @@ Search Results
 <div id="featured-container" class="container-fluid">
   <div class="row justify-content-center">
 
-      <!-- <?php foreach($featuredProducts as $featuredProduct) {
+      <?php foreach($products as $featuredProduct) {
         ?>
         @include('partials.featured')
-      <?php } ?> -->
+      <?php } ?>
 
 </div>
 </div>
