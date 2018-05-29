@@ -76,12 +76,14 @@ CREATE TABLE product_category (
 
 CREATE TABLE product_order (
     id_product integer,
-    id_order integer
+    id_order integer,
+    quantity integer
 );
 
 CREATE TABLE cart (
     id_product integer,
-    id_user integer
+    id_user integer,
+    quantity integer
 );
 
 
@@ -146,6 +148,9 @@ ALTER TABLE ONLY brand
 ALTER TABLE ONLY favorite
     ADD CONSTRAINT favorite_pkey PRIMARY KEY (id_user, id_product);
 
+ALTER TABLE ONLY cart
+ADD CONSTRAINT cart_pkey PRIMARY KEY (id_product, id_user);
+
 ALTER TABLE ONLY "order"
     ADD CONSTRAINT order_pkey PRIMARY KEY (id);
 
@@ -185,9 +190,6 @@ ALTER TABLE ONLY "user"
 ALTER TABLE ONLY single_featured_product
     ADD CONSTRAINT single_featured_product_pkey PRIMARY KEY (id_product, id_featured_product);
 
-    ALTER TABLE ONLY cart
-        ADD CONSTRAINT cart_pkey PRIMARY KEY (id_product, id_user);
-
 
     -- Foreign Keys
 
@@ -196,6 +198,12 @@ ALTER TABLE ONLY favorite
 
 ALTER TABLE ONLY favorite
     ADD CONSTRAINT favorite_id_product_fkey FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE CASCADE;
+
+ALTER TABLE ONLY cart
+ADD CONSTRAINT cart_id_user_fkey FOREIGN KEY(id_user) REFERENCES "user"(id) ON DELETE CASCADE;
+
+ALTER TABLE ONLY cart
+ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON UPDATE CASCADE;
 
 
 ALTER TABLE ONLY "order"
@@ -236,11 +244,7 @@ ALTER TABLE ONLY single_featured_product
 ALTER TABLE ONLY single_featured_product
 ADD CONSTRAINT single_featured_product_id__featured_product_fkey FOREIGN KEY (id_featured_product) REFERENCES featured_product(id) ON UPDATE CASCADE;
 
-ALTER TABLE ONLY cart
-ADD CONSTRAINT cart_id_user_fkey FOREIGN KEY(id_user) REFERENCES "user"(id) ON DELETE CASCADE;
 
-ALTER TABLE ONLY cart
-ADD CONSTRAINT cart_id_product_fkey FOREIGN KEY(id_product) REFERENCES product(id) ON DELETE CASCADE;
 
 
 
@@ -391,9 +395,9 @@ INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,2,'2018-04-05
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (9,7,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (12,8,'2018-04-05');
 
-INSERT INTO cart(id_product, id_user) VALUES (1,20);
-INSERT INTO cart(id_product, id_user) VALUES (3,20);
-INSERT INTO cart(id_product, id_user) VALUES (5,20);
+INSERT INTO cart(id_product, id_user, quantity) VALUES (1,20,2);
+INSERT INTO cart(id_product, id_user, quantity) VALUES (3,20,1);
+INSERT INTO cart(id_product, id_user, quantity) VALUES (5,20,1);
 
 INSERT INTO "order" (status,address,contact,total_cost,payment_method,id_user,id,delivery_date,payment_date) VALUES (' Deliveried','Ap #699-800 Ligula St.','981 553 524',2203,'Credit Card ',11,DEFAULT,'2018-10-06','2018-01-03');
 INSERT INTO "order" (status,address,contact,total_cost,payment_method,id_user,id,delivery_date,payment_date) VALUES (' Processing ','P.O. Box 328, 3629 Luctus Avenue','915 449 883',244,'Credit Card ',17,DEFAULT,'2018-10-06','2018-01-03');
@@ -438,26 +442,26 @@ INSERT INTO payment (id,method,amount,date) VALUES (DEFAULT,'Credit Card ',301,'
 INSERT INTO payment (id,method,amount,date) VALUES (DEFAULT,' Paypal ',1344,'2018-01-03');
 
 
-INSERT INTO product_order (id_product,id_order) VALUES (6,8);
-INSERT INTO product_order (id_product,id_order) VALUES (20,6);
-INSERT INTO product_order (id_product,id_order) VALUES (7,1);
-INSERT INTO product_order (id_product,id_order) VALUES (7,17);
-INSERT INTO product_order (id_product,id_order) VALUES (18,10);
-INSERT INTO product_order (id_product,id_order) VALUES (14,13);
-INSERT INTO product_order (id_product,id_order) VALUES (12,11);
-INSERT INTO product_order (id_product,id_order) VALUES (9,8);
-INSERT INTO product_order (id_product,id_order) VALUES (17,7);
-INSERT INTO product_order (id_product,id_order) VALUES (19,6);
-INSERT INTO product_order (id_product,id_order) VALUES (4,15);
-INSERT INTO product_order (id_product,id_order) VALUES (13,17);
-INSERT INTO product_order (id_product,id_order) VALUES (12,1);
-INSERT INTO product_order (id_product,id_order) VALUES (18,19);
-INSERT INTO product_order (id_product,id_order) VALUES (15,9);
-INSERT INTO product_order (id_product,id_order) VALUES (12,7);
-INSERT INTO product_order (id_product,id_order) VALUES (5,20);
-INSERT INTO product_order (id_product,id_order) VALUES (14,14);
-INSERT INTO product_order (id_product,id_order) VALUES (8,15);
-INSERT INTO product_order (id_product,id_order) VALUES (15,4);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (6,8,1);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (20,6,3);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (7,1,2);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (7,17,4);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (18,10,1);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (14,13,1);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (12,11,1);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (9,8,2);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (17,7,3);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (19,6,4);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (4,15,2);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (13,17,2);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (12,1,2);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (18,19,1);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (15,9,3);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (12,7,5);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (5,20,3);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (14,14,1);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (8,15,2);
+INSERT INTO product_order (id_product,id_order,quantity) VALUES (15,4,2);
 
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,5,'Melhor marca chinesa no mercado! Flagship killer sem duvida!!','2018-08-25',6,4);
 INSERT INTO review (id,score,comment,date,id_product,id_user) VALUES (DEFAULT,1,'Yet one that really paid off six months into our testing.One that was sorely needed after years of similarity and the premium design, extra power.Losing the home button and altering the design was a dangerous move.','2018-08-10',1,10);

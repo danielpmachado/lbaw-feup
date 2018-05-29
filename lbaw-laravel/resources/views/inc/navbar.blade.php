@@ -106,13 +106,13 @@
 
            @if (!Auth::check())
         <li class="nav-item">
-            <button type="button" class="btn btn-link nav-link" data-toggle="modal" data-target="#cartModal">
+            <a id="nav_cart"   class="nav-link"  data-toggle="modal" data-target="#cartModal">
                 <i class="fa fa-shopping-cart"></i> 0,00€
-            </button>
+            </a>
         </li>
           @else
           <li class="nav-item">
-              <a type="button" class="btn btn-link nav-link"  href="{{route('cart', ['id' =>Auth::user()->id])}}" >
+              <a id="nav_cart" class="nav-link"  href="{{route('cart', ['id' =>Auth::user()->id])}}" >
                   <i class="fa fa-shopping-cart"></i> 0,00€
               </a>
           </li>
