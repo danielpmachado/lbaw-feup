@@ -16,7 +16,9 @@
 
 body {
     background-color: var(--main-text-color);
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 300;
 }
 
 /*
@@ -232,6 +234,10 @@ border: 25px solid var(--main-text-color);
   border-bottom: 1px solid rgba(0,0,0,.5);
   padding-bottom: 5px;
   margin: 0 0 25px 0;
+  margin-top:20px;
+  margin-left:0;
+  font-weight: 500;
+  text-align: center;
 }
 
 .catalog .card p{
@@ -520,10 +526,11 @@ FOOTER
 	color: var(--main-bg-color);
 	font-size: 30px;
 	padding-bottom:15px;
+    font-weight: 600;
 }
 
 .description-tag {
-	font-weight: bolder;
+	font-weight: 600;
 	font-size: 1.3em;
 }
 
@@ -1402,10 +1409,7 @@ h3.dropdown-header{
       min-width: 700px;
   }
 
-  .catalog h2 {
-    margin-top:30px;
-    margin-left:0;
-  }
+
 
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
