@@ -11,7 +11,7 @@
 
 <div id="search-container" class="container-fluid">
         <div class="row justify-content-center">
-            @each('partials.product_searched',$products_paginate, 'product')
+            @each('partials.product',$products_paginate, 'product')
     </div>
 </div>
 

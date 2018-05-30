@@ -15,16 +15,11 @@
         </p>
         <hr>
         <div class="card-btn">
-             @if(Auth::check())
-                    @if($product->ordered())
-                        <button id="cart" type="button" class="btn btn-outline-success mb-2" disabled>
-                            <i class="fa fa-check"></i> In Cart
-                        </button>
-                    @else
+             @if(Auth::check())      
                         <button id="cart" type="button" class="btn btn-outline-success mb-2">
                             <i class="fa fa-shopping-cart"></i> Add to Cart
                         </button>
-                    @endif
+
                 @else
                     <button  type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
                         <i class="fa fa-shopping-cart"></i> Add to Cart

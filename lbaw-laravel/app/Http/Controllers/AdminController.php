@@ -37,13 +37,7 @@ class AdminController extends Controller
 
     public function searchUsers(Request $request){
         $text =$request->search_content;
-        // $users= DB::select("SELECT * from \"user\"  WHERE textsearch_name_col @@ to_tsquery('english',?)
-        //  DESC LIMIT 20",[$text])->paginate(4);
-        //   return view('admin.listUsers',compact('users'));
-
-          // $users=DB::table('user')->where('textsearch_name_col @@ to_tsquery(\'english\','.$text.')')->paginate(4);
-
-           $users = User::whereRaw('textsearch_name_col @@ to_tsquery(\'english\', ?)', $text)->paginate(4);
+        $users = User::whereRaw('textsearch_name_col @@ to_tsquery(\'english\', ?)', $text)->paginate(4);
            return view('admin.listUsers',compact('users'));
     }
     public function addProduct(){
