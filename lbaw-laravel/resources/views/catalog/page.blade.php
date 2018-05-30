@@ -7,9 +7,12 @@
 
 	<div class="row justify-content-center">
 
-        @each('partials.product_searched',$category->products, 'product')
+        @each('partials.product_searched',$products_paginate, 'product')
 
     </div>
 </div>
+
+
+{{$products_paginate->links()}}
 
 @endsection

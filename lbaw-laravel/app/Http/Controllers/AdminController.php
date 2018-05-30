@@ -32,5 +32,31 @@ class AdminController extends Controller
           ORDER BY username DESC LIMIT 20",[$text]);
           return view('admin.listUsers',compact('users'));
     }
+    public function addProduct(){
+        $product = Product::find(1);
+        return view('admin.addProduct',compact('product'));
+    }
+
+    public function insertProduct(Request $request){
+        $product = new Product();
+        $product->name = request('name');
+        $product->price = request('price');
+        $product->stock = request('stock');
+        $product->description = request('description');
+        $product->score=0;
+        $product->id_brand=request('brand');
+        $product->id_category=request('category');
+
+        $avatar = $request->file('avatar');
+
+        if($avatar != null){
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->save( public_path('/images/products/' . $filename ) );
+            $product->pic = $filename;
+        }
+
+        $product->save();
+        return redirect()->route('page',['id' => $product->id]);;
+    }
 
 }
