@@ -1064,11 +1064,21 @@ div[role="tabpanel"]:after {
     /* border-bottom: 1px solid whitesmoke; */
 }
 
-
-
 .tab-content{
     width:100%;
 }
+
+
+.shopping-cart input[type=radio]:checked + label{
+    color: gainsboro;
+}
+
+
+
+.shopping-cart input[type=radio]{
+    display: none;
+}
+
 
 
 /*
@@ -1108,7 +1118,7 @@ section#faq{
     border-radius: 0;
 }
 #faq .card-header {
-    background-color: var(--main-bg-color:);
+    background-color: var(--main-bg-color);
     margin-bottom: 0;
     padding: 20px 1.25rem;
     -border:none;
