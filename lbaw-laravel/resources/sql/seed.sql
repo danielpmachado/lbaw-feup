@@ -16,6 +16,7 @@ DROP TABLE IF EXISTS single_featured_product CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS cards CASCADE;
 DROP TABLE IF EXISTS items CASCADE;
+DROP TABLE IF EXISTS password_resets CASCADE;
 
 
 
@@ -136,6 +137,12 @@ CREATE TABLE featured_product (
 CREATE TABLE single_featured_product (
     id_product integer,
     id_featured_product integer
+);
+
+CREATE TABLE password_resets (
+  email VARCHAR(255) unique,
+  token VARCHAR(255) not null,
+  created_at timestamp
 );
 
 -- Primary Keys and Uniques

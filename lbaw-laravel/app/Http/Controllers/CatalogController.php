@@ -12,7 +12,12 @@ class CatalogController extends Controller
 
         $category = Category::where('name', $type)->get()->first();
 
-        return view ('catalog.page',compact('category'));
+
+
+        $products_paginate = Category::where('name', $type)->get()->first()->products()->paginate(4);
+
+
+        return view ('catalog.page',compact('category','products_paginate'));
     }
 
 }
