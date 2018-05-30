@@ -291,6 +291,10 @@ a#nav_signIn, a#nav_cart {
     margin-left: 10px;
 }
 
+.help-spotlight{
+    color: var(--main-hl-color);
+}
+
 /*
 --------
 HOME
