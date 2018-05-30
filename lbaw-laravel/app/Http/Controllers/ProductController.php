@@ -51,7 +51,7 @@ class ProductController extends Controller
         $products = Product::whereRaw('textsearchable_name_col @@ to_tsquery(\'portuguese\', ?)', $searchText);
         //
         // dd($products);
-        // return $products;
+        return $products;
     }
 
 
