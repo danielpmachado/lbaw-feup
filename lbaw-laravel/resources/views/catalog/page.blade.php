@@ -13,4 +13,6 @@
 </div>
 
 
+{{$products_paginate->links()}}
+
 @endsection
