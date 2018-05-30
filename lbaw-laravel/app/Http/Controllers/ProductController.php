@@ -40,8 +40,7 @@ class ProductController extends Controller
 
       $text =$request->search_content;
       $products=$this->searchByName($text);
-      dd($products);
-      return view('pages.search_page',compact('products'));
+      return view('pages.search_page',compact('products', 'text'));
 
     }
 
