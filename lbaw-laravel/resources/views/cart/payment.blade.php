@@ -15,7 +15,7 @@
                 </form>
             </div>
             <div class="card-footer ">
-                <button id="final-step"  type="submit" class="btn btn-outline-dark float-right">
+                <button id="step-3-next"  type="submit" class="btn btn-outline-dark float-right">
                     Next
                 </button>
             </div>

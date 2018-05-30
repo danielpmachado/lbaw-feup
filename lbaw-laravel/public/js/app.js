@@ -107,11 +107,12 @@ function addEventListeners() {
     sendAddCartRequest(this);
   }
 
-  let final_step = document.querySelector('#final-step');
+  let final_step = document.querySelector('#step-3-next');
   if(final_step!=null)
   final_step.onclick = function(){
-    sendConfirmationRequest(this);
+    makeFinalStep(this);
   }
+
 
 }
 
@@ -119,28 +120,43 @@ function addEventListeners() {
 //            Cart
 //----------------------------------
 
-function sendConfirmationRequest(button){
+function makeFinalStep(button){
 
-  let address = document.getElementById('address').value;
-                + " " + document.getElementById('city').value;
+  let address_final = document.getElementById('address').value
+                + " " + document.getElementById('city').value
                 + " " + document.getElementById('zip').value;
-  let contact = document.getElementById('contact').value;
+  let contact_final= document.getElementById('contact').value;
   let radios = document.getElementsByName('payment');
  
-  let payment;
+  let payment_final;
   for (let i = 0, length = radios.length; i < length; i++){
     if (radios[i].checked){
-       payment =radios[i].value;
+       payment_final=radios[i].value;
       break;
     }
   }
 
-  sendAjaxRequest('put', '/orders/create', {address: address,contact:contact, payment:payment}, fakehandler());
+
+  let address = document.querySelector('#address-conf');
+
+
+  address.innerHTML = `<strong>Address:</strong> ${address_final}`;
+  let contact = document.querySelector('#contact-conf');
+  contact.innerHTML = `<strong>Contact:</strong> ${contact_final}`;
+  let payment = document.querySelector('#payment-conf');
+  payment.innerHTML = `<strong>Payment Method:</strong> ${payment_final}`;
+
+ 
 }
 
-function fakehandler(){
+function confirmationHandler(){
+  let order = JSON.parse(this.responseText);
 
+  
+  
 }
+
+
 function sendAddCartRequest(button){
   let id = button.closest('div.product').getAttribute('data-id');
 
@@ -217,12 +233,17 @@ function updateQuantityHandler(){
   let quantity = response['quantity'];
   let op = response['op'];
 
-  let element =document.querySelector('div.product-order[data-id="' + product.id + '"] .qty');
+  let cart_quantity =document.querySelector('div.product-order[data-id="' + product.id + '"] .qty');
+  let conf_quantity = document.querySelector('div.product-conf[data-id="' + product.id + '"] .qty');
   let price_cart =document.querySelector('div.shopping-cart .price');
   let price_nav = document.querySelector('#nav_cart');
+  let price_conf =document.querySelector('#total-conf');
 
-  if(quantity >=1)
-    element.value = quantity;
+
+  if(quantity >=1){
+     cart_quantity.value = quantity;
+     conf_quantity.innerHTML = `<strong>Quantity:</strong>  ${quantity}`
+  }
 
   let price =0;
   if(op== 'add')
@@ -235,6 +256,7 @@ function updateQuantityHandler(){
   if(price >0){
     price_cart.innerHTML = price;
     price_nav.innerHTML = `<i class="fa fa-shopping-cart"></i>${price} € ` 
+    price_conf.innerHTML = `<strong>Total:</strong> ${price} €`
   }
 
 }
@@ -342,7 +364,8 @@ function addReviewHandler(){
 function createReview(review,user){
   let new_review = document.createElement('div');
   new_review.classList.add('row');
-  console.log(review.score);
+
+
   let str = `
   <div class="col-sm-3 text-center">
         <img src="/images/avatars/default.png" class="rounded" height="60" width="60">

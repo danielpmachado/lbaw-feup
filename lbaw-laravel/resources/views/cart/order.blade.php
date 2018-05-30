@@ -26,18 +26,27 @@
                     </a>
                 </li>
                 <li rel-index="3">
-                    <a href="#step-4" class="btn disabled" aria-controls="step-4" role="tab" data-toggle="tab">
+                    <a id="step-4-link" href="#step-4" class="btn disabled" aria-controls="step-4" role="tab" data-toggle="tab">
                         <span> 4</span>
                         <a> Confirmation</a>
                     </a>
                 </li>
             </ul>
         </div>
+
+         <?php
+            $total =0;
+
+            foreach($products as $product)
+                $total += $product->price * $product->pivot->quantity;
+
+        ?>
         
         <div class="tab-content">
             @include('cart.cart')
             @include('cart.expedition')
             @include('cart.payment')
+            @include('cart.confirmation')
         </div>
     </div>
 </div>
