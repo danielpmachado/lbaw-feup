@@ -34,17 +34,25 @@ function sendAjaxRequest(method, url, data, handler) {
 
 function addEventListeners() {
 
-  let fav_button = document.querySelectorAll(' #fav');
-  [].forEach.call(fav_button, function(fav) {
-    fav.onclick = function(){
-      favoriteRequest(this);
-    }
-  });
+// ---------------------------------
+//            PROFILE
+//----------------------------------
 
   let profile_button = document.querySelectorAll(".profile-user-menu li");
   [].forEach.call(profile_button, function(change) {
     change.onclick = function(){
       changeProfilePill(this);
+    }
+  });
+
+// ---------------------------------
+//            PRODUCT
+//----------------------------------
+
+  let fav_button = document.querySelectorAll(' #fav');
+  [].forEach.call(fav_button, function(fav) {
+    fav.onclick = function(){
+      favoriteRequest(this);
     }
   });
 
@@ -68,6 +76,9 @@ function addEventListeners() {
     }
   });
 
+// ---------------------------------
+//            CART
+//----------------------------------
 
   let order_deleter = document.querySelectorAll('.product-order #delete');
   [].forEach.call(order_deleter, function(deleter) {
@@ -95,11 +106,14 @@ function addEventListeners() {
   cart_button.onclick = function(){
     sendAddCartRequest(this);
   }
+
+
 }
 
 // ---------------------------------
 //            Cart
 //----------------------------------
+
 
 function sendAddCartRequest(button){
   let id = button.closest('div.product').getAttribute('data-id');
@@ -145,8 +159,13 @@ function deleteOrderHandler(){
   let quantity = response['quantity'];
 
 
-  let price =document.querySelector('div.shopping-cart .price');
-  price.innerHTML =Math.round((+price.innerHTML - (+product.price* +quantity) ) * 100) / 100 ;
+  let price_cart =document.querySelector('div.shopping-cart .price');
+  let price_nav = document.querySelector('#nav_cart');
+  let price = Math.round((+price_cart.innerHTML - (+product.price* +quantity) ) * 100) / 100 ;
+
+  price_cart.innerHTML = price;
+  price_nav.innerHTML = `<i class="fa fa-shopping-cart"></i>${price} € `;
+
 
   let element = document.querySelector('div.product-order[data-id="' + product.id + '"]');
   element.remove();
@@ -173,18 +192,24 @@ function updateQuantityHandler(){
   let op = response['op'];
 
   let element =document.querySelector('div.product-order[data-id="' + product.id + '"] .qty');
-  let price =document.querySelector('div.shopping-cart .price');
+  let price_cart =document.querySelector('div.shopping-cart .price');
+  let price_nav = document.querySelector('#nav_cart');
 
   if(quantity >=1)
     element.value = quantity;
 
-
+  let price =0;
   if(op== 'add')
-    price.innerHTML = Math.round((+price.innerHTML + +product.price) * 100) / 100 ;
+    price = Math.round((+price_cart.innerHTML + +product.price) * 100) / 100 ;
+  
 
   if(op== 'sub')
-    price.innerHTML =Math.round((+price.innerHTML - +product.price) * 100) / 100 ;
-
+    price = Math.round((+price_cart.innerHTML - +product.price) * 100) / 100 ;
+  
+  if(price >0){
+    price_cart.innerHTML = price;
+    price_nav.innerHTML = `<i class="fa fa-shopping-cart"></i>${price} € ` 
+  }
 
 }
 

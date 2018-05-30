@@ -105,15 +105,25 @@
             @endif
 
            @if (!Auth::check())
-        <li class="nav-item">
-            <a id="nav_cart"   class="nav-link"  data-toggle="modal" data-target="#cartModal">
-                <i class="fa fa-shopping-cart"></i> 0,00€
-            </a>
-        </li>
+            <li class="nav-item">
+                <a id="nav_cart"   class="nav-link"  data-toggle="modal" data-target="#cartModal">
+                    <i class="fa fa-shopping-cart"></i> 0,00€
+                </a>
+            </li>
+
           @else
+
+            <?php
+                $products = Auth::user()->cart;
+                $total =0;
+
+                foreach($products as $product)
+                    $total += $product->price * $product->pivot->quantity;
+
+            ?>
           <li class="nav-item">
               <a id="nav_cart" class="nav-link"  href="{{route('cart', ['id' =>Auth::user()->id])}}" >
-                  <i class="fa fa-shopping-cart"></i> 0,00€
+                  <i class="fa fa-shopping-cart"></i>{{$total}} €
               </a>
           </li>
 
