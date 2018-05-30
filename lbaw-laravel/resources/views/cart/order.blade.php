@@ -38,11 +38,6 @@
             @include('cart.cart')
             @include('cart.expedition')
             @include('cart.payment')
-            <div role="tabpanel" class="tab-pane" id="step-4">
-                <div class="col-md-12">
-                    <button id="step-4-next" class="btn btn-lg btn-primary pull-right">Continue</button>
-                </div>
-            </div>
         </div>
     </div>
 </div>

@@ -32,6 +32,9 @@ Route::post('/cart/products/{id}/inc','CartController@incQuantity');
 Route::post('/cart/products/{id}/sub','CartController@subQuantity');
 Route::post('/cart/products/{id}/add','CartController@add');
 
+// Order
+Route::put('/orders/create','OrderController@create');
+
 // Authentication
 Auth::routes();
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -53,7 +56,7 @@ Route::post('/products/{id}/update','ProductController@update')->name('update_pr
 
 Route::get('/products/search','ProductController@searchProducts')->name('search');
 Route::delete('products/{id}/delete','ProductController@delete')->name('delete_product');
-/*Route::delete('/products/{id_product}/reviews/{id_review}/delete', 'ReviewController@delete')->name('delete_review');*/
+
 //Reviews
 Route::post('/products/reviews/{id_review}/delete','ReviewController@delete');
 Route::put('/products/{id}/reviews', 'ReviewController@create');
