@@ -1102,6 +1102,43 @@ section#faq{
     align-items: center;
 }
 
+/*
+--------
+PAGINATION
+--------
+*/
+
+.pagination a,  .pagination .next_page, .pagination span{
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  text-decoration: none;
+  border-left-width: 0;
+}
+
+.pagination li{
+    border: 1px solid var(--main-bg-color);
+    border-radius: 3px;
+    margin:2px;
+    
+}
+
+.pagination li:hover, .pagination .active {
+    background-color: var(--main-bg-color);
+}
+
+.pagination li a:hover,.pagination li span:hover, .pagination li.active span {
+    color:white;
+}
+
+.pagination li a {
+    color: var(--main-bg-color);
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
 
 
 /*

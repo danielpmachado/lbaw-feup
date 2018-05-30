@@ -59,3 +59,6 @@ Route::post('/products/{id_product}/reviews/{id_review}/delete','ReviewControlle
 Route::get('/admin/users', 'AdminController@getAllUsers');
 Route::get('/admin/users/search', 'AdminController@searchUsers')->name('searchUsers');
 Route::get('/admin/editProduct/{id}', 'AdminController@editProduct')->name('editProduct');
+
+//Catalog
+Route::get('/catalog/{type}', 'CatalogController@getCatalog')->name('catalog');
