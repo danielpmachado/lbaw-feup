@@ -101,11 +101,13 @@ function addEventListeners() {
     }
   });
 
-  let cart_button = document.querySelector('.product-buttons #cart');
-  if(cart_button!=null)
-  cart_button.onclick = function(){
-    sendAddCartRequest(this);
-  }
+  let cart_button = document.querySelectorAll('#cart');
+  [].forEach.call(cart_button, function(adder) {
+    adder.onclick = function(){
+      sendAddCartRequest(this);
+    }
+  });
+ 
 
   let final_step = document.querySelector('#step-3-next');
   if(final_step!=null)

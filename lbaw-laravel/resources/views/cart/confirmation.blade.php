@@ -25,7 +25,7 @@
 
             </div>
             <div class="card-footer">
-                <button id="step-4-next"  type="submit" class="btn btn-outline-dark float-right">
+                <button id="confirmation"  type="submit" class="btn btn-outline-dark float-right">
                 <i class="fas fa-check"></i> Confirm
                 </button>
             </div>
