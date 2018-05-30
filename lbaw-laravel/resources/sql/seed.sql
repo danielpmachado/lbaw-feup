@@ -387,6 +387,12 @@ INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,sc
 
 INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Auscultadores Bluetooth SONY WH-CH400 G.CE7 em Cinzento','Ligação NFC e Bluetooth 4.2, Autonomia até 20h, Tempo de carregamento aprox. 4.5h, Utilize os botões para reproduzir, parar ou avançar entre as faixas e ajustar o volume', 88, 59.99, 22, 'sony-head.png',2,3);
 
+INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Coluna SONY SRS-XB41 Preto','coluna com função Party Booster, luzes festivas, Extra Bass e modo de Som ao Vivo; tecnologia DSP; tecnologia Party Chain sem fios; aplicação Sony Music Center; à prova de água (classificação IP67), pó, choque e oxidação; autonomia da bateria de 24 horas; tecnologia NFC; função mãos-livres; alcance BT de 30 metros; frequência de resposta de 20 Hz a 20 kHz; colunas duplas de 58 mm.', 9, 221.99, 22, 'coluna-sony.png',2,3);
+
+INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Apple Auriculares EarPods','Ao contrário dos auriculares convencionais, o design dos novos EarPods Apple é definido pela geometria do ouvido. O que os torna mais confortáveis para mais pessoas do que os outros auscultadores parecidos. Os altifalantes dos EarPods Apple foram concebidos para minimizar a perda de áudio e maximizar a saída de som. Assim, obtém uma qualidade de som tão impressionante como a dos auscultadores mais caros. Os EarPods Apple com telecomando e microfone também incluem um telecomando incorporado que permite ajustar o volume, controlar a leitura de música e vídeo e atender ou terminar chamadas com um simples aperto do cabo.', 21, 35.00, 3, 'apple-earpods.png',2,3);
+
+INSERT INTO product (id,name,description,stock,price,id_brand,pic,id_category,score) VALUES (DEFAULT,'Smartwatch XIAOMI Mi Band 2 Preto','Time to step up. Display OLED, botão touch, pedômetro com algoritmo melhorado. A Mi Band 2 da Xiaomi é o gadget pertfeito para o acompanhar no seu dia a dia, medindo os seus passos, sono (horas dormidas, sono profundo, etc), bem como alertas das suas notificações favoritas',23,28.99,5,'miband2.png',2,3);
+
 
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (1,1,'2018-04-05');
 INSERT INTO favorite (id_user,id_product,addition_date) VALUES (20,1,'2018-04-05');
