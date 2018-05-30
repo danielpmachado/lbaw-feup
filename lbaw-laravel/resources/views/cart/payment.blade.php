@@ -7,7 +7,10 @@
                
                     
                     <div class="row justify-content-center">
-                        <div class="mx-5"><input id="visa" type="radio" name="payment" value="Visa" checked> <label for="visa"><i class="fab fa-cc-visa fa-5x"></i></label></div>
+                        <div class="mx-5">
+                            <input id="visa" type="radio" name="payment" value="Visa" checked>      
+                            <label for="visa"><i class="fab fa-cc-visa fa-5x"></i></label>
+                        </div>
                         <div class="mx-5"><input id="mastercard" type="radio" name="payment" value="MasterCard" ><label for="mastercard"><i class="fab fa-cc-mastercard fa-5x"></i></label></div>
                         <div class="mx-5"><input id="paypal" type="radio" name="payment" value="PayPal"> <label for="paypal"><i class="fab fa-cc-paypal fa-5x"></i></label></div>
                     </div>
