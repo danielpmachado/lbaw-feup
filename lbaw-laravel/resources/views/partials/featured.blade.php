@@ -13,7 +13,7 @@
             @endif
         </p>
         <hr>
-            <div class="card-btn">
+            <div class="card-btn product"  data-id="{{$featuredProduct->product->id}}">
                 @if(Auth::check())
                     @if($featuredProduct->product->ordered())
                         <button id="cart" type="button" class="btn btn-outline-success" disabled>

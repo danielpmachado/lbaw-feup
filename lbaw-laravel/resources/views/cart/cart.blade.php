@@ -10,13 +10,7 @@
 
                     @each('cart.product',$products,'product')
 
-                    <?php
-                        $total =0;
-
-                        foreach($products as $product)
-                            $total += $product->price * $product->pivot->quantity;
-
-                    ?>
+                   
                     
                 </div>
                 <div class="card-footer">
