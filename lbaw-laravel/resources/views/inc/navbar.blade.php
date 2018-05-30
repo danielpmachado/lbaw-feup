@@ -95,7 +95,7 @@
                         <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item align-left" href="{{route('profile', ['id' =>Auth::user()->id])}}">Profile</a>
                             <a class="dropdown-item" href="{{ url('/admin/users') }}">Users</a>
-                            <a class="dropdown-item" href="{{ url('/admin/users') }}">Add Product</a>
+                            <a class="dropdown-item" href="{{ url('/admin/addProduct') }}">Add Product</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
                         </div>
