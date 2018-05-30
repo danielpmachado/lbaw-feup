@@ -32,5 +32,8 @@ class AdminController extends Controller
           ORDER BY username DESC LIMIT 20",[$text]);
           return view('admin.listUsers',compact('users'));
     }
+    public function addProduct(){
+        return view('admin.addProduct');
+    }
 
 }
