@@ -25,7 +25,7 @@ class OrderController extends Controller{
 
         $order->save();
       
-
-        return view('pages.about');
+ 
+        return $order;
       }
 }

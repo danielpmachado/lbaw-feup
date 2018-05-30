@@ -59,7 +59,6 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <form action="{{ route('block_user', ['id' => $user->id]) }}" method="post">
                     {{ csrf_field() }}
-                    {{ method_field('UPDATE') }}
                     <button type="submit" class="btn btn-warning">Block</button>
                 </form>
             </div>
