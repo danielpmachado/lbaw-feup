@@ -7,12 +7,12 @@
             <div class="col-md-3">
                 <div class="profile-sidebar">
                     <img class="profile-user-pic" src="/images/products/{{$product->pic}}" alt="product preview">
-                    
+
                         <div class="profile-user-name">
                             {{$product->name}}
                         </div>
-                   
-             
+
+
                 </div>
             </div>
             <div class="profile-tabs tab-content col-md-9">
@@ -25,19 +25,7 @@
                                         <a> Name </a>
                                         <input  id="name" type="text" class="form-control" name="username" value="{{ $product->name  }}" required autofocus>
                                     </div>
-                        
 
-                                    <div class="form-row">
-                                            <div class="form-group col-md-6 ">
-                                                <a> Brand </a>
-                                                <input  id="brand" type="text" class="form-control" name="city" value="{{ $product->brand }}" required>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <a> Category </a>
-                                                <input  id="category" type="text" class="form-control" name="zip" value="{{ $product->brand }}" required>
-                                            </div>
-                                        </div>
-                        
                                     <div class="form-row">
                                         <div class="form-group col-md-6 ">
                                             <a> Price </a>
@@ -48,27 +36,25 @@
                                             <input  id="stock" type="text" class="form-control" name="zip" value="{{ $product->stock }}" required>
                                         </div>
                                     </div>
-                    
+
                                     <div class="form-group">
                                         <a> Description </a>
                                         <textarea id="description" type="text" class="form-control" name="email"   rows="10"required>{{ $product->description }}</textarea>
                                     </div>
-                    
-                                    <div  class="form-group"> 
+
+                                    <div  class="form-group">
                                         <a> Product Image </a>
                                         <input style="margin-left:20px;"type="file" name="avatar">
                                     </div>
 
-                                    
+
                                     <div class="form-group float-left">
                                         <button type="submit" class="btn btn-dark ">Save Changes</button>
                                     </div>
-                    
+
                                 </form>
-                                <button type="button" class="btn btn-danger float-right" data-toggle="modal" data-target="#deleteAccount">
-                                Delete Account
-                                </button>
-                    
+                          
+
                                 <!-- Modal -->
                                 <div class="modal fade" id="deleteAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -93,7 +79,7 @@
                                     </div>
                                 </div>
                                 </div>
-                            
+
                     </div>
                 </div>
             </div>
