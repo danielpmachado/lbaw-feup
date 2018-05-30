@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App;
 
@@ -10,6 +10,9 @@ use App\Brand;
 
 class Product extends Model{
     protected $table = 'product';
+
+    
+    public $timestamps  = false;
 
     public function favorited(){
         $user = Auth::user();
@@ -35,7 +38,6 @@ class Product extends Model{
         return $brand->name;
 
     }*/
-    
+
 
 }
-

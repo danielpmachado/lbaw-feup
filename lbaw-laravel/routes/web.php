@@ -49,6 +49,7 @@ Route::get('/products/search','ProductController@searchProducts')->name('search'
 Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
+Route::post('/products/{id}/update','ProductController@update')->name('update_product');
 
 Route::get('/products/search','ProductController@searchProducts')->name('search');
 Route::delete('products/{id}/delete','ProductController@delete')->name('delete_product');
