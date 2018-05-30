@@ -51,13 +51,13 @@ class UsersController extends Controller
     public function cart($id){
       $user = User::find($id);
       $products= $user->cart;
-        
+
       if(Auth::user()->id == $id)
         return view('cart.order',compact('products','user'));
       else
          return redirect('/');
-      
+
     }
 
-   
+
 }

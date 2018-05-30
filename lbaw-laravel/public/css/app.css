@@ -672,11 +672,11 @@ Team CSS
 */
 
 h2#team{
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 .team{
-    padding-top:5em;
+    padding-top:3em;
     padding-bottom: 3em;
 }
 h6.description{
@@ -782,17 +782,82 @@ h3.description{
     margin-bottom: 2em;
 }
 
-#about{
+#about {
     margin-top:100px;
-    margin-bottom: 4em;
+}
 
+#about p {
+    text-align: justify;
 }
 
 #about-title{
     margin-bottom: 10px;
 }
 
+.info-row{
+    width: 80%;
+    margin-left: 8.5%;
+}
 
+.description-row{
+    margin-bottom: 5em;
+}
+
+#info{
+    width: 100vw !important;
+    margin: 0 0 0 !important;
+    padding: 0 0 0 0;
+}
+
+#info p {
+    text-align: center;
+}
+
+#info .info-point{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#info i{
+    font-size: 2em;
+    margin-bottom: 0.3em;
+    color: white;
+    width: 1.5em;
+    height: 1.5em;
+    padding-top: 0.25em;
+    background-color: var(--main-bg-color);
+    border-radius: 100%;
+    color: white;
+}
+
+#info .category{
+    font-weight: bold;
+}
+
+#contact i {
+    font-size: 2.5em;
+    margin-bottom: 0.3em;
+    color: white;
+    width: 1.5em;
+    height: 1.5em;
+    padding-top: 0.25em;
+    background-color: var(--main-bg-color);
+    border-radius: 100%;
+    color: white;
+
+}
+
+#contact h2{
+    margin-bottom: 0.5em;
+}
+
+#contact h5{
+    font-weight: 100;
+}
+
+#map{
+    margin-top: 2em;
+}
 
 /*
 -----------
@@ -980,7 +1045,7 @@ div[role="tabpanel"]:after {
 .quantity .minus:hover, .quantity .plus:hover {
     background-color: #dad8da
  }
- 
+
 .shopping-cart {
     margin-bottom: 40px;
 }
@@ -1102,6 +1167,43 @@ section#faq{
     align-items: center;
 }
 
+/*
+--------
+PAGINATION
+--------
+*/
+
+.pagination a,  .pagination .next_page, .pagination span{
+  float: left;
+  padding: 0 14px;
+  line-height: 34px;
+  text-decoration: none;
+  border-left-width: 0;
+}
+
+.pagination li{
+    border: 1px solid var(--main-bg-color);
+    border-radius: 3px;
+    margin:2px;
+    
+}
+
+.pagination li:hover, .pagination .active {
+    background-color: var(--main-bg-color);
+}
+
+.pagination li a:hover,.pagination li span:hover, .pagination li.active span {
+    color:white;
+}
+
+.pagination li a {
+    color: var(--main-bg-color);
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
 
 
 /*

@@ -36,17 +36,20 @@
           </li>
           <li class="col-sm-3 nav-column " id="image">
             <ul>
-            <li class="dropdown-header">Featured</li>
+            <li class="dropdown-header"></li>
                     <div id="menCollection" class="carousel slide" data-ride="carousel"> 
                       <div class="carousel-inner">
                         <div class="item active">
-                            <a href="#"><img src="{{ URL::to('/') }}/images/home1.jpg" height="200em" width="300em"class="img-responsive rounded" alt="product 1"></a>
-                           <button style="margin-top:7px" href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                            <a href="#"><img src="{{ URL::to('/') }}/images/products/MacBook.png" height="200em" width="300em"class="img-responsive rounded" alt="product 1"></a>
+                          <!-- <button style="margin-top:7px" href="#" class="btn btn-outline-dark" type="button">{{$category->name}}  Catalog</button>-->
                       </div>
                    </div>
                 </div>
              <li class="divider"></li>
           </ul>
-          </li>
+          <form action="{{route('catalog', ['type' => $category->name])}}">
+             <button  style="margin-top:7px"  class="btn btn-outline-dark" type="submit">{{$category->name}} Catalog</button>
+          </form>
+        </li>
         </ul>
 </li>

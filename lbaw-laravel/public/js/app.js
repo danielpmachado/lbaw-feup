@@ -58,8 +58,8 @@ function addEventListeners() {
 
   let comment_button = document.querySelector('form.submit-review #submit_review');
   if(comment_button!=null)
-    comment_button.onclick = function(){
-      addReviewRequest(this);
+    comment_button.onclick = function(event){
+      addReviewRequest(this,event);
   }
 
   let rate_button = document.querySelectorAll('form.submit-review .review-block-rate button');
@@ -84,6 +84,13 @@ function addEventListeners() {
   [].forEach.call(order_deleter, function(deleter) {
     deleter.onclick = function(){
       sendDeleteOrderRequest(this);
+    }
+  });
+
+  let delete_review = document.querySelectorAll('.remove_comment #delete');
+  [].forEach.call(delete_review, function(del){
+    del.onclick = function(){
+      sendDeleteReviewRequest(this);
     }
   });
 
@@ -113,7 +120,7 @@ function sendAddCartRequest(button){
 
   if(!button.disabled)
     sendAjaxRequest('post', '/cart/products/' + id + "/add",null,addCartHandler);
-  
+
 }
 
 function  addCartHandler(){
@@ -122,7 +129,7 @@ function  addCartHandler(){
 
   button.innerHTML ='<i class="fa fa-check"></i> In Cart';
   button.disabled =true;
-  
+
 }
 
 function sendUpdateQuantityRequest(button){
@@ -131,7 +138,7 @@ function sendUpdateQuantityRequest(button){
 
   if(value == "+")
     sendAjaxRequest('post', '/cart/products/' + id + "/inc",null,updateQuantityHandler);
-  
+
   if(value == "-")
     sendAjaxRequest('post', '/cart/products/' + id + "/sub",null,updateQuantityHandler);
 
@@ -151,7 +158,7 @@ function deleteOrderHandler(){
   let product = response['product'];
   let quantity = response['quantity'];
 
-  
+
   let price_cart =document.querySelector('div.shopping-cart .price');
   let price_nav = document.querySelector('#nav_cart');
   let price = Math.round((+price_cart.innerHTML - (+product.price* +quantity) ) * 100) / 100 ;
@@ -161,6 +168,17 @@ function deleteOrderHandler(){
 
 
   let element = document.querySelector('div.product-order[data-id="' + product.id + '"]');
+  element.remove();
+
+}
+
+function deleteReviewHandler(){
+  if (this.status != 200) window.location = '/';
+
+  let id = JSON.parse(this.responseText);
+
+
+  let element = document.querySelector('div.review-container[data-id="' + id + '"]');
   element.remove();
 
 }
@@ -199,6 +217,16 @@ function updateQuantityHandler(){
 // ---------------------------------
 //            Review
 //----------------------------------
+
+function sendDeleteReviewRequest(button){
+  let id = button.closest("div.review-container").getAttribute('data-id');
+
+  sendAjaxRequest('post', '/products/reviews/' + id + '/delete', null, deleteReviewHandler);
+
+//  /products/{id_product}/reviews/{id_review}/delete
+
+}
+
 function finalRateButtons(button){
   let id = button.getAttribute('id');
   let btn_number = id.charAt(3);
@@ -237,7 +265,7 @@ function deactivateRateButtons(button){
   }
 }
 
-function addReviewRequest(button) {
+function addReviewRequest(button,event) {
   let id = button.closest("div.review-section").getAttribute('data-id');
 
   // get comment
@@ -300,7 +328,7 @@ function createReview(review,user){
   for(i=0; i < 5; i++){
     if(i<review.score)
       str +=
-      `<button type="button" class="btn  btn-primary btn-sm ml-1" aria-label="Left Align" disabled>
+      `<button type="button" class="btn btn-primary btn-sm ml-1" aria-label="Left Align" disabled>
           <i class="fa fa-star"></i>
         </button>`;
     else

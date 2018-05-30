@@ -135,6 +135,8 @@
 </div>
 
 
+
+
 </div>
 
 	@include('modals.cart')
