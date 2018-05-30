@@ -12,6 +12,10 @@ class CatalogController extends Controller
 
         $category = Category::where('name', $type)->get()->first();
 
+        $products = $category->products;
+
+        dd('$products');
+
         return view ('catalog.page',compact('category'));
     }
 

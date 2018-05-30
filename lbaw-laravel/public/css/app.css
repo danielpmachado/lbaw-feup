@@ -281,6 +281,13 @@ a#nav_signIn, a#nav_cart {
     color:var(--main-hl-color);
 }
 
+#nav_button{
+    color: var(--main-bg-color);
+}
+
+#nav_button:hover{
+    color:white;
+}
 
 
 /*

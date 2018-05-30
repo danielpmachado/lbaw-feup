@@ -7,31 +7,43 @@
         <ul  class="dropdown-menu mega-dropdown-menu show">
           <li class="col-6 col-sm-4 col-md-3 nav-column">
             <ul>
-              <h3 class="dropdown-header ">Desktops</h3>
-                <li><a href="#">Tech4U Gaming</a></li>
-                <li><a href="#">Tech4U Workstation</a></li>
-                <li><a href="#">Gaming</a></li>
-                <li><a href="#">Workstation</a></li>
+              <h3 class="dropdown-header ">Our Favorites</h3>
+                  @php
+                    $products = $category->products;
+                  @endphp
+                  @for($i=0;$i<3;$i++)
+                    <li><a href="/products/{{ $products->slice($i, 1)->first()['id'] }}">{{$products->slice($i,1)->first()['name']}} </a></li>
+                  @endfor
                 <li class="divider"></li>
-              <h3 class="dropdown-header">Fonts</h3>
-                            <li><a href="#">Glyphicon</a></li>
-              <li><a href="#">Google Fonts</a></li>
+              <h3 class="dropdown-header">More</h3>
+                  @for($i=3;$i<5;$i++)
+                    <li><a href="/products/{{ $products->slice($i, 1)->first()['id'] }}">{{$products->slice($i,1)->first()['name']}} </a></li>
+                  @endfor                          
             </ul>
           </li>
           <li class="col-6 col-sm-4 col-md-3 nav-column">
             <ul>
-               @each('partials.brand',$category->products, 'product')
+               <h3 class="dropdown-header ">New Items</h3>
+        
+               @for($i=5;$i<10;$i++)
+                <li><a href="/products/{{ $products->slice($i, 1)->first()['id'] }}">{{$products->slice($i,1)->first()['name']}} </a></li>
+                @endfor
+             
             </ul>
           </li>
           <li class="col-6 col-sm-4 col-md-3 nav-column">
             <ul>
-              <h3 class="dropdown-header ">Tablet PCs</h3>
-              <li><a href="#">Android Tablet</a></li>
-              <li><a href="#">Windows Tablet</a></li>
-              <li><a href="#">2 In 1 Tablet</a></li>
-              <li><a href="#">Phablet</a></li>
-              <li><a href="#">Kids Tablet </a></li>
-              <li><a href="#">Gaming Tablet</a></li>
+              <h3 class="dropdown-header ">Flash Sale</h3>
+              
+      
+              @for($i=10;$i<15;$i++)
+
+                <li><a href="/products/{{ $products->slice($i, 1)->first()['id'] }}">{{$products->slice($i,1)->first()['name']}} </a></li>
+              @endfor
+              
+
+                    
+                    
             </ul>
           </li>
           <li class="col-sm-3 nav-column " id="image">
@@ -47,9 +59,10 @@
                 </div>
              <li class="divider"></li>
           </ul>
-          <form action="{{route('catalog', ['type' => $category->name])}}">
+         <!-- <form action="{{route('catalog', ['type' => $category->name])}}">
              <button  style="margin-top:7px"  class="btn btn-outline-dark" type="submit">{{$category->name}} Catalog</button>
-          </form>
+          </form>-->
+          <a  href="{{route('catalog', ['type' => $category->name])}}" id="nav_button" style="margin-top:7px"  class="btn btn-outline-dark" type="submit">{{$category->name}} Catalog</a>
         </li>
         </ul>
 </li>
