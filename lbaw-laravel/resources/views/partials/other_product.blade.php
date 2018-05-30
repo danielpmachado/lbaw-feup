@@ -1,4 +1,3 @@
-
 <div class="card col-lg-2 col-md-3 col-sm-6 product-card">
     <div class="image-card" style="height:100%; width:100%; display:flex; align-items:center;">
         <img class="card-img-top" src="{{ URL::to('/') }}/images/products/{{$product->pic}}" alt="Card image cap">
@@ -16,10 +15,15 @@
         <hr>
         <div class="card-btn">
              @if(Auth::check())
+                    @if($product->ordered())
+                        <button id="cart" type="button" class="btn btn-outline-success btn-block mb-2" disabled>
+                            <i class="fa fa-check"></i> In Cart
+                        </button>
+                    @else
                         <button id="cart" type="button" class="btn btn-outline-success btn-block mb-2">
                             <i class="fa fa-shopping-cart"></i> Add to Cart
                         </button>
-
+                    @endif
                 @else
                     <button  type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#buttons-modal">
                         <i class="fa fa-shopping-cart"></i> Add to Cart
