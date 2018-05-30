@@ -212,7 +212,7 @@
                     can change your name, address, etc.
                 </p>
                 <hr />
-                <p class="help-spotlight">Delete your account</p>
+                <p class="help-spotlight">Delete account</p>
                 <p>
                     Follow the same steps for edit your profile. At the page for edit your profile, you will have thead
                     option <span class="category">Delete Account</span>. Atention: this action is irreversible.
