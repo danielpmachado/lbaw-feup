@@ -45,14 +45,11 @@ class ProductController extends Controller
     }
 
     public function searchByName($searchText){
-       // return DB::select("SELECT * from product
-       //  WHERE textsearchable_name_col @@ to_tsquery('portuguese',?) LIMIT 20",[$searchText]);
-
-        $products = Product::whereRaw('textsearchable_name_col @@ to_tsquery(\'portuguese\', ?)', $searchText);
-        //
-        // dd($products);
-        return $products;
-    }
+      return DB::select("SELECT * from product
+       WHERE textsearchable_name_col @@ to_tsquery('portuguese',?)
+       ORDER BY name DESC LIMIT 20",[$searchText]);
+   }
+   
 
 
     public function delete($id){
