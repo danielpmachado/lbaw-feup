@@ -8,6 +8,7 @@
     <li data-target="#demo" data-slide-to="0" class="active"></li>
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
   </ul>
 
   <!-- The slideshow -->
@@ -19,7 +20,10 @@
       <img src="{{ URL::to('/') }}/images/carousel/banner-iphone-x.jpg" alt="iPhone X" width="1200" height="300">
     </div>
     <div class="carousel-item">
-      <img src="{{ URL::to('/') }}/images/carousel/banner-ps4.jpg" alt="New York" width="1200" height="300">
+      <img src="{{ URL::to('/') }}/images/carousel/banner-ps4.jpg" alt="Ps4" width="1200" height="300">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ URL::to('/') }}/images/carousel/banner-macbook.jpg" alt="Macbook" width="1200" height="300">
     </div>
   </div>
 
