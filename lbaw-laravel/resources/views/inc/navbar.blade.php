@@ -168,14 +168,54 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content" id="modal-cart">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Help</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Online Help</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+                <p class="help-spotlight">Welcome to Tech4U!</p>
                 <p>
-                    Explain how to use the site. <span class="category">TODO</span>
+                    Only logged users have access to all functionalities of this website. Although not logged in,
+                    you can search for products by using our search bar or searching for category.
+                </p>
+                <hr />
+                <p class="help-spotlight">Sign In</p>
+                <p>
+                    You have a quick access to login form through the navigation bar on <span class="category">Sign In</span>.
+                    If you don't have a account yet, you can easily do it following the same path but chosing
+                    <span class="category">New here? Sign up</span> instead.
+                </p>
+                <hr />
+                <p class="help-spotlight">Add a product to cart</p>
+                <p>
+                    You have the option <span class="category"><i class="fa fa-shopping-cart"></i> Add to Cart</span> from the page of
+                    the product or directly from the catalog or search results.
+                </p>
+                <hr />
+                <p class="help-spotlight">Add a product to Wishlist</p>
+                <p>
+                    You have the option <span class="category"><i class="fa fa-heart"></i> Add to Wishlist</span> from the page of
+                    the product.
+                </p>
+                <hr />
+                <p class="help-spotlight">Finalize a purchase</p>
+                <p>
+                    You just have to press to <span class="category"><i class="fa fa-shopping-cart"></i></span> at the right of navigation bar
+                    and follow the steps.
+                </p>
+                <hr />
+                <p class="help-spotlight">Edit Profile</p>
+                <p>
+                    Click at your name on the navigation bar and choose <span class="category">Profile</span>. At your
+                    profile page, choose <span class="category"><i class="fa fa-cogs"></i> Settings</span>. There you
+                    can change your name, address, etc.
+                </p>
+                <hr />
+                <p class="help-spotlight">Delete account</p>
+                <p>
+                    Follow the same steps for edit your profile. At the page for edit your profile, you will have thead
+                    option <span class="category">Delete Account</span>. Atention: this action is irreversible.
                 </p>
             </div>
             <div class="modal-footer" id="cart-footer">
