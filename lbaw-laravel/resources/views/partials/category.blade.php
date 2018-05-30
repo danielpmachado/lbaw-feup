@@ -11,12 +11,12 @@
                   @php
                     $products = $category->products;
                   @endphp
-                  @for($i=0;$i<3;$i++)
+                  @for($i=0;$i<2;$i++)
                     <li><a href="/products/{{ $products->slice($i, 1)->first()['id'] }}">{{$products->slice($i,1)->first()['name']}} </a></li>
                   @endfor
                 <li class="divider"></li>
               <h3 class="dropdown-header">More</h3>
-                  @for($i=3;$i<5;$i++)
+                  @for($i=4;$i<5;$i++)
                     <li><a href="/products/{{ $products->slice($i, 1)->first()['id'] }}">{{$products->slice($i,1)->first()['name']}} </a></li>
                   @endfor                          
             </ul>
@@ -25,7 +25,7 @@
             <ul>
                <h3 class="dropdown-header ">New Items</h3>
         
-               @for($i=5;$i<10;$i++)
+               @for($i=2;$i<4;$i++)
                 <li><a href="/products/{{ $products->slice($i, 1)->first()['id'] }}">{{$products->slice($i,1)->first()['name']}} </a></li>
                 @endfor
              
@@ -36,7 +36,7 @@
               <h3 class="dropdown-header ">Flash Sale</h3>
               
       
-              @for($i=10;$i<15;$i++)
+              @for($i=5;$i<10;$i++)
 
                 <li><a href="/products/{{ $products->slice($i, 1)->first()['id'] }}">{{$products->slice($i,1)->first()['name']}} </a></li>
               @endfor
@@ -59,9 +59,6 @@
                 </div>
              <li class="divider"></li>
           </ul>
-         <!-- <form action="{{route('catalog', ['type' => $category->name])}}">
-             <button  style="margin-top:7px"  class="btn btn-outline-dark" type="submit">{{$category->name}} Catalog</button>
-          </form>-->
           <a  href="{{route('catalog', ['type' => $category->name])}}" id="nav_button" style="margin-top:7px"  class="btn btn-outline-dark" type="submit">{{$category->name}} Catalog</a>
         </li>
         </ul>

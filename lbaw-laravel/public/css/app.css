@@ -137,9 +137,11 @@ div.abcRioButton.abcRioButtonLightBlue{
 
 #sign-in{
     text-align: center;
-    border-radius:0px;
+    border-radius:5px;
     padding:15px;
     background-color: var(--main-text-color);
+    margin-top:12px;
+    background-color:whitesmoke;
 }
 
 #user-menu{
@@ -281,10 +283,12 @@ a#nav_signIn, a#nav_cart {
 
 #nav_button{
     color: var(--main-bg-color);
+    background-color: white;
 }
 
 #nav_button:hover{
     color:white;
+    background-color:var(--main-bg-color);
 }
 
 #help-link{
@@ -1389,7 +1393,7 @@ MOBILE
     .profile-sidebar{
         margin:90px 10px 20px 10px;
         display: flex !important;
-        justify-content: flex-center;
+        justify-content: center;
 
     }
 
