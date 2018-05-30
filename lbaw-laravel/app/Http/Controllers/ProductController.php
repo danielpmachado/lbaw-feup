@@ -40,14 +40,19 @@ class ProductController extends Controller
 
       $text =$request->search_content;
       $products=$this->searchByName($text);
+      dd($products);
       return view('pages.search_page',compact('products'));
 
     }
 
     public function searchByName($searchText){
        return DB::select("SELECT * from product
-        WHERE textsearchable_name_col @@ to_tsquery('portuguese',?)
-        ORDER BY name DESC LIMIT 20",[$searchText]);
+        WHERE textsearchable_name_col @@ to_tsquery('portuguese',?) LIMIT 20",[$searchText]);
+
+        // $products = Product::whereRaw('textsearchable_name_col @@ to_tsquery(\'portuguese\', ?)', $searchText);
+        //
+        // dd($products);
+        // return $products;
     }
 
 

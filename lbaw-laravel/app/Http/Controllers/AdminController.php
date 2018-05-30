@@ -25,17 +25,32 @@ class AdminController extends Controller
 
         return view('admin.editProduct',compact('product'));
     }
+    public function arrayPaginator($array, $request)
+    {
+    $page = Input::get('page', 1);
+    $perPage = 10;
+    $offset = ($page * $perPage) - $perPage;
+
+    return new LengthAwarePaginator(array_slice($array, $offset, $perPage, true), count($array), $perPage, $page,
+        ['path' => $request->url(), 'query' => $request->query()]);
+  }
 
     public function searchUsers(Request $request){
         $text =$request->search_content;
-        $users= DB::select("SELECT * from \"user\"  WHERE textsearch_name_col @@ to_tsquery('english',?)
-          ORDER BY username DESC LIMIT 20",[$text]);
-          return view('admin.listUsers',compact('users'));
+        // $users= DB::select("SELECT * from \"user\"  WHERE textsearch_name_col @@ to_tsquery('english',?)
+        //  DESC LIMIT 20",[$text])->paginate(4);
+        //   return view('admin.listUsers',compact('users'));
+
+          // $users=DB::table('user')->where('textsearch_name_col @@ to_tsquery(\'english\','.$text.')')->paginate(4);
+
+           $users = User::whereRaw('textsearch_name_col @@ to_tsquery(\'english\', ?)', $text)->paginate(4);
+           return view('admin.listUsers',compact('users'));
     }
     public function addProduct(){
         $product = Product::find(1);
         return view('admin.addProduct',compact('product'));
     }
+
 
     public function insertProduct(Request $request){
         $product = new Product();
@@ -59,6 +74,6 @@ class AdminController extends Controller
         return redirect()->route('page',['id' => $product->id]);;
     }
 
-    
+
 
 }

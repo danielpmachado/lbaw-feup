@@ -8,6 +8,7 @@ use App\User;
 use App\Order;
 use Image;
 
+
 class UsersController extends Controller
 {
     public function profile($id){
@@ -22,8 +23,9 @@ class UsersController extends Controller
     public function delete($id){
         $user = User::find($id);
         $user->delete();
+        $users = User::where('permissions','User')->paginate(4);
 
-        return redirect()->route('home');
+      return view ('admin.listUsers',compact('users'));
    }
 
    public function update(Request $request,$id){
@@ -60,11 +62,12 @@ class UsersController extends Controller
     }
 
     public function block($id){
-
         $user = User::find($id);
         $user->blocked=1;
 
-        return view ('/admin/users');
+        $users = User::where('permissions','User')->paginate(4);
+
+      return view ('admin.listUsers',compact('users'));
     }
 
 
