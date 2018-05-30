@@ -16,12 +16,12 @@
                 <hr>
 
                 <h5><strong>Expedition Info</strong></h5>
-                <h6 id="address-conf"><strong>Address:</strong> Address</h6>
-                <h6 id="contact-conf"><strong>Contact:</strong> Address</h6>
-                <h6 id="payment-conf"><strong>Contact:</strong> Address</h6>
+                <h6><strong>Address: </strong> <span id="address-conf"></span></h6>
+                <h6><strong>Contact: </strong> <span id="contact-conf"></span></h6>
+                <h6><strong>Payment Method: </strong> <span id="payment-conf"></span></h6>
                 <hr>
 
-                <h6 id="total-conf" class="float-right" ><strong>Total:</strong> {{$total}} €</h6>
+                <h6 class="float-right" ><strong>Total:</strong> <span id="total-conf">{{$total}}</span> €</h6>
 
             </div>
             <div class="card-footer">

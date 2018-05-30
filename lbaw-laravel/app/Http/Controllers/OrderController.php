@@ -23,8 +23,13 @@ class OrderController extends Controller{
         $order->delivery_date =date('Y-m-d');
         $order->payment_date =date('Y-m-d');
 
+        $cart = Auth::user()->cart;
         $order->save();
-      
+
+        foreach($cart as $product)
+             $order->products()->attach($product->id);
+        
+        Auth::user()->cart()->detach();
  
         return $order;
       }

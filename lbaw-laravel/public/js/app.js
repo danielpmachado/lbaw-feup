@@ -115,12 +115,50 @@ function addEventListeners() {
     makeFinalStep(this);
   }
 
+  let confirmation = document.querySelector("#confirmation");
+  if(confirmation!=null)
+    confirmation.onclick = function(){
+    sendConfirmationRequest(this);
+  }
 
 }
 
 // ---------------------------------
 //            Cart
 //----------------------------------
+
+function sendConfirmationRequest(button){
+  let address = document.querySelector('#address-conf').innerHTML;
+  let contact = document.querySelector('#contact-conf').innerHTML;
+  let payment = document.querySelector('#payment-conf').innerHTML;
+  let total = document.querySelector('#total-conf').innerHTML;
+
+  if(+total>0)
+    sendAjaxRequest('put', '/orders/create' ,{address:address,contact:contact,payment:payment},confirmationHandler);
+  else
+    alert("You can not make an order whit no products attached!");
+}
+
+function confirmationHandler(){
+  let order = JSON.parse(this.responseText);
+  let element = document.getElementById('progress-bar');
+  let price_cart =document.querySelector('#nav_cart').innerHTML = `<i class="fa fa-shopping-cart"></i>0,00 € `;
+
+  element.innerHTML = `
+                        <div class="jumbotron text-center" style="background-color:transparent;">
+                        <br><br><br>
+                        <h1 class="display-3">Thank You!</h1><br>
+                        <p class="lead"> Your transaction has been successfully aproved. You will received your order really soon.</p>
+                        <hr>
+                      
+                        <p class="lead"><br>
+                          <a class="btn btn-success btn-lg" href="/" role="button">Continue to homepage</a>
+                        </p>
+                        <br><br><br>
+                      </div>`
+  
+}
+
 
 function makeFinalStep(button){
 
@@ -138,26 +176,15 @@ function makeFinalStep(button){
     }
   }
 
-
   let address = document.querySelector('#address-conf');
-
-
-  address.innerHTML = `<strong>Address:</strong> ${address_final}`;
+  address.innerHTML = `${address_final}`;
   let contact = document.querySelector('#contact-conf');
-  contact.innerHTML = `<strong>Contact:</strong> ${contact_final}`;
+  contact.innerHTML = `${contact_final}`;
   let payment = document.querySelector('#payment-conf');
-  payment.innerHTML = `<strong>Payment Method:</strong> ${payment_final}`;
+  payment.innerHTML = `${payment_final}`;
 
- 
+
 }
-
-function confirmationHandler(){
-  let order = JSON.parse(this.responseText);
-
-  
-  
-}
-
 
 function sendAddCartRequest(button){
   let id = button.closest('div.product').getAttribute('data-id');
@@ -258,7 +285,7 @@ function updateQuantityHandler(){
   if(price >0){
     price_cart.innerHTML = price;
     price_nav.innerHTML = `<i class="fa fa-shopping-cart"></i>${price} € ` 
-    price_conf.innerHTML = `<strong>Total:</strong> ${price} €`
+    price_conf.innerHTML = price;
   }
 
 }
