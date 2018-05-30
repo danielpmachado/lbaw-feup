@@ -22,8 +22,8 @@ Route::get('/search_page','PagesController@search_page');
 // User
 Route::get('/users/{id}','UsersController@profile')->name('profile');
 Route::post('/users/{id}/update','UsersController@update')->name('update_user');
-Route::delete('/users/{id}/delete','UsersController@delete')->name('delete_user');
-Route::post('/users/{id}/block','UsersController@block')->name('block_user');
+Route::delete('/admin/users/{id}/delete','UsersController@delete')->name('delete_user');
+Route::post('/admin/users/{id}/block','UsersController@block')->name('block_user');
 
 // Cart
 Route::post('/cart/products/{id}/remove','ProductController@deleteOrder');
