@@ -20,12 +20,22 @@
                     <div class="card fav-card">
                          <div class="card-header bg-dark text-light">Add Product</div>
                         <div class="card-body">
-                            <form form class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{ route('update_product', ['id' => $product->id])}}">
+                            <form form class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{ route('insertProduct')}}">
                               {{ csrf_field() }}
                                 <div class="form-group">
                                         <a> Name </a>
                                         <input  id="name" type="text" class="form-control" name="name" value="{{ $product->name  }}" required autofocus>
                                     </div>
+                                    <div class="form-row">
+                                           <div class="form-group col-md-6 ">
+                                               <a> Brand </a>
+                                               <input  id="brand" type="text" class="form-control" name="brand" value="{{ $product->brand }}" required>
+                                           </div>
+                                           <div class="form-group col-md-6">
+                                               <a> Category </a>
+                                               <input  id="category" type="text" class="form-control" name="category" value="{{ $product->brand }}" required>
+                                           </div>
+                                          </div>
 
                                     <div class="form-row">
                                         <div class="form-group col-md-6 ">
