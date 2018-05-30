@@ -59,5 +59,13 @@ class UsersController extends Controller
 
     }
 
+    public function block($id){
+
+        $user = User::find($id);
+        $user->blocked=1;
+
+        return view ('/admin/users');
+    }
+
 
 }

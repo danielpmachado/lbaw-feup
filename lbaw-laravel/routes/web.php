@@ -23,6 +23,7 @@ Route::get('/search_page','PagesController@search_page');
 Route::get('/users/{id}','UsersController@profile')->name('profile');
 Route::post('/users/{id}/update','UsersController@update')->name('update_user');
 Route::delete('/users/{id}/delete','UsersController@delete')->name('delete_user');
+Route::post('/users/{id}/block','UsersController@block')->name('block_user');
 
 // Cart
 Route::post('/cart/products/{id}/remove','ProductController@deleteOrder');
