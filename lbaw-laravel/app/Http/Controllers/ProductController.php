@@ -49,6 +49,7 @@ class ProductController extends Controller
        WHERE textsearchable_name_col @@ to_tsquery('portuguese',?)
        ORDER BY name DESC LIMIT 20",[$searchText]);
    }
+   
 
 
     public function delete($id){
