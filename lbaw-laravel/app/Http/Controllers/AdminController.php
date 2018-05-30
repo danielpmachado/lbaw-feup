@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function getAllUsers(){
 
-        $users = User::where('permissions','User')->get();
+        $users = User::where('permissions','User')->paginate(4);
 
         return view('admin.listUsers',compact('users'));
 

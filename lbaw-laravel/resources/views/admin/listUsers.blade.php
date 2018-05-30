@@ -20,7 +20,9 @@
 
         @each('admin.userCard',$users, 'user')
 
-	</div>
+    </div>
+    
+   
 </div>
-
+{{$users->links()}}
 @endsection

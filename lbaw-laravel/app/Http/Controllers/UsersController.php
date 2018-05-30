@@ -53,7 +53,7 @@ class UsersController extends Controller
       $products= $user->cart;
 
       if(Auth::user()->id == $id)
-        return view('cart.cart',compact('products','user'));
+        return view('cart.order',compact('products','user'));
       else
          return redirect('/');
 

@@ -49,6 +49,7 @@ Route::get('/products/search','ProductController@searchProducts')->name('search'
 Route::get('/products/{id}','ProductController@page')->name('page');
 Route::post('/products/{id}/favorite','ProductController@favorite');
 Route::post('/products/{id}/unfavorite','ProductController@unfavorite');
+Route::post('/products/{id}/update','ProductController@update')->name('update_product');
 
 Route::get('/products/search','ProductController@searchProducts')->name('search');
 Route::delete('products/{id}/delete','ProductController@delete')->name('delete_product');
@@ -61,3 +62,6 @@ Route::put('/products/{id}/reviews', 'ReviewController@create');
 Route::get('/admin/users', 'AdminController@getAllUsers');
 Route::get('/admin/users/search', 'AdminController@searchUsers')->name('searchUsers');
 Route::get('/admin/editProduct/{id}', 'AdminController@editProduct')->name('editProduct');
+
+//Catalog
+Route::get('/catalog/{type}', 'CatalogController@getCatalog')->name('catalog');
