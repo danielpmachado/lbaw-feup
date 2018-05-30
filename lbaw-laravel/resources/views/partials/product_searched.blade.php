@@ -4,7 +4,7 @@
         <img class="card-img-top" src="{{ URL::to('/') }}/images/products/{{$product->pic}}" alt="Card image cap">
     </div>
 
-    <div class="card-body ">
+    <div class="card-body product" data-id="{{$product->id}}">
         <h5 class="card-title">{{$product->name}}</h5>
         <p class="card-text" style="height:-20px;">{{$product->price}}€ -
             @if($product->stock > 0)
@@ -15,12 +15,21 @@
         </p>
         <hr>
         <div class="card-btn">
-           <!-- <a href="product.html" class="btn  btn-success btn-block">Add to Cart</a>
-        <a href="{{route('page', ['id' =>$product->id])}}" class="btn  btn-dark  btn-block">See More</a>-->
-
-            <button id="cart" type="button" class="btn btn-outline-success btn-block">
-                <i class="fa fa-shopping-cart"></i> Add to Cart
-            </button>
+             @if(Auth::check())
+                    @if($product->ordered())
+                        <button id="cart" type="button" class="btn btn-outline-success mb-2" disabled>
+                            <i class="fa fa-check"></i> In Cart
+                        </button>
+                    @else
+                        <button id="cart" type="button" class="btn btn-outline-success mb-2">
+                            <i class="fa fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    @endif
+                @else
+                    <button  type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#buttons-modal">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart
+                    </button>
+                @endif
             <a href="{{route('page', ['id' =>$product->id])}}" class="btn btn-outline-dark btn-block">
                     See More <i class="fa fa-arrow-right-arrow-alt-circle-right"></i>
             </a>

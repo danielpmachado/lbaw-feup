@@ -4,15 +4,10 @@
 
 <ol style="margin-bottom:15px;" class="p_breadcrumb breadcrumb">
         <li class="breadcrumb-item h6"><a href="/">Home</a></li>
-        <li class="breadcrumb-item h6">Catalog</li>
         <li class="breadcrumb-item active h6">{{$category->name}}</li>
     </ol>
 <hr>
 
-<div id="search-title" class="row h2">
-        {{$category->name}} 
-</div>
-<hr>
 
 <div id="search-container" class="container-fluid">
         <div class="row justify-content-center">
