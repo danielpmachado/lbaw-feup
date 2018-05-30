@@ -33,7 +33,13 @@ class AdminController extends Controller
           return view('admin.listUsers',compact('users'));
     }
     public function addProduct(){
-        return view('admin.addProduct');
+        $product = Product::find(1);
+        return view('admin.addProduct',compact('product'));
+    }
+
+    public function insertProduct(Request $request){
+        $product = Product::find(1);
+        return view('admin.addProduct',compact('product'));
     }
 
 }

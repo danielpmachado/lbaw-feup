@@ -63,6 +63,7 @@ Route::get('/admin/users', 'AdminController@getAllUsers');
 Route::get('/admin/users/search', 'AdminController@searchUsers')->name('searchUsers');
 Route::get('/admin/editProduct/{id}', 'AdminController@editProduct')->name('editProduct');
 Route::get('/admin/addProduct', 'AdminController@addProduct')->name('addProduct');
+Route::post('admin/insertProduct','AdminController@insertProduct')->name('insertProduct');
 
 //Catalog
 Route::get('/catalog/{type}', 'CatalogController@getCatalog')->name('catalog');
