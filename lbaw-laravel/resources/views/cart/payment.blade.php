@@ -5,26 +5,24 @@
             <div class="card-body">
                 <form class="form-horizontal">
                     <fieldset class="form-group">
-                        <div class="row">
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="visa">
-                                <label class="form-check-label" for="gridRadios1">
-                                    First radio
-                                </label>
-                                </div>
-                                <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="mastercard">
-                                <label class="form-check-label" for="gridRadios2">
-                                    Second radio
-                                </label>
-                                </div>
-                                <div class="form-check disabled">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="americanexpress">
-                                <label class="form-check-label" for="gridRadios3">
-                                    Third disabled radio
-                                </label>
-                                </div>
+                        <div class="row justify-content-center">
+                            <div class="form-check mx-5">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                                 <i class="fab fa-cc-visa fa-5x"></i>
+                            </label>
+                            </div>
+                            <div class="form-check mx-5">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                <i class="fab fa-cc-mastercard fa-5x"></i>
+                            </label>
+                            </div>
+                            <div class="form-check mx-5">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                                <i class="fab fa-cc-paypal fa-5x"></i>
+                            </label>
                             </div>
                         </div>
                     </fieldset>
