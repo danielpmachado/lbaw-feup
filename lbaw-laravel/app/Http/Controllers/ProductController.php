@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Review;
 use Illuminate\Support\Facades\DB;
+use Image;
 
 class ProductController extends Controller
 {
@@ -65,17 +66,16 @@ class ProductController extends Controller
         $product->stock = request('stock');
         $product->description = request('description');
 
-
         $avatar = $request->file('avatar');
 
         if($avatar != null){
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->save( public_path('/images/avatars/' . $filename ) );
-            $user->pic = $filename;
+            Image::make($avatar)->save( public_path('/images/products/' . $filename ) );
+            $product->pic = $filename;
         }
 
-        $user->save();
+        $product->save();
 
-        return redirect()->route('profile',['id' => $user->id]);
+        return redirect()->route('page',['id' => $product->id]);
     }
 }

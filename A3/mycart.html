@@ -313,145 +313,113 @@
      </div>
   </nav>
 
-  <div id="progress-bar" class="container">
+  <div class="container">
       <div class="row">
           <div class="board">
               <ul class="nav nav-tabs">
                   <div class="liner"></div>
                   <li rel-index="0" class="active">
                       <a href="#step-1" class="btn" aria-controls="step-1" role="tab" data-toggle="tab">
-                          <span> 1  </span>
-                          <a>  Cart </a>
+                          <span><i class="glyphicon glyphicon-user"></i></span>
                       </a>
                   </li>
                   <li rel-index="1">
                       <a href="#step-2" class="btn disabled" aria-controls="step-2" role="tab" data-toggle="tab">
-                          <span> 2  </span>
-                          <a> Expedition </a>
-
+                          <span><i class="glyphicon glyphicon-heart"></i></span>
                       </a>
                   </li>
                   <li rel-index="2">
                       <a href="#step-3" class="btn disabled" aria-controls="step-3" role="tab" data-toggle="tab">
-                          <span> 3 </span>
-                          <a> Payment </a>
+                          <span><i class="glyphicon glyphicon-plus"></i></span>
                       </a>
                   </li>
                   <li rel-index="3">
                       <a href="#step-4" class="btn disabled" aria-controls="step-4" role="tab" data-toggle="tab">
-                          <span> 4</span>
-                          <a> Confirmation</a>
+                          <span><i class="glyphicon glyphicon-ok"></i></span>
                       </a>
                   </li>
               </ul>
           </div>
           <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="step-1">
-                  <div class="col-md-17">
-
-
-                    <div class="container">
-                       <div class="card shopping-cart">
-                                <div class="card-header bg-dark text-light">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    Shopping cart
-                                    <a href="catalog.html" class="btn btn-outline-light btn-sm pull-right">Continue shopping</a>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="card-body">
-                                        <!-- PRODUCT -->
-                                        <div class="row">
-                                            <div class="col-12 col-sm-12 col-md-2 text-center">
-                                                    <img class="img-responsive" src="images/product1.jpg" alt="prewiew" width="120" height="80">
-                                            </div>
-                                            <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                                                <h4 class="product-name"><strong>MacBook Pro</strong></h4>
-                                                <h4>
-                                                    <small>Product description</small>
-                                                </h4>
-                                            </div>
-                                            <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                                                <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                                                    <h6><strong>1299.99 <span class="text-muted">x</span></strong></h6>
-                                                </div>
-                                                <div class="col-4 col-sm-4 col-md-4">
-                                                    <div class="quantity">
-                                                        <input type="button" value="+" class="plus">
-                                                        <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
-                                                               size="4">
-                                                        <input type="button" value="-" class="minus">
-                                                    </div>
-                                                </div>
-                                                <div class="col-2 col-sm-2 col-md-2 text-right">
-                                                    <button type="button" class="btn btn-outline-danger btn-xs">
-                                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <!-- END PRODUCT -->
-                                        <!-- PRODUCT -->
-                                        <div class="row">
-                                            <div class="col-12 col-sm-12 col-md-2 text-center">
-                                                    <img class="img-responsive" src="images/product2.png" alt="prewiew" width="120" height="80">
-                                            </div>
-                                            <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                                                <h4 class="product-name"><strong>Asus Zenbook</strong></h4>
-                                                <h4>
-                                                    <small>Product description</small>
-                                                </h4>
-                                            </div>
-                                            <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                                                <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                                                    <h6><strong>999.00 <span class="text-muted">x</span></strong></h6>
-                                                </div>
-                                                <div class="col-4 col-sm-4 col-md-4">
-                                                    <div class="quantity">
-                                                        <input type="button" value="+" class="plus">
-                                                        <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
-                                                               size="4">
-                                                        <input type="button" value="-" class="minus">
-                                                    </div>
-                                                </div>
-                                                <div class="col-2 col-sm-2 col-md-2 text-right">
-                                                    <button type="button" class="btn btn-outline-danger btn-xs">
-                                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <!-- END PRODUCT -->
-                                    <div class="pull-right">
-                                        <a href="" class="btn btn-outline-secondary pull-right">
-                                            Update shopping cart
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <input type="text" class="form-control" placeholder="coupon code">
-                                            </div>
-                                            <div class="col-6">
-                                                <input type="submit" class="btn btn-default" value="Use coupon">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pull-right" style="margin: 10px">
-                                        <button href="" id="step-1-next" class="btn btn-success pull-right">Checkout</button>
-                                        <div class="pull-right" style="margin: 5px">
-                                            Total price: <b>2289.99€</b>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-
-
-
+                  <div class="col-md-12">
+                  
+  
+                      <h3>Business Info</h3>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Business Name</label>
+                              <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Name"  />
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">EIN (used to verify your business)</label>
+                              <input  maxlength="10" type="text" required="required" class="form-control" placeholder="12-3456789"  />
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="subject">
+                                  Type of Business</label>
+                              <select id="subject" name="subject" class="form-control" required="required">
+                                  <option value="na" selected="">Choose One:</option>
+                                  <option value="service">Restaurant</option>
+                                  <option value="suggestions">Shopping</option>
+                                  <option value="product">Financial</option>
+                                  <option value="product">Retail</option>
+                                  <option value="product">Online</option>
+                                  <option value="product">Other</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Website (option)</label>
+                              <input maxlength="100" type="text"  class="form-control" placeholder="URL" />
+                          </div>
+                      </div> 
+                      <h3>Business Location</h3>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Street Adress</label>
+                              <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Address"  />
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">City</label>
+                              <input  maxlength="40" type="text" required="required" class="form-control" placeholder="Enter City"  />
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">ZIP</label>
+                              <input  maxlength="5" type="text" required="required" class="form-control" placeholder="Enter ZIP Code"  />
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">State</label>
+                              <input  maxlength="2" type="text" required="required" class="form-control" placeholder="Enter State"  />
+                          </div>
+                      </div>
+                      <h3>Business Contact</h3>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Phone Number</label>
+                              <input  maxlength="14" type="text" required="required" class="form-control" placeholder="(555) 555-5555"  />
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="control-label">Email</label>
+                              <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Email"  />
+                          </div>
+                      </div>
+                  
+                      <button id="step-1-next" class="btn btn-lg btn-primary nextBtn pull-right">Next</button>
+                  
                   </div>
               </div>
               <div role="tabpanel" class="tab-pane" id="step-2">
@@ -473,7 +441,45 @@
       </div>
   </div>
 
-
+  <script>
+    $(function() {
+    // Nav Tab stuff
+    $('.nav-tabs > li > a').click(function() {
+        if($(this).hasClass('disabled')) {
+            return false;
+        } else {
+            var linkIndex = $(this).parent().index() - 1;
+            $('.nav-tabs > li').each(function(index, item) {
+                $(item).attr('rel-index', index - linkIndex);
+            });
+        }
+    });
+    $('#step-1-next').click(function() {
+        // Check values here
+        var isValid = true;
+        
+        if(isValid) {
+            $('.nav-tabs > li:nth-of-type(2) > a').removeClass('disabled').click();
+        }
+    });
+    $('#step-2-next').click(function() {
+        // Check values here
+        var isValid = true;
+        
+        if(isValid) {
+            $('.nav-tabs > li:nth-of-type(3) > a').removeClass('disabled').click();
+        }
+    });
+    $('#step-3-next').click(function() {
+        // Check values here
+        var isValid = true;
+        
+        if(isValid) {
+            $('.nav-tabs > li:nth-of-type(4) > a').removeClass('disabled').click();
+        }
+    });
+});
+  </script>
 
 
   <footer class="footer-distributed">

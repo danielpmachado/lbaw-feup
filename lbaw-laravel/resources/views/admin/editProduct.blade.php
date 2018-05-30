@@ -20,26 +20,27 @@
                     <div class="card fav-card">
                          <div class="card-header bg-dark text-light">Edit Product</div>
                         <div class="card-body">
-                            <form form class="form-horizontal" enctype="multipart/form-data" method="POST" action="">
+                            <form form class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{ route('update_product', ['id' => $product->id])}}">
+                              {{ csrf_field() }}
                                 <div class="form-group">
                                         <a> Name </a>
-                                        <input  id="name" type="text" class="form-control" name="username" value="{{ $product->name  }}" required autofocus>
+                                        <input  id="name" type="text" class="form-control" name="name" value="{{ $product->name  }}" required autofocus>
                                     </div>
 
                                     <div class="form-row">
                                         <div class="form-group col-md-6 ">
                                             <a> Price </a>
-                                            <input  id="price" type="text" class="form-control" name="city" value="{{ $product->price }}" required>
+                                            <input  id="price" type="text" class="form-control" name="price" value="{{ $product->price }}" required>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <a> Stock </a>
-                                            <input  id="stock" type="text" class="form-control" name="zip" value="{{ $product->stock }}" required>
+                                            <input  id="stock" type="text" class="form-control" name="stock" value="{{ $product->stock }}" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <a> Description </a>
-                                        <textarea id="description" type="text" class="form-control" name="email"   rows="10"required>{{ $product->description }}</textarea>
+                                        <textarea id="description" type="text" class="form-control" name="description" rows="10"required>{{ $product->description }}</textarea>
                                     </div>
 
                                     <div  class="form-group">
@@ -53,7 +54,7 @@
                                     </div>
 
                                 </form>
-                          
+
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="deleteAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

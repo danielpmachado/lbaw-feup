@@ -36,12 +36,6 @@
 					<a> Profile Image </a><br>
 					<input type="file" name="avatar">
 				</div>
-				<!-- <a> Profile Image </a><br>
-				<div class="form-group custom-file">
-						
-						<input type="file" class="custom-file-input" id="customFile" name="avatar">
-						<label class="custom-file-label" for="customFile">Choose file</label>
-				</div> -->
 				
 				<div class="form-group float-left">
 					<button type="submit" class="btn btn-dark ">Save Changes</button>

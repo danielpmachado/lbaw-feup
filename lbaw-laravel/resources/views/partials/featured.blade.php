@@ -29,7 +29,9 @@
                         <i class="fa fa-shopping-cart"></i> Add to Cart
                     </button>
                 @endif
-                <a href="{{route('page', ['id' =>$featuredProduct->product->id])}}" class="btn btn-dark float-right">See More</a>
+                <a href="{{route('page', ['id' =>$featuredProduct->product->id])}}" class="btn btn-outline-dark">
+                    See More <i class="fa fa-arrow-right-arrow-alt-circle-right"></i>
+                </a>
             </div>
 
     </div>
