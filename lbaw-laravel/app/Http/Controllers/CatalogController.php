@@ -14,7 +14,7 @@ class CatalogController extends Controller
 
         $products = $category->products;
 
-        dd('$products');
+ 
 
         return view ('catalog.page',compact('category'));
     }
