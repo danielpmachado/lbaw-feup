@@ -22,8 +22,8 @@
                     </div>
 
                     <div class="form-group">
-                        <a> Email </a>
-                        <input  id="email" type="text" class="form-control" name="email" value="{{ $user->email }}" required>
+                        <a> Contact </a>
+                        <input  id="contact" type="text" class="form-control" name="contact" value="{{ $user->email }}" required>
                     </div>
                 </form>
                 </div>

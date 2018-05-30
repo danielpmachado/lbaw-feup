@@ -107,6 +107,11 @@ function addEventListeners() {
     sendAddCartRequest(this);
   }
 
+  let final_step = document.querySelector('#final-step');
+  if(final_step!=null)
+  final_step.onclick = function(){
+    sendConfirmationRequest(this);
+  }
 
 }
 
@@ -114,7 +119,28 @@ function addEventListeners() {
 //            Cart
 //----------------------------------
 
+function sendConfirmationRequest(button){
 
+  let address = document.getElementById('address').value;
+                + " " + document.getElementById('city').value;
+                + " " + document.getElementById('zip').value;
+  let contact = document.getElementById('contact').value;
+  let radios = document.getElementsByName('payment');
+ 
+  let payment;
+  for (let i = 0, length = radios.length; i < length; i++){
+    if (radios[i].checked){
+       payment =radios[i].value;
+      break;
+    }
+  }
+
+  sendAjaxRequest('put', '/orders/create', {address: address,contact:contact, payment:payment}, fakehandler());
+}
+
+function fakehandler(){
+
+}
 function sendAddCartRequest(button){
   let id = button.closest('div.product').getAttribute('data-id');
 

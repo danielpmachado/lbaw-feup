@@ -5,7 +5,6 @@
             <div class="card shopping-cart">
                 <div class="card-header bg-dark text-light ">
                     <p class="float-left mb-0" style="padding-top: 5px">Shopping cart</p>
-                    <a href="catalog.html" class="btn btn-outline-light float-right">Continue shopping</a>
                 </div>
                 <div class="card-body">
 
