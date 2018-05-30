@@ -14,7 +14,7 @@ class CatalogController extends Controller
 
 
 
-        $products_paginate = Category::where('name', $type)->get()->first()->products()->paginate(8);
+        $products_paginate = Category::where('name', $type)->get()->first()->products()->paginate(5);
 
 
         return view ('catalog.page',compact('category','products_paginate'));
