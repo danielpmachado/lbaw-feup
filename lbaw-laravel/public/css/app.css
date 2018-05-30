@@ -1107,6 +1107,10 @@ section#faq{
     border-radius: 0 0 0 0 !important;
 
 }
+#faq .card-header a{
+    text-decoration: none;
+}
+
 #faq .card-header a i{
     float:left;
     font-size:25px;
@@ -1197,7 +1201,7 @@ PAGINATION
     border: 1px solid var(--main-bg-color);
     border-radius: 3px;
     margin:2px;
-    
+
 }
 
 .pagination li:hover, .pagination .active {
