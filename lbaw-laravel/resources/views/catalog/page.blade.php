@@ -2,13 +2,21 @@
 
 @section('content')
 
-<div class="catalog container-fluid">
-<h2> {{$category->name}} Catalog</h2>
+<ol style="margin-bottom:15px;" class="p_breadcrumb breadcrumb">
+        <li class="breadcrumb-item h6"><a href="/">Home</a></li>
+        <li class="breadcrumb-item h6">Catalog</li>
+        <li class="breadcrumb-item active h6">{{$category->name}}</li>
+    </ol>
+<hr>
 
-	<div class="row justify-content-center">
+<div id="search-title" class="row h2">
+        {{$category->name}} 
+</div>
+<hr>
 
-        @each('partials.product_searched',$products_paginate, 'product')
-
+<div id="search-container" class="container-fluid">
+        <div class="row justify-content-center">
+            @each('partials.product_searched',$products_paginate, 'product')
     </div>
 </div>
 

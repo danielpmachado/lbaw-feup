@@ -1083,7 +1083,26 @@ div[role="tabpanel"]:after {
     display: none;
 }
 
+/*
+--------
+PRODUCT CARDS
+--------
+*/
 
+#search-container{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#search-title{
+
+    margin-left:2em;
+}
+
+.product-card{
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 /*
 --------

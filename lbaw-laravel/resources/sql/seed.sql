@@ -300,7 +300,7 @@ INSERT INTO "user" (id,email,username,password,address,city,zip,permissions,bloc
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions,blocked) VALUES (DEFAULT,'semper@penatibusetmagnis.edu','Ciaran Singleton','FBI41SUB4DT','Ap #147-4425 Velit Ave','San Juan de la Costa','5370-253','Admin',0);
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions,blocked) VALUES (DEFAULT,'Morbi.metus.Vivamus@faucibusleo.edu','Sloane Hatfield','JPG58FMP5HH','P.O. Box 882, 3276 Nunc Ave','Cañete','5370-253','User',0);
 INSERT INTO "user" (id,email,username,password,address,city,zip,permissions,blocked) VALUES (DEFAULT,'lbaw_admin@google.pt','Zachary Love','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','P.O. Box 790, 9016 Vitae Ave','Purnea','5370-253','Admin',0);
-INSERT INTO "user" (id,email,username,password,address,city,zip,permissions,blocked) VALUES (DEFAULT,'lbaw1753@google.pt','lbaw1753','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','212-7102 Risus. Av.','Águas Lindas de Goiás','5370-253','User',0);
+INSERT INTO "user" (id,email,username,password,address,city,zip,permissions,blocked) VALUES (DEFAULT,'lbaw1753@google.pt','lbaw1753','$2y$10$.Q3h8TkBwod3avIbBiqkreSoREbfX6LmNbzjxfhPAPQ7nXPMcfZAy','212-7102 Risus. Av.','Águas Lindas de Goiás','5370-253','User',1);
 --a pass deste user lbaw1753 é 123456
 
 
