@@ -15,7 +15,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $favorites = $user->favorites;
 
-        $orders = Order::where('id_user',$id)->get();
+        $orders = $user->orders;
 
         return view('user.profile',compact('user','favorites','orders'));
     }

@@ -123,14 +123,14 @@
             ?>
             <li class="nav-item">
                 <a id="nav_cart" class="nav-link"  href="{{route('cart', ['id' =>Auth::user()->id])}}" >
-                    <i class="fa fa-shopping-cart"></i>{{$total}} €
+                    <i class="fa fa-shopping-cart"></i>{{number_format($total, 2)}} €
                 </a>
             </li>
 
             @endif
             <li class="nav-item">
                 <a id="help-link" class="nav-link" data-toggle="modal" data-target="#helpModal">
-                    <i class="fas fa-question"></i>
+                    <i class="fas fa-question fa-sm"></i>
                 </a>
             </li>
 

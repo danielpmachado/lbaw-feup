@@ -19,19 +19,19 @@
 			<div class="col-md-12">
 			<div class="rating-block">
 				<h2 class="bold padding-bottom-7">{{round($product->score,2)}} <small>/ 5</small></h2>
-				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+				<button type="button" class="btn @if($product->score > 0) btn-primary @else btn-dark btn-grey @endif btn-sm" aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btn-primary btn-sm" aria-label="Left Align" disabled>
+				<button type="button" class="btn  @if($product->score > 1) btn-primary @else btn-dark btn-grey @endif btn-sm" aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btn-primary btn-sm" data-id="{{ $product->id }}"aria-label="Left Align" disabled>
+				<button type="button" class="btn @if($product->score > 2) btn-primary @else btn-dark btn-grey @endif btn-sm" data-id="{{ $product->id }}"aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btn-primary btn-sm" data-id="{{ $product->id }}"ia-label="Left Align" disabled>
+				<button type="button" class="btn  @if($product->score > 3) btn-primary @else btn-dark btn-grey @endif btn-sm" data-id="{{ $product->id }}"ia-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
-				<button type="button" class="btn btn-dark btn-grey btn-sm" data-id="{{ $product->id }}" aria-label="Left Align" disabled>
+				<button type="button" class="btn  @if($product->score > 4) btn-primary @else btn-dark btn-grey @endif btn-sm" data-id="{{ $product->id }}" aria-label="Left Align" disabled>
 					<i class="fa fa-star"></i>
 				</button>
 			</div>
